@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="01_project" 
+	NodeType="text/html" 
+	ModelLayout="ContentPage"
+	htmltitle="Inovação e Pesquisa">
+	<NodeContent>
+		<![CDATA[<ul class="Ident24" style="list-style-type:square">
+      <li onclick="hcCore.ndContent.SetPage('07_context.xml')" class="pMenu16">
+        <p class="button3D">Contextualização</p>
+        <p>Um breve contexto histórico da evolução da interação e visualização de informações</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('08_field.xml')" class="pMenu16">
+        <p class="button3D">Áreas de Conhecimento</p>
+        <p>Principais áreas de conhecimento relacionadas ao projeto</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('09_ihcmetaphor.xml')" class="pMenu16">
+        <p class="button3D">Interação baseada em metáforas</p>
+        <p>Breve histórico do uso de metáforas na IHC, principalmente a metáfora do desktop</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('10_requisite.xml')" class="pMenu16">
+        <p class="button3D">Requisitos</p>
+        <p>Requisitos nos quais o projeto se baseia</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('11_hypercube.xml')" class="pMenu16">
+        <p class="button3D">As metáforas do HyperCube</p>
+        <p>Apresentamos as metáforas: Do que são feitas, como funcionam e por que devem funcionar</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('12_schedule.xml')" class="pMenu16">
+        <p class="button3D">Cronograma</p>
+        <p>Página de acompanhamento da evolução do projeto</p>
+      </li>
+    </ul>]]>
+	</NodeContent>
+</NodeInterface>

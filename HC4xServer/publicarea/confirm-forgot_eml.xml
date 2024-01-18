@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="confirm-forgot_eml" 
+	NodeType="text/eml" 
+	ModelLayout="MailMessage"
+	htmltitle="Email solicitado ao clicar no botão Esqueceu a senha">
+	<NodeHeader>
+		<![CDATA[
+		    Redefinição de senha
+            Este email foi enviado porque você solicitou a redefinição de senha no site https://hypercube4x.com .
+            Caso não reconheça este site, favor desconsiderar este e-mail.
+            Clique no link abaixo para redefinir a sua senha:
+            {0}]]>
+	</NodeHeader>
+</NodeInterface>

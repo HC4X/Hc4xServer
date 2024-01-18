@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="index" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube4x - Um mundo possível">
+	<NodeContent>
+		<![CDATA[
+<!--Cards private area-->
+    <div class="container-fluid d-flex justify-content-center mb-5 p-5" id="initial_private_area">
+        <div class="container">
+            <h3 class=" text-uppercase text-center text-primary mt-5 mb-3">Seja bem-vindo à sua conta Hypercube!</h3>
+            <hr class="w-25 mx-auto mb-5">
+            <div class="row justify-content-center my-2 g-3">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/area-usuario/" alt="Perfil" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-fill-gear fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-primary">Acesse seu Perfil</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/register-customer" alt="Cadastre sua empresa" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+							<i class="bi bi-building fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Cadastre sua empresa</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Analyzer" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-boxes fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Analyzer</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Relational" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-database fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Relational</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/catalogo/" alt="Hyper Stone" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-aspect-ratio fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Stone</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Book" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-book-half fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Book</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Minhas assinaturas" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-check-fill fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Minhas assinaturas</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                  <a href="#" alt="Favoritos" class="text-decoration-none">
+                      <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                          <div class="card-header">
+                              <i class="bi bi-heart fs-1 text-center text-primary"></i>
+                              <br>
+                          </div>
+                          <div class="card-body ">
+                              <h5 class="card-title text-center text-primary">Favoritos</h5>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+            </div>
+        </div>
+    </div>
+          ]]>
+	</NodeContent>
+</NodeInterface>

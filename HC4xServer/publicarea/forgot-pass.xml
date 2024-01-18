@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="forgot-pass" 
+	NodeType="text/html" 
+	ModelLayout="SingleForm"
+	htmltitle="HyperCube4x - Um mundo possível" 
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeForm>
+		<![CDATA[ 
+           <section>
+          <div class="container-fluid mb-4 pb-4">
+            <div class="row d-block">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <img src="/images/general/undraw_forgot_password_re_hxwm.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Esqueceu sua Senha?</h4>
+                <p class="text-uppercase text-center text-secondary">Informe seu e-mail para recuperação:</p>
+            </div>
+            <!-- Email input -->
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4  my-3 mx-auto d-block">
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                    <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
+                        placeholder="nome@email.com" required />
+                </div>
+                <a href="/publicarea/pt/email_send" class="text-decoration-none"><button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button></a>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+	</NodeForm>
+</NodeInterface>

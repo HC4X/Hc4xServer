@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="hyper_relational" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube 4x">
+	<NodeContent>
+		<![CDATA[
+        <style>
+            p{
+            font-family: Roboto;
+            }
+        </style>
+        <div class="container">
+            <h1 class="text-center fs-2">
+                Hyper Relational
+                </h1>
+                <p class="text-justify fs-6">
+                As folhas de cálculo expõem dados em linhas e colunas. Portanto, trata-se de um objeto
+                plano porque os dados nas células dependem de um “cabeçalho de linha” (ou seja, uma
+                chave primária) e um cabeçalho de coluna para serem significativos. A conexão entre duas
+                tabelas (por exemplo, através de um comando join) imita a figura 3.5(a), uma vez que os
+                dados de ambas as tabelas estão disponíveis no mesmo plano. Em contraste, a disposição
+                mestre/detalhe imita a figura 3.5(b), pois mantém as informações de cada tabela em planos
+                diferentes. Assim, os dados organizados conforme o modelo entidade-relacionamento são 
+                um cubo 3D. Em contrapartida, também é necessário lidar com metadados para descobrir
+                novas formas de juntar informações ao longo da coleção.
+                </p>
+                <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5a.png" alt="Figura 3.5(a)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figura 3.5. a) cubo desdobrado
+                        </p>
+                    </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5b.png" alt="Figura 3.5(b)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figura 3.b. a) cubo projetado
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <p class="text-justify fs-6 mt-5">
+                O <b>HyperRelational</b> trata dados estruturados em diversos formatos, como RDMS9
+                proprietário, CSV, XML e JSON. O objetivo é fornecer opções de exploração de dados e
+                metadados extraídas de propriedades de visualização geométrica, conforme a figura 3.15:
+                </p>
+                <div class="col-12">
+                <img src="/images/hyper_relational/3.15.jpg" alt="Figura 3.15. uma tabela em visão de grade e formulário mestre/detalhe." class="img-fluid text-center"/>
+                <div class="d-flex justify-content-center">
+                    <p class="fs-6 text-muted">
+                    Figura 3.15.uma tabela em visão de grade e formulário mestre/detalhe. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        ]]>
+	</NodeContent>
+</NodeInterface>

@@ -1,0 +1,258 @@
+body {
+  font-family: 'Verdana', sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.text-uppercase {
+  color: rgba(18, 84, 223, 1);
+}
+
+#produtos,
+#parceiros {
+  background-color: #F0F0E2;
+}
+
+html {
+  font-size: 14px;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+#hero {
+  background-image: url("/images/background/hero-background.jpg");
+  height: 50em;
+  width: auto;
+  padding: 0;
+}
+
+  #hero h1 {
+    font-size: 4.5em;
+  }
+
+  #hero p {
+    font-size: 2em;
+  }
+
+  #hero img {
+    padding: 2em;
+  }
+
+.absolute {
+  position: absolute;
+  right: 1rem;
+  bottom: 0rem;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.text-primary {
+  color: rgba(18, 84, 223, 1) !important;
+  margin: 0;
+}
+
+h1 {
+  color: rgba(18, 84, 223, 1);
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  background-color: #fff;
+  max-width: 30rem;
+  transition: all 0.3s;
+  margin: 1rem;
+  text-decoration: none;
+  height: 28rem;
+  width: 100%;
+}
+
+#card:hover {
+  transform: scale(1.05);
+}
+
+  #card img {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    padding: .25rem;
+    height: auto;
+    margin-right: 1rem;
+    width: 100%;
+  }
+
+  #card p {
+    text-align: start;
+    color: black;
+    margin: 0;
+  }
+
+.imagem-descricao {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transform: scale(.95);
+}
+
+.imagem-descricao img {
+  flex: 1; 
+  max-width: 50%; 
+  height: auto; 
+  object-fit: cover;
+  padding: .25rem;
+  border: 1px solid #dee2e6;
+}
+
+.imagem-descricao p {
+  flex: 1;
+  text-align: start;
+  color: black;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/*frames da galeria*/
+#veja-mais .box-part {
+  background: #FFF;
+  border-radius: 0;
+  padding: 60px 10px;
+  margin: 30px 0px;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 300px;
+}
+
+#veja-mais .video-part {
+  width: 80%;
+  height: 60%;
+  max-width: 350px;
+  max-height: 250px;
+}
+
+/*página equipe*/
+
+#equipe .card {
+  width: 360px;
+  height: 290px;
+}
+
+  #equipe .card:hover {
+    transform: scale(1.05);
+    z-index: 99;
+  }
+
+.imageStone {
+  position: relative;
+}
+
+#hyper_stone .image {
+  position: relative;
+  max-width: 500px;
+}
+
+#hyper_stone img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.legenda {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+  .legenda:hover {
+    opacity: 1;
+  }
+
+#HyperStone {
+  background-color: #F0F0E2;
+}
+
+
+
+#hyper_library .card{
+  max-width: 400px;
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+}
+
+#hyper_library .card img{
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 1450px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1185px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imagem-descricao p {
+    text-align: start;
+  }
+}
+
+@media(max-width: 767px) {
+  .legenda {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    transition: 0.6s;
+  }
+}
+#password-icon {
+  position: absolute;
+  top: 44px;
+  right: 9px;
+}

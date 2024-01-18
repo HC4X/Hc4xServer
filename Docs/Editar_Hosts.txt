@@ -1,0 +1,11 @@
+Execute o notepad.exe como adminitrador
+
+Abra o arquivo "hosts" (o nome não tem extensão)
+c:\Windows\System32\drivers\etc\hosts
+
+Acrescente as seguintes linhas no final do arquivo:
+199.102.48.7 dev.hypercube4x.com
+199.102.48.7 test.hypercube4x.com
+199.102.48.7 oldfrmwrk.hypercube4x.com
+
+Salve o arquivo e saia.

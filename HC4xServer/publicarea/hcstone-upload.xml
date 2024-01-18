@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hcstone-upload"
+  ModelLayout="UploadForm"
+  htmltitle="HyperCube4x - Um mundo possível"
+  ServerClass="HC4x_Server.HCStone.SlabUpload">
+	<NodeHeader>
+		<![CDATA[<p id="PageTitle" class="MarginT8 LensBlack75 Padding8 pTitle24">&nbsp;</p>]]>
+	</NodeHeader>
+	<NodeForm>
+		<![CDATA[
+	<p><input type="file" name="myupload" id="myupload" /></p>
+    <p><input type="submit" value="Upload " /></p>]]>
+	</NodeForm>
+	<NodeFooter>
+		<![CDATA[<div id="PageContent" class="PrintFalse" style="overflow-y:auto;">&nbsp;</div>]]>
+	</NodeFooter>
+</NodeInterface>

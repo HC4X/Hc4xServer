@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="registration_success" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage">
+	<NodeContent>
+		<![CDATA[<section>
+          <div class="container-fluid mb-5 pb-5">
+        <div class="row d-block ">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <h2 class="text-center text-uppercase text-primary">Cadastro realizado com sucesso!</h2>
+                <img src="/images/general/undraw_mailbox_re_dvds.svg" class="img-fluid mx-auto d-block" alt="Registration success image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Verifique sua conta de email e confirme a validade da sua conta</h4>
+                <p class="text-uppercase text-center text-secondary">Lembre-se de olhar a caixa de spam caso a mensagem não esteja na caixa de entrada!</p>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+	</NodeContent>
+</NodeInterface>

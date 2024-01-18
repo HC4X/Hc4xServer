@@ -1,0 +1,73 @@
+﻿@page "{sitearea}/{lang}/{pageid}/{*QueryString}"
+@using HC4xServer.Core
+@using LibServer
+@model IndexModel
+
+@section HeadMeta{
+  @Html.Raw(Model.GetHeadMeta())
+ }
+@section HeadLink{
+  @Html.Raw(Model.GetHeadLink())
+ }
+@section BodyHeader{
+  @Html.Raw(Model.GetBodyHeader())
+ }
+@section BodyFooter{
+  @Html.Raw(Model.GetBodyFooter())
+ }
+
+@{
+  ServerInterface objInterface;
+  hc4x_ModelLayout atModelLayout;
+  try {
+    objInterface = Model.RenderCurrent();
+    Layout = objInterface.atPageLayout;
+    atModelLayout = objInterface.ModelLayout<hc4x_ModelLayout>();
+    ViewData[GearCore.c_tagtitle] = objInterface.atTitle;
+    }
+  catch (Exception Err) {
+    objInterface = new ServerInterface(hc4x_ModelLayout.ErrorPage);
+    atModelLayout = objInterface.ModelLayout<hc4x_ModelLayout>();
+    objInterface.ShowException(Err, nameof(IndexModel), "@Code");
+    }
+}
+
+@switch (atModelLayout) {
+  case hc4x_ModelLayout.None:
+  case hc4x_ModelLayout.InfoPage:
+  case hc4x_ModelLayout.ErrorPage:
+    <p id="PageSection" class="Margin0 LensBlack75 Padding8 pLight20" style="margin-top:0px;">@Html.Raw(objInterface.atPageSection)</p>
+    <p id="PageTitle" class="MarginT8 LensBlack75 Padding8 pTitle24">@Html.Raw(objInterface.atHeader)</p>
+    <p>@Html.Raw(Model.atMessage)</p>
+    <div id="PageContent" class="PrintFalse" style="overflow-y:auto;">@Html.Raw(objInterface.atFooter)</div>
+    break;
+  case hc4x_ModelLayout.ContentPage:
+    @Html.Raw(objInterface.atPageSection)
+    @Html.Raw(objInterface.atHeader)
+    @Html.Raw(objInterface.atContentPage)
+    @Html.Raw(Model.atMessage)
+    @Html.Raw(objInterface.atFooter)
+    break;
+  case hc4x_ModelLayout.UploadForm:
+    @Html.Raw(objInterface.atPageSection)
+    @Html.Raw(objInterface.atHeader)
+    @Html.Raw(Model.atMessage)
+    @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" })) {
+      @Html.Raw(objInterface.atForm)
+      }
+    @Html.Raw(objInterface.atFooter)
+    break;
+  case hc4x_ModelLayout.SingleForm:
+    <p id="PageSection" class="Margin0 LensBlack75 Padding8 pLight20" style="margin-top:0px;">@Html.Raw(objInterface.atPageSection)</p>
+    <p id="PageTitle" class="MarginT8 LensBlack75 Padding8 pTitle24">@Html.Raw(objInterface.atHeader)</p>
+    <p>@Html.Raw(Model.atMessage)</p>
+    @using (Html.BeginForm(FormMethod.Post)) {
+      @Html.Raw(objInterface.atForm)
+      }
+    <div id="PageContent" class="PrintFalse" style="overflow-y:auto;">@Html.Raw(objInterface.atFooter)</div>
+    break;
+  default:
+    @Html.Raw(string.Format("Not Implemented: {0}", atModelLayout))
+    <p>@Html.Raw(Model.atMessage)</p>
+    break;
+  }

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>HC4XLogic</AssemblyName>
+    <RootNamespace>HC4x_Server.Logic</RootNamespace>
+    <BaseOutputPath>..\HC4xServer\bin</BaseOutputPath>    
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="HCStone_SlabUpload_01.cs" />
+    <Compile Remove="HCStone_SlabUpload_02.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\HyperCube\Community\HyperCube\LibModel\LibModelBlazor.csproj" />
+    <ProjectReference Include="..\..\..\..\HyperCube\Community\HyperServer4x\HyperServer\LibServerBlazor.csproj" />
+    <ProjectReference Include="..\HC4xServer\HC4xServer_full.csproj" />
+  </ItemGroup>
+</Project>

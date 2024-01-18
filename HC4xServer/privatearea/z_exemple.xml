@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="index"
+  NodeType="text/html"
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube 4x">
+	<NodeHeader>
+		<![CDATA[]]>
+	</NodeHeader>
+	<NodeContent>
+		<![CDATA[]]>
+	</NodeContent>
+	<NodeFooter>
+		<![CDATA[]]>
+	</NodeFooter>
+</NodeInterface>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="registration"
+  NodeType="text/html" 
+  ModelLayout="SingleForm"
+  htmltitle="HyperCube4x - Um mundo possível"
+  ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeForm>
+		<![CDATA[ <section>
+        <div class="container-fluid mb-5 pb-5">
+          <h1 class="text-center text-uppercase">Venha pro universo Hypercube!</h1> 
+            <div class="d-flex flex-direction-column justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div class="divider d-flex justify-content-around my-4">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                            <input type="email" name="user_email" value="" id="user_email"
+                                class="form-control form-control-lg" placeholder="nome@email.com" required />
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="user_pass">Senha</label>
+                            <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
+                                placeholder="digite sua senha"  required />
+              <i class="bi bi-eye-fill" id="password-icon"></i>
+                        </div>
+                        <!-- Password input confirm -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label lead fs-6 " for="user_pass">Confirme sua senha</label>
+                            <input type="password" name="user_pass_2" value="" id="user_pass_2"
+                                class="form-control form-control-lg" placeholder="confirme sua senha" required />
+                        </div>
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrar</button>
+                    
+            <p>Ao se registrar, você concorda com os <a href="/publicarea/pt/termos" target="_blank">Termos de Serviço</a> e a <a href="/publicarea/pt/politica-de-privacidade" target="_blank">Política de Privacidade</a> </p>
+            
+          <p class="lead fs-6 small mt-2 pt-1 mb-0">Já possui uma conta?<a  href="/publicarea/pt/login"
+                                    class="link-primary">  Clique aqui </a>para fazer Login</p>
+                        </div>
+                </div>
+                  <img src="/images/general/undraw_team_up_re_84ok.svg" class="img-fluid mx-auto d-none d-md-none d-lg-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+            </div>
+        </div>
+        </div>
+    </section>]]>
+	</NodeForm>
+	<NodeFooter>
+		<![CDATA[
+        <script>
+                    const icon = document.querySelector(".bi-eye-fill");
+                    const inputPass = document.querySelector("#user_pass");
+                    const inputPass_2 = document.querySelector("#user_pass_2");
+          
+                    icon.addEventListener("click", function(){
+                        icon.classList.toggle("bi-eye-slash-fill");
+                        if(inputPass.type === "password"){
+                            inputPass.type = "text";
+              inputPass_2.type = "text";
+                        } else {
+                            inputPass.type = "password";
+              inputPass_2.type = "password";
+                        }
+                    });
+                </script>
+        ]]>
+	</NodeFooter>
+</NodeInterface>

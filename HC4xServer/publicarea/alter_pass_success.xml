@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="alter_pass_success" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube 4x">
+	<NodeContent>
+		<![CDATA[<section>
+                    <div class="container-fluid">
+                            <div class="row d-block">
+                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3 d-flex align-items-center flex-column justify-content-center mx-auto d-block ">
+                                <h1 class="text-center" style="color: #5C82D8;">Senha alterada com sucesso !</h1>
+                                <img src="/images/general/confirm_code.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+								<a href="/publicarea/pt/login" class="btn btn-outline-primary my-5">Ir para o login</a>
+                            </div>  
+                        </div>
+                    </div>
+                   </section>]]>
+	</NodeContent>
+</NodeInterface>

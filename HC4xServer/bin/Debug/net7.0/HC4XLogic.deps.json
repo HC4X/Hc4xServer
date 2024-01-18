@@ -1,0 +1,103 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "HC4XLogic/1.0.0": {
+        "dependencies": {
+          "HC4xServer": "1.0.0",
+          "LibModel": "20.24.1.1",
+          "LibServer": "20.24.1.1"
+        },
+        "runtime": {
+          "HC4XLogic.dll": {}
+        }
+      },
+      "HC4xServer/1.0.0": {
+        "runtime": {
+          "HC4xServer.dll": {}
+        }
+      },
+      "LibModel/20.24.1.1": {
+        "runtime": {
+          "LibModel.dll": {
+            "assemblyVersion": "20.24.1.1",
+            "fileVersion": "20.24.1.1"
+          }
+        }
+      },
+      "LibServer/20.24.1.1": {
+        "runtime": {
+          "LibServer.dll": {
+            "assemblyVersion": "20.24.1.1",
+            "fileVersion": "20.24.1.1"
+          }
+        }
+      },
+      "MySql.Data/8.0.33.0": {
+        "runtime": {
+          "MySql.Data.dll": {
+            "assemblyVersion": "8.0.33.0",
+            "fileVersion": "8.0.33.0"
+          }
+        }
+      },
+      "LibCryptoBlazor/20.24.1.1": {
+        "runtime": {
+          "LibCryptoBlazor.dll": {
+            "assemblyVersion": "20.24.1.1",
+            "fileVersion": "20.24.1.1"
+          }
+        }
+      },
+      "BouncyCastle.Cryptography/2.0.0.0": {
+        "runtime": {
+          "BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.2.1.47552"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HC4XLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HC4xServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibModel/20.24.1.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibServer/20.24.1.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MySql.Data/8.0.33.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibCryptoBlazor/20.24.1.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BouncyCastle.Cryptography/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

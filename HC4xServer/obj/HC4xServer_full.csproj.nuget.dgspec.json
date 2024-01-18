@@ -1,0 +1,269 @@
+{
+  "format": 1,
+  "restore": {
+    "L:\\Documentos\\vs\\2023\\HC4xServer\\HC4xServer\\HC4xServer_full.csproj": {}
+  },
+  "projects": {
+    "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\LibModelBlazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\LibModelBlazor.csproj",
+        "projectName": "LibModel",
+        "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\LibModelBlazor.csproj",
+        "packagesPath": "C:\\Users\\lecod\\.nuget\\packages\\",
+        "outputPath": "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lecod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj": {
+                "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\LibServerBlazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\LibServerBlazor.csproj",
+        "projectName": "LibServer",
+        "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\LibServerBlazor.csproj",
+        "packagesPath": "C:\\Users\\lecod\\.nuget\\packages\\",
+        "outputPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lecod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\LibModelBlazor.csproj": {
+                "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperCube\\LibModel\\LibModelBlazor.csproj"
+              },
+              "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj": {
+                "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj",
+        "projectName": "LibCryptoBlazor",
+        "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\LibCryptoBlazor.csproj",
+        "packagesPath": "C:\\Users\\lecod\\.nuget\\packages\\",
+        "outputPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\LibCrypto\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lecod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "L:\\Documentos\\vs\\2023\\HC4xServer\\HC4xServer\\HC4xServer_full.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "L:\\Documentos\\vs\\2023\\HC4xServer\\HC4xServer\\HC4xServer_full.csproj",
+        "projectName": "HC4xServer",
+        "projectPath": "L:\\Documentos\\vs\\2023\\HC4xServer\\HC4xServer\\HC4xServer_full.csproj",
+        "packagesPath": "C:\\Users\\lecod\\.nuget\\packages\\",
+        "outputPath": "L:\\Documentos\\vs\\2023\\HC4xServer\\HC4xServer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lecod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\LibServerBlazor.csproj": {
+                "projectPath": "L:\\Documentos\\HyperCube\\Community\\HyperServer4x\\HyperServer\\LibServerBlazor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

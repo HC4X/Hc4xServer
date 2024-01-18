@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Remove="Assets\Bianco_021.JPG" />
+    <None Remove="Assets\Bianco_021.png" />
+    <None Remove="Assets\BRANCO_ITAUNAS_016.png" />
+    <None Remove="Assets\BRANCO_ITAUNAS_031.JPG" />
+    <None Remove="Assets\CRISTALLO_001.JPG" />
+    <None Remove="Assets\CRISTALLO_001.png" />
+    <None Remove="Assets\LE_BLANC_001.JPG" />
+    <None Remove="Assets\LE_BLANC_001.png" />
+    <None Remove="Assets\PERLA_VENATA_002.JPG" />
+    <None Remove="Assets\PERLA_VENATA_002.png" />
+    <None Remove="Assets\TAHYTI_014.png" />
+    <None Remove="Assets\TAHYTI_017.JPG" />
+    <None Remove="Assets\VERDE_BAHIA_004.JPG" />
+    <None Remove="Assets\VERDE_BAHIA_010.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+</Project>

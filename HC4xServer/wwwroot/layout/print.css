@@ -1,0 +1,45 @@
+@media only print and (min-width: 600px) {
+  @page {
+    margin: 0.5cm;
+  }
+
+  * {
+    background: transparent !important;
+    border-color: transparent !important;
+    border-style: none !important;
+    color: #000;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+  }
+
+  nav, footer, video, audio, object, embed {
+    display: none;
+  }
+
+  .PrintOnly, .PrintTrue {
+    display: block;
+  }
+
+  .PrintFalse {
+    display: none;
+  }
+
+  .pHighlight36 {
+    color: navy;
+  }
+
+  .pLight24 {
+    color: navy;
+  }
+
+  .ContentFit {
+    max-width: none;
+  }
+}

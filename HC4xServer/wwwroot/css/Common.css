@@ -1,0 +1,33 @@
+@import url('https://fonts.cdnfonts.com/css/chosence');
+
+#navbar {
+  background: linear-gradient(90deg, rgba(18, 84, 223, 1) 0%, rgba(91, 135, 227, 1) 35%, rgba(146, 181, 255, 1) 100%);
+}
+#hero {
+  width: 100%;
+}
+
+#footer {
+  background: linear-gradient(90deg, rgba(18, 84, 223, 1) 0%, rgba(91, 135, 227, 1) 35%, rgba(146, 181, 255, 1) 100%);
+}
+
+/* Image Size */
+.img256 {
+  height: 256px;
+  width: 256px;
+}
+
+.img128 {
+  height: 128px;
+  width: 128px;
+}
+
+.img64 {
+  height: 64px;
+  width: 64px;
+}
+
+.img32 {
+  height: 32px;
+  width: 32px;
+}

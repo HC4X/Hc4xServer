@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+	id="confirm-email"
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+</NodeInterface>

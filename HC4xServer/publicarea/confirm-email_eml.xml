@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="confirm-email_eml" 
+	NodeType="text/eml" 
+	ModelLayout="MailMessage" 
+	htmltitle="Recebemos sua inscrição. Confirme o seu email" 
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeHeader>
+		<![CDATA[Validação de Email
+
+      Este email foi enviado porque você se cadastrou no site https://hypercube4x.com .
+      Caso não reconheça este site, favor desconsiderar este e-mail.
+      Clique no link abaixo ou copie e cole no seu browser para validar o seu email:
+
+      {0}
+
+      Acesse aqui seu e-book e veja o que o HyperStone é capaz de fazer você/fazer por sua empresa: {1}
+
+      ]]>
+	</NodeHeader>
+</NodeInterface>

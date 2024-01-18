@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HyperApplication Name="HyperCube"
+  Title="Hyper Cube"
+  DisplayImage="images/Logo/HyperCubeScene.png"
+  AssemblyPath=""
+  StartClass=""
+  StartType="None"
+  StartData="App_Data"
+  ConnectionId=""
+  Direction4D="Shell"
+  ShowInGallery="false"
+  LoginType="None"
+  Revision="2023-05-17 12:26:00">
+  <SectorLocale>
+    <NodeLocale id="1" LanguageCode="pt-BR" LanguageName="Português Brasil" DictionaryFile="CultureDic\HyperCube_pt-BR.xml" LocaleFile="HyperApp\Locale\HyperCube_pt-BR.xml" DicVersion="1.01.0001" />
+  </SectorLocale>
+  <SectorString>
+    <NodeString id="1" key="found_type_name">{0} not Found: '{1}'</NodeString>
+    <NodeString id="2" key="required_type_name">Required {0}: {1}</NodeString>
+    <NodeString id="2" key="invalid_type_name">Invalid {0}: {1}</NodeString>
+    <NodeString id="3" key="ParseDbl">Can't Convert {0} to Double</NodeString>
+    <NodeString id="4" key="invalid_user_pass">Invalid User Name/Password</NodeString>
+    <NodeString id="5" key="object_Implemented">'{0}' Not Implemented: '{1}'</NodeString>
+  </SectorString>
+  <SectorSecurity>
+    <SectorRole>
+      <NodeRole id="1" Name="Admim_Group" RoleType="Group" />
+      <NodeRole id="2" Name="Guest_Group" RoleType="Group" />
+      <NodeRole id="3" Name="Admin" RoleType="User" CredentialParent="1" UserPass="adm.8765" />
+      <NodeRole id="4" Name="Guest_User" RoleType="User" CredentialParent="2" UserPass="adm.8765" />
+    </SectorRole>
+  </SectorSecurity>
+  <SectorTable>
+    <NodeTable TabName="hc4x_user_insert" PrimaryKey="pkeyUser">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">hc4xuser</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkeyUser" FieldLabel="Inc" DataType="Integer" IncrementSeed="1" IncrementStep="1"/>
+        <NodeField FieldName="selfUser" DataType="Integer" />
+        <NodeField FieldName="email" />
+        <NodeField FieldName="nameUser" />
+        <NodeField FieldName="descUser" />
+        <NodeField FieldName="passUser" />
+      </SectorField>
+
+    </NodeTable>
+    <NodeTable TabName="TableBlob">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">htBlob</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkBlob" FieldLabel="Inc" DataType="Integer" IncrementSeed="1" IncrementStep="1"/>
+        <NodeField FieldName="fkStorage" FieldLabel="Storage" DataType="Integer"/>
+        <NodeField FieldName="dsBlob" FieldLabel="Desc"/>
+        <NodeField FieldName="Content" FieldLabel="Content" DataType="Binary" />
+        <NodeField FieldName="atMime" FieldLabel="Mime" />
+        <NodeField FieldName="atEncoding" FieldLabel="Encoding" />
+        <NodeField FieldName="atState" FieldLabel="State" />
+        <NodeField FieldName="atUpd" FieldLabel="Date Upd" DataType="DateTime" />
+      </SectorField>
+    </NodeTable>
+  </SectorTable>
+  <SectorInterface>
+    <NodeInterface id="HeadMeta" NodeType="text/html" ModelLayout="PageSection">
+      <NodeHeader>
+        <![CDATA[<meta name="description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta name="keywords" content="Interface Homem-Computador, Visualização da Informação, Além do Desktop, Jogo de Permutação, Hipercubo, Quarta Dimensão" />
+    <!-- Open Graph -->
+  <meta property="og:type" content="website" /> <!-- website / article -->
+  <meta property="og:locale" content="pt_BR" /> <!-- pt_BR / en_US  -->
+  <meta property="og:title" content="HyperCube - Um Mundo Possível" />
+  <meta property="og:description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />
+  <meta property="og:url" content="https://hypercube4x.com" />
+  <meta property="og:site_name" content="HyperCube - Um Mundo Possível" /> <!-- HyperCube - A Possible World -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" /> <!-- summary / summary_large_image -->
+  <meta name="twitter:site" content="[conta do twitter do site com @]" />
+  <meta name="twitter:creator" content="[conta do twitter do site com @]" />
+  <meta name="twitter:title" content="HyperCube - Um Mundo Possível" />
+  <meta name="twitter:description" content="O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />]]>
+      </NodeHeader>
+    </NodeInterface>
+    <SectorInterface id="PublicArea">
+      <NodeInterface id="HeadLink" NodeType="text/html" ModelLayout="PageSection">
+        <NodeHeader>
+          <![CDATA[<link rel="stylesheet" type="text/css" href="/css/Common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/publicArea.css" />
+  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css"/>]]>
+        </NodeHeader>
+      </NodeInterface>
+      <NodeInterface id="BodyHeaderFooter" NodeType="text/html" ModelLayout="PageSection">
+        <NodeHeader>
+          <![CDATA[<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="/publicarea/pt/index#hero">
+        <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo"
+             style="width: 40px; height: 40px;">Hypercube4X
+      </a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <div class="navbar-nav ms-auto align-items-end me-5">
+	  <a href="/publicarea/pt/index" class="nav-link text-white">Home</a>
+          <a href="/publicarea/pt/index#sobre" class="nav-link text-white">Empresa</a>
+          <a href="/publicarea/pt/equipe" class="nav-link text-white">Equipe</a>
+          <a href="/publicarea/pt/index#produtos" class="nav-link text-white">Soluções</a>
+          <a href="/publicarea/pt/index#vejaMais" class="nav-link text-white">Galeria</a>
+          <a href="/publicarea/pt/index#parceiros" class="nav-link text-white">Apoio</a>
+          <a href="/publicarea/pt/index#contato" class="nav-link text-white">Contatos</a>
+          <a href="/publicarea/pt/01_project" class="nav-link text-white">Pesquisa e Inovação</a>
+          <a href="/publicarea/pt/05_download" class="nav-link text-white">Download</a>
+          <a href="/publicarea/pt/login" class="nav-link text-white">Login</a>
+          <a href="/publicarea/pt/registration" class="nav-link text-white">Cadastre-se</a>
+        </div>
+      </div>
+    </div>
+  </nav>]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[<div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="index" NodeType="text/html" ModelLayout="InfoPage"
+        htmltitle="Main Page">
+        <NodeHeader>
+          <![CDATA[  <!-- Hero Section -->
+  <div class="container-fluid p-0" id="hero">
+    <img src="/images/background/heroHC4X_2.jpg" alt="hero" class="img-fluid">
+  </div>
+  <!-- Sobre -->
+  <div class="container-fluid p-5" id="sobre">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block">
+        <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
+        <h1 class="text-uppercase text-center mt-5">Saiba mais sobre o Hypercube 4X</h1>
+        <hr class="w-50 mx-auto">
+        <p>
+          <ul>
+            <li class="mx-2 p-3">
+              O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a
+              cognição especial,
+              memória especial e organização espacial do cérebro humano
+            </li>
+            <li class="mx-2 p-3">
+              Utiliza metáforas e algoritmos próprios para criar interação simbiótica e
+              visualização de dados
+              mais parecida com o mundo real.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>]
+  <!-- Produtos -->
+  <div class="container-fluid p-5 d-flex justify-content-center" id="produtos">
+    <div class="container">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">Você pode usar o Hypercube 4X para:</h1>
+      <hr class="w-25 mx-auto mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mx-3">
+          <div class="card position-relative card-img-top text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <img src="/images/logo/HyperAnalyzer.png" class="card-img-top img-thumbnail"
+                 alt="hiperAnalyzer">
+            <div class="card-body ">
+              <h5 class="card-title text-center">Hyper Analyzer</h5>
+              <p>
+              Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação 2D.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mx-3">
+          <div class="card position-relative card-img-top text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <img src="/images/logo/HyperBook.png" class="card-img-top img-thumbnail" alt="hiperBook">
+            <div class="card-body ">
+              <h5 class="card-title text-center">Hyper Book</h5>
+              <p>
+                “Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mx-3">
+          <div class="card position-relative card-img-top text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <img src="/images/logo/HyperRelational.png" class="card-img-top img-thumbnail"
+                 alt="hiperRelative">
+            <div class="card-body ">
+              <h5 class="card-title text-center">Hyper Stone</h5>
+              <p>
+                Escolha e compre seus produtos Natural Stone com maior fidelidade nos detalhes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Veja mais -->
+  <div class="container-fluid" id="vejaMais">
+    <div class="container mt-5">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
+      <hr class="w-25 mx-auto  mb-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+          <div class="box-part text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+            <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
+            </div>
+            <div class="text">
+              <span>Saiba como realizar suas leituras imersivas utilizando o Hyperbook</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+          <div class="box-part text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+            <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">O que é o Hypercube4X?</h4>
+            </div>
+            <div class="text">
+              <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+          <div class="box-part text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+            <iframe src="https://www.youtube.com/embed/aswTtECl_Zo" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">Hyper Stone</h4>
+            </div>
+            <div class="text">
+              <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Empresas parceiras -->
+  <div class="container-fluid" id="parceiros">
+    <div class="container justify-content-center p-5">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
+      <hr class="w-25 mx-auto mb-5">
+      <div class="row justify-content-center pb-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 justify-content-center p-3">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/Ifes.png" width="256px" height="256px" alt="Ifes">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/fapes.png" width="256px" height="256px" alt="Fapes">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/inovativa.svg" width="256px" height="256px" alt="Inovativa">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/tecVitoria.svg" width="256px" height="256px" alt="Tec Vitória">
+        </div>
+      </div>
+    </div>
+  </div>]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[  <!-- Contatos -->
+  <div class="container-fluid p-5" id="contato">
+    <h1 class=" text-uppercase text-center mt-5 mb-5">contatos</h1>
+    <hr class="w-100 text-secondary mx-auto mb-5">
+    <div class="row text-center mt-5">
+      <div class="col-lg-4 my3">
+        <span class="text-secondary text-uppercase">
+          <i class="bi bi-whatsapp mx-2"></i>Fale com a gente:
+        </span>
+        <br>
+        <a href="https://api.whatsapp.com/send?phone=28988056685" title="Whatsapp Hypercube4X" target="_blank" class="text-decoration-none text-secondary text-uppercase"> (27) 99845-4982</a>
+      </div>
+      <div class="col-lg-4 my-3">
+        <span class="text-secondary text-uppercase">Siga-nos:</span>
+        <br>
+        <a href="https://www.instagram.com/hypercube4x/" title="Whatsapp Hypercube4X" target="_blank"
+           class="text-decoration-none text-secondary text-uppercase">
+          <span class="text-secondary text-uppercase">
+            <i class="bi bi-instagram mx-2 "></i>
+          </span>
+        </a>
+      </div>
+      <div class="col-lg-4 my-3">
+        <span class="text-secondary text-uppercase">
+          <i class="bi bi-geo-alt mx-2"></i>Localização
+        </span>
+        <span class="text-secondary text-uppercase">
+          <br>
+          Espírito Santo
+        </span>
+      </div>
+    </div>
+    <hr class="w-100 text-secondary">
+  </div>]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="equipe" NodeType="text/html" ModelLayout="SingleForm"
+            htmltitle="HyperCube4x - Um mundo possível">
+        <NodeHeader>
+          <![CDATA[
+				<style>
+            .card:{
+              height: 0px;
+            }
+				    .card:hover{
+					    transform: scale(1.15);
+						z-index: 99;
+					}
+				</style>
+				<h1 class=" text-uppercase text-center mt-5 mb-5">Equipe</h1>
+<div class="container-xxl d-flex flex-column align-items-center">
+  <div class="row mb-3 gap-1">
+        <div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/1.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Saulo Ribeiro</h5>
+                <p class="card-text">RV / IA</p>
+				<p class="card-text"><small class="text-muted">Sócio</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/2.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Marcelo Tadeu</h5>
+                <p class="card-text">DBA/Análise de dados</p>
+				<p class="card-text"><small class="text-muted">Sócio</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/3.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Alessandro Lima</h5>
+                <p class="card-text">Proponente</p>
+				<p class="card-text"><small class="text-muted">Sócio</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+	<div class="row mb-3 gap-1">
+        <div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/4.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Denilson Carvalho</h5>
+                <p class="card-text">Administrativo / Comercial</p>
+                <p class="card-text"><small class="text-muted">Sócio</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card  col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/5.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Caio Schmidt França Fonseca</h5>
+                <p class="card-text">Universidade Vila Velha</p>
+                <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/6.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Gabriel Lemos</h5>
+                <p class="card-text">Universidade Vila Velha</p>
+                <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+	<div class="row gap-1">
+        <div class="card col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/7.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Gabriel Nicácio</h5>
+                <p class="card-text">Universidade Federal de Alagoas</p>
+                <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha) </small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card  col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/8.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Agda da Silva de Paula</h5>
+                <p class="card-text">Instituto Federal do Espírito Santo</p>
+                <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha)</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+		<div class="card  col-md-4" style="max-width: 432px; height: 250px !important; transition: all 0.3s;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/images/equipe/9.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Raphael Macedo Bernardino</h5>
+                <p class="card-text">Instituto Federal do Espírito Santo</p>
+                <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha) </small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+				]]>
+        </NodeHeader>
+        <NodeFooter />
+        <NodeComment>
+          <![CDATA[Comentários:
+Tratar o campo email como obrigatório!]]>
+        </NodeComment>
+      </NodeInterface>
+      <NodeInterface id="login" NodeType="text/html" ModelLayout="SingleForm"
+            htmltitle="HyperCube4x - Um mundo possível"
+            pagesection="Área Pública > Login">
+        <NodeHeader>
+          <![CDATA[<div class="container"><h1 class="text-start text-primary">Faça seu Login</h1></div>]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="/images/general/undraw_login_re_4vu2.svg" class="img-fluid" alt="Login image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <div class="divider d-flex justify-content-around my-4">
+			    <hr class="w-25">
+                            <p class="text-center text-uppercase fs-4 fw-bold mx-3 mb-0">Entre com seu: </p>
+			    <hr class="w-25">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+			    <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                            <input type="email" name="user_email" value=""  id="user_email" class="form-control form-control-lg"
+                                placeholder="nome@email.com" required/>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label lead fs-6 " for="user_pass">Password</label>
+                            <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg"
+                                placeholder="digite sua senha"  required />
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="form-check lead mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="rememberMe" />
+                                <label class="form-check-label" for="rememberMe">
+                                    Lembre de mim
+                                </label>
+                            </div>
+                            <a href="/publicarea/pt/registration" class="lead text-body link-primary">Esqueceu a senha?</a>
+                        </div>
+                
+                        <div class="text-center text-lg-start mt-4 pt-2"> 
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="lead fs-6 small mt-2 pt-1 mb-0">Não tem uma conta? <a href="/publicarea/pt/registration"
+                                    class="link-primary">Cadastre-se</a></p>
+			    <p class="lead fs-6 small mt-2 pt-1 mb-0">Para receber um novo código de confirmação do email<a  href="/publicarea/pt/newmailcode"
+                                    class="link-primary"> clique aqui</a></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>]]>
+        </NodeForm>
+        <NodeFooter>
+          <![CDATA[ <!-- Footer -->
+  <div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>
+          ]]>
+        </NodeFooter>
+        <NodeComment>
+          <![CDATA[Comentários:
+Tratar o campo email como obrigatório!]]>
+        </NodeComment>
+      </NodeInterface>
+      <NodeInterface id="registration" NodeType="text/html" ModelLayout="SingleForm"
+        htmltitle="HyperCube4x - Um mundo possível"
+        pagesection="Área Pública">
+        <NodeHeader>
+          <![CDATA[ <div class="container">
+			<h1 class="text-start text-uppercase">Venha pro universo Hypercubo!</h1>	
+		    </div>]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[ <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="/images/general/undraw_team_up_re_84ok.svg" class="img-fluid p-5" alt="teamUp image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+ 			    <div class="divider d-flex justify-content-around my-4">
+			    <hr class="w-25">
+                            <p class="text-center text-uppercase fs-4 mx-3 mb-0">Cadastre-se agora mesmo:</p>
+			    <hr class="w-25">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                            <input type="email" name="user_email" value="" id="user_email"
+                                class="form-control form-control-lg" placeholder="nome@email.com" required />
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label lead fs-6 " for="user_pass">Senha</label>
+                            <input type="password" name="user_pass" value="" id="user_pass"
+                                class="form-control form-control-lg" placeholder="digite sua senha" required />
+                        </div>
+                        <!-- Password input confirm -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label lead fs-6 " for="user_pass">Confirme sua senha</label>
+                            <input type="password" name="user_pass_2" value="" id="user_pass_2"
+                                class="form-control form-control-lg" placeholder="confirme sua senha" required />
+                        </div>
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrar</button>
+			    <p class="lead fs-6 small mt-2 pt-1 mb-0">Já possui uma conta?<a  href="/publicarea/pt/login"
+                                    class="link-primary">  Clique aqui </a>para fazer Login</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>]]>
+        </NodeForm>
+        <NodeFooter />
+      </NodeInterface>
+      <NodeInterface id="registration_success" NodeType="text/html" ModelLayout="InfoPage">
+        <NodeHeader>
+          <![CDATA[<h1 class="display-4">Cadastro realizado com sucesso!</h1>
+<p>Verifique sua conta de email e confirme a validade da sua conta de email</p>
+<p>Lembre-se de olhar a caixa de spam caso a mensagem não esteja na caixa de entrada</p>
+<p><a href="/">OK</a></p>]]>
+        </NodeHeader>
+      </NodeInterface>
+      <NodeInterface id="registration-client" NodeType="text/html" ModelLayout="SingleForm"
+              htmltitle="HyperCube4x - Um mundo possível"
+              pagesection="Área Pública">
+        <NodeHeader>
+          <![CDATA[Cadastre-se agora mesmo!]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[<table>
+  <tr><td>email:</td></tr>
+  <tr><td><input class="form-control" type="email" name="user_email" value="" required /></td></tr>
+  <tr><td>senha:</td></tr>
+  <tr><td><input class="form-control" type="password" name="user_pass" value="" required /></td></tr>
+  <tr><td>repita a senha:</td></tr>
+  <tr><td><input class="form-control" type="password" name="user_pass_2" value="" required /></td></tr>
+  <tr><td>razão social:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>CNPJ:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>site:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>contato:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>whatsapp comercial:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>tipo:</td></tr>
+  <tr><td><select name="" id="tipo" form="type_co_form">
+            <option value="industria">Indústria</option>
+            <option value="distribuidor">Distribuidor</option>
+            <option value="representante">Representante</option>
+            <option value="arquiteto">Arquiteto</option>
+          </select></td>
+  </tr>
+  <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Registrar" /></td></tr>
+</table>]]>
+        </NodeForm>
+        <NodeFooter />
+      </NodeInterface>
+      <NodeInterface id="confirm-email" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível"
+      pagesection="Área Pública">
+        <NodeHeader>
+          <![CDATA[<p>Seu email deve ser validado a partir da URL encaminhada por email. Caso o email não tenha chegado, podemos enviar um novo código<p>
+          <p><a href="resend-mailcode">Enviar novo código</a></p>]]>
+        </NodeHeader>
+      </NodeInterface>
+      <NodeInterface id="confirm-email_eml" NodeType="text/eml" ModelLayout="MailMessage"
+        htmltitle="Recebemos sua inscrição. Confirme o seu email">
+        <NodeHeader>
+          <![CDATA[Validação de Email
+
+Este email está sendo enviado por que o seu email foi cadastrado no site https://Hypercube4x.com
+Copie a url abaixo e cole no seu browser para validar o seu email:
+
+{0}]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[<h1>Validação de Email</h1>
+
+<p>Este email está sendo enviado por que o seu email foi cadastrado no site https://Hypercube4x.com</p>
+<p>Copie a url abaixo e cole no seu browser para validar o seu email:</p>
+
+<p>{0}</p>]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="alterar-senha" NodeType="text/html" ModelLayout="SingleForm"
+              htmltitle="Hypercube4x - Alterar senha"
+              pagesection="Área Privada">
+        <NodeHeader>
+          <![CDATA[Altere sua senha]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[<table>
+  <tr><td>Senha atual: </td></tr><tr>
+  <tr><td><input class="form-control" type="password" name="user_pass" value="" required /></td></tr><tr>
+  <tr><td>Nova senha: </td></tr>
+  <tr><td><input class="form-control" type="password" name="user_new_pass" value="" required /></td></tr><tr>
+  <tr><td>Repita a nova senha: </td></tr>
+  <tr><td><input class="form-control" type="password" name="user_new_pass_conf" value="" required /></td></tr>
+  <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Alterar senha" /></td></tr>
+</table>]]>
+        </NodeForm>
+      </NodeInterface>
+      <NodeInterface id="01_project" NodeType="text/html" ModelLayout="InfoPage"
+              htmltitle="Inovação e Pesquisa"
+              pagesection="Área Pública">
+        <NodeHeader>
+          <![CDATA[<ul class="Ident24" style="list-style-type:square">
+      <li onclick="hcCore.ndContent.SetPage('07_context.xml')" class="pMenu16">
+        <p class="button3D">Contextualização</p>
+        <p>Um breve contexto histórico da evolução da interação e visualização de informações</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('08_field.xml')" class="pMenu16">
+        <p class="button3D">Áreas de Conhecimento</p>
+        <p>Principais áreas de conhecimento relacionadas ao projeto</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('09_ihcmetaphor.xml')" class="pMenu16">
+        <p class="button3D">Interação baseada em metáforas</p>
+        <p>Breve histórico do uso de metáforas na IHC, principalmente a metáfora do desktop</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('10_requisite.xml')" class="pMenu16">
+        <p class="button3D">Requisitos</p>
+        <p>Requisitos nos quais o projeto se baseia</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('11_hypercube.xml')" class="pMenu16">
+        <p class="button3D">As metáforas do HyperCube</p>
+        <p>Apresentamos as metáforas: Do que são feitas, como funcionam e por que devem funcionar</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('12_schedule.xml')" class="pMenu16">
+        <p class="button3D">Cronograma</p>
+        <p>Página de acompanhamento da evolução do projeto</p>
+      </li>
+    </ul>]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="05_download" NodeType="text/html" ModelLayout="InfoPage"
+        htmltitle="Download"
+        pagesection="Área Pública">
+        <NodeHeader>
+          <![CDATA[<p class="border3D pMenu20">23 de janeiro de 2023, HyperCube Versão 20.23.01</p>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="~/Download/pt/HyperCube4x_BR_x64_202301.msi">instalador 64 bits (computadores atuais)</a> em português do Brasil</li> 
+    </ul>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="~/Download/pt/HyperCube4x_BR_x86_202301.msi">instalador 32 bits (computadores antigos)</a> em português do Brasil</li> 
+    </ul>
+
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="/Download/pt/HC4XTemplate.pptx">Modelo para Apresentações PPTX</a></li> 
+    </ul>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="/Download/pt/License_pt-BR.pdf">Licença de uso (mesmo embutido no instalador em .pdf)</a></li> 
+    </ul>
+    <p class="border3D pMenu20">Informações Adicionais</p>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16">Este programa utiliza .NET Framework versão 4.7.2;</li> 
+    </ul>]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[]]>
+        </NodeFooter>
+      </NodeInterface>
+    </SectorInterface>
+    <SectorInterface id="PrivateArea">
+      <NodeInterface id="HeadLink" NodeType="text/html" ModelLayout="PageSection">
+        <NodeHeader>
+          <![CDATA[<link rel="stylesheet" type="text/css" href="/css/Common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/privateArea.css" />
+  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css" />]]>
+        </NodeHeader>
+      </NodeInterface>
+      <NodeInterface id="BodyHeaderFooter" NodeType="text/html" ModelLayout="PageSection">
+        <NodeHeader>
+          <![CDATA[<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+      <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/privatearea/pt/profile">Atualizar Informações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/privatearea/pt/imageupload">Upload de Imagens</a>
+        </li>
+      </ul>
+    </nav>]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[<div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="index" NodeType="text/html" ModelLayout="InfoPage"
+        htmltitle="HyperCube4x - Um mundo possível"
+        pagesection="Área Privada">
+        <NodeHeader>
+          <![CDATA[A plataforma de realidade virtual que se conecta com você!]]>
+        </NodeHeader>
+        <NodeFooter>
+          <![CDATA[<div style="align-items:middle; margin:4px 0 0 0;">
+Capa da Área restrita aqui!
+    </div>]]>
+        </NodeFooter>
+      </NodeInterface>
+      <NodeInterface id="myaccount" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível"
+      pagesection="Área Privada">
+        <NodeHeader>
+          <![CDATA[Minha conta]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[<table>
+                    <tr><td><a class="link-dark text-dark" href="new-email" >Alterar Email</a></td></tr>
+                    <tr><td><a class="link-dark text-dark" href="alterar-senha">Alterar Senha</a></td></tr>
+					<tr><td><a class="link-dark text-dark" href="insert-photo">Inserir foto</a></td></tr>
+                    </table>
+					]]>
+        </NodeForm>
+        <NodeFooter/>
+      </NodeInterface>
+      <NodeInterface id="new-email" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível"
+      pagesection="Área Privada">
+        <NodeHeader>
+          <![CDATA[Altere seu email]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[<table>
+                      <tr><td>Email atual: </td></tr><tr>
+                      <tr><td><input class="form-control" type="email" name="current_email" value="" required /></td></tr><tr>
+                      <tr><td>Novo email: </td></tr><tr>
+                      <tr><td><input class="form-control" type="email" name="new_email" value="" required /></td></tr><tr>
+                      <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Alterar email" /></td></tr>
+                    </table>]]>
+        </NodeForm>
+      </NodeInterface>
+      <NodeInterface id="insert-photo" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível"
+      pagesection="Área Privada">
+        <NodeHeader>
+          <![CDATA[Insira sua foto]]>
+        </NodeHeader>
+        <NodeForm>
+          <![CDATA[<table>
+                    <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Inserir foto" /></td></tr>
+                </table>]]>
+        </NodeForm>
+      </NodeInterface>
+    </SectorInterface>
+    <SectorArea id="Other">
+      <NodeInterface id="UXForm" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Post</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="UXForm/ok" method="post">
+    <input type="text" name="StorageId" />
+    <input type="text" name="SessionId" />
+    <input type="text" name="FileHexa" />
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+      <NodeInterface id="Upload" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="ok" EncType="multipart/form-data" method="post">
+    <table>
+      <thead>
+        <tr>
+          <th />
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Folder Id:</td>
+          <td><input type="text" name="fkStorage" /></td>
+        </tr>
+        <tr>
+          <td>FileName:</td>
+          <td><input type="text" name="dsBlob" /></td>
+        </tr>
+        <tr>
+          <td>Choose File:</td>
+          <td><input type="file" name="Content" /></td>
+        </tr>
+        <tr>
+          <td>Mime:</td>
+          <td><input type="text" name="atMime" /></td>
+        </tr>
+        <tr>
+          <td>Encoding:</td>
+          <td><input type="text" name="atEncoding" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+    </SectorArea>
+  </SectorInterface>
+</HyperApplication>

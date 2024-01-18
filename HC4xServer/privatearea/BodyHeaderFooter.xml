@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="BodyHeaderFooter" 
+	NodeType="text/html" 
+	ModelLayout="PageSection">
+	<NodeHeader>
+		<![CDATA[		  
+				  <!--Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
+        <div class="container-fluid justify-content-start">
+            <a href="#sidebar" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar" class="mx-1">
+                <button class="btn btn-outline-light mx-1" type="button"><span
+                        class="navbar-toggler-icon"></span></button>
+            </a>
+            <a class="navbar-brand text-white d-block mx-auto" href="/privatearea/pt/index/">
+                <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo"
+                    style="width: 40px; height: 40px;">
+                Hypercube4X
+            </a>
+            <div class="d-flex justify-content-center align-items-center flex-md-column flex-lg-row">
+              <p class="mb-md-2 mb-lg-0 text-white" id="toggled"> Olá <b>{0}</b> você está logado!</p>
+            </div>
+        </div>
+    </nav>
+    <!--Menu offcanvas-->
+    <div class="offcanvas offcanvas-start " tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-center" id="sidebar-label">
+                <img src="/images/logo/HyperCubeAlfa.png" alt="logo" class="img-fluid" id="logo"
+                    style="width: 40px; height: 40px;">
+                Hypercube4X
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-person-circle"></i>
+                    <a href="/privatearea/pt/area-usuario/" class="text-decoration-none">Acesse seu perfil</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-boxes"></i>
+                    <a href="#" class="text-decoration-none">Hyper Analyzer</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-database"></i>
+                    <a href="#" class="text-decoration-none">Hyper Relational</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-aspect-ratio"></i>
+                    <a href="/privatearea/pt/catalogo" class="text-decoration-none">Hyper Stone</a>  
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-book-half"></i>
+                    <a href="#" class="text-decoration-none">Hyper Book</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-person-check-fill"></i>
+                    <a href="#" class="text-decoration-none">Minhas Assinaturas</a>
+                </li>
+                <li class="list-group-item fs-5">
+                  <i class="bi bi-heart"></i>
+                  <a href="#" class="text-decoration-none">Favoritos</a>
+              </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-door-open-fill"></i>
+                    <a href="/publicarea/pt/index" class="text-decoration-none">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	]]>
+	</NodeHeader>
+	<NodeFooter>
+		<![CDATA[<div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>]]>
+	</NodeFooter>
+</NodeInterface>

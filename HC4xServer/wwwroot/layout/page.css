@@ -1,0 +1,143 @@
+.slide_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  width: 90%;
+  vertical-align: middle;
+}
+.PrintOnly {
+  display: none;
+}
+.MainFrame {
+  display:block; 
+  margin:auto;
+  width:896px;
+  height:504px;
+}
+/* Image Size */
+.imgConstruction {
+  width:600px;
+  height:338px
+}
+.img256 {
+  height: 256px;
+  width: 256px;
+}
+.img128 {
+  height: 128px;
+  width: 128px;
+}
+.img64 {
+  height: 64px;
+  width: 64px;
+}
+.img32 {
+  height: 32px;
+  width: 32px;
+}
+.img16 {
+  height: 16px;
+  width: 16px;
+}
+/* End */
+/* List Style */
+.ulNoBullet {
+  list-style-type: none;
+}
+
+.liLeft {
+  float: left;
+}
+
+.liRight {
+  float: right;
+}
+/* end */
+/* Border Style */
+.CursorClick, .button3D {
+  cursor: pointer;
+}
+
+.border3D, .button3D {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+/* end */
+/* Margin */
+.Ident24 {
+  margin-left: 24px;
+}
+.MarginT8 {
+  margin: 8px 0 0 0;
+}
+.MarginT4 {
+  margin: 4px 0 0 0;
+}
+.Margin8 {
+  margin: 8px 8px 8px 8px;
+}
+.Margin4 {
+  margin: 4px 4px 4px 4px;
+}
+.Margin0 {
+  margin: 0 0 0 0;
+}
+/* end */
+/* Padding */
+.Padding8 {
+  padding: 8px 8px 8px 8px;
+}
+
+.Padding4, .button3D {
+  padding: 4px 4px 4px 4px;
+}
+
+.Padding0 {
+  padding: 0 0 0 0;
+}
+/* end */
+/* Input Width */
+.Width300 {
+  width:300px;
+}
+.Width200 {
+  width:200px;
+}
+.Width100 {
+  width:100px;
+}
+/* end */
+/* page layout */
+.grid-left {
+  grid-area: left;
+}
+
+.grid-main {
+  grid-area: main;
+  background-color: rgba(0, 100, 100, 0.7);
+}
+
+.grid-right {
+  grid-area: right;
+}
+
+body {
+  background-attachment: fixed;
+  background-size: 100%;
+  display: grid;
+  grid-template-areas: "left main right";
+  grid-template-columns: 15% 1fr 5%;
+  grid-template-rows: 100%;
+  grid-auto-flow:row;
+  grid-auto-rows: 100%;
+  grid-gap: 10px;
+  font-family: Verdana, Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* end */

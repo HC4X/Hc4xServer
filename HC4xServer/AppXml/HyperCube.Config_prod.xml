@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HyperCubeConfig CultureId="en-US" 
+  AppMode="User"
+  ConnectionId="MySql"
+  EnvironmentKey="6rzzCCTySTCSwSva9FGuAEu8PxcVdrgfiQ5dLR9Q0u1yOTKHV58E06jWyB8BDL0I"
+  StartData="jEhUI39y7bkQcBbfGKryP6lSSua6OGNO6SpDbRZrFrwojKxp9lIvpTbJy2RoqP9qRFQJn52pisUPqajBmSwX7Q=="
+  SmtpSetting="Wh5vvweCgCRhz3Wy/8YNpisQIW6/m/OuIQ12If8pRn3LWEZMVUaiKNklobOhSfhN9oexDYS2XLp8c5WPQeqYCLl1BaGsT69U4uo+H1okTBlZ4Nbfq+gVQUPCNRIvWeXrMsBEQA34mLTyRsPs9uWYJl5CAAFHzEvtYUOtg5+9IHJGjLycjUFj17K8cBAdkQjPMNLoxQhvsb+gMW08/9rpgg=="
+  Version="2023-06-27 18:20:00">
+  <!--smtp.live.com; lecodalai@hotmail.com -->
+  <!--smtp.gmail.com; HyperCube4x@gmail.com -->
+  <SectorEdgeSql>
+    <NodeEdgeSql id ="AccessFile" EdgeClass="EdgeSqlOleDb"  Provider="System.Data.OleDb" ConnString="Provider=Microsoft.ACE.OLEDB.12.0; Persist Security Info=False; Data Source={0}"  />
+    <NodeEdgeSql id="MdfFile" EdgeClass="EdgeSqlClient" Provider="System.Data.SqlClient" ConnString="Data Source=(local);Integrated Security=True;Initial Catalog={0}" />
+    <NodeEdgeSql id ="MySql" EdgeClass="EdgeSqlMySql" ConnString="Server={0}; Database={1}; Uid={2}; Pwd={3}; Allow User Variables=True" />
+    <NodeEdgeSql id="search" EdgeClass="EdgeSqlGoogle" />
+    <NodeEdgeSql id="url" EdgeClass="EdgeSqlHttp" />
+  </SectorEdgeSql>
+</HyperCubeConfig>

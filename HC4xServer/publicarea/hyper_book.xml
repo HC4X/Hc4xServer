@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hyper_book"
+	NodeType="text/html"
+	ModelLayout="ContentPage">
+	<NodeContent>
+		<![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 fs-2">Hyper Book</h1>
+              <p class="text-justify fs-6">
+                O HyperBook é a WorkScene mais simples porque não lida com nenhuma “relação de 
+                informação mapeável para dimensões”, exibindo dados como texto literário eferente e 
+                estético, infográficos e imagens. Além disso, conforme discutido no capítulo 2, a 
+                interpretação da informação deve ser linear, sequencial ou seguir um caminho desenhado 
+                pelo autor ou pelo utilizador. Uma vez que não há como acelerar a cognição usando uma 
+                abordagem dimensional, o HyperBook os trata como formas unidimensionais. 
+                Aqui, o grande desafio é emular o “acesso aleatório” para atingir objetivos como agilizar a 
+                análise das informações, permitir a comparação lado a lado e mesclar conteúdos. 
+                Presume-se que documentos formatados como DOC, DOCX, ODS, PDF sejam divididos em páginas, 
+                mas, na verdade, a divisão ocorre apenas na versão impressa. Quando visualizados no ecrã, 
+                eles se comportam como “pergaminhos egípcios”, pois o acesso às páginas deve obedecer 
+                ao fluxo sequencial do documento. Ao contrário, o HyperBook divide os documentos em 
+                páginas; para agrupar/reordenar, analisar/comparar informações não sequenciais lado a 
+                lado no ecrã. Assim, esta WorkScene aproveita as metáforas do bindery e identificadores 
+                ilustradas na figura 3.8 e movimentos de câmara predefinidos ilustrados na figura 3.9.  
+              </p>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.8.jpg" alt="Figura 3.8 (a) identificador real; (b) faces marcadas com etiqueta; (c) faces organizadas por tag." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figura 3.8. (a) identificador real; (b) faces marcadas com etiqueta; (c) faces organizadas por tag.</p>
+                  </div>
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.9.jpg" alt="Figura 3.9 (a) visão geral, (b) visão de face única, (c) rotação, (d) zoom manual." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figura 3.9 (a) visão geral, (b) visão de face única, (c) rotação, (d) zoom manual.</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <h1 class="text-center fs-2">
+                    Rolagem e Ampliação Virtual do Ecrã 
+                  </h1>
+                  <p class="text-justify fs-6">
+                  Em um documento do mundo real, os leitores não têm limitações como “porção do ecrã” 
+                  e usam os dedos para marcar a posição de leitura antes de mover a página. No entanto, 
+                  quando os leitores abrem um documento no formato A4 com orientação “retrato” em um 
+                  leitor de e-book, como a orientação do ecrã e da página são diferentes, surgem alguns 
+                  problemas: 1) é necessário rolar a página; 2) a parte visível do documento é limitada; e 3) 
+                  os leitores devem fixar o olhar na página em movimento para manter a posição de leitura. 
+                  As limitações impostas à parte visível dos documentos levam a ajustes de zoom e rolagem 
+                  que forçam os leitores a olhar para a página em movimento. Considerando que os métodos 
+                  tradicionais de rolagem, como a rotação da roda do rato ou o arrastar da barra de rolagem, 
+                  não são suficientemente precisos, essa é a única maneira de acompanhar a posição de
+                  leitura. Como resultado, a carga cognitiva associada a esses aspetos impacta na 
+                  produtividade, imersão, prazer e absorção da leitura. 
+                  O <b>HyperBook</b> implementa algumas técnicas para lidar com esses problemas, visando 
+                  reduzir a carga cognitiva da LnE: rolagem mais suave e inclinação da página. No primeiro, a 
+                  área de rolagem avança em etapas em um tempo fixo para que o leitor possa prever a 
+                  posição de leitura sem olhar para a página. No último, ao inclinar a página, é possível 
+                  ampliar a parte visível do documento, ampliar o contexto e reduzir a área de rolagem. Por 
+                  exemplo, a figura 3.13 mostra como a inclinação de 45º resulta em 41,42% de aumento da 
+                  altura virtual, fazendo com que um ecrã de 18” imite um de 20”. 
+                  </p>
+                  <img src="/images/hyper_book/3.13.jpg" alt="Figura 3.13 Inclinação da página." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6">Figura 3.13. Inclinação da página.</p>
+                  <p class="text-justify fs-6">
+                    A medida comercial de um ecrã 16:9 é 18,3576. A inclinação da altura em 45o
+                    gera um triângulo retângulo isósceles. A altura aumentada é a hipotenusa, então: 9 * √2 = 9 * 
+                    1,414221. O ecrã virtual é 16:12.7280. A medida comercial seria: √ (16^2 + 12,728^2) = √ 
+                    (256 + 162,0019) = √ (418,0019) = 20,445. A obtenção da ampliação máxima com melhor 
+                    legibilidade requer a combinação de técnicas de inclinação e rolagem, conforme proposto:
+                  </p>
+                  <img src="/images/hyper_book/3.14.jpg" alt="Figura 3.14. Ampliação da página." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6 my-2">Figura 3.14. Ampliação da página.</p>
+                  <p class="text-justify fs-6 my-2">
+                    A Figura 3.14(a) mostra uma página sem inclinação. A câmara mostra a metade superior da 
+                    página (P1). A distância entre P1 e P2 é metade da página, ou seja, se uma página tiver 
+                    1920 de altura, a câmara deve rolar 960. Se a página inclinar 450
+                    , ela reduz a rolagem, mas 
+                    a câmara fica muito longe do topo da página, provocando distorção. Para reduzir a 
+                    distorção e ampliar a área visível da página, é necessário usar uma pequena inclinação 
+                    quando a câmara estiver em cima (150
+                    ), conforme mostrado na Figura 3.14(b) P3. A Figura 
+                    3.14(b) P4 mostra que a inclinação aumenta à medida que a câmara rola para baixo (até 
+                    450
+                    ). A parte central da página é visível nas posições P3 e P4 da câmara, facilitando a 
+                    regressão da leitura, se necessário. Os ângulos de início/fim e o número de passos para 
+                    percorrer a página são ajustáveis.
+                  </p>
+                </div>
+            </div>
+          ]]>
+	</NodeContent>
+</NodeInterface>

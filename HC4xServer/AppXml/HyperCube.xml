@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HyperApplication
+  Name="HyperCube"
+  DisplayImage="images/Logo/HyperCubeScene.png"
+  AssemblyPath=""
+  StartClass=""
+  StartType="None"
+  StartData="App_Data"
+  ConnectionId=""
+  Direction4D="Shell"
+  ShowInGallery="false"
+  LoginType="None"
+  Revision="2023-07-31 14:39:00">
+  <SectorLocale>
+    <NodeLocale id="1" LanguageCode="pt-BR" LanguageName="Português Brasil"      DictionaryFile="CultureDic\HyperCube_pt-BR.xml"
+      LocaleFile="HyperApp\Locale\HyperCube_pt-BR.xml" DicVersion="1.01.0001" />
+  </SectorLocale>
+  <SectorString>
+    <NodeString id="1" key="found_type_name">{0} not Found: '{1}'</NodeString>
+    <NodeString id="2" key="required_type_name">Required {0}: {1}</NodeString>
+    <NodeString id="2" key="invalid_type_name">Invalid {0}: {1}</NodeString>
+    <NodeString id="3" key="ParseDbl">Can't Convert {0} to Double</NodeString>
+    <NodeString id="4" key="invalid_user_pass">Invalid User Name/Password</NodeString>
+    <NodeString id="5" key="object_Implemented">'{0}' Not Implemented: '{1}'</NodeString>
+  </SectorString>
+  <SectorSecurity>
+    <SectorRole>
+      <NodeRole id="1" Name="Admim_Group" RoleType="Group" />
+      <NodeRole id="2" Name="Guest_Group" RoleType="Group" />
+      <NodeRole id="3" Name="Admin" RoleType="User" CredentialParent="1" UserPass="adm.8765" />
+      <NodeRole id="4" Name="Guest_User" RoleType="User" CredentialParent="2" UserPass="adm.8765" />
+    </SectorRole>
+  </SectorSecurity>
+  <SectorTable>
+    <NodeTable TabName="hc4x_user_insert" PrimaryKey="pkeyUser">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">hc4xuser</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkeyUser" FieldLabel="Inc" DataType="Integer" IncrementSeed="1"
+          IncrementStep="1" />
+        <NodeField FieldName="selfUser" DataType="Integer" />
+        <NodeField FieldName="email" />
+        <NodeField FieldName="nameUser" />
+        <NodeField FieldName="descUser" />
+        <NodeField FieldName="passUser" />
+        <NodeField FieldName="imgUser" />
+      </SectorField>
+    </NodeTable>
+    <NodeTable TabName="hc4x_customer_insert" PrimaryKey="pkeyCustomer">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">hc4xcustomer</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkeyCustomer" FieldLabel="Inc" DataType="Integer" IncrementSeed="1"
+        IncrementStep="1" />
+        <NodeField FieldName="pkeyCustomerCategory" DataType="Integer" />
+        <NodeField FieldName="pkeyAppUser"  DataType="Integer" />
+        <NodeField FieldName="namecustomer" />
+        <NodeField FieldName="razaoSocial"  />
+        <NodeField FieldName="cnpjCpf"      />
+        <NodeField FieldName="nameContact"  />
+        <NodeField FieldName="emailContact" />
+        <NodeField FieldName="site"         />
+        <NodeField FieldName="descCustomer" />
+      </SectorField>
+    </NodeTable>
+    <NodeTable TabName="TableBlob">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">htBlob</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkBlob" FieldLabel="Inc" DataType="Integer" IncrementSeed="1"
+          IncrementStep="1" />
+        <NodeField FieldName="fkStorage" FieldLabel="Storage" DataType="Integer" />
+        <NodeField FieldName="dsBlob" FieldLabel="Desc" />
+        <NodeField FieldName="Content" FieldLabel="Content" DataType="Binary" />
+        <NodeField FieldName="atMime" FieldLabel="Mime" />
+        <NodeField FieldName="atEncoding" FieldLabel="Encoding" />
+        <NodeField FieldName="atState" FieldLabel="State" />
+        <NodeField FieldName="atUpd" FieldLabel="Date Upd" DataType="DateTime" />
+      </SectorField>
+    </NodeTable>
+  </SectorTable>
+  <SectorInterface>
+		<NodeInterface id="HeadMeta" FileName="publicarea\HeadMeta.xml"/>
+    <SectorInterface id="PublicArea" PageLayout="_LayoutPublic" DllName="HC4xLogic.dll" ServerClass="HC4x_Server.Render.PublicAreaRender">
+      <NodeInterface id="HeadLink" FileName="publicarea\HeadLink.xml"/>
+      <NodeInterface id="BodyHeaderFooter" FileName="publicarea\BodyHeaderFooter.xml"/>
+      <NodeInterface id="index" FileName="publicarea\index.xml"/>
+      <NodeInterface id="hyper_library" FileName="publicarea\hyper_library.xml"/>
+      <NodeInterface id="equipe" FileName="publicarea\equipe.xml"/>
+      <NodeInterface id="login" FileName="publicarea\login.xml"/>
+			<NodeInterface id="forgot-pass" FileName="publicarea\forgot-pass.xml" />
+			<NodeInterface id="reset_pass" FileName="publicarea\reset_pass.xml"/>
+      <NodeInterface id="email_send" FileName="publicarea\email_send.xml"/>
+			<NodeInterface id="send_success" FileName="publicarea\send_success.xml"/>
+			<NodeInterface id="registration" FileName="publicarea\registration.xml"/>
+      <NodeInterface id="termos" FileName="publicarea\termos.xml"/>
+      <NodeInterface id="politica-de-privacidade" FileName="publicarea\politica-de-privacidade.xml"/>
+			<NodeInterface id="registration_success" FileName="publicarea\registration_success.xml"/>
+      <NodeInterface id="alter_pass_success" FileName="publicarea\alter_pass_success.xml"/>
+      <NodeInterface id="hyper_analyzer" FileName="publicarea\hyper_analyzer.xml"/>
+      <NodeInterface id="hyper_book" FileName="publicarea\hyper_book.xml"/>
+			<NodeInterface id="hyper_stone" FileName="publicarea\hyper_stone.xml"/>
+			<NodeInterface id="hyper_relational" FileName="publicarea\hyper_relational.xml"/>
+			<NodeInterface id="confirm_sucess" FileName="publicarea\confirm_sucess.xml"/>
+			<NodeInterface id="confirm-email_eml" FileName="publicarea\confirm-email_eml.xml"/>
+			<NodeInterface id="confirm-forgot_eml" FileName="publicarea\confirm-forgot_eml.xml"/>
+      <NodeInterface id="confirm-email" FileName="publicarea\confirm-email.xml"/>
+			<NodeInterface id="newmailcode" FileName="publicarea\newmailcode.xml"/>
+			<NodeInterface id="01_project" FileName="publicarea\01_project.xml"/>
+			<NodeInterface id="download" FileName="publicarea\download.xml"/>
+			<NodeInterface id="certificados" FileName="publicarea\certificados.xml"/>
+      <NodeInterface id="non-authenticate" FileName="publicarea\non-authenticate.xml"/>
+      <NodeInterface id="hcstone-slabxml" FileName="publicarea\hcstone-slabxml.xml"/>
+			<NodeInterface id="hcstone-upload" FileName="publicarea\hcstone-upload.xml"/>
+		</SectorInterface>
+    <SectorInterface id="PrivateArea" PageLayout="_LayoutPrivate" DllName="HC4xLogic.dll"
+      ServerClass="HC4x_Server.Render.PrivateAreaRender">
+      <NodeInterface id="HeadLink" FileName="privatearea\HeadLink.xml"/>
+      <NodeInterface id="BodyHeaderFooter" FileName="privatearea\BodyHeaderFooter.xml"/>
+			<NodeInterface id="index" FileName="privatearea\index.xml"/>
+      <NodeInterface id="catalogo" FileName="privatearea\catalogo.xml"/>
+      <NodeInterface id="marble" FileName="privatearea\marble.xml"/>
+			<NodeInterface id="area-usuario" FileName="privatearea\area-usuario.xml"/>
+			<NodeInterface id="register-customer" FileName="privatearea\register-customer.xml"/>
+    </SectorInterface>
+    <SectorArea id="Other">
+      <NodeInterface id="UXForm" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Post</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="UXForm/ok" method="post">
+    <input type="text" name="StorageId" />
+    <input type="text" name="SessionId" />
+    <input type="text" name="FileHexa" />
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+      <NodeInterface id="Upload" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="ok" EncType="multipart/form-data" method="post">
+    <table>
+      <thead>
+        <tr>
+          <th />
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Folder Id:</td>
+          <td><input type="text" name="fkStorage" /></td>
+        </tr>
+        <tr>
+          <td>FileName:</td>
+          <td><input type="text" name="dsBlob" /></td>
+        </tr>
+        <tr>
+          <td>Choose File:</td>
+          <td><input type="file" name="Content" /></td>
+        </tr>
+        <tr>
+          <td>Mime:</td>
+          <td><input type="text" name="atMime" /></td>
+        </tr>
+        <tr>
+          <td>Encoding:</td>
+          <td><input type="text" name="atEncoding" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+    </SectorArea>
+  </SectorInterface>
+</HyperApplication>

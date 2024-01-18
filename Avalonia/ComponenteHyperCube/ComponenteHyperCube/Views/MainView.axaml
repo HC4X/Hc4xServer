@@ -1,0 +1,141 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ComponenteHyperCube.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ComponenteHyperCube.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+	  
+  </Design.DataContext>
+	
+	<ScrollViewer >
+	<Border Padding="30" Background="#EEEEEE">
+		<Grid>
+			<StackPanel Orientation="Vertical" Spacing="10">
+				<!-- Buttons -->
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<Button Content="Sessão" Width="100" HorizontalContentAlignment="Center" BorderBrush="Black" Background="Transparent" Foreground="Black"/>
+					<Button Content="Sessão" Width="100" HorizontalContentAlignment="Center" BorderBrush="Black" Background="Transparent" Foreground="Black"/>
+					<Button Content="Sobre" Width="100" HorizontalContentAlignment="Center" BorderBrush="Black" Background="Transparent" Foreground="Black"/>
+				</StackPanel>
+				<!-- Favorites Section -->
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<Image Source="/Assets/heart.png" Width="24" Height="24"/>
+					<TextBlock Text="Favoritos" FontSize="18" FontWeight="Bold"/>
+				</StackPanel> 
+				<StackPanel Orientation="Horizontal" Margin="0, 10">
+					<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Background="#FFFFFF">
+						<StackPanel VerticalAlignment="Center">
+							<Image Source="/Assets/cs3.png" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock Text="CS3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</StackPanel>
+					</Border>
+					
+					<StackPanel >
+						<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+							<StackPanel Orientation="Vertical">
+								<Image Source="/Assets/BRANCO_ITAUNAS_016.png" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Center">Branco Itaúnas</TextBlock>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+
+					<StackPanel >
+						<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+							<StackPanel Orientation="Vertical">
+								<Image Source="avares://ComponenteHyperCube/Assets/TAHYTI_014.png" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Center">Thayti</TextBlock>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+
+					<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Background="#FFFFFF">
+						<StackPanel VerticalAlignment="Center">
+							<Image Source="/Assets/cs3.png" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock Text="CS3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+				<!-- Empresa Section -->
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<Image Source="avares://ComponenteHyperCube/Assets/architecture.png" Width="24" Height="24"/>
+					<TextBlock Text="Empresas" FontSize="18" FontWeight="Bold"/>
+				</StackPanel>
+				<!--EMPRESAS-->
+				<StackPanel Orientation="Horizontal" Margin="0, 30">
+					
+					<Border BorderBrush="#212529" BorderThickness="1" CornerRadius="100" Width="200" Height="200" Padding="30" Margin="0, 0, 10, 0" Background="#FFFFFF">
+						<Image Source="/Assets/Ifes.png" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+
+					<Border BorderBrush="#212529" BorderThickness="1" CornerRadius="100" Width="200" Height="200" Padding="30" Margin="0, 0, 10, 0" Background="#FFFFFF">
+						<Image Source="/Assets/cs3.png" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+
+					<Border BorderBrush="#212529" BorderThickness="1" CornerRadius="100" Width="200" Height="200" Padding="30" Margin="0, 0, 10, 0" Background="#FFFFFF">
+						<Image Source="/Assets/fapes.png" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+
+					<Border BorderBrush="#212529" BorderThickness="1" CornerRadius="100" Width="200" Height="200" Padding="30" Margin="0, 0, 10, 0" Background="#FFFFFF">
+						<Image Source="/Assets/NY.jpg" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+
+					<Border BorderBrush="#212529" BorderThickness="1" CornerRadius="100" Width="200" Height="200" Padding="30" Background="#FFFFFF">
+						<Image Source="/Assets/NY.jpg" Height="180" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+					
+				</StackPanel>
+				<!-- Materiais Section -->
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<Image Source="/Assets/shopping-cart.png" Width="24" Height="24"/>
+					<TextBlock Text="Materiais" FontSize="18" FontWeight="Bold"/>
+				</StackPanel>
+				<!--MATERIAIS-->
+				<StackPanel Orientation="Horizontal" Margin="0, 30">
+					<StackPanel >
+					<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+						<StackPanel Orientation="Vertical">
+							<Image Source="/Assets/PERLA_VENATA_002.JPG" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+							<TextBlock HorizontalAlignment="Center">Perla Venata</TextBlock>
+						</StackPanel>
+					</Border>
+					</StackPanel>
+
+					<StackPanel >
+						<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+							<StackPanel Orientation="Vertical">
+								<Image Source="/Assets/CRISTALLO_001.JPG" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Center">Cristallo</TextBlock>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+
+					<StackPanel >
+						<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+							<StackPanel Orientation="Vertical">
+								<Image Source="/Assets/BRANCO_ITAUNAS_016.png" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Center">Branco Itaúnas</TextBlock>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+
+					<StackPanel>
+						<Border Width="200" Height="250" CornerRadius="10" Margin="0, 0, 100, 0" BorderBrush="#D2D2D2" BorderThickness="1" Padding="10" Background="#FFFFFF">
+							<StackPanel Orientation="Vertical">
+								<Image Source="/Assets/Bianco_021.png" Margin="0, 0, 0, 30" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+								<TextBlock HorizontalAlignment="Center">Bianco</TextBlock>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+	</Border>
+	</ScrollViewer>
+
+</UserControl>

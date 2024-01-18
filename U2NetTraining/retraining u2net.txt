@@ -1,0 +1,168 @@
+versão do Python utilizada: Python 3.11.0
+
+Retraining u2net
+-------------------------------------------------------------------------------
+inicialmente, foi organizado um dataset com 67 imagens das pedras, verificando se todas são .jpg, e 67 máscaras tratadas para as imagens, verificando se todas as máscaras estão no formato .png.
+
+clonei na minha máquina local o repositório da U-2-Net, que está disponível no link: https://github.com/xuebinqin/U-2-Net 
+-------------------------------------------------------------------------------
+o sistema operacional da minha máquina local é Windows
+
+no folder da U-2-Net, criei um python virtual environment, para isso é necessário instalar com pip install virtualenv e para usar o venv no projeto pode ser feito 
+python<version> -m venv <virtual-environment-name> 
+ou 
+python -m venv <virtual-environment-name>, que foi como funcionou para mim.
+
+para ativar o virtual environment 
+
+source env/bin/activate
+env/Scripts/activate.bat //no CMD
+env/Scripts/Activate.ps1 //no Powershel
+
+para mim, funcionou env/Scripts/activate
+
+se quiser desativar o comando é:
+ 
+deactivate
+--------------------------------------------------------------------------------
+as libs e dependências que estão sendo utilizadas e foram instaladas para que o projeto funcione são:
+
+certifi==2023.7.22
+charset-normalizer==3.2.0
+contourpy==1.1.0
+cycler==0.11.0
+filelock==3.12.2
+fonttools==4.42.0
+idna==3.4
+imageio==2.31.1
+Jinja2==3.1.2
+kiwisolver==1.4.4
+lazy_loader==0.3
+MarkupSafe==2.1.3
+matplotlib==3.7.2
+mpmath==1.3.0
+networkx==3.1
+numpy==1.25.2
+opencv-python==4.8.0.74
+packaging==23.1
+Pillow==10.0.0
+pyparsing==3.0.9
+python-dateutil==2.8.2
+PyWavelets==1.4.1
+requests==2.31.0
+scikit-image==0.21.0
+scipy==1.11.1
+six==1.16.0
+sympy==1.12
+tifffile==2023.7.18
+torch==2.0.1
+torchvision==0.15.2
+typing_extensions==4.7.1
+urllib3==2.0.4
+
+com o comando pip freeze é possível ver isso
+--------------------------------------------------------------------------------
+
+criei uma pasta data dentro do repositório e coloquei a pasta images, que tem as imagens source e máscaras, dentro dela.
+
+observando a estrutura do repositório da U-2-Net podemos ver que há um arquivo python chamado u2net_train.py 
+nesse arquivo, na linha 52 e 53 havia o seguinte:
+
+tra_image_dir = os.path.join('DUTS', 'DUTS-TR', 'DUTS-TR', 'im_aug' + os.sep)
+tra_label_dir = os.path.join('DUTS', 'DUTS-TR', 'DUTS-TR', 'gt_aug' + os.sep)
+
+alterei para que ficasse da seguinte forma: 
+tra_image_dir = os.path.join('im_aug' + os.sep)
+tra_label_dir = os.path.join('gt_aug' + os.sep)
+
+--------------------------------------------------------------------------------
+
+sendo assim, no folder da U-2-Net, criei uma pasta chamada train_data, dentro dessa pasta foram criadas outras duas pastas chamadas: gt_aug e im_aug. Dentro da pasta gt_aug devem ser adicionadas as máscaras e dentro da pasta im_aug devem ser adicionadas as imagens 
+
+alguns erros estavam aparecendo ao tentar rodar o u2net_train.py, para resolver foi preciso alterar no código que antes estava 
+bce_loss = nn.BCELoss(size_average=True)
+
+para:
+
+bce_loss = nn.BCELoss(reduction='mean')
+
+nisso um dos erros foi resolvido 
+--------------------------------------------------------------------------------
+
+para resolver o outro foi necessário envolver o código todo a ser utilizado, com exeção dos imports, em uma função def main(): e colocar no final do código o seguinte 
+
+if __name__ == '__main__':
+    main()
+
+dentro da pasta saved_models foi criada uma pasta chamada u2net, nela o modelo será salvo 
+
+nisso consegui resolver os problemas e rodar os códigos
+
+--------------------------------------------------------------------------------
+
+a partir de agora irei falar um pouco dos treinamentos realizados
+
+treinamento feito inicialmente utilizando 10 imagens e 10 de suas respectivas máscaras. com: 
+    
+    epoch_num = 10
+    batch_size_train = 4
+    batch_size_val = 1
+    train_num = 0
+    val_num = 0
+
+obs: antes o save_freq estava 80, então acredito que não foi salvo o modle pois o número estava maior do que o número de epochs 
+
+tendo finalizado o treinamento
+
+coloquei 10 imagens para teste na pasta ./test_data/test_images e rodei o u2net_test.py
+
+os resultados obtidos e direcionados para a pasta u2net_results não foram satisfatórios
+
+treinamento sendo realizado agora utilizando o dataset completo com 67 imagens e 67 de suas respecticas máscaras. com:
+
+    epoch_num = 100
+    batch_size_train = 4
+    batch_size_val = 1
+    train_num = 0
+    val_num = 0
+
+obs: o número de epochs aumentou e o dataset também, então está demorando um pouco mais o treinamento.
+
+agora o save_freq está em 8 e é possível observar os arquivos.pth sendo salvos na pasta ./saved_models/u2net
+
+# ------- 5. training process --------
+    print("---start training...")
+    ite_num = 0
+    running_loss = 0.0
+    running_tar_loss = 0.0
+    ite_num4val = 0
+    save_frq = 8
+
+precisei parar o treinamento na iteração de número 1104 com train de 0.173232 e tar 0.016994
+
+sendo assim, vou realizar o teste agora de como prosseguir do momento em que parei o treinamento alterando o valor das variáveis no código
+
+--------------------------------------------------------------------------------
+
+nisso, 
+
+# ------- 5. training process --------
+    print("---start training...")
+    ite_num = 1104
+    running_loss = 0.173232
+    running_tar_loss = 0.016994
+    ite_num4val = 0
+    save_frq = 8
+
+em ./saved_models/u2net está sendo salvo a partir realmente de onde parou, porém tenho dúvidas do que está acontecendo pois o treinamento começou a partir de onde rodei por epoch: 1/100, talvez houvesse algum valor que eu deveria ter colocado no código antes de treinar novamente para começar da epoch em que havia parado, não tenho certeza quanto a isso. O que irei fazer é continuar o treinamento, analisando a train loss, tar e depois realizar u2net_test.py
+
+detalhe, dentro da pasta test_data há uma pasta test_images, nesta pasta estão as imagens para teste e já vem por padrão algumas, o que eu fiz foi remover o que já veio e coloquei as imagens de Bianco_021.jpg até Bianco_030.jpg no lugar, para teste.
+
+após o treinamento, peguei o modelo salvo na pasta ./saved_models/u2net de uma das primeiras iterações, alterei o nome dele para u2net.pth e testei rodando o u2net_test.py. os resultados foram gerados na pasta ./test_data/u2net_results e não foram tão satisfátorios.
+
+em seguida, procurei pelo modelo salvo mais recente na pasta ./saved_models/u2net, que no caso era o salvo da iteração 1720, e alterei seu nome para u2net.pth, sendo assim, testei rodando o u2net_test.py 
+as imagens geradas na pasta ./test_data/u2net_results já foram mais satisfatórias. ainda assim, é necessário mais treinamento e uma melhora considerável.
+
+--------------------------------------------------------------------------------
+
+

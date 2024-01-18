@@ -1,0 +1,2460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HyperApplication
+  Name="HyperCube"
+  DisplayImage="images/Logo/HyperCubeScene.png"
+  AssemblyPath=""
+  StartClass=""
+  StartType="None"
+  StartData="App_Data"
+  ConnectionId=""
+  Direction4D="Shell"
+  ShowInGallery="false"
+  LoginType="None"
+  Revision="2023-07-31 14:39:00">
+  <SectorLocale>
+    <NodeLocale id="1" LanguageCode="pt-BR" LanguageName="Português Brasil"      DictionaryFile="CultureDic\HyperCube_pt-BR.xml"
+      LocaleFile="HyperApp\Locale\HyperCube_pt-BR.xml" DicVersion="1.01.0001" />
+  </SectorLocale>
+  <SectorString>
+    <NodeString id="1" key="found_type_name">{0} not Found: '{1}'</NodeString>
+    <NodeString id="2" key="required_type_name">Required {0}: {1}</NodeString>
+    <NodeString id="2" key="invalid_type_name">Invalid {0}: {1}</NodeString>
+    <NodeString id="3" key="ParseDbl">Can't Convert {0} to Double</NodeString>
+    <NodeString id="4" key="invalid_user_pass">Invalid User Name/Password</NodeString>
+    <NodeString id="5" key="object_Implemented">'{0}' Not Implemented: '{1}'</NodeString>
+  </SectorString>
+  <SectorSecurity>
+    <SectorRole>
+      <NodeRole id="1" Name="Admim_Group" RoleType="Group" />
+      <NodeRole id="2" Name="Guest_Group" RoleType="Group" />
+      <NodeRole id="3" Name="Admin" RoleType="User" CredentialParent="1" UserPass="adm.8765" />
+      <NodeRole id="4" Name="Guest_User" RoleType="User" CredentialParent="2" UserPass="adm.8765" />
+    </SectorRole>
+  </SectorSecurity>
+  <SectorTable>
+    <NodeTable TabName="hc4x_user_insert" PrimaryKey="pkeyUser">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">hc4xuser</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkeyUser" FieldLabel="Inc" DataType="Integer" IncrementSeed="1"
+          IncrementStep="1" />
+        <NodeField FieldName="selfUser" DataType="Integer" />
+        <NodeField FieldName="email" />
+        <NodeField FieldName="nameUser" />
+        <NodeField FieldName="descUser" />
+        <NodeField FieldName="passUser" />
+		<NodeField FieldName="ImgUser"  />
+      </SectorField>
+
+    </NodeTable>
+    <NodeTable TabName="TableBlob">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">htBlob</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkBlob" FieldLabel="Inc" DataType="Integer" IncrementSeed="1"
+          IncrementStep="1" />
+        <NodeField FieldName="fkStorage" FieldLabel="Storage" DataType="Integer" />
+        <NodeField FieldName="dsBlob" FieldLabel="Desc" />
+        <NodeField FieldName="Content" FieldLabel="Content" DataType="Binary" />
+        <NodeField FieldName="atMime" FieldLabel="Mime" />
+        <NodeField FieldName="atEncoding" FieldLabel="Encoding" />
+        <NodeField FieldName="atState" FieldLabel="State" />
+        <NodeField FieldName="atUpd" FieldLabel="Date Upd" DataType="DateTime" />
+      </SectorField>
+    </NodeTable>
+  </SectorTable>
+  <SectorInterface>
+    <NodeInterface id="HeadMeta" NodeType="text/html" ModelLayout="PageSection">
+      <NodeHeader>
+        <![CDATA[<meta name="description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta name="keywords" content="Interface Homem-Computador, Visualização da Informação, Além do Desktop, Jogo de Permutação, Hipercubo, Quarta Dimensão" />
+    <!-- Open Graph -->
+  <meta property="og:type" content="website" /> <!-- website / article -->
+  <meta property="og:locale" content="pt_BR" /> <!-- pt_BR / en_US  -->
+  <meta property="og:title" content="HyperCube - Um Mundo Possível" />
+  <meta property="og:description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />
+  <meta property="og:url" content="https://hypercube4x.com" />
+  <meta property="og:site_name" content="HyperCube - Um Mundo Possível" /> <!-- HyperCube - A Possible World -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" /> <!-- summary / summary_large_image -->
+  <meta name="twitter:site" content="[conta do twitter do site com @]" />
+  <meta name="twitter:creator" content="[conta do twitter do site com @]" />
+  <meta name="twitter:title" content="HyperCube - Um Mundo Possível" />
+  <meta name="twitter:description" content="O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />]]>
+      </NodeHeader>
+    </NodeInterface>
+  <SectorInterface id="PublicArea" PageLayout="_LayoutPublic" DllName="HC4xLogic.dll" ServerClass="HC4x_Server.Render.PublicAreaRender">
+		  <NodeInterface id="HeadLink" NodeType="text/html" ModelLayout="PageSection">
+			  <NodeHeader>
+				  <![CDATA[<link rel="stylesheet" type="text/css" href="/css/Common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/publicArea.css" />
+  <link rel="stylesheet" type="text/css" href="/icons/font/bootstrap-icons.css"/>]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="BodyHeaderFooter" NodeType="text/html" ModelLayout="PageSection">
+			  <NodeHeader>
+				  <![CDATA[<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="/publicarea/pt/index#hero">
+        <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo"
+             style="width: 40px; height: 40px;">Hypercube4X
+      </a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <div class="navbar-nav ms-auto align-items-end me-5">
+	      <a href="/publicarea/pt/index" class="nav-link text-white">Home</a>
+          <a href="/publicarea/pt/index#sobre" class="nav-link text-white">Empresa</a>
+          <a href="/publicarea/pt/index#produtos" class="nav-link text-white">Soluções</a>
+          <a href="/publicarea/pt/index#vejaMais" class="nav-link text-white">Galeria</a>
+          <a href="/publicarea/pt/index#parceiros" class="nav-link text-white">Apoio</a>
+          <a href="/publicarea/pt/index#contato" class="nav-link text-white">Contatos</a>
+		  <a href="/publicarea/pt/certificados" class="nav-link text-white">Certificações</a>
+          <a href="/publicarea/pt/equipe" class="nav-link text-white">Equipe</a>
+          <a href="/publicarea/pt/certificados" class="nav-link text-white">Certificações</a>
+          <a href="/publicarea/pt/05_download" class="nav-link text-white">Download</a>
+          <a href="/publicarea/pt/login" class="nav-link text-white">Login</a>
+          <a href="/publicarea/pt/registration" class="nav-link text-white">Cadastre-se</a>
+        </div>
+      </div>
+    </div>
+  </nav>]]>
+			  </NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[<div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="index" 
+        NodeType="text/html" 
+        ModelLayout="ContentPage" 
+        htmltitle="HyperCube 4x">
+			  <NodeHeader>
+				  <![CDATA[
+		  <style>
+		  .absolute{
+		    position: absolute;
+			right: 1rem;
+			bottom: 0rem;
+			overflow:hidden;
+			z-index: 999;
+		  }
+	
+		  </style>
+		  <!-- Hero Section -->
+<div id="hero" class="d-flex flex-column justify-content-center">
+
+  <div class="d-flex flex-column p-2">
+
+    <div class="d-flex flex-column p-2">
+      <h1 class="display-1 p-2 text-center text-light">HYPERCUBE 4X</h1>
+      <p class="lead p-2 text-light text-center">Plataforma de realidade virtual para a Web 3.0 e o Metaverso </p>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-evenly position-relative">
+      <div class="text-center">
+          <img src="/images/logo/HyperCubeAlfaHero.png" alt="Logo HyperCube4X" class="img-fluid">
+      </div>
+<div class="absolute d-flex flex-md-row flex-column align-items-center">
+    <p class="m-0 p-0 text-start" style="font-size: 1rem; width:12em; height: 8em; color:yellow;">Conheça mais sobre o HyperStone baixando grátis nosso e-book <a style="text-decoration: none; color:yellow;"href="https://www-agenciarabisco-com.rds.land/hypercube-4x" alt="Landing page"><b>clicando aqui</b></a> ou acessando o QR-code</p>
+    <img src="/images/general/qrcode_hc4x.jfif" alt="Logo HyperCube4X" class="img-fluid" width="200px">
+</div>
+	</div>
+
+</div>
+<!-- Sobre -->
+<div class="container-fluid p-5" id="sobre">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block">
+      <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
+      <h1 class="text-uppercase text-center mt-5">Saiba mais sobre o Hypercube 4X</h1>
+      <hr class="w-50 mx-auto">
+      <p>
+        <ul>
+          <li class="mx-2 p-3">
+            O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a
+            cognição especial,
+            memória especial e organização espacial do cérebro humano
+          </li>
+          <li class="mx-2 p-3">
+            Utiliza metáforas e algoritmos próprios para criar interação simbiótica e
+            visualização de dados
+            mais parecida com o mundo real.
+          </li>
+        </ul>
+      </p>
+    </div>
+</div>
+<!-- Produtos -->
+<div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
+  <div class="container-fluid">
+    <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
+    <hr class="w-100">
+    <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
+    <hr class="w-100">
+    <div class="row row-cols-1 row-cols-md-3 gap-3 justify-content-center"> 
+        <div class="card shadow">
+          <h5 class="card-title text-center text-primary mt-4">Hyper Analyzer</h5>
+          <div class="row d-flex align-items-center">
+            <div class="col-md-6">
+            <img src="/images/logo/ha.png" class="mx-auto d-block img-thumbnail rounded-3" alt="Hyper Analyzer">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <p class="card-text text-start">Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação.</p>
+              </div>
+            </div>
+          </div>
+          <a class="text-center text-decoration-none" href="/publicarea/pt/hyper_analyzer">Clique aqui para saber mais</a>
+        </div>
+        <div class="card shadow">
+          <h5 class="card-title text-center text-primary mt-4">Hyper Book</h5>
+          <div class="row d-flex align-items-center">
+            <div class="col-md-6">
+              <img src="/images/logo/hb.png" class=" mx-auto d-block img-thumbnail rounded-3 my-auto" alt="Hyper Book">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <p class="card-text text-start">"Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.</p>
+              </div>
+            </div>
+          </div>
+            <a class="text-center text-decoration-none" href="/publicarea/pt/hyper_book" id="hb">Clique aqui para saber mais</a>
+        </div>
+        <div class="card shadow">
+          <h5 class="card-title text-center text-primary mt-4">Hyper Relational</h5>
+          <div class="row d-flex align-items-center">
+            <div class="col-md-6">
+              <img src="/images/logo/hr.png" class=" mx-auto d-block img-thumbnail rounded-3" alt="Hyper Relational">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <p class="card-text text-start">Conecta Sistemas de Gerenciamento de Banco de Dados Relacional (RDMS) a texto estruturado, como json e xml, por exemplo.</p>
+              </div>
+            </div>
+          </div>
+          <a class="text-center text-decoration-none" href="/publicarea/pt/hyper_relational">Clique aqui para saber mais</a>
+        </div>
+      </div>
+
+    <!-- HyperStone -->
+    <hr class="w-100 mt-5 mx-auto">
+    <h2 class="text-uppercase text-center p-1">Aplicações de uso específico</h2>
+    <hr class="w-100 mx-auto mb-5">
+      <div class="row g-3 justify-content-center">  
+          <div class="card mb-3 shadow p-3">
+            <h5 class="card-title text-center text-primary mt-4">Hyper Stone</h5>
+            <div class="row d-flex align-items-center">
+              <div class="col-md-6">
+              <img src="/images/logo/hs.jpg" class="mx-auto d-block img-thumbnail rounded-3" alt="Hyper Stone">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <p class="card-text text-start">Ambiente de realidade virtual para visualização de chapas de "natural stone" que simula a sensação de distância e o reflexo da chapa para a experiência de manuseio e interação com o material.</p>
+                </div>
+              </div>
+            </div>
+            <a class="text-center text-decoration-none" href="/publicarea/pt/hyper_stone">Clique aqui para saber mais</a>
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- Veja mais -->
+<div class="container-fluid" id="vejaMais">
+  <div class="container my-5 p-3">
+    <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
+    <hr class="w-25 mx-auto  mb-5">
+    <div class="row justify-content-center" id="veja-mais">
+      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded">
+          <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
+          <div class="title">
+            <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
+          </div>
+          <div class="text">
+            <span>Saiba como realizar suas leituras imersivas no Hyperbook</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
+          <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
+          <div class="title">
+            <h4 class="text-uppercase text-center">Conheça o Hypercube4X</h4>
+          </div>
+          <div class="text">
+            <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
+          <iframe src="https://www.youtube.com/embed/aswTtECl_Zo" class="video-part"></iframe>
+          <div class="title">
+            <h4 class="text-uppercase text-center">Hyper Stone</h4>
+          </div>
+          <div class="text">
+            <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Empresas parceiras -->
+<div class="container-fluid" id="parceiros">
+  <div class="container justify-content-center p-5">
+    <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
+    <hr class="w-25 mx-auto mb-5">
+    <div class="row justify-content-center pb-5">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
+        <a href="https://www.ifes.edu.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/Ifes.png" width="256px" height="256px" alt="Ifes">
+        </a>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
+        <a href="https://fapes.es.gov.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/fapes.png" width="256px" height="256px" alt="Fapes">
+        </a>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+        <a href="https://www.inovativa.online/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/inovativa.svg" width="256px" height="256px" alt="Inovativa">
+        </a>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+        <a href="https://www.tecvitoria.com.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/tecVitoria.svg" width="256px" height="256px" alt="Tec Vitória">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>]]>
+			  </NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[  <!-- Contatos -->
+  <div class="container-fluid p-5" id="contato">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">contatos</h1>
+      <hr class="w-100 text-secondary mx-auto mb-5">
+      <div class="row text-center mt-5">
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  Fale com a gente:
+                  <br>
+                  <i class="bi bi-envelope-at text-secondary mx-2"></i><a href="mailto:comercial@hypercube4x.com"
+                  title="E-mail Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">comercial@hypercube4x.com</a>
+              </span>
+          </div>
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  Siga-nos:
+              </span>
+              <br>
+              <a href="https://www.instagram.com/hypercube4x/" title="Instagram Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-instagram mx-2 "></i>
+              </a>
+              <a href="https://www.facebook.com/hypercube4x" title="Facebook Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-facebook mx-2 "></i>
+              </a>
+              <a href="https://twitter.com/hypercube4x/" title="Twitter Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-twitter mx-2 "></i>
+              </a>
+              <a href="https://www.linkedin.com/in/hypercube4x-realidade-virtual-034612280/"
+                  title="Linkedin Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-linkedin mx-2 "></i>
+              </a>
+              <a href="https://www.youtube.com/@hypercube4x" title="YouTube Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-youtube mx-2 "></i>
+              </a>
+              </span>
+          </div>
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  <i class="bi bi-geo-alt mx-2"></i>Localização
+              </span>
+              <span class="text-secondary text-uppercase">
+                  <br>
+                  Espírito Santo
+              </span>
+          </div>
+      </div>
+      <hr class="w-100 text-secondary">
+  </div>]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="equipe" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="HyperCube4x - Um mundo possível">
+			  <NodeHeader>
+				  <![CDATA[
+<div class="container text-center d-flex flex-column justify-content-center align-items-center" id="equipe">
+  <h1 class=" text-uppercase text-center mt-5 mb-2">Equipe</h1>
+  <hr class="w-50 mx-auto mb-5">
+  <div class="row g-2">
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3">
+            <img src="/images/equipe/saulo.png" class="img-fluid img-thumbnail rounded-circle" alt="Saulo Ribeiro">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Saulo Ribeiro</h5>
+              <p class="card-text">RV / IA</p>
+              <p class="card-text"><small class="text-muted">Sócio</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3">
+            <img src="/images/equipe/alessandro.png" class="img-fluid img-thumbnail rounded-circle" alt="Alessandro Lima">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Alessandro Lima</h5>
+              <p class="card-text">Proponente</p>
+              <p class="card-text"><small class="text-muted">Sócio</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3 ">
+            <img src="/images/equipe/marcelo.png" class="img-fluid img-thumbnail rounded-circle" alt="Marcelo Tadeu">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Marcelo Tadeu</h5>
+              <p class="card-text">DBA/Análise de dados</p>
+              <p class="card-text"><small class="text-muted">Sócio</small></p>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3">
+            <img src="/images/equipe/denilson.png" class="img-fluid img-thumbnail rounded-circle" alt="Denilson Carvalho">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Denilson Carvalho</h5>
+              <p class="card-text">Administrativo / Comercial</p>
+              <p class="card-text"><small class="text-muted">Sócio</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3">
+            <img src="/images/equipe/raphael.png" class="img-fluid img-thumbnail rounded-circle" alt="Raphael Macedo Bernardino">
+          </div>
+            <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Raphael Macedo Bernardino</h5>
+              <p class="card-text">Instituto Federal do Espírito Santo</p>
+              <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha)</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+      <div class="card shadow p-3" style="transition: all 0.3s;">
+        <div class="row align-items-center">
+          <div class="col-6 p-3">
+            <img src="/images/equipe/agda.png" class="img-fluid img-thumbnail rounded-circle" alt="Agda da Silva de Paula">
+          </div>
+          <div class="col-6">
+          <div class="card-body">
+            <h5 class="card-title">Agda da Silva de Paula</h5>
+            <p class="card-text">Instituto Federal do Espírito Santo</p>
+            <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha)</small></p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+    <div class="card shadow p-3" style="transition: all 0.3s;">
+      <div class="row align-items-center">
+        <div class="col-6 p-3">
+          <img src="/images/equipe/caio.png" class="img-fluid img-thumbnail rounded-circle" alt="Caio Schmidt França Fonseca">
+        </div>
+        <div class="col-6">
+          <div class="card-body">
+            <h5 class="card-title text-xl-center">Caio Schmidt França Fonseca </h5>
+            <p class="card-text">Universidade Vila Velha</p>
+            <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+    <div class="card shadow p-3" style="transition: all 0.3s;">
+      <div class="row align-items-center">
+      <div class="col-6 p-3">
+        <img src="/images/equipe/nicacio.png" class="img-fluid img-thumbnail rounded-circle" alt="Gabriel Nicácio">
+      </div>
+      <div class="col-6">
+        <div class="card-body">
+          <h5 class="card-title">Gabriel Nicácio</h5>
+          <p class="card-text text-start text-lg-start">Universidade Federal de Alagoas</p>
+          <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha)</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+  <div class="card shadow p-3" style="transition: all 0.3s;">
+    <div class="row align-items-center">
+      <div class="col-6 p-3">
+        <img src="/images/equipe/lemos.png" class="img-fluid img-thumbnail rounded-circle" alt="Gabriel Lemos">
+      </div>
+      <div class="col-5">
+      <div class="card-body">
+        <h5 class="card-title">Gabriel Lemos</h5>
+        <p class="card-text text-start text-lg-start">Universidade Vila Velha</p>
+        <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+				]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="login" FileName="publicarea\login.xml" />
+		  <NodeInterface id="forgot-pass" NodeType="text/html" ModelLayout="SingleForm"
+			htmltitle="HyperCube4x - Um mundo possível" ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeForm>
+				  <![CDATA[ 
+           <section>
+          <div class="container-fluid mb-4 pb-4">
+            <div class="row d-block">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <img src="/images/general/undraw_forgot_password_re_hxwm.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Esqueceu sua Senha?</h4>
+                <p class="text-uppercase text-center text-secondary">Informe seu e-mail para recuperação:</p>
+            </div>
+            <!-- Email input -->
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4  my-3 mx-auto d-block">
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                    <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
+                        placeholder="nome@email.com" required />
+                </div>
+                <a href="/publicarea/pt/email_send" class="text-decoration-none"><button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button></a>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+			  </NodeForm>
+		  </NodeInterface>
+		  <NodeInterface id="reset_pass" NodeType="text/html" ModelLayout="SingleForm"
+			htmltitle="HyperCube4x - Um mundo possível" ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeForm>
+				  <![CDATA[ 
+           <section>
+          <div class="container mb-5 pb-5">
+            <div class="row d-block">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto d-block ">
+                <img src="/images/general/reset_pass.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center">Redefina a sua senha</h4>
+            </div>
+             <div class="justify-content-center align-items-center d-flex flex-column">
+			    <!-- Password input -->
+                       <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_pass">Senha</label>
+                    <input type="password" name="user_pass" value="" id="user_pass" class="form-control form-control-lg" required />
+                </div>
+                        <!-- Password input confirm -->
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_pass_2">Confirmar senha</label>
+                    <input type="password" name="user_pass_2" value="" id="user_pass_2" class="form-control form-control-lg" required />
+                </div>
+                    <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button>
+			    </div>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+			  </NodeForm>
+		  </NodeInterface>
+		  <NodeInterface id="email_send" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[<section>
+          <div class="container-fluid mb-5 pb-5">
+        <div class="row d-block ">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <h2 class="text-center text-uppercase text-primary">E-mail enviado com sucesso!</h2>
+                <img src="/images/general/undraw_mailbox_re_dvds.svg" class="img-fluid mx-auto d-block" alt="Registration success image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Verifique sua conta de email e confirme a validade da sua conta</h4>
+                <p class="text-uppercase text-center text-secondary">Lembre-se de olhar a caixa de spam caso a mensagem não esteja na caixa de entrada!</p>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="send_success" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[
+            <section>
+                <div class="container-fluid mb-5 pb-5">
+                    <div class="row d-block ">
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                        <h2 class="text-uppercase text-center my-3">Verifique sua conta de email e restaure a sua senha</h2>
+                        <img src="/images/general/undraw_mailbox_re_dvds.svg" class="img-fluid mx-auto d-block" alt="Registration success image" style="width:50vw; height:39.5vh;">
+                        <p class="text-uppercase text-center text-secondary">Lembre-se de olhar a caixa de spam caso a mensagem não esteja na caixa de entrada!</p>
+                        </div>
+                    </div>
+                </div>
+            </section> ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="registration" NodeType="text/html" ModelLayout="SingleForm"
+			htmltitle="HyperCube4x - Um mundo possível"
+			ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeHeader>
+				  <![CDATA[
+				<style>
+				    .bi-eye-fill{
+                        position: absolute;
+                        right: 2%;
+                        top: 58%;
+						cursor: pointer;
+					}
+				</style>
+				]]>
+			  </NodeHeader>
+			  <NodeForm>
+				  <![CDATA[ <section>
+        <div class="container-fluid mb-5 pb-5">
+          <h1 class="text-center text-uppercase">Venha pro universo Hypercube!</h1>	
+            <div class="d-flex flex-direction-column justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+ 			    <div class="divider d-flex justify-content-around my-4">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                            <input type="email" name="user_email" value="" id="user_email"
+                                class="form-control form-control-lg" placeholder="nome@email.com" required />
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="user_pass">Senha</label>
+                            <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
+                                placeholder="digite sua senha"  required />
+							<i class="bi bi-eye-fill"></i>
+                        </div>
+                        <!-- Password input confirm -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label lead fs-6 " for="user_pass">Confirme sua senha</label>
+                            <input type="password" name="user_pass_2" value="" id="user_pass_2"
+                                class="form-control form-control-lg" placeholder="confirme sua senha" required />
+                        </div>
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrar</button>
+			    <p class="lead fs-6 small mt-2 pt-1 mb-0">Já possui uma conta?<a  href="/publicarea/pt/login"
+                                    class="link-primary">  Clique aqui </a>para fazer Login</p>
+                        </div>
+                </div>
+                  <img src="/images/general/undraw_team_up_re_84ok.svg" class="img-fluid mx-auto d-none d-md-none d-lg-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+            </div>
+        </div>
+        </div>
+    </section>]]>
+			  </NodeForm>
+			  <NodeFooter>
+				  <![CDATA[
+				<script>
+                    const icon = document.querySelector(".bi-eye-fill");
+                    const inputPass = document.querySelector("#user_pass");
+                    const inputPass_2 = document.querySelector("#user_pass_2");
+					
+                    icon.addEventListener("click", function(){
+                        icon.classList.toggle("bi-eye-slash-fill");
+                        if(inputPass.type === "password"){
+                            inputPass.type = "text";
+							inputPass_2.type = "text";
+                        } else {
+                            inputPass.type = "password";
+							inputPass_2.type = "password";
+                        }
+                    });
+                </script>
+				]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="registration_success" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[<section>
+          <div class="container-fluid mb-5 pb-5">
+        <div class="row d-block ">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <h2 class="text-center text-uppercase text-primary">Cadastro realizado com sucesso!</h2>
+                <img src="/images/general/undraw_mailbox_re_dvds.svg" class="img-fluid mx-auto d-block" alt="Registration success image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Verifique sua conta de email e confirme a validade da sua conta</h4>
+                <p class="text-uppercase text-center text-secondary">Lembre-se de olhar a caixa de spam caso a mensagem não esteja na caixa de entrada!</p>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="alter_pass_success" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[<section>
+                    <div class="container-fluid">
+                            <div class="row d-block">
+                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3 d-flex align-items-center flex-column justify-content-center mx-auto d-block ">
+                                <h1 class="text-center" style="color: #5C82D8;">Senha alterada com sucesso !</h1>
+                                <img src="/images/general/confirm_code.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+								<a href="/publicarea/pt/login" class="btn btn-outline-primary my-5">Ir para o login</a>
+                            </div>  
+                        </div>
+                    </div>
+                   </section>]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="hyper_analyzer" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 fs-2">Hyper Analyzer</h1>
+              <p class="text-justify fs-6">
+                Suponha que um conjunto de dados seja composto por três colunas, duas delas
+                “agrupáveis” (ou seja, uma coluna em que GROUP BY é aplicável) e uma “agregável” (ou
+                seja, usada em funções SUM, COUNT, AVG na SELECT de uma cláusula SQL). Este conjunto
+                de dados seria explorado como o cubo 3D na figura 3.5(b). Em contraste, a visualização
+                OLAP tradicional trata esses conjuntos de dados como cubos desdobrados, conforme
+                mostrado na figura 3.5(a), ou seja, entendimento prejudicado pela perda de relações
+                espaciais. Adicionar colunas “agrupáveis” e “agregáveis” ao conjunto de dados se
+                transforma em um conjunto de dados multidimensional. Eles se comportam como
+                tesseratos desdobrados (figura 3.5(c)) quando os utilizadores analisam cada conjunto de
+                dados em sequência. Em contraste, combinar o conjunto de dados para visualizações
+                simultâneas mapeia para a figura 3.5(d). 
+              </p>
+                <div class="row row-cols-4 gap-1 align-items-center">
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5a.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figura 3.5(a)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5b.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figura 3.5(b)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5c.png" class="img-fluid " alt="...">
+                      <div class="card-body align-items-center">
+                        <p class="card-text">Figura 3.5(c)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5d.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figura 3.5(d)</p>
+                      </div>
+                  </div>
+                
+                </div>
+                <div class="row align-items-start mt-5">
+                  <div class="col-md-12 col-xl-6">
+                      <p class="text-justify fs-6">
+                      O HyperAnalyzer lida com essas questões oferecendo formas complementares de
+                      visualização das informações, integrando propostas de interação e o mantra de
+                      Shneiderman para permitir que o utilizador escolha a estratégia de visualização que melhor
+                      se adapta às suas necessidades. Primeiro, o utilizador prepara os dados delimitando o
+                      número de colunas, transpondo, adicionando cálculos personalizados, gerando gráficos e
+                      criando novas faces com esses dados transformados. Em seguida, o utilizador faria uma
+                      sequência (por exemplo, para uma apresentação de slides), compararia lado a lado, usaria
+                      a técnica de “depth and surface” e assim por diante.
+                      A Figura 3.16 mostra um conjunto de dados de 3 colunas na visualização padrão inicial: (a)
+                      contém uma tabela de resumo e um gráfico de pizza gerados por rótulo de coluna e total
+                      da coluna; (b) uma tabela de resumo e gráfico de barras gerado por rótulo de linha e total
+                      de linha; (c) a tabela inteira dividida em duas faces.
+                  </p></div>
+                  <div class="col-md-12 col-xl-6 ">
+                    <img src="/images/hyper_analyzer/3.16.jpg" alt="" class="img-fluid" text-center"/>
+                  </div>
+                </div>
+                <div class="row align-items-start mt-5">
+                  <div class="col-md-12 col-xl-6">
+                      <p class="text-justify fs-6">
+                      Conforme mostrado na figura 3.17, o relatório de cubo dividido colocado em uma
+                      visualização lado a lado destaca “colunas externas”. Assim, as colunas externas geram o
+                      gráfico de pizza na figura 3.16(a). Aplicando os mesmos critérios para linhas, temos o
+                      gráfico de barras da figura 3.16(b). Portanto, as linhas e colunas externas são a “Visão
+                      Geral” e devem aparecer primeiro. 
+                  </p></div>
+                  <div class="col-md-12 col-xl-6">
+                    <img src="/images/hyper_analyzer/3.17.jpg" alt="" class="img-fluid text-center"/>
+                  </div>
+                </div>
+                <div class="col-12 mt-5">
+                      <p class="text-justify fs-6">
+                      A escolha de um gráfico de pizza para colunas e um gráfico de barras para linhas foi apenas
+                      uma preferência pessoal. O gráfico de pizza destaca a participação de cada coluna no
+                      resultado, ou seja, trata as colunas como categorias. No entanto, os dados de linha são
+                      temporais e o gráfico de barras ilustra como os números mudam ao longo do tempo. No
+                      entanto, alguém pode considerar o oposto como uma abordagem melhor: um gráfico de
+                      pizza para indicar o progresso ao longo do tempo e um gráfico de barras para comparar a
+                      participação nas categorias. Caso contrário, usar o mesmo tipo de gráfico facilita a
+                      comparação de dados de linha e coluna. Todos esses cenários são facilmente alcançados
+                      substituindo o conteúdo das faces ou criando faces.
+                      A partir dos insights fornecidos pelas faces de visão geral, é possível gerar visualizações
+                      segmentadas como “zoom and filter”. Por exemplo, na figura 3.18, (a) mostra uma revisão
+                      trimestral (linhas), enquanto (b) mostra três categorias selecionadas. Os cálculos são feitos
+                      apenas para o conjunto de dados selecionado.
+                  </p>
+                </div>
+                <div class="col-12">
+                  <img src="/images/hyper_analyzer/3.18.jpg" alt="" class="img-fluid text-center"/>
+                  <div class="d-flex justify-content-evenly">
+                    <p class="fs-6 text-muted">
+                      (a) Filtro por revisão trimestral 
+                    </p>
+                    <p class="fs-6 text-muted">
+                      (b) Filtro por categoria.
+                    </p>
+                  </div>
+                </div>
+            </div>
+          ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="hyper_book" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 fs-2">Hyper Book</h1>
+              <p class="text-justify fs-6">
+                O HyperBook é a WorkScene mais simples porque não lida com nenhuma “relação de 
+                informação mapeável para dimensões”, exibindo dados como texto literário eferente e 
+                estético, infográficos e imagens. Além disso, conforme discutido no capítulo 2, a 
+                interpretação da informação deve ser linear, sequencial ou seguir um caminho desenhado 
+                pelo autor ou pelo utilizador. Uma vez que não há como acelerar a cognição usando uma 
+                abordagem dimensional, o HyperBook os trata como formas unidimensionais. 
+                Aqui, o grande desafio é emular o “acesso aleatório” para atingir objetivos como agilizar a 
+                análise das informações, permitir a comparação lado a lado e mesclar conteúdos. 
+                Presume-se que documentos formatados como DOC, DOCX, ODS, PDF sejam divididos em páginas, 
+                mas, na verdade, a divisão ocorre apenas na versão impressa. Quando visualizados no ecrã, 
+                eles se comportam como “pergaminhos egípcios”, pois o acesso às páginas deve obedecer 
+                ao fluxo sequencial do documento. Ao contrário, o HyperBook divide os documentos em 
+                páginas; para agrupar/reordenar, analisar/comparar informações não sequenciais lado a 
+                lado no ecrã. Assim, esta WorkScene aproveita as metáforas do bindery e identificadores 
+                ilustradas na figura 3.8 e movimentos de câmara predefinidos ilustrados na figura 3.9.  
+              </p>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.8.jpg" alt="Figura 3.8 (a) identificador real; (b) faces marcadas com etiqueta; (c) faces organizadas por tag." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figura 3.8. (a) identificador real; (b) faces marcadas com etiqueta; (c) faces organizadas por tag.</p>
+                  </div>
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.9.jpg" alt="Figura 3.9 (a) visão geral, (b) visão de face única, (c) rotação, (d) zoom manual." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figura 3.9 (a) visão geral, (b) visão de face única, (c) rotação, (d) zoom manual.</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <h1 class="text-center fs-2">
+                    Rolagem e Ampliação Virtual do Ecrã 
+                  </h1>
+                  <p class="text-justify fs-6">
+                  Em um documento do mundo real, os leitores não têm limitações como “porção do ecrã” 
+                  e usam os dedos para marcar a posição de leitura antes de mover a página. No entanto, 
+                  quando os leitores abrem um documento no formato A4 com orientação “retrato” em um 
+                  leitor de e-book, como a orientação do ecrã e da página são diferentes, surgem alguns 
+                  problemas: 1) é necessário rolar a página; 2) a parte visível do documento é limitada; e 3) 
+                  os leitores devem fixar o olhar na página em movimento para manter a posição de leitura. 
+                  As limitações impostas à parte visível dos documentos levam a ajustes de zoom e rolagem 
+                  que forçam os leitores a olhar para a página em movimento. Considerando que os métodos 
+                  tradicionais de rolagem, como a rotação da roda do rato ou o arrastar da barra de rolagem, 
+                  não são suficientemente precisos, essa é a única maneira de acompanhar a posição de
+                  leitura. Como resultado, a carga cognitiva associada a esses aspetos impacta na 
+                  produtividade, imersão, prazer e absorção da leitura. 
+                  O <b>HyperBook</b> implementa algumas técnicas para lidar com esses problemas, visando 
+                  reduzir a carga cognitiva da LnE: rolagem mais suave e inclinação da página. No primeiro, a 
+                  área de rolagem avança em etapas em um tempo fixo para que o leitor possa prever a 
+                  posição de leitura sem olhar para a página. No último, ao inclinar a página, é possível 
+                  ampliar a parte visível do documento, ampliar o contexto e reduzir a área de rolagem. Por 
+                  exemplo, a figura 3.13 mostra como a inclinação de 45º resulta em 41,42% de aumento da 
+                  altura virtual, fazendo com que um ecrã de 18” imite um de 20”. 
+                  </p>
+                  <img src="/images/hyper_book/3.13.jpg" alt="Figura 3.13 Inclinação da página." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6">Figura 3.13. Inclinação da página.</p>
+                  <p class="text-justify fs-6">
+                    A medida comercial de um ecrã 16:9 é 18,3576. A inclinação da altura em 45o
+                    gera um triângulo retângulo isósceles. A altura aumentada é a hipotenusa, então: 9 * √2 = 9 * 
+                    1,414221. O ecrã virtual é 16:12.7280. A medida comercial seria: √ (16^2 + 12,728^2) = √ 
+                    (256 + 162,0019) = √ (418,0019) = 20,445. A obtenção da ampliação máxima com melhor 
+                    legibilidade requer a combinação de técnicas de inclinação e rolagem, conforme proposto:
+                  </p>
+                  <img src="/images/hyper_book/3.14.jpg" alt="Figura 3.14. Ampliação da página." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6 my-2">Figura 3.14. Ampliação da página.</p>
+                  <p class="text-justify fs-6 my-2">
+                    A Figura 3.14(a) mostra uma página sem inclinação. A câmara mostra a metade superior da 
+                    página (P1). A distância entre P1 e P2 é metade da página, ou seja, se uma página tiver 
+                    1920 de altura, a câmara deve rolar 960. Se a página inclinar 450
+                    , ela reduz a rolagem, mas 
+                    a câmara fica muito longe do topo da página, provocando distorção. Para reduzir a 
+                    distorção e ampliar a área visível da página, é necessário usar uma pequena inclinação 
+                    quando a câmara estiver em cima (150
+                    ), conforme mostrado na Figura 3.14(b) P3. A Figura 
+                    3.14(b) P4 mostra que a inclinação aumenta à medida que a câmara rola para baixo (até 
+                    450
+                    ). A parte central da página é visível nas posições P3 e P4 da câmara, facilitando a 
+                    regressão da leitura, se necessário. Os ângulos de início/fim e o número de passos para 
+                    percorrer a página são ajustáveis.
+                  </p>
+                </div>
+            </div>
+          ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="hyper_stone" NodeType="text/html" ModelLayout="SingleForm">
+			  <NodeHeader>
+				  <![CDATA[<div class="container-fluid" style="background-color: #F0F0E2;">
+            <div class="container py-5">
+                <h1 class="text-center text-primary">HyperStone</h1>
+                <hr class="mx-auto w-50">
+                <h3 class="text-center text-primary text-uppercase">Conheça nossos resultados</h3>
+                <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5">
+                    <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a>
+					<a href="/publicarea/pt/05_download" class="text-decoration-none btn btn-outline-primary">Clique aqui para baixar o HyperCube4x</a>
+                </div>
+
+                <h6 class="text-center text-primary text-uppercase my-5">Imagens cedidas pela empresa CS3 Revestimentos</h6>
+
+
+                <div class="row my-5">
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/Bianco_021.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Bianco</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/Bianco_021.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Bianco</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/CRISTALLO_001.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Cristallo</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/CRISTALLO_001.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Cristallo</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/LE_BLANC_001.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Le Blanc</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/LE_BLANC_001.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Le Blanc</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/PERLA_VENATA_002.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Perla Venata</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/PERLA_VENATA_002.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Perla Venata</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/BRANCO_ITAUNAS_031.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Branco Itaúnas</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/BRANCO_ITAUNAS_031.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Branco Itaúnas</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/TAHYTI_017.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Tahyti</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/TAHYTI_017.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="mx-auto w-50">
+                            <h4 class="text-center text-primary">Tahyti</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/VERDE_BAHIA_004.JPG" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">ANTES</h3>
+                            <hr class="text-white mx-auto w-50">
+                            <h4 class="text-center text-primary">Verde Bahia</h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 imageStone my-4">
+                        <img src="/images/hyper_stone/VERDE_BAHIA_004.png" alt="" class="img-fluid image">
+                        <div class="legenda">
+                            <h3 class="text-center text-uppercase">DEPOIS</h3>
+                            <hr class="text-white mx-auto w-50">
+                            <h4 class="text-center text-primary">Verde Bahia</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5">
+                    <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a>
+					<a href="/publicarea/pt/05_download" class="text-decoration-none btn btn-outline-primary">Clique aqui para baixar o HyperCube4x</a>
+                </div>
+            </div>
+        </div>]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="hyper_relational" NodeType="text/html" ModelLayout="InfoPage">
+			  <NodeHeader>
+				  <![CDATA[
+        <style>
+            p{
+            font-family: Roboto;
+            }
+        </style>
+        <div class="container">
+            <h1 class="text-center fs-2">
+                Hyper Relational
+                </h1>
+                <p class="text-justify fs-6">
+                As folhas de cálculo expõem dados em linhas e colunas. Portanto, trata-se de um objeto
+                plano porque os dados nas células dependem de um “cabeçalho de linha” (ou seja, uma
+                chave primária) e um cabeçalho de coluna para serem significativos. A conexão entre duas
+                tabelas (por exemplo, através de um comando join) imita a figura 3.5(a), uma vez que os
+                dados de ambas as tabelas estão disponíveis no mesmo plano. Em contraste, a disposição
+                mestre/detalhe imita a figura 3.5(b), pois mantém as informações de cada tabela em planos
+                diferentes. Assim, os dados organizados conforme o modelo entidade-relacionamento são 
+                um cubo 3D. Em contrapartida, também é necessário lidar com metadados para descobrir
+                novas formas de juntar informações ao longo da coleção.
+                </p>
+                <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5a.png" alt="Figura 3.5(a)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figura 3.5. a) cubo desdobrado
+                        </p>
+                    </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5b.png" alt="Figura 3.5(b)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figura 3.b. a) cubo projetado
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <p class="text-justify fs-6 mt-5">
+                O <b>HyperRelational</b> trata dados estruturados em diversos formatos, como RDMS9
+                proprietário, CSV, XML e JSON. O objetivo é fornecer opções de exploração de dados e
+                metadados extraídas de propriedades de visualização geométrica, conforme a figura 3.15:
+                </p>
+                <div class="col-12">
+                <img src="/images/hyper_relational/3.15.jpg" alt="Figura 3.15. uma tabela em visão de grade e formulário mestre/detalhe." class="img-fluid text-center"/>
+                <div class="d-flex justify-content-center">
+                    <p class="fs-6 text-muted">
+                    Figura 3.15.uma tabela em visão de grade e formulário mestre/detalhe. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="registration-client" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="HyperCube4x - Um mundo possível">
+			  <NodeHeader>
+				  <![CDATA[Cadastre-se agora mesmo!]]>
+			  </NodeHeader>
+			  <NodeForm>
+				  <![CDATA[<table>
+  <tr><td>email:</td></tr>
+  <tr><td><input class="form-control" type="email" name="user_email" value="" required /></td></tr>
+  <tr><td>senha:</td></tr>
+  <tr><td><input class="form-control" type="password" name="user_pass" value="" required /></td></tr>
+  <tr><td>repita a senha:</td></tr>
+  <tr><td><input class="form-control" type="password" name="user_pass_2" value="" required /></td></tr>
+  <tr><td>razão social:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>CNPJ:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>site:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>contato:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>whatsapp comercial:</td></tr>
+  <tr><td><input class="form-control" type="text" name="" value="" /></td></tr>
+  <tr><td>tipo:</td></tr>
+  <tr><td><select name="" id="tipo" form="type_co_form">
+            <option value="industria">Indústria</option>
+            <option value="distribuidor">Distribuidor</option>
+            <option value="representante">Representante</option>
+            <option value="arquiteto">Arquiteto</option>
+          </select></td>
+  </tr>
+  <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Registrar" /></td></tr>
+</table>]]>
+			  </NodeForm>
+			  <NodeFooter />
+		  </NodeInterface>
+		  <NodeInterface id="confirm_sucess" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="Email confirmado com sucesso !">
+			  <NodeHeader>
+				  <![CDATA[
+				   <section>
+                    <div class="container-fluid">
+                            <div class="row d-block">
+                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3 d-flex align-items-center flex-column justify-content-center mx-auto d-block ">
+                                <h1 class="text-center" style="color: #5C82D8;">Código confirmado com sucesso !</h1>
+                                <img src="/images/general/confirm_code.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+								<a href="/publicarea/pt/login" class="btn btn-outline-primary my-5">Ir para o login</a>
+                            </div>  
+                        </div>
+                    </div>
+                   </section>
+			  ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="confirm-email_eml" NodeType="text/eml" ModelLayout="MailMessage" htmltitle="Recebemos sua inscrição. Confirme o seu email" ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeHeader>
+				  <![CDATA[Validação de Email
+
+      Este email foi enviado porque você se cadastrou no site https://hypercube4x.com .
+      Caso não reconheça este site, favor desconsiderar este e-mail.
+      Clique no link abaixo ou copie e cole no seu browser para validar o seu email:
+
+      {0}
+
+      Acesse aqui seu e-book e veja o que o HyperStone é capaz de fazer você/fazer por sua empresa: {1}
+
+      ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="teste">
+			  <NodeHeader>
+				  <![CDATA[
+				  Teste
+				  ]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="confirm-forgot_eml" NodeType="text/eml" ModelLayout="MailMessage"
+			htmltitle="Email solicitado ao clicar no botão Esqueceu a senha">
+			  <NodeHeader>
+				  <![CDATA[
+		    Redefinição de senha
+            Este email foi enviado porque você solicitou a redefinição de senha no site https://hypercube4x.com .
+            Caso não reconheça este site, favor desconsiderar este e-mail.
+            Clique no link abaixo para redefinir a sua senha:
+            {0}]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="confirm-email" ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+
+		  </NodeInterface>
+		  <NodeInterface id="newmailcode" NodeType="text/html" ModelLayout="SingleForm"
+			htmltitle="Hypercube4x - Código de Confirmação"
+			ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeForm>
+				  <![CDATA[ 
+<section>
+          <div class="container-fluid">
+            <div class="row d-block">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
+                <img src="/images/general/undraw_letter_re_8m03.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center my-3">Deseja enviar um novo código de confirmação?</h4>
+                <p class="text-uppercase text-center text-secondary">Informe seu e-mail para o envio do código:</p>
+            </div>
+            <!-- Email input -->
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4  my-3 mx-auto d-block">
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                    <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
+                        placeholder="nome@email.com" required />
+                </div>
+                <a href="/publicarea/pt/email_send" class="text-decoration-none"><button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button></a>
+            </div>
+        </div>
+    </div>
+</section> ]]>
+			  </NodeForm>
+		  </NodeInterface>
+		  <NodeInterface id="01_project" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="Inovação e Pesquisa">
+			  <NodeHeader>
+				  <![CDATA[<ul class="Ident24" style="list-style-type:square">
+      <li onclick="hcCore.ndContent.SetPage('07_context.xml')" class="pMenu16">
+        <p class="button3D">Contextualização</p>
+        <p>Um breve contexto histórico da evolução da interação e visualização de informações</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('08_field.xml')" class="pMenu16">
+        <p class="button3D">Áreas de Conhecimento</p>
+        <p>Principais áreas de conhecimento relacionadas ao projeto</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('09_ihcmetaphor.xml')" class="pMenu16">
+        <p class="button3D">Interação baseada em metáforas</p>
+        <p>Breve histórico do uso de metáforas na IHC, principalmente a metáfora do desktop</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('10_requisite.xml')" class="pMenu16">
+        <p class="button3D">Requisitos</p>
+        <p>Requisitos nos quais o projeto se baseia</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('11_hypercube.xml')" class="pMenu16">
+        <p class="button3D">As metáforas do HyperCube</p>
+        <p>Apresentamos as metáforas: Do que são feitas, como funcionam e por que devem funcionar</p>
+      </li>
+      <li onclick="hcCore.ndContent.SetPage('12_schedule.xml')" class="pMenu16">
+        <p class="button3D">Cronograma</p>
+        <p>Página de acompanhamento da evolução do projeto</p>
+      </li>
+    </ul>]]>
+			  </NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="05_download" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="Download">
+			  <NodeHeader>
+				  <![CDATA[<p class="border3D pMenu20">23 de janeiro de 2023, HyperCube Versão 20.23.01</p>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x64_202302.msi">instalador 64 bits (computadores atuais)</a> em português do Brasil</li> 
+    </ul>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x86_202302.msi">instalador 32 bits (computadores antigos)</a> em português do Brasil</li> 
+    </ul>
+
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="https://download.hypercube4x.com/pt/HC4XTemplate.pptx">Modelo para Apresentações PPTX</a></li> 
+    </ul>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16"><a class="ALink16" href="/Download/pt/License_pt-BR.pdf">Licença de uso (mesmo embutido no instalador em .pdf)</a></li> 
+    </ul>
+    <p class="border3D pMenu20">Informações Adicionais</p>
+    <ul class="Ident24" style="list-style-type:square">
+      <li class="pMenu16">Este programa utiliza .NET Framework versão 4.7.2;</li> 
+    </ul>]]>
+			  </NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="certificados" NodeType="text/html" ModelLayout="InfoPage"
+			htmltitle="Certificados">
+			  <NodeHeader>
+				  <![CDATA[ <div class="container-fluid">
+          <div class="container my-5">
+              <h1 class="text-center text-primary mt-5 mb-2">Veja nossas certificações</h1>
+              <hr class="mx-auto mb-4 w-50 ">
+              <div class="row">
+                  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                      <img src="/images/certificados/Certificado_Centelha_2022.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="certificado_centelha_2022" />
+                      <img src="/images/certificados/HYPERCUBE-Certificado-Acelerada-InovAtiva-23.1-1.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="Certificado_acelerada_inivativa" />
+                  </div>
+                  <div class="col-lg-4 mb-4 mb-lg-0">
+                      <img src="/images/certificados/certificado_cluster.jpg" class="w-100 shadow-1-strong rounded mb-4"
+                          alt="Certificado_cluster" />
+                      <img src="/images/certificados/GRADUADA BRASIL COLORIDA.png"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="selo_graduada_brasil" />
+                  </div>
+                  <div class="col-lg-4 mb-4 mb-lg-0">
+                      <img src="/images/certificados/HYPERCUBE-Certificado-Graduada-InovAtiva-23.1.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="Certificado_graduada_inovativa" />
+                      <img src="/images/certificados/MOI_Certificate_Alessandro_Rego.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="certificado_moi" />
+                  </div>
+              </div>
+          </div>
+      </div>]]>
+			  </NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[]]>
+			  </NodeFooter>
+		  </NodeInterface>
+		  <NodeInterface id="non-authenticate" NodeType="text/html" ModelLayout="InfoPage"
+		  htmltitle="Non-Authenticate">
+			  <NodeHeader>
+				  <![CDATA[<!-- non-athenticate -->
+      <div class="container-fluid my-5">
+          <div class="row d-block">
+              <div class="col-4 my-3  mx-auto d-block ">
+                  <img src="/images/general/undraw_Questions_re_1fy7.png" class="img-fluid" alt="Sample image">
+                  <h4 class="text-uppercase text-center my-3">Seção expirada ou não autenticada</h4>
+                  <p class="text-uppercase text-center text-secondary"><a href="/publicarea/pt/login">Clique aqui</a> para fazer login</p>
+              </div>
+          </div>
+      </div>]]>
+			  </NodeHeader>
+		  </NodeInterface>
+		  <NodeInterface id="naturalstone" ModelLayout="InfoPage" htmltitle="NaturalStone" ServerClass="HC4x_Server.HCStone.HyperStone_Handler">
+			
+		  </NodeInterface>
+	        <NodeInterface id="hcstone-upload"
+    ModelLayout="UploadForm"
+    htmltitle="HyperCube4x - Um mundo possível"
+    ServerClass="HC4x_Server.HCStone.SlabUpload">
+		        <NodeHeader>
+			        <![CDATA[<p id="PageTitle" class="MarginT8 LensBlack75 Padding8 pTitle24">&nbsp;</p>]]>
+		        </NodeHeader>
+		        <NodeForm>
+			        <![CDATA[
+	<p><input type="file" name="myupload" id="myupload" /></p>
+    <p><input type="submit" value="Upload " /></p>]]>
+		        </NodeForm>
+		        <NodeFooter>
+			        <![CDATA[<div id="PageContent" class="PrintFalse" style="overflow-y:auto;">&nbsp;</div>]]>
+		        </NodeFooter>
+	        </NodeInterface>
+	  </SectorInterface>
+  <SectorInterface id="PrivateArea" PageLayout="_LayoutPrivate" DllName="HC4xLogic.dll" ServerClass="HC4x_Server.Render.PrivateAreaRender">
+    <NodeInterface id="HeadLink" NodeType="text/html" ModelLayout="PageSection">
+      <NodeHeader>
+				  <![CDATA[<link rel="stylesheet" type="text/css" href="/css/Common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/privateArea.css" /> 
+  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css"/>]]>
+			  </NodeHeader>
+    </NodeInterface>
+    <NodeInterface id="BodyHeaderFooter" NodeType="text/html" ModelLayout="PageSection">
+      <NodeHeader>
+				  <![CDATA[		  
+				  <!--Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
+        <div class="container-fluid justify-content-start">
+            <a href="#sidebar" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar" class="mx-1">
+                <button class="btn btn-outline-light mx-1" type="button"><span
+                        class="navbar-toggler-icon"></span></button>
+            </a>
+            <a class="navbar-brand text-white d-block mx-auto" href="/privatearea/pt/index/">
+                <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo"
+                    style="width: 40px; height: 40px;">
+                Hypercube4X
+            </a>
+            <div class="d-flex justify-content-center align-items-center flex-md-column flex-lg-row">
+              <p class="mb-md-2 mb-lg-0 text-white" id="toggled"> Olá <b>{0}</b> você está logado!</p>
+            </div>
+        </div>
+    </nav>
+    <!--Menu offcanvas-->
+    <div class="offcanvas offcanvas-start " tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-center" id="sidebar-label">
+                <img src="/images/logo/HyperCubeAlfa.png" alt="logo" class="img-fluid" id="logo"
+                    style="width: 40px; height: 40px;">
+                Hypercube4X
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-person-circle"></i>
+                    <a href="/privatearea/pt/area-usuario/">Acesse seu perfil</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-boxes"></i>
+                    <a href="#">Hyper Analyzer</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-database"></i>
+                    <a href="#">Hyper Relational</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-aspect-ratio"></i>
+                    <a href="/privatearea/pt/catalogo">Hyper Stone</a>  
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-book-half"></i>
+                    <a href="#">Hyper Book</a>
+                </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-person-check-fill"></i>
+                    <a href="#">Minhas Assinaturas</a>
+                </li>
+                <li class="list-group-item fs-5">
+                  <i class="bi bi-heart"></i>
+                  <a href="#">Favoritos</a>
+              </li>
+                <li class="list-group-item fs-5">
+                    <i class="bi bi-door-open-fill"></i>
+                    <a href="/publicarea/pt/index">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	]]>
+			  </NodeHeader>
+      <NodeFooter>
+        <NodeFooter>
+					  <![CDATA[<div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>]]>
+				  </NodeFooter>
+      </NodeFooter>
+    </NodeInterface>
+    <NodeInterface id="index" NodeType="text/html" ModelLayout="InfoPage" htmltitle="HyperCube4x - Um mundo possível">
+      <NodeHeader>
+				  <![CDATA[
+<!--Cards private area-->
+    <div class="container-fluid d-flex justify-content-center mb-5 p-5" id="initial_private_area">
+        <div class="container">
+            <h3 class=" text-uppercase text-center text-primary mt-5 mb-3">Seja bem-vindo à sua conta Hypercube!</h3>
+            <hr class="w-25 mx-auto mb-5">
+            <div class="row justify-content-center my-2 g-3">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/area-usuario/" alt="Perfil" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-fill-gear fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-primary">Acesse seu Perfil</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/registro-customer/" alt="Perfil" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-building fs-1 text-center"></i>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-primary">Cadastre sua empresa</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Analyzer" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-boxes fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Analyzer</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Relational" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-database fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Relational</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/catalogo/" alt="Hyper Stone" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-aspect-ratio fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Stone</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Book" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-book-half fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Book</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Minhas assinaturas" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-check-fill fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Minhas assinaturas</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                  <a href="#" alt="Favoritos" class="text-decoration-none">
+                      <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                          <div class="card-header">
+                              <i class="bi bi-heart fs-1 text-center text-primary"></i>
+                              <br>
+                          </div>
+                          <div class="card-body ">
+                              <h5 class="card-title text-center text-primary">Favoritos</h5>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+            </div>
+        </div>
+    </div>
+          ]]>
+			  </NodeHeader>
+    </NodeInterface>
+    <NodeInterface id="registro-customer" NodeType="text/html" ModelLayout="SingleForm"
+			htmltitle="HyperCube4x - Um mundo possível"
+			ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+			  <NodeForm>
+				  <![CDATA[ <section>
+        <div class="container mb-3">
+          <h1 class="text-center text-uppercase text-primary mt-1">Venha pro universo Hypercube!</h1>	
+            <div class="d-flex flex-direction-column justify-content-center align-items-center p-0">
+                <div class="col-6">
+                        <!-- Name input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
+                            <input type="text" name="namecustomer" value="" id="namecustomer"
+                                class="form-control form-control-lg" placeholder="Nome da empresa" required />
+                        </div>
+                        <!-- Razão social input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="razaoSocial">Razão social da empresa</label>
+                            <input type="text" name="razaoSocial" value="" id="razaoSocial"
+                                class="form-control form-control-lg" placeholder="Razão social da empresa" required />
+                        </div>
+                        <!-- cnpj input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="cnpjCpf">CNPJ</label>
+                            <input type="text" id="cnpjCpf" name="cnpjCpf" value="" class="form-control form-control-lg position-relative" placeholder="CNPJ da empresa"  required />
+                        </div>
+                        <!-- nameContact input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="nameContact">Nome do Representante da empresa</label>
+                            <input type="text" id="nameContact" name="nameContact" value="" class="form-control form-control-lg position-relative" placeholder="Representante da empresa"  required />
+                        </div>
+                        <!-- emailContact input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="emailContact">Email do representante da empresa</label>
+                            <input type="text" id="emailContact" name="emailContact" value="" class="form-control form-control-lg position-relative" placeholder="Email do representante da empresa"  required />
+                        </div>
+                        <!-- Site input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="site">Site da empresa</label>
+                            <input type="text" name="site" value="" id="site"
+                             class="form-control form-control-lg" placeholder="Site da empresa" required />
+                        </div>
+                        <!-- Descrição input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label lead fs-6" for="descCustomer">Descrição da empresa</label>
+                            <input type="text" name="descCustomer" value="" id="descCustomer"
+                             class="form-control form-control-lg" placeholder="Descrição da empresa" required />
+                        </div>
+                </div>
+                <div class="col-6">
+                  <img src="/images/general/undraw_done_re_oak4.svg" class="img-fluid" alt="Sample image" >
+                </div>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrar</button>
+            </div>
+          </div>
+        </div>
+    </section>]]>
+			  </NodeForm>
+			  <NodeFooter>
+				  <![CDATA[
+				<script>
+                    const icon = document.querySelector(".bi-eye-fill");
+                    const inputPass = document.querySelector("#user_pass");
+                    const inputPass_2 = document.querySelector("#user_pass_2");
+					
+                    icon.addEventListener("click", function(){
+                        icon.classList.toggle("bi-eye-slash-fill");
+                        if(inputPass.type === "password"){
+                            inputPass.type = "text";
+							inputPass_2.type = "text";
+                        } else {
+                            inputPass.type = "password";
+							inputPass_2.type = "password";
+                        }
+                    });
+                </script>
+				]]>
+			  </NodeFooter>
+		  </NodeInterface>
+	<NodeInterface id="catalogo">
+		  <NodeHeader>
+			  <![CDATA[
+		  <style>
+            .empresa-section {
+                background-color: rgb(65, 65, 65);
+            }
+            .imagem-empresa {
+                width: 200px;
+                height: 200px;
+            }
+
+            .main-examples {
+                background-color: rgb(221, 221, 221);
+            }
+
+            .card-body {
+                background-color: rgb(218, 218, 218);
+            }
+		  </style>
+        <div class="empresa-section container-fluid d-flex flex-column justify-content-center align-items-center p-5">
+            <img class="imagem-empresa rounded-sm rounded-circle mt-4" src="/images/chapas/cube.jpg" alt="wallpaper">
+            <h1 class="p-1 text-uppercase text-center text-light mt-2">Marmoraria X</h1>
+            <p class="text-uppercase text-center text-info"> Cachoeiro de Itapemirim, ES </p>
+        </div>
+
+        <div class="container-fluid d-flex flex-column justify-content-center p-5">
+                <h3 class="text-uppercase text-center text-primary mb-3">Seja bem-vindo à página da Marmoraria X</h3>
+                <hr class="w-100 mx-auto mb-3">
+
+                <div class="row row-cols-1 row-cols-lg-6 row-cols-md-3 row-cols-sm-3 g-4 py-3">
+
+                    <a href="/privatearea/pt/marble/" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 1</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/images/chapas/marble2.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 2</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="/images/chapas/marble3.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 3</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/images/chapas/marble4.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 4</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/images/chapas/marble5.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 5</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="text-decoration: none;" class="text-dark">
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/images/chapas/marble6.jpg" class="card-img-top img-fluid">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Card 6</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+        </div>]]>
+		  </NodeHeader>
+	  </NodeInterface>
+	<NodeInterface id="marble">
+		  <NodeHeader>
+			  <![CDATA[
+			  <style>
+            .empresa-section {
+                background-color: rgb(65, 65, 65);
+            }
+            .imagem-empresa {
+                width: 200px;
+                height: 200px;
+            }
+
+            .main-examples {
+                background-color: rgb(221, 221, 221);
+            }
+
+            .card-body {
+                background-color: rgb(218, 218, 218);
+            }
+		  </style>
+		  <div class="empresa-section container-fluid d-flex flex-column justify-content-center align-items-center p-5">
+    <img class="imagem-empresa rounded-sm rounded-circle mt-4" src="/images/chapas/cube.jpg" alt="wallpaper">
+    <h1 class="p-1 text-uppercase text-center text-light mt-2">Marmoraria X</h1>
+    <p class="text-uppercase text-center text-info"> Cachoeiro de Itapemirim, ES </p>
+</div>
+
+<div class="container-fluid d-flex flex-column justify-content-center p-5">
+        <h3 class="text-uppercase text-center text-primary mb-3">Variações do card X escolhido</h3>
+        <hr class="w-100">
+
+    <div class="row row-cols-1 row-cols-lg-6 row-cols-md-3 row-cols-sm-3 g-4 py-3">
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;" class="text-dark">
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card 1</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
+	  ]]>
+		  </NodeHeader>
+	  </NodeInterface>
+    <NodeInterface id="index-client" NodeType="text/html" ModelLayout="InfoPage"
+      htmltitle="HyperCube4x - Um mundo possível">
+      <NodeHeader>
+				  <![CDATA[
+<!--Cards private area-->
+    <div class="container-fluid d-flex justify-content-center mb-5 p-5" id="initial_private_area">
+        <div class="container">
+            <h3 class=" text-uppercase text-center text-primary mt-5 mb-3">Seja bem-vindo à sua conta Hypercube!</h3>
+            <hr class="w-25 mx-auto mb-5">
+            <div class="row justify-content-center my-2 g-3">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/area-cliente/" alt="Perfil" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-fill-gear fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-primary">Acesse seu Perfil</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Analyzer" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-boxes fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Analyzer</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Relational" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-database fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Relational</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Stone" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-aspect-ratio fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Stone</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Hyper Book" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-book-half fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Book</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="#" alt="Minhas assinaturas" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+                                <i class="bi bi-person-check-fill fs-1 text-center text-primary"></i>
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Minhas assinaturas</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                  <a href="/privatearea/pt/upload-image" alt="Upload de imagens" class="text-decoration-none">
+                      <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                          <div class="card-header">
+                              <i class="bi bi-upload fs-1 text-center text-primary"></i>
+                              <br>
+                          </div>
+                          <div class="card-body ">
+                              <h5 class="card-title text-center text-primary">Upload de imagens</h5>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+            </div>
+        </div>
+    </div>
+          ]]>
+			  </NodeHeader>
+    </NodeInterface>
+    <NodeInterface id="area-cliente" NodeType="text/html" ModelLayout="SingleForm" htmltitle="HyperCube4x - Perfil">
+      <NodeForm>
+				  <![CDATA[
+          <!--perfil-->
+    <div class="container-fluid d-flex justify-content-center my-5" id="show_client_perfil">
+        <div class="container pb-5 mb-5">
+            <h3 class=" text-uppercase text-center text-primary mt-3 mb-3">Este é o seu perfil!</h3>
+            <hr class="w-25 mx-auto mb-3">
+            <div class="row justify-content-center">
+                <div class="col-6 col-lg-8 max-width justify-content-center d-block mx-auto my-2">
+                    <img class="img-fluid img-thumbnail rounded-circle border border-secondary d-block mx-auto"
+                        src="/images/logo/HyperCubeAlfa.png" alt="foto do perfil" id="perfil-image">
+                </div>
+            </div>
+            <div class="col-6 col-lg-4 d-block mx-auto my-3">
+                <button class="btn btn-outline-primary d-block mx-auto" id="button-input-file">
+                    Salvar</button>
+            </div>
+            <input type="file" accept="image/*" id="file-image">
+            <div class="col-12 col-lg-8 mt-2 mx-auto">
+                <div>
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">fulano@email.com</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Razão social</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Empresa X</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">CNPJ</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">111111110001-11</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Contato</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">(28) 00000 - 0000</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Whatsapp</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">(28) 00000 - 0000</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Tipo</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Indústria</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+                    <button class="btn btn-outline-primary mx-auto d-block">
+                      <a href="/privatearea/pt/cadastro-cliente/" class="text-decoration-none">
+                      Salvar</a>
+                </button>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+                    <div class="form-check form-switch mx-auto d-block">
+                        <input class="form-check-input" type="checkbox" role="switch" id="newsletter" checked>
+                        <label class="form-check-label" for="newsletter">
+                            Ativar newsletters
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          ]]>
+			  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="area-usuario" NodeType="text/html" ModelLayout="UploadForm" htmltitle="HyperCube4x - Perfil" ServerClass="HC4x_Server.PrivateArea.UserArea">
+      <NodeForm>
+				  <![CDATA[
+        <!--perfil-->
+      <style>
+	        input{
+			    text-align: center;
+			}
+            input:focus{
+                outline: none;
+            }
+			.imagem-perfil-container {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%; 
+                position: relative;
+				margin-bottom: 2rem;
+            }
+
+            .imagem-perfil-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;  /* isso irá cortar a imagem para se ajustar ao contêiner, preservando sua proporção */
+                display: block;
+                position: absolute;
+                top: 20%;
+                left: 7%;
+                transform: translate(-13%, -10%);
+				border-radius: 100%;
+            }
+
+       </style>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <h1 class="text-uppercase text-primary">Este é o seu perfil!</h1>
+        <hr class="w-25">
+        <label class="imagem-perfil-container" for="file-input" style="cursor: pointer;">
+            <img src="{hc4x-key:ImgUser}" alt="" class="img-thumbnail" id="image-preview" />
+        </label> 
+		<input type="file" name="file-input" id="file-input" />
+        <input type="submit" class="btn btn-outline-primary mb-5" value="Salvar"id="button-input-file" />
+        <input type="hidden" id="pkeyUser" name="pkeyUser" value="{hc4x-key:pkeyUser}"/>
+        <table class="table m-2 border rounded-2 w-25">
+          <tbody>
+            <tr>
+              <td><label for="email">Email</label></td>
+              <td><input size=30 type="text" id="email" name="email" value="{hc4x-key:email}" class="border-0"/></td>
+            </tr>
+            <tr>
+              <td><label for="descUser">Nome</label></td>
+              <td><input size=30 type="text" placeholder="Digite seu nome aqui" id="descUser" name="descUser" value="{hc4x-key:descUser}" class="border-0" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-evenly align-items-center mt-2">
+            <button type="submit" class="btn btn-outline-primary me-5">Salvar</button>
+            <div>
+                <input class="form-check-input" type="checkbox" role="switch" id="newsletter">
+                <label for="form-check-input">Ativar newsletter</label>
+            </div>
+        </div>
+		<script> 
+            document.getElementById('image-preview').addEventListener('click', function() {
+            document.getElementById('file-input').click();
+			console.log(document.getElementById('file-input'));
+            });
+            document.getElementById('file-input').addEventListener('change', function() {
+            var fileInput = this;
+			console.log(fileInput);
+            var imagePreview = document.getElementById('image-preview');
+			console.log(imagePreview);
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+            
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                }
+            
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+            });
+         </script>
+    </div>
+        ]]>
+	  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="cadastro-cliente" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Perfil">
+      <NodeForm>
+				  <![CDATA[
+      <!--form -->
+      <div class="container-fluid d-flex justify-content-center my-5" id="rechange_client_perfil">
+          <div class="container pb-5 mb-5">
+              <h3 class=" text-uppercase text-center text-primary mt-3 mb-3">Este é o seu perfil!</h3>
+              <hr class="w-25 mx-auto mb-3">
+              <div class="row justify-content-center">
+                  <div class="col-6 col-lg-8 max-width justify-content-center d-block mx-auto my-2">
+                      <img class="img-fluid img-thumbnail rounded-circle border border-secondary d-block mx-auto"
+                          src="/images/logo/HyperCubeAlfa.png" alt="foto do perfil" id="perfil-image">
+                  </div>
+              </div>
+              <div class="col-6 col-lg-4 d-block mx-auto my-3">
+                  <button class="btn btn-outline-primary d-block mx-auto" id="button-input-file">
+                      Salvar</button>
+              </div>
+              <input type="file" accept="image/*" id="file-image">
+              <div class="col-12 col-lg-8 mt-2 mx-auto form-outline">
+                  <!-- Email -->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6 fw-normal" for="user_email">E-mail</label>
+                      <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
+                          placeholder="nome@email.com" required />
+                  </div>
+                  <!-- Senha -->
+                  <div class="form-outline mb-3">
+                      <label class="form-label lead fs-6 fw-normal" for="user_pass">Senha</label>
+                      <input type="password" name="user_pass" value="" id="user_pass" class="form-control form-control-lg"
+                          placeholder="digite sua senha" required />
+                  </div>
+                  <!-- Confirmação Senha -->
+                  <div class="form-outline mb-3">
+                      <label class="form-label lead fs-6 fw-normal" for="user_pass">Confirme sua senha</label>
+                      <input type="password" name="user_pass_2" value="" id="user_pass_2"
+                          class="form-control form-control-lg" placeholder="confirme sua senha" required />
+                  </div>
+                  <!--Razão Social-->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6 fw-normal" for="razao_social">Razão Socail</label>
+                      <input type="text" name="razao_social" value="" id="razao_social"
+                          class="form-control form-control-lg" placeholder="Empresa X" required />
+                  </div>
+                  <!--CNPJ-->
+                  <div class="row">
+                      <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                          <label class="form-label lead fs-6 fw-normal" for="cnpj">CNPJ</label>
+                          <input type="text" name="cnpj" value="" id="cnpj" class="form-control form-control-lg"
+                              placeholder="111111110001-11" required />
+                      </div>
+                      <!--Contato-->
+                      <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                          <label class="form-label lead fs-6 fw-normal" for="contato">Contato</label>
+                          <input type="text" name="contato" value="" id="contato" class="form-control form-control-lg"
+                              placeholder="(28) 00000 - 0000" required />
+                      </div>
+                      <!--WhatsApp-->
+                      <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                          <label class="form-label lead fs-6 fw-normal" for="whatsapp">WhatsApp</label>
+                          <input type="text" name="whatsapp" value="" id="whatsapp" class="form-control form-control-lg"
+                              placeholder="(28) 00000 - 0000" required />
+                      </div>
+                      <!--Tipo-->
+                      <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                          <label class="form-label lead fs-6 fw-normal" for="tipo">Tipo</label>
+                          <select class="form-select form-select-lg" aria-label="tipo" id="tipo">
+                              <option value="indústria" selected>Indústria</option>
+                              <option value="distribuidor">Distribuidor</option>
+                              <option value="representante">Representante</option>
+                              <option value="arquiteto">Arquiteto</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <a href="" class="text-decoration-none" alt="">
+                  <button class="btn btn-primary mx-auto d-block">Alterar Cadastro</button>
+              </a>
+          </div>
+      </div>
+      ]]>
+			  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="cadastro-usuario" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Perfil">
+      <NodeForm>
+				  <![CDATA[
+    <!--form-->
+    <div class="container-fluid d-flex justify-content-center my-5" id="rechange_user_perfil">
+        <div class="container pb-5 mt-5">
+            <h3 class=" text-uppercase text-center text-primary mt-3 mb-3">Este é o seu perfil!</h3>
+            <hr class="w-25 mx-auto mb-3">
+            <div class="row justify-content-center">
+                <div class="col-6 col-lg-8 max-width justify-content-center d-block mx-auto my-2">
+                    <img class="img-fluid img-thumbnail rounded-circle border border-secondary d-block mx-auto"
+                        src="/images/logo/HyperCubeAlfa.png" alt="foto do perfil" id="perfil-image">
+                </div>
+            </div>
+            <div class="col-6 col-lg-4 d-block mx-auto my-3">
+                <button class="btn btn-outline-primary d-block mx-auto" id="button-input-file">
+                    Salvar</button>
+            </div>
+            <input type="file" accept="image/*" id="file-image">
+            <div class="col-12 col-lg-8 mt-2 mx-auto form-outline">
+                <!-- Email -->
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6 fw-normal" for="user_email">E-mail</label>
+                    <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
+                        placeholder="nome@email.com" required />
+                </div>
+                <!-- Senha -->
+                <div class="form-outline mb-3">
+                    <label class="form-label lead fs-6 fw-normal" for="user_pass">Senha</label>
+                    <input type="password" name="user_pass" value="" id="user_pass" class="form-control form-control-lg"
+                        placeholder="digite sua senha" required />
+                </div>
+                <!--Confirmação Senha-->
+                <div class="form-outline mb-3">
+                    <label class="form-label lead fs-6 fw-normal" for="user_pass">Confirme sua senha</label>
+                    <input type="password" name="user_pass_2" value="" id="user_pass_2"
+                        class="form-control form-control-lg" placeholder="confirme sua senha" required />
+                </div>
+                <!--Nome-->
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6 fw-normal" for="nome">Nome Completo</label>
+                    <input type="text" name="nome" value="" id="nome"
+                        class="form-control form-control-lg" placeholder="Digite seu nome aqui" required />
+                </div>
+                <!--CPF-->
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                        <label class="form-label lead fs-6 fw-normal" for="cpf">CPF</label>
+                        <input type="text" name="cpf" value="" id="cpf" class="form-control form-control-lg"
+                            placeholder="111000111-00" required />
+                    </div>
+                    <!--Contato-->
+                    <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 form-outline mb-4">
+                        <label class="form-label lead fs-6 fw-normal" for="contato">Contato</label>
+                        <input type="text" name="contato" value="" id="contato" class="form-control form-control-lg"
+                            placeholder="(28) 00000 - 0000" required />
+                    </div>
+                </div>
+            </div>
+            <a href="" class="text-decoration-none" alt="">
+                <button class="btn btn-primary mx-auto d-block">Alterar Cadastro</button>
+            </a>
+        </div>
+    </div>
+    ]]>
+			  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="upload-image" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Perfil">
+      <NodeForm>
+				  <![CDATA[
+    <!-- upload image -->
+    <div class="container-fluid">
+        <div class="container mb-5 pb-5 justify-content-center">
+            <h3 class=" text-uppercase text-center text-primary mt-3 mb-3">Upload de imagens</h3>
+            <hr class="w-25 mx-auto mb-3">
+            <div class="picture mx-auto shadow rounded" tabindex="0" id="image-import">
+                <img class="img-fluid" src="" id="image-import">
+                <input type="file" accept="image/*" id="file-image" />
+                Clique para escolher uma imagem
+            </div>
+            <div class="mt-3 d-flex justify-content-center">
+                <button class="btn btn-outline-primary mx-1">Ver no Hypercube</button>
+                <button class="btn btn-outline-primary mx-1">Download</button>
+                <button class="btn btn-outline-primary mx-1">Adicionar imagem à pasta</button>
+            </div>
+        </div>
+    </div>
+    ]]>
+			  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="new-email" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível">
+      <NodeHeader>
+				  <![CDATA[Altere seu email]]>
+			  </NodeHeader>
+      <NodeForm>
+				  <![CDATA[<table>
+                      <tr><td>Email atual: </td></tr><tr>
+                      <tr><td><input class="form-control" type="email" name="current_email" value="" required /></td></tr><tr>
+                      <tr><td>Novo email: </td></tr><tr>
+                      <tr><td><input class="form-control" type="email" name="new_email" value="" required /></td></tr><tr>
+                      <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Alterar email" /></td></tr>
+                    </table>]]>
+			  </NodeForm>
+    </NodeInterface>
+    <NodeInterface id="insert-photo" NodeType="text/html" ModelLayout="SingleForm"
+      htmltitle="HyperCube4x - Um mundo possível">
+      <NodeHeader>
+				  <![CDATA[Insira sua foto]]>
+			  </NodeHeader>
+      <NodeForm>
+				  <![CDATA[<table>
+                    <tr><td colspan="2"><input class="btn btn-primary" type="submit" value="Inserir foto" /></td></tr>
+                </table>]]>
+			  </NodeForm>
+    </NodeInterface>
+  </SectorInterface>
+  <SectorArea id="Other">
+    <NodeInterface id="UXForm" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Post</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="UXForm/ok" method="post">
+    <input type="text" name="StorageId" />
+    <input type="text" name="SessionId" />
+    <input type="text" name="FileHexa" />
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+    <NodeInterface id="Upload" NodeType="text/html">
+        <![CDATA[<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <form action="ok" EncType="multipart/form-data" method="post">
+    <table>
+      <thead>
+        <tr>
+          <th />
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Folder Id:</td>
+          <td><input type="text" name="fkStorage" /></td>
+        </tr>
+        <tr>
+          <td>FileName:</td>
+          <td><input type="text" name="dsBlob" /></td>
+        </tr>
+        <tr>
+          <td>Choose File:</td>
+          <td><input type="file" name="Content" /></td>
+        </tr>
+        <tr>
+          <td>Mime:</td>
+          <td><input type="text" name="atMime" /></td>
+        </tr>
+        <tr>
+          <td>Encoding:</td>
+          <td><input type="text" name="atEncoding" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>]]>
+      </NodeInterface>
+  </SectorArea>
+  </SectorInterface>
+</HyperApplication>

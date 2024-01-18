@@ -1,0 +1,17 @@
+﻿@font-face {
+    font-family: 'Bootstrap Icons';
+    src: url('/wwwroot/icons/font/fonts/bootstrap-icons.woff2') format('woff2'), url('/wwwroot/icons/font/fonts/bootstrap-icons.woff') format('woff'), font-weight: normal;
+    font-style: normal;
+}
+
+.bi {
+    display: inline-block;
+    font-family: 'Bootstrap Icons';
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    vertical-align: text-bottom;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

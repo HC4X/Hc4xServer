@@ -1,0 +1,273 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MigrandoXMLparaAvalonia.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+	<Application.Resources>
+		<!--stck_bar_gray_75-->
+		<ControlTheme x:Key="stck_bar_gray_75" TargetType="StackPanel" BasedOn="{StaticResource pnl_gray_75}">
+			<Setter Property="Margin" Value="0,0,0,4" />
+		</ControlTheme>
+		<!--pnl_gray_75-->
+		<ControlTheme x:Key="pnl_gray_75" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="DarkGray" Opacity="0.75" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--hover_6_44-->
+		<ControlTheme x:Key="hover_6_44" TargetType="Control" BasedOn="{StaticResource hover_6}">
+			<Setter Property="Height" Value="44" />
+			<Setter Property="Width" Value="44" />
+		</ControlTheme>
+		<!--hover_6-->
+		<ControlTheme x:Key="hover_6" TargetType="Control">
+			<Style Selector="^:pointerover">
+				<Setter Property="Opacity" Value=".6" />
+			</Style>
+		</ControlTheme>
+		<!--label_color-->
+		<ControlTheme x:Key="label_color" TargetType="ContentControl" BasedOn="{StaticResource font_nw_10}">
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="BorderThickness" Value="1,1,1,1" />
+			<Setter Property="Height" Value="16" />
+			<Setter Property="Width" Value="16" />
+		</ControlTheme>
+		<!--font_nw_10-->
+		<ControlTheme x:Key="font_nw_10" TargetType="TextBlock" BasedOn="{StaticResource font_nb_10}">
+			<Setter Property="Foreground" Value="White" />
+		</ControlTheme>
+		<!--font_nb_10-->
+		<ControlTheme x:Key="font_nb_10" TargetType="ContentControl">
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="FontFamily" Value="Verdana" />
+			<Setter Property="FontSize" Value="10" />
+			<Setter Property="FontStretch" Value="Normal" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="FontWeight" Value="Normal" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+		</ControlTheme>
+		<!--font_nb_12-->
+		<ControlTheme x:Key="font_nb_12" TargetType="TextBlock" BasedOn="{StaticResource font_nb_10}">
+			<Setter Property="FontSize" Value="12" />
+		</ControlTheme>
+		<!--border_lt_gray_50-->
+		<ControlTheme x:Key="border_lt_gray_50" TargetType="Border">
+			<Setter Property="BorderBrush" Value="White" />
+			<Setter Property="BorderThickness" Value="1,1,1,1" />
+			<Setter Property="CornerRadius" Value="0,0,2,0" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="DarkGray" Opacity="0.5" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--hover_6_20-->
+		<ControlTheme x:Key="hover_6_20" TargetType="Control" BasedOn="{StaticResource hover_6}">
+			<Setter Property="Height" Value="20" />
+			<Setter Property="Width" Value="20" />
+		</ControlTheme>
+		<!--tab_top_gray75-->
+		<ControlTheme x:Key="tab_top_gray75" TargetType="Border" BasedOn="{StaticResource tab_top_black75}">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Gray" Opacity="0.75" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--tab_top_black75-->
+		<ControlTheme x:Key="tab_top_black75" TargetType="Border">
+			<Setter Property="CornerRadius" Value="0,4,0,0" />
+			<Setter Property="BorderBrush" Value="Gray" />
+			<Setter Property="BorderThickness" Value="0,1,1,0" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.75" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--label_black_25-->
+		<ControlTheme x:Key="label_black_25" TargetType="TextBlock" BasedOn="{StaticResource font_bw_12}">
+			<Setter Property="Margin" Value="0,4,0,4" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.25" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--font_bw_12-->
+		<ControlTheme x:Key="font_bw_12" TargetType="TextBlock" BasedOn="{StaticResource font_nw_12}">
+			<Setter Property="FontWeight" Value="Bold" />
+		</ControlTheme>
+		<!--font_nw_12-->
+		<ControlTheme x:Key="font_nw_12" TargetType="TextBlock" BasedOn="{StaticResource font_nw_10}">
+			<Setter Property="FontSize" Value="12" />
+		</ControlTheme>
+		<!--size_16_vc-->
+		<ControlTheme x:Key="size_16_vc" TargetType="Control" BasedOn="{StaticResource size_16}">
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</ControlTheme>
+		<!--size_16-->
+		<ControlTheme x:Key="size_16" TargetType="Control">
+			<Setter Property="Height" Value="16" />
+			<Setter Property="Width" Value="16" />
+		</ControlTheme>
+		<!--pnl_black_25-->
+		<ControlTheme x:Key="pnl_black_25" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.25" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--font_bo_16-->
+		<ControlTheme x:Key="font_bo_16" TargetType="TextBlock" BasedOn="{StaticResource font_bo_12}">
+			<Setter Property="FontSize" Value="16" />
+		</ControlTheme>
+		<!--font_bo_12-->
+		<ControlTheme x:Key="font_bo_12" TargetType="TextBlock" BasedOn="{StaticResource font_bb_12}">
+			<Setter Property="Foreground" Value="#FFFFA500" />
+		</ControlTheme>
+		<!--font_bb_12-->
+		<ControlTheme x:Key="font_bb_12" TargetType="TextBlock" BasedOn="{StaticResource font_nb_12}">
+			<Setter Property="FontWeight" Value="Bold" />
+		</ControlTheme>
+		<!--tbox_normal-->
+		<ControlTheme x:Key="tbox_normal" TargetType="TextBox">
+			<Setter Property="FontFamily" Value="Verdana" />
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="MaxHeight" Value="22" />
+			<Setter Property="Watermark" Value="Teste"/>
+		</ControlTheme>
+		<!--Button_WB_12-->
+		<ControlTheme x:Key="Button_WB_12" TargetType="TextBlock" BasedOn="{StaticResource font_bw_16}">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Gray" />
+				</Setter.Value>
+			</Setter>
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+			<Setter Property="Padding" Value="50, 10, 50, 10" />
+		</ControlTheme>
+		<!--font_bw_16-->
+		<ControlTheme x:Key="font_bw_16" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Verdana" />
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Margin" Value="0, 15, 0, 15" />
+		</ControlTheme>
+		<!--pnl_gray_25-->
+		<ControlTheme x:Key="pnl_gray_25" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="DarkGray" Opacity="0.25" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--pnl_gray_50-->
+		<ControlTheme x:Key="pnl_gray_50" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="DarkGray" Opacity="0.50" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--size_24-->
+		<ControlTheme x:Key="size_24" TargetType="Control">
+			<Setter Property="Height" Value="24" />
+			<Setter Property="Width" Value="24" />
+		</ControlTheme>
+		<!--button_nw_12-->
+		<ControlTheme x:Key="button_nw_12" TargetType="UserControl" BasedOn="{StaticResource font_nw_12}">
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+		</ControlTheme>
+		<!--pnl_black_50-->
+		<ControlTheme x:Key="pnl_black_50" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.50" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--font_bo_14-->
+		<ControlTheme x:Key="font_bo_14" TargetType="ContentControl" BasedOn="{StaticResource font_bo_12}">
+			<Setter Property="FontSize" Value="14" />
+		</ControlTheme>
+		<!--hover_6_72-->
+		<ControlTheme x:Key="hover_6_72" TargetType="Control" BasedOn="{StaticResource hover_6}">
+			<Setter Property="Height" Value="72" />
+			<Setter Property="Width" Value="72" />
+		</ControlTheme>
+		<!--size_128-->
+		<ControlTheme x:Key="size_128" TargetType="Control">
+			<Setter Property="Height" Value="128" />
+			<Setter Property="Width" Value="128" />
+		</ControlTheme>
+		<!--tile_black_25-->
+		<ControlTheme x:Key="tile_black_25" TargetType="Panel" BasedOn="{StaticResource pnl_black_25}">
+			<Setter Property="Margin" Value="0,4,0,4" />
+		</ControlTheme>
+		<!--size_32-->
+		<ControlTheme x:Key="size_32" TargetType="Control">
+			<Setter Property="Height" Value="32" />
+			<Setter Property="Width" Value="32" />
+		</ControlTheme>
+		<!--size_96-->
+		<ControlTheme x:Key="size_96" TargetType="Control">
+			<Setter Property="Height" Value="96" />
+			<Setter Property="Width" Value="96" />
+		</ControlTheme>
+		<!--viewer_gray_50-->
+		<ControlTheme x:Key="viewer_gray_50" TargetType="ScrollViewer">
+			<Setter Property="Background" Value="DarkGray"/>
+			<Setter Property="Opacity" Value="0.50"/>
+		</ControlTheme>
+		<!--tab_left_black75-->
+		<ControlTheme x:Key="tab_left_black75" TargetType="Border">
+			<Setter Property="CornerRadius" Value="4,0,0,0" />
+			<Setter Property="BorderBrush" Value="Gray" />
+			<Setter Property="BorderThickness" Value="2,1,0,0" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.75" />
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Margin" Value="2,2,0,0" />
+		</ControlTheme>
+		<!--size_48-->
+		<ControlTheme x:Key="size_48" TargetType="Control">
+			<Setter Property="Height" Value="48" />
+			<Setter Property="Width" Value="48" />
+		</ControlTheme>
+		<!--size_64-->
+		<ControlTheme x:Key="size_64" TargetType="Control">
+			<Setter Property="Height" Value="64" />
+			<Setter Property="Width" Value="64" />
+		</ControlTheme>
+		<!--pnl_black_75-->
+		<ControlTheme x:Key="pnl_black_75" TargetType="Panel">
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="Black" Opacity="0.75" />
+				</Setter.Value>
+			</Setter>
+		</ControlTheme>
+		<!--hover_6_36-->
+		<ControlTheme x:Key="hover_6_36" TargetType="Control" BasedOn="{StaticResource hover_6}">
+			<Setter Property="Height" Value="36" />
+			<Setter Property="Width" Value="36" />
+		</ControlTheme>
+	</Application.Resources>
+	
+</Application>
+

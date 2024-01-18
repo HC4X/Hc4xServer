@@ -1,0 +1,1074 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MigrandoXMLparaAvalonia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MigrandoXMLparaAvalonia.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<!--tbar0-->
+	<!--
+	<StackPanel Name="tbar0" Orientation="Horizontal" Theme="{StaticResource stck_bar_gray_75}">
+		<Image Name="CamFace0" Margin="10,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Full View" Source="/Assets/Images/Camera/CamFull.png"/>
+		<Image Name="CamFace3" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Focus central Face" Source="/Assets/Images/Camera/CamFront.png"/>
+		<Image Name="CamLeft" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Turns camera Left" Source="/Assets/Images/Camera/CamLeft.png"/>
+		<Image Name="CamRight" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Turns camera Right" Source="/Assets/Images/Camera/CamRight.png"/>
+		<Image Name="FaceBackward" Margin="10,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Move Faces Forward" Source="/Assets/Images/Face/FaceLeft.png"/>
+		<Image Name="FaceForward" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Move Faces Backward" Source="/Assets/Images/Face/FaceRight.png"/>
+		<Image Name="FaceSolve" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Solve Cube" Source="/Assets/Images/launcher/SolveCube.png"/>
+		<Image Name="InteractCenter" Margin="10,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Interaction Center" Source="/Assets/Images/Interact/InteractCenter.png"/>
+		<Image Name="FullScreen" Margin="10,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Toggle Full Screen" Source="/Assets/Images/launcher/FullScrn.png"/>
+		<Image Name="tbarTravl" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Main Menu" Source="/Assets/Images/tbar0/HyperMenu.png"/>
+		<Image Name="BurgerMenu" Margin="2,5,0,5" Theme="{StaticResource hover_6_44}" ToolTip.Tip="Scene Menu" Source="/Assets/Images/tbar0/tbarSceneMenu.png"/>
+	</StackPanel>
+	-->
+	<!--DialogBorder-->
+	<!--
+	<Border BorderBrush="LightGray"
+            BorderThickness="0,0,1,1"
+            CornerRadius="0,0,4,0"
+            Margin="0,2,0,2">
+		<Border.Background>
+			<SolidColorBrush Opacity="0.25" Color="Gray"/>
+		</Border.Background>
+		<Grid Name="DialogGrid" Margin="0,4,0,4">
+			<Grid.Background>
+				<SolidColorBrush Color="Black" Opacity="0.25"/>
+			</Grid.Background>
+		</Grid>
+	</Border>
+	-->
+	<!--ComboColorItem-->
+	<!--
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="30"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Label Grid.Column="0" Theme="{StaticResource label_color}"/>
+		<Label Grid.Column="1" Theme="{StaticResource font_nb_12}" Content="asdasdasdasd"/>
+	</Grid>
+	-->
+	<!--ComboColorItem Modified-->
+	<!--
+	<Grid ColumnDefinitions="30, Auto" VerticalAlignment="Center">
+		<Label Foreground="Black" FontFamily="Verdana" FontSize="10" FontStretch="10" FontStyle="Normal" FontWeight="Normal" VerticalAlignment="Center" Grid.Column="0" BorderBrush="Black" BorderThickness="1,1,1,1" Height="16" Width="16"></Label>
+	</Grid>
+	-->
+	<!--ComboBoxFont-->
+	<!--
+	<ComboBox Name="ComboBoxFont" SelectedItem="Content"/>
+	-->
+	<!--Desktop Tab-->
+	<!--DesktopBorder-->
+	<!--
+	<Border Name="DesktopBorder"
+            Theme="{StaticResource border_lt_gray_50}"
+            Focusable="False"
+			IsVisible="False">
+		<Grid Name="DesktopGrid">
+			<Grid.RowDefinitions>
+				
+				
+				 1. RowTabMenu 
+				<RowDefinition Height="Auto"/>
+				 2. RowTbarTop 
+				<RowDefinition Height="Auto"/>
+				 3. RowContent 
+				<RowDefinition Height="Auto"/>
+				 4. RowTbarBottom 
+				<RowDefinition Height="Auto"/>
+				 5. RowStatus 
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid Name="RowMainMenu"
+				  Grid.Row="0"
+				  Grid.Column="0"
+				  Focusable="False"
+				  HorizontalAlignment="Stretch"
+				  Margin="0,0,0,0">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Name="DesktopTabAdd" Grid.Row="0" Grid.Column="1" ToolTip.Tip.Tip="Add Tab" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Common/Desktop/PinTab.png"/>
+				<Grid Grid.Row="0"
+					  Grid.Column="2"
+					  Name="DesktopToggle"
+					  Theme="{StaticResource pnl_gray_75}"
+					  HorizontalAlignment="Right"
+					  Margin="0,2,4,0">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<Image Name="DeskTogBarTop" Grid.Row="0" Grid.Column="0" ToolTip.Tip.Tip="Hide Toolbar" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Common/Desktop/TogBarUp.png" Margin="4,0,0,0"/>
+					<Image Name="DeskTogHorizontal" Grid.Row="0" Grid.Column="1" ToolTip.Tip.Tip="Toggle Horizontal Alignment" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Common/Desktop/TogHorizontal0.png"/>
+					<Image Name="DeskTogVertical" Grid.Row="0" Grid.Column="2" ToolTip.Tip.Tip="Toggle Vertical Alignment" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Common/Desktop/TogVertical0.png"/>
+					<Image Name="DeskTogScreen" Grid.Row="0" Grid.Column="3" ToolTip.Tip.Tip="Maximized" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Desktop/maximize.png"/>
+					<Image Name="DeskClose" Grid.Row="0" Grid.Column="4" ToolTip.Tip.Tip="Close" Theme="{StaticResource hover_6_20}" Source="/Assets/Images/Desktop/close.png"/>
+				</Grid>
+			</Grid>
+			<ScrollViewer Name="DesktopViewer"
+				   Grid.Row="3"
+				   Grid.Column="0"
+				   Focusable="False"
+				   HorizontalScrollBarVisibility="Auto"
+				   VerticalScrollBarVisibility="Auto">
+				<ScrollViewer.Background>
+					<SolidColorBrush Color="Black" Opacity="0.5"/>
+				</ScrollViewer.Background>
+				<Grid Name="DesktopViewerGrid"/>
+			</ScrollViewer>
+		</Grid>
+	</Border>
+	-->
+	<!--DesktopTab-->
+	<!--
+	<Grid Name="DesktopTab" Theme="{StaticResource pnl_gray_75}">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Border Grid.Row="0"
+				Grid.Column="0"
+				Name="Tab_1"
+				Theme="{StaticResource tab_top_gray75}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Label Grid.Row="0" Grid.Column="0" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Foreground="White">Tab 1</Label>
+				<Image Grid.Row="0" Grid.Column="1" Theme="{StaticResource size_16_vc}" Source="/Assets/Images/Desktop/TabClose.png" Tag="TabClose"/>
+			</Grid>
+		</Border>
+	</Grid>
+	-->
+	<!--Detail Tab-->
+	<!--
+	<Grid Name="DetailTab">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Border Grid.Row="0"
+		  Grid.Column="0"
+		  Name="Tab_1"
+		  Theme="{StaticResource tab_top_black75}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Label Grid.Row="0" Grid.Column="0" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Foreground="White">Tab 1</Label>
+				<Image Grid.Row="0" Grid.Column="1" Theme="{StaticResource size_16_vc}"/>
+			</Grid>
+		</Border>
+	</Grid>
+	-->
+	<!--FlatWebSplash-->
+	<!--
+	<StackPanel Name="FlatWebSplash" Orientation="Vertical" Theme="{StaticResource pnl_black_25}" Margin="4,4,4,4">
+		<Label Name="FlatTitle"
+			  Margin="8,8,0,8"
+			  FontSize="16"
+			  Foreground="#FFFFA500"
+			  FontWeight="Bold"
+			  FontFamily="Verdana"
+			  FontStretch="Normal"
+			  FontStyle="Normal"
+			  VerticalAlignment="Center">Web Browser
+		</Label>
+		<Grid Name="FlatWebPrompt" Theme="{StaticResource pnl_gray_75}" Margin="0,0,0,4">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label Grid.Row="0" Grid.Column="0" Margin="4,0,0,0"   
+				   FontWeight="Bold" 
+				   FontSize="12" 
+				   Foreground="White" 
+				   FontFamily="Verdana" 
+				   FontStretch="Normal" 
+				   FontStyle="Normal" 
+				   VerticalContentAlignment="Center">URL:</Label>
+				   
+			<TextBox 
+				Name="txtUrl" 
+				Grid.Row="1" 
+				Grid.Column="0" 
+				Margin="8,2,2,2" 
+				HorizontalAlignment="Stretch" 
+				MinWidth="600" MinHeight="27"
+				Height="1"
+				FontSize="12"
+				Watermark="http://www.example.com"
+				Text="http://hypercube4x.com.br"
+				/>
+				   
+			<Label Name="lblGO" Grid.Row="1" Grid.Column="1"
+				   Background="Gray"
+				   FontSize="12"
+				   HorizontalAlignment="Center"
+				   HorizontalContentAlignment="Center"
+				   Padding="50, 10, 50, 10"
+				   FontFamily="Verdana"
+				   FontWeight="Bold"
+				   Foreground="White"
+				   Margin="0, 15, 0, 15">GO</Label>
+		</Grid>
+	</StackPanel>
+	-->
+	<!--BrowserPanel-->
+	<!--
+	<Grid Name="BrowserPanel" Theme="{StaticResource pnl_gray_25}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid Name="NavigationBar" Grid.Row="0" Grid.Column="0" Theme="{StaticResource pnl_gray_50}" Margin="0,0,0,4">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Image Name="Back" Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_24}" ToolTip.Tip.Tip="Back" Source="/Assets/Images/Common/gecko/back.png"/>
+			<Image Name="Forward" Grid.Row="0" Grid.Column="1" Theme="{StaticResource size_24}" ToolTip.Tip.Tip="Forward" Source="/Assets/Images/Common/gecko/forward.png"/>
+			<Image Name="Refresh" Grid.Row="0" Grid.Column="2" Theme="{StaticResource size_24}" ToolTip.Tip.Tip="Refresh" Source="/Assets/Images/Common/gecko/refresh.png"/>
+			<TextBox Name="txtUrl" 
+					 Grid.Row="0" 
+					 Grid.Column="3" 
+					 Text="about:blank" 
+					 VerticalContentAlignment="Center"
+					 Foreground="Black"
+					 FontFamily="Verdana"
+					 FontSize="12"
+					 FontStretch="Normal"
+					 FontStyle="Normal"
+					 FontWeight="Normal"
+				 MinHeight="27"
+			Height="1"	/>
+			<Label Name="WebAdd" 
+				   Grid.Row="0" 
+				   Grid.Column="4" 
+				   ToolTip.Tip.Tip="Add"
+				   Foreground="White"
+				   FontSize="12"
+				   FontStretch="Normal"
+				   FontStyle="Normal"
+				   FontWeight="Normal"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Center">Add</Label>
+		</Grid>
+	</Grid>
+	-->
+	<!--FlatInteractCenter-->
+	<!--
+	<StackPanel Name="FlatInteractCenter" Orientation="Vertical" Theme="{StaticResource pnl_black_50}" Margin="4,4,4,4">
+		<TextBlock Name="FlatTitleInteract"
+			  Theme="{StaticResource font_bo_16}"
+			  Margin="8,8,0,8">Interaction Central</TextBlock>
+		<Grid Name="FlatGridInteract" Margin="0,8,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<StackPanel Grid.Row="0" Grid.Column="0">
+				<TextBlock Name="TitleEssential"
+				  Theme="{StaticResource font_bo_14}"
+				  Margin="8,8,0,8">Environment Control</TextBlock>
+				<Grid Theme="{StaticResource pnl_gray_75}">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+						<Image Name="FullScreen" Grid.Row="0" Grid.Column="0" Source="/Assets/Images/launcher/FullScrn.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">Toggle FullScreen (F11)</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+						<Image Name="FaceSolve" Grid.Row="1" Grid.Column="0" Source="/Assets/Images/launcher/SolveCube.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock Theme="{StaticResource font_bw_12}" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1">
+							Faces to original position
+						</TextBlock>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+			<StackPanel Grid.Row="1" Grid.Column="0">
+				<TextBlock Name="TitleCamera"
+				  Theme="{StaticResource font_bo_14}"
+				  Margin="8,8,0,8">Camera Control</TextBlock>
+				<Grid Theme="{StaticResource pnl_gray_75}">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+						<Image Name="CamFace0" Grid.Row="2" Grid.Column="0" Source="/Assets/Images/Camera/CamFull.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock Theme="{StaticResource font_bw_12}" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1">
+							Full View
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="1" Name="CamFace3" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Central Face
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="2" Name="CamLeft" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamLeft.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock  Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Camera to Left
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="3" Name="CamRight" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamRight.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Camera to Right
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="4" Name="CamRotateLeft" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamRotateLeft.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Rotate Left
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="0" Grid.Column="5" Name="CamRotateRight" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamRotateRight.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Rotate Right
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="0" Name="HndCamZ1" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/HndCamZ1.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Less Zoom
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="1" Name="HndCamZ2" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/HndCamZ2.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							More Zoom
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
+						<Image Name="HndCamX1" Grid.Row="2" Grid.Column="0" Source="/Assets/Images/Camera/HndCamX1.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="2" Grid.Column="1">
+							Left
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="3" Name="HndCamX2" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/HndCamX2.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Right
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="4" Name="HndCamY1" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/HndCamY1.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Camera Down
+						</TextBlock>
+					</StackPanel>
+					<StackPanel Grid.Row="1" Grid.Column="5" Name="HndCamY2" HorizontalAlignment="Center">
+						<Image Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/HndCamY2.png" Theme="{StaticResource hover_6_72}"/>
+						<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							Camera Up
+						</TextBlock>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+		</Grid>
+	</StackPanel>
+	-->
+	<!--FlatLauncherHelp PRECISA VER ONDE ESTÃO AS IMAGENS DELE-->
+	<!--
+	<StackPanel Name="FlatLauncherHelp" Orientation="Vertical" Theme="{StaticResource pnl_black_50}" Margin="4,4,4,4">
+		<TextBlock Name="FlatTitle"
+			  Theme="{StaticResource font_bo_16}"
+			  Margin="8,8,0,8">Help Options</TextBlock>
+		<StackPanel>
+			<TextBlock Name="TitleKeyboard"
+				Theme="{StaticResource font_bo_16}"
+				Margin="8,8,0,8">Keyboard Shortcuts</TextBlock>
+			<ScrollViewer>
+				<Grid Name="GridHelpKeyboard" Theme="{StaticResource pnl_gray_75}" Margin="0,8,0,0" HorizontalAlignment="Center">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition MaxWidth="600"/>
+					</Grid.ColumnDefinitions>
+					<Image Name="keys_wasd" Grid.Row="0" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png" Theme="{StaticResource size_128}"/>
+					<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">
+							A / D - Move the camera left and right<LineBreak/>W / S - Move the camera up and down
+					</TextBlock>
+					<Image Name="keys_ijkl" Grid.Row="1" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png" Theme="{StaticResource size_128}"/>
+					<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="1" Grid.Column="1">
+							J / L - Rotate the camera left and right<LineBreak/>I / K - tilt the page in portrait mode
+					</TextBlock>
+					<Image Name="keys_arrow" Grid.Row="2" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png" Theme="{StaticResource size_128}"/>
+					<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="2" Grid.Column="1">
+						
+							Left and Right Arrow - Move faces<LineBreak/>Up arrow - central face focus<LineBreak/>Down arrow - Full View
+						
+					</TextBlock>
+					<Image Name="keys_zoom" Grid.Row="3" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png"/>
+					<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="3" Grid.Column="1">
+						- / + - camera zoom
+					</TextBlock>
+					<Image Name="key_alt" Grid.Row="4" Grid.Column="0" Source="/Assets/Images/Camera/CamFront.png" Theme="{StaticResource hover_6_72}"/>
+					<TextBlock TextWrapping="Wrap" Theme="{StaticResource font_bw_12}" Grid.Row="4" Grid.Column="1">
+						If this window is open, combine Alt key with previous keys
+					</TextBlock>
+				</Grid>
+			</ScrollViewer>
+		</StackPanel>
+	</StackPanel>
+	-->
+	<!--FlatLauncher-->
+	<!--
+	<Grid Name="FlatLauncher" Theme="{StaticResource pnl_gray_50}">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid Name="LauncherControl" Grid.Row="0" Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Image Name="hcLauncherLogo" Grid.Row="0" Grid.Column="0"
+				 Theme="{StaticResource size_96}"
+				 Source="/Assets/Images/Logo/HyperCubeAlfa.png"
+				 Margin="4, 0, 4, 0"/>
+			<Grid Name="hcLauncherUser" Grid.Row="2" Grid.Column="0" Theme="{StaticResource tile_black_25}">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/launcher/user.png"/>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_nw_12}">User</TextBlock>
+			</Grid>
+			<Grid Name="hcLauncherPll" Grid.Row="3" Grid.Column="0" Theme="{StaticResource tile_black_25}">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/launcher/pll.png"/>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_nw_12}">Layout</TextBlock>
+			</Grid>
+			<Grid Name="hcLauncherExit" Grid.Row="4" Grid.Column="0" Theme="{StaticResource tile_black_25}">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/tbar0/TBarExit.png"/>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_nw_12}">Exit</TextBlock>
+			</Grid>
+		</Grid>
+		<ScrollViewer Name="LauncherArea" Grid.Row="0" Grid.Column="1"/>
+	</Grid>
+	-->
+	<!--LauncherTab OS STYLES DO SCROLLVIEW ESTÃO INLINE-->
+	<!--
+	<Grid Name="LauncherTab">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid Name="LauncherSelector" Grid.Row="0" Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Border Grid.Row="0"
+			  Grid.Column="0"
+			  Name="hcLauncherTabNew"
+			  Theme="{StaticResource tab_top_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/launcher/scene.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Scene</TextBlock>
+					<Image Grid.Row="0" Grid.Column="2" Theme="{StaticResource size_16_vc}"/>
+				</Grid>
+			</Border>
+			<Border Grid.Row="0"
+			  Grid.Column="1"
+			  Name="hcLauncherTabOpen"
+			  Theme="{StaticResource tab_top_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/launcher/session.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Session</TextBlock>
+					<Image Grid.Row="0" Grid.Column="2" Theme="{StaticResource size_16_vc}"/>
+				</Grid>
+			</Border>
+			<Border Grid.Row="0"
+			  Grid.Column="4"
+			  Name="hcLauncherTabAbout"
+			  Theme="{StaticResource tab_top_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_32}" Source="/Assets/Images/launcher/settings.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">About</TextBlock>
+					<Image Grid.Row="0" Grid.Column="2" Theme="{StaticResource size_16_vc}"/>
+				</Grid>
+			</Border>
+		</Grid>
+		<ScrollViewer Name="LauncherArea" Grid.Row="1" Grid.Column="0" Background="DarkGray" Opacity="0.5" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+	</Grid>
+	-->
+	<!--FlatLauncherMenu-->
+	<!--
+	<Grid Name="FlatLauncherMenu" Theme="{StaticResource pnl_black_50}">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid Name="FlatMenuLeft" Grid.Row="0" Grid.Column="0">
+			<Grid.Background>
+				<SolidColorBrush Color="Gray" Opacity="0.5"/>
+			</Grid.Background>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Border Grid.Row="0" Grid.Column="0" Name="hctbSwitchTo" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/launcher/scene.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">WorkScene</TextBlock>
+				</Grid>
+			</Border>
+			<Border Grid.Row="1" Grid.Column="0" Name="hctbSave" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/launcher/SaveSession.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Save</TextBlock>
+				</Grid>
+			</Border>
+			<Border Grid.Row="2" Grid.Column="0" Name="hctbWebBrowser" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/launcher/WebBrowser.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">WebBrowser</TextBlock>
+				</Grid>
+			</Border>
+			<Border Grid.Row="3" Grid.Column="0" Name="hctbHelp" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/launcher/help.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Help</TextBlock>
+				</Grid>
+			</Border>
+			<Border Grid.Row="4" Grid.Column="0" Name="hcWebCam" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/launcher/user.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Web Cam</TextBlock>
+				</Grid>
+			</Border>
+			<Border Grid.Row="5" Grid.Column="0" Name="hctbExit" Theme="{StaticResource tab_left_black75}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource size_48}" Source="/Assets/Images/tbar0/TBarExit.png"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}">Exit</TextBlock>
+				</Grid>
+			</Border>
+		</Grid>
+		<ScrollViewer Name="FlatMenuArea" Grid.Row="0" Grid.Column="1"/>
+	</Grid>
+	-->
+	<!-- Main Menu Options -->
+	<!-- Main Menu Open -->
+	
+	<!--MainWindowOpen-->
+	<!--
+	<StackPanel Name="FlatRight" Orientation="Vertical" Margin="12,0,0,0">
+		<Grid Name="FlatFilePrompt" Theme="{StaticResource pnl_black_25}">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Row="0" Grid.Column="0" Theme="{StaticResource font_nw_12}">Choose a File:</TextBlock>
+		</Grid>
+		<Grid Name="FlatFileTab" Theme="{StaticResource pnl_black_25}">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<StackPanel Name="LauncherOpenLocal" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+				<Image Theme="{StaticResource size_64}" Source="/Assets/Images/launcher/LocalFolder.png"/>
+				<TextBlock Theme="{StaticResource font_nw_12}">Local File</TextBlock>
+			</StackPanel>
+			<StackPanel Name="LauncherOpenRemote" Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+				<Image ToolTip.Tip.Tip="Abrir Remote" Theme="{StaticResource size_64}" Source="/Assets/Images/launcher/FolderRemote.png"/>
+				<TextBlock Theme="{StaticResource font_nw_12}">Remote File</TextBlock>
+			</StackPanel>
+		</Grid>
+		<ScrollViewer Name="FlatFileArea" Margin="0,8,0,0"/>
+	</StackPanel>
+	-->
+	<!-- Main Menu Save -->
+	
+	<!--FlatLauncherSave-->
+	<!--
+	<StackPanel Name="FlatLauncherSave" Theme="{StaticResource pnl_black_25}">
+		<TextBlock Name="FlatTitle"
+			Theme="{StaticResource font_bo_16}"
+			Margin="8,8,0,8">Save As Options</TextBlock>
+		<Grid Name="InLauncherSave" Theme="{StaticResource pnl_gray_75}">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition MaxWidth="600"/>
+			</Grid.ColumnDefinitions>
+			<Image Name="LauncherSaveAsSession" Grid.Row="0" Grid.Column="0" Source="/Assets/Images/launcher/SaveLocal.png" Theme="{StaticResource hover_6_72}"/>
+			<TextBlock VerticalAlignment="Center" Margin="0, 0, 5, 0" Theme="{StaticResource font_bw_12}" Grid.Row="0" Grid.Column="1">Session</TextBlock>
+			<TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Theme="{StaticResource font_nw_12}" Grid.Row="0" Grid.Column="2">
+					Saves your session, but don't pack files in it.<LineBreak/>It is smaller, but for local use
+			</TextBlock>
+			<Image Name="LauncherSaveAsPack" Grid.Row="1" Grid.Column="0" Source="/Assets/Images/launcher/SavePack.png" Theme="{StaticResource hover_6_72}"/>
+			<TextBlock VerticalAlignment="Center" Theme="{StaticResource font_bw_12}" Grid.Row="1" Grid.Column="1">Pack</TextBlock>
+			<TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Theme="{StaticResource font_nw_12}" Grid.Row="1" Grid.Column="2">
+					Saves your session, and packs all referenced files.<LineBreak/>It's bigger but can be opened on another computer
+			</TextBlock>
+		</Grid>
+	</StackPanel>
+	-->
+
+	<!-- Main Menu About -->
+	<!--FlatLauncherAbout-->
+	<!--
+	<StackPanel Name="FlatLauncherAbout" Margin="0,10,0,0" VerticalAlignment="Top" Theme="{StaticResource pnl_black_75}">
+		<TextBlock Name="FlatTitle"
+		  Theme="{StaticResource font_bo_16}"
+		  Margin="8,8,0,8">About HyperCube</TextBlock>
+		<Border Grid.Row="0" Grid.Column="0" BorderBrush="Orange" BorderThickness="1" CornerRadius="8" Background="Black" Margin="8,8,8,8">
+			<Grid HorizontalAlignment="Left">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Row="0" Grid.Column="0" Theme="{StaticResource font_bw_12}" Width="250">Current Version:</TextBlock>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_nw_12}">20.23.02</TextBlock>
+				<TextBlock Grid.Row="1" Grid.Column="0" Theme="{StaticResource font_bw_12}" Width="250" VerticalAlignment="Center">Integrity Check:</TextBlock>
+				<TextBlock Grid.Row="1" Grid.Column="1" Theme="{StaticResource font_nw_12}" VerticalAlignment="Center" Margin="0, 0,3, 0">(Not Executed)</TextBlock>
+				<TextBlock Name="RunIntegrity" Grid.Row="1" Grid.Column="2" Theme="{StaticResource Button_WB_12}">OK</TextBlock>
+				<TextBlock Grid.Row="2" Grid.Column="0" Theme="{StaticResource font_bw_12}" Width="250" VerticalAlignment="Center">Update:</TextBlock>
+				<TextBlock Grid.Row="2" Grid.Column="1" Theme="{StaticResource font_nw_12}" VerticalAlignment="Center">(Not Verified)</TextBlock>
+				<TextBlock Name="RunUpdate" Grid.Row="2" Grid.Column="2" Theme="{StaticResource Button_WB_12}">OK</TextBlock>
+			</Grid>
+		</Border>
+		<Border Grid.Row="1" Grid.Column="0" Name="FlatConfigTable" BorderBrush="Orange" BorderThickness="1" CornerRadius="8" Background="Black" Margin="8,8,8,8" />
+	</StackPanel>
+	-->
+	<!-- Main Menu Exit -->
+	<!--FlatLauncherExit-->
+	<!--
+	<StackPanel Name="FlatLauncherExit" Margin="0,10,0,0" VerticalAlignment="Top" Theme="{StaticResource pnl_black_75}">
+		<TextBlock Name="FlatTitle"
+			Theme="{StaticResource font_bo_16}"
+			Margin="8,8,0,8">Closing Options</TextBlock>
+		<Border Grid.Row="0" Grid.Column="0" Name="hcLauncherReset" BorderBrush="Orange" BorderThickness="1" CornerRadius="8" Background="Black" Margin="8,8,8,8">
+			<Grid HorizontalAlignment="Left">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource hover_6_44}" Source="/Assets/Images/launcher/scene.png"/>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource Button_WB_12}" Width="250">Close Session</TextBlock>
+				<TextBlock Theme="{StaticResource font_nw_12}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="5, 0, 0, 0">Close the project and return to the main menu</TextBlock>
+			</Grid>
+		</Border>
+		<Border Grid.Row="1" Grid.Column="0" Name="hcLauncherExit" BorderBrush="Orange" BorderThickness="1" CornerRadius="8" Background="Black" Margin="8,8,8,8">
+			<Grid HorizontalAlignment="Left">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Row="0" Grid.Column="0" Theme="{StaticResource hover_6_44}" Source="/Assets/Images/tbar0/TBarExit.png"/>
+				<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource Button_WB_12}" Width="250">Exit</TextBlock>
+				<TextBlock Theme="{StaticResource font_nw_12}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="5, 0, 0, 0">Exit HyperCube4x</TextBlock>
+			</Grid>
+		</Border>
+	</StackPanel>
+	-->
+	<!-- Work Scene Config -->
+	<!--FlatSceneConfig-->
+	<!--
+	<StackPanel Name="FlatSceneConfig" Orientation="Vertical" Theme="{StaticResource pnl_black_25}" Margin="4,4,4,4" MaxWidth="800">
+		<TextBlock Theme="{StaticResource font_bo_16}" Name="FlatTitle" Margin="8,8,0,8">Backdrop Curtain</TextBlock>
+		<TextBlock Name="maincopy" Theme="{StaticResource font_nw_12}">Make your environment pleasant by setting a back image, lens color and lens opacity</TextBlock>
+		<TextBlock Name="LensTitle" Theme="{StaticResource font_bo_14}" Margin="8,8,0,8">Lens Options</TextBlock>
+		<TextBlock Name="lenscopy" Theme="{StaticResource font_nw_12}">Lens opacity 0% is totally transparent while 100% is solid.</TextBlock>
+		<Grid Name="BackGroundGrid" Theme="{StaticResource pnl_gray_75}" Margin="0,8,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Row="0" Grid.Column="0" Theme="{StaticResource font_bw_12}">Lens Color:</TextBlock>
+			<ComboBox Name="cmbOpacityColor" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
+			<TextBlock Grid.Row="1" Grid.Column="0" Theme="{StaticResource font_bw_12}">Lens Opacity:</TextBlock>
+			<TextBox Name="txtBackOpacity" Grid.Row="1" Grid.Column="1" TextAlignment="Right"/>
+			<Slider Name="sldBackOpacity" Grid.Row="2" Grid.ColumnSpan="2" Maximum="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="False"/>
+		</Grid>
+		<TextBlock Name="ImageTitle" Theme="{StaticResource font_bo_14}" Margin="8,8,0,8">Choose a Back Image</TextBlock>
+		<ScrollViewer Name="AreaBackImage"/>
+	</StackPanel>
+	-->
+	<!-- Dialogs -->
+	<!--FlatUserPass-->
+	<!--
+	<Grid Name="FlatUserPass" Theme="{StaticResource tile_black_25}" Margin="4,12,4,12">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Row="0" Grid.Column="1" Theme="{StaticResource font_bw_12}" HorizontalAlignment="Center" Margin="0,4,0,4">Enter Login Information:</TextBlock>
+		<Grid Grid.Row="1" Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Row="0" Grid.Column="0" Theme="{StaticResource font_bw_12}" VerticalAlignment="Center">UserName:</TextBlock>
+			<TextBox Name="txtUserName" Grid.Row="0" Grid.Column="1" MinWidth="200" HorizontalAlignment="Stretch"/>
+			<TextBlock Grid.Row="1" Grid.Column="0" Theme="{StaticResource font_bw_12}" VerticalAlignment="Center">Password:</TextBlock>
+			<TextBox PasswordChar="*" Name="txtUserPass" Grid.Row="1" Grid.Column="1" MinWidth="200" HorizontalAlignment="Stretch"/>
+			
+			<TextBlock Name="SceneLoginOK" Grid.Row="2" Grid.Column="1"
+				   Theme="{StaticResource label_black_25}"
+				   Width="100"
+				   HorizontalAlignment="Left"
+					TextAlignment="Center"
+					   Padding="5"
+					>
+				OK
+			</TextBlock>
+			<Image Name="hcFlatBack" Grid.Row="3" Grid.Column="0" Theme="{StaticResource size_64}" Source="/Assets/Images/launcher/back_row.png" Margin="0, 10, 0, 10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+		</Grid>
+		<TextBox Name="ExtraInfo" IsVisible="False"/>
+	</Grid>
+	-->
+	<!--FlatWebCam-->
+	<!--
+	<StackPanel Name="FlatWebCam" Orientation="Vertical" Theme="{StaticResource pnl_black_75}" Margin="4,4,4,4">
+		<TextBlock Name="FlatTitle" Theme="{StaticResource font_bo_16}" Margin="8,8,0,8">Stage Control</TextBlock>
+		<StackPanel Theme="{StaticResource pnl_gray_75}" Margin="0,0,0,4">
+			<TextBlock Theme="{StaticResource font_bo_14}" Margin="8,8,0,8">Presentation Control</TextBlock>
+			<StackPanel Orientation="Horizontal">
+				<Image Name="EjectDesktop" ToolTip.Tip="Eject this panel to another window" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Desktop/eject.png" Margin="0,0,8,0"/>
+				<Image Name="CamFace0" ToolTip.Tip="Full View" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Camera/CamFull.png" Margin="0,0,4,0"/>
+				<Image Name="CamFace3" ToolTip.Tip="Full Slide" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Camera/CamFront.png" Margin="0,0,8,0"/>
+				<Image Name="FaceBackward" ToolTip.Tip="Previous Slide" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Face/FaceLeft.png" Margin="0,0,4,0"/>
+				<Image Name="FaceForward" ToolTip.Tip="Next Slide" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Face/FaceRight.png"/>
+			</StackPanel>
+			<TextBox Name="FlatCaption" Theme="{StaticResource font_bo_16}" IsVisible="False" MaxWidth="400" MaxHeight="800" TextWrapping="Wrap" AcceptsReturn="True" Margin="8,8,0,8"/>
+			<TextBlock Theme="{StaticResource font_bo_14}" Margin="8,8,0,8">Video Control</TextBlock>
+			<StackPanel Orientation="Horizontal">
+				<Image Name="FaceVideo" ToolTip.Tip="Load Vídeo" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Player/FaceVideo.png"/>
+				<Image Name="FaceVideoPlay" ToolTip.Tip="Start" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Player/MediaPlay.png"/>
+				<Image Name="FaceVideoPause" ToolTip.Tip="Pause" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Player/MediaPause.png"/>
+				<Image Name="FaceVideoStop" ToolTip.Tip="Stop" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/Player/MediaStop.png"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Grid Theme="{StaticResource pnl_gray_25}" MaxWidth="250">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Grid.Row="0" Grid.ColumnSpan="3" Margin="8,8,0,8" Theme="{StaticResource font_bo_14}">Mouse</TextBlock>
+					<Image Name="CurNormal" Grid.Row="1" Grid.Column="0" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/normal.png"/>
+					<Image Name="CurRig_01" Grid.Row="1" Grid.Column="1" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/rig_01.png"/>
+					<Image Name="CurRig_02" Grid.Row="1" Grid.Column="2" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/rig_02.png"/>
+					<Image Name="CurRig_03" Grid.Row="2" Grid.Column="0" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/rig_03.png"/>
+					<Image Name="CurRig_04" Grid.Row="2" Grid.Column="1" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/rig_04.png"/>
+					<Image Name="CurLef_01" Grid.Row="2" Grid.Column="2" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/lef_01.png"/>
+					<Image Name="CurLef_02" Grid.Row="3" Grid.Column="0" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/lef_02.png"/>
+					<Image Name="CurLef_03" Grid.Row="3" Grid.Column="1" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/lef_03.png"/>
+					<Image Name="CurLef_04" Grid.Row="3" Grid.Column="2" Theme="{StaticResource hover_6_36}" Source="/Assets/Images/cursor/lef_04.png"/>
+				</Grid>
+				<Grid Theme="{StaticResource pnl_gray_25}" MaxWidth="200">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Grid.Row="0" Grid.ColumnSpan="3" Margin="8,8,0,8" Theme="{StaticResource font_bo_14}">Zoom</TextBlock>
+					<TextBlock Name="QuaCam27" Grid.Row="1" Grid.Column="0" ToolTip.Tip="Top, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[7]</TextBlock>
+					<TextBlock Name="QuaCam28" Grid.Row="1" Grid.Column="1" ToolTip.Tip="Top, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[8]</TextBlock>
+					<TextBlock Name="QuaCam29" Grid.Row="1" Grid.Column="2" ToolTip.Tip="Top, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center">[9]</TextBlock>
+					<TextBlock Name="QuaCam24" Grid.Row="2" Grid.Column="0" ToolTip.Tip="Center, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[4]</TextBlock>
+					<TextBlock Name="QuaCam25" Grid.Row="2" Grid.Column="1" ToolTip.Tip="Center, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[5]</TextBlock>
+					<TextBlock Name="QuaCam26" Grid.Row="2" Grid.Column="2" ToolTip.Tip="Center, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center">[6]</TextBlock>
+					<TextBlock Name="QuaCam21" Grid.Row="3" Grid.Column="0" ToolTip.Tip="Bottom, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[1]</TextBlock>
+					<TextBlock Name="QuaCam22" Grid.Row="3" Grid.Column="1" ToolTip.Tip="Bottom, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[2]</TextBlock>
+					<TextBlock Name="QuaCam23" Grid.Row="3" Grid.Column="2" ToolTip.Tip="Bottom, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center">[3]</TextBlock>
+					<TextBlock Name="HndCamZ2" Grid.Row="4" Grid.Column="0" ToolTip.Tip="Zoom Plus" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[+]</TextBlock>
+					<TextBlock Name="HndCamY2" Grid.Row="4" Grid.Column="1" ToolTip.Tip="move up" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[W]</TextBlock>
+					<TextBlock Name="HndCamZ1" Grid.Row="4" Grid.Column="2" ToolTip.Tip="Zoom Less" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center">[-]</TextBlock>
+					<TextBlock Name="HndCamX1" Grid.Row="5" Grid.Column="0" ToolTip.Tip="move left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[A]</TextBlock>
+					<TextBlock Name="HndCamY1" Grid.Row="5" Grid.Column="1" ToolTip.Tip="move down" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 5, 0">[S]</TextBlock>
+					<TextBlock Name="HndCamX2" Grid.Row="5" Grid.Column="2" ToolTip.Tip="move right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center">[D]</TextBlock>
+				</Grid>
+				<Grid Theme="{StaticResource pnl_gray_25}" MaxWidth="250">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Grid.Row="0" Grid.ColumnSpan="3" Margin="8,8,0,8" Theme="{StaticResource font_bo_14}">WebCam</TextBlock>
+					<TextBlock Name="WCamTL" Grid.Row="1" Grid.Column="0" ToolTip.Tip="Top, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">TE</TextBlock>
+					<TextBlock Name="WCamTC" Grid.Row="1" Grid.Column="1" ToolTip.Tip="Top, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">TC</TextBlock>
+					<TextBlock Name="WCamTR" Grid.Row="1" Grid.Column="2" ToolTip.Tip="Top, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">TD</TextBlock>
+					<TextBlock Name="WCamCL" Grid.Row="2" Grid.Column="0" ToolTip.Tip="Center, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">CE</TextBlock>
+					<TextBlock Name="WCamCC" Grid.Row="2" Grid.Column="1" ToolTip.Tip="Center, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">CC</TextBlock>
+					<TextBlock Name="WCamCR" Grid.Row="2" Grid.Column="2" ToolTip.Tip="Center, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">CD</TextBlock>
+					<TextBlock Name="WCamBL" Grid.Row="3" Grid.Column="0" ToolTip.Tip="Bottom, Left" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">BE</TextBlock>
+					<TextBlock Name="WCamBC" Grid.Row="3" Grid.Column="1" ToolTip.Tip="Bottom, Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">BC</TextBlock>
+					<TextBlock Name="WCamBR" Grid.Row="3" Grid.Column="2" ToolTip.Tip="Bottom, Right" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">BD</TextBlock>
+					<TextBlock Name="WCamINC" Grid.Row="4" Grid.Column="0" ToolTip.Tip="Increase" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">Increase</TextBlock>
+					<TextBlock Name="WCamCEN" Grid.Row="4" Grid.Column="1" ToolTip.Tip="Increase and Center" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">Center</TextBlock>
+					<TextBlock Name="WCamBACK" Grid.Row="4" Grid.Column="2" ToolTip.Tip="Back to original place" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">Back</TextBlock>
+					<TextBlock Name="WCam43" Grid.Row="5" Grid.Column="0" ToolTip.Tip="Aspect 4:3" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">4:3</TextBlock>
+					<TextBlock Name="WCam169" Grid.Row="5" Grid.Column="1" ToolTip.Tip="Aspect 16:9" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">16:9</TextBlock>
+					<TextBlock Name="WCamClose" Grid.Row="5" Grid.Column="2" ToolTip.Tip="End the camera" Theme="{StaticResource button_nw_12}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5, 0, 5, 0">End Camera</TextBlock>
+				</Grid>
+			</StackPanel>
+		</StackPanel>
+	</StackPanel>
+   -->
+   <!--ScreenViewPort-->
+	<!--NÃO TEM AINDA-->
+</UserControl>

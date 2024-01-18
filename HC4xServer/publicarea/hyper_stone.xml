@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hyper_stone" 
+	NodeType="text/html" 
+	ModelLayout="ContentPage" 
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeHeader>
+		<![CDATA[
+  <div class="container-fluid" style="background-color: #F0F0E2;">
+    <div class="container py-5">
+      <h1 class="text-center text-primary">HyperStone</h1>
+      <hr class="mx-auto w-50">
+      <h3 class="text-center text-primary text-uppercase">Conheça nossos resultados</h3>
+      <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5">
+        <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a>
+        <a href="/publicarea/pt/download" class="text-decoration-none btn btn-outline-primary" target="_blank">Clique aqui para baixar o HyperCube4x</a>
+      </div>
+
+      <br>
+      <div class="row my-5">
+        <h3 class="text-uppercase text-center text-primary mb-3">Imagens Cedidas pela CS3 revestimentos</h3>
+        <hr class="w-100 mx-auto mb-3">
+			<div class="container my-5">
+			  <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3  g-4">
+]]>
+	</NodeHeader>
+	<NodeContent>
+		<![CDATA[
+<div class="col">
+  <a href="{hc4x-key:url_template}" class="card text-decoration-none">
+    <img src="{hc4x-key:productCover}" class="card-img-top w-100" alt="{hc4x-key:description}" height="352">
+    <div class="card-body">
+      <p class="card-text text-center text-dark">{hc4x-key:description}</p>
+    </div>
+  </a>
+</div>]]>
+	</NodeContent>
+	<NodeFooter>
+		<![CDATA[
+      </div>
+     </div>
+    </div>	
+  </div>
+</div>	]]>
+	</NodeFooter>
+</NodeInterface>
+
+
+
+
+

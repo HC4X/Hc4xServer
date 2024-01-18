@@ -1,0 +1,107 @@
+A:link 	     {font:12px verdana; color:white; text-decoration: none;}
+A:visited    {font:12px verdana; color:navy; text-decoration: none;}
+A:active     {font:12px verdana; color:navy; text-decoration: none;}
+A:hover      {font:12px verdana; color:navy; text-decoration: none;}
+.ErrorText {font:12px verdana; font-weight:bold; color:red; }
+.Table   {padding-left:0.2cm; padding-top:0.2cm; border:1px solid black; }
+.TdLabel {font:12px verdana; font-weight:bold; }
+.TdNormal0 {font:12px verdana; }
+.TdNormal1 {font:12px verdana; background-color: rgb(210, 210, 220); }
+.TdRight0 {font:12px verdana; text-align:right; }
+.TdRight1 {font:12px verdana; text-align:right; background-color: rgb(210, 210, 220); }
+.TdTitle {font:14px verdana; font-weight:bold; color:white; background-color: rgb(50, 50, 60); }
+.Text    {font:12px verdana; border-left:1px solid gray; border-top:1px solid gray;}
+
+/* Lens Style */
+.LensGray85, .button3D {
+  background: rgba(70, 70, 70, 0.85);
+}
+.LensGray75 {
+  background: rgba(70, 70, 70, 0.75);
+}
+.LensGray50 {
+  background: rgba(70, 70, 70, 0.5);
+}
+.LensBlack75 {
+  background: rgba(0, 0, 0, 0.75);
+}
+.LensBlack50 {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* end */
+/* Paragraph Style */
+.pMenu16, .ALink16:link, .ALink16:visited, .ALink16:hover  {
+  font-family: Verdana;
+  font-size: 16px;
+  color: white;
+}
+.pMenu20 {
+  font-family: Verdana;
+  font-size: 20px;
+  color: white;
+}
+.pMenu24 {
+  font-family: Verdana;
+  font-size: 24px;
+  color: white;
+}
+.pLight24 {
+  font-family: Verdana;
+  font-size: 24px;
+  color: yellow;
+}
+.pLight20 {
+  font-family: Verdana;
+  font-size: 20px;
+  color: yellow;
+}
+.pLight16 {
+  font-family: Verdana;
+  font-size: 16px;
+  color: yellow;
+}
+.pLight12 {
+  font-family: Verdana;
+  font-size: 12px;
+  color: yellow;
+}
+.pTitle32 {
+  font-family: Verdana;
+  font-size: 32px;
+  font-weight: bold;
+  color: orange;
+}
+.pTitle28 {
+  font-family: Verdana;
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+}
+.pTitle24 {
+  font-family: Verdana;
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+}
+.pTitle16 {
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: bold;
+  color: orange;
+}
+/* end */
+/* Link */
+.ALink16:link, .ALink16:visited, .ALink16:active, .ALink16:hover  {
+  color:navy;
+  font-weight:bold;
+}
+/* end */
+
+/* Border Style */
+.button3D:hover {
+  color: orange;
+}
+/* end */
+body {
+  background-image: url("../images/background/back_default.png");
+}

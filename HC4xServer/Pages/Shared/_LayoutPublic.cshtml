@@ -1,0 +1,27 @@
+﻿@using HC4xServer.Core;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  @await RenderSectionAsync(GearCore.c_SectorHeadMeta)
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  @await RenderSectionAsync(GearCore.c_SectorHeadLink)
+  <link rel="shortcut icon" type="image/x-icon" href="~/images/ico/HyperCube.ico" />
+  <title>@ViewData[GearCore.c_tagtitle]</title>
+</head>
+<body>
+  @await RenderSectionAsync(GearCore.c_SectorBodyHeader)
+  <!-- main role="main" class="pb-3" -->
+  @RenderBody()
+  <!--/main-->
+  @await RenderSectionAsync(GearCore.c_SectorBodyFooter)
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

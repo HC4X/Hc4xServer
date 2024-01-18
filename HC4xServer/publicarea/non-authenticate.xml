@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="non-authenticate" 
+	NodeType="text/html" 
+	ModelLayout="ContentPage"
+  htmltitle="Non-Authenticate">
+	<NodeContent>
+		<![CDATA[<!-- non-athenticate -->
+      <div class="container-fluid my-5">
+          <div class="row d-block">
+              <div class="col-4 my-3  mx-auto d-block ">
+                  <img src="/images/general/undraw_Questions_re_1fy7.png" class="img-fluid" alt="Sample image">
+                  <h4 class="text-uppercase text-center my-3">Seção expirada ou não autenticada</h4>
+                  <p class="text-uppercase text-center text-secondary"><a href="/publicarea/pt/login">Clique aqui</a> para fazer login</p>
+              </div>
+          </div>
+      </div>]]>
+	</NodeContent>
+</NodeInterface>

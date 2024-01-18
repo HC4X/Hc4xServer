@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NaturalStone pkeyCustomer="" namecustomer="" emailContact="" razaoSocial="" cnpjCpj="" site="" descCustomer="" logoCustomer="" folderCustomer="" nameContact=""  atUpdate="">
+  <SectorProduct>
+    <NodeProduct pkeyStoneProduct="" pkeyCustomer="" color="" description="" fichaTecnica="" apresentacao="" >
+      <NodeSlab pkeyStoneslab="1" pkeyStoneProduct="1" area="" thickness="" weight="" quality="" bundle="" url="lab1" />
+      <NodeSlab pkeyStoneslab="2" pkeyStoneProduct="1" area="" thickness="" weight="" quality="" bundle="" url="lab2" />
+      <NodeSlab pkeyStoneslab="3" pkeyStoneProduct="1" area="" thickness="" weight="" quality="" bundle="" url="lab3" />
+      <NodeSlab pkeyStoneslab="4" pkeyStoneProduct="1" area="" thickness="" weight="" quality="" bundle="" url="lab4" />
+      <NodeSlab pkeyStoneslab="5" pkeyStoneProduct="1" area="" thickness="" weight="" quality="" bundle="" url="lab5" />
+    </NodeProduct>
+    <NodeProduct pkeyStoneProduct="" pkeyCustomer="" color="" description="" fichaTecnica="" apresentacao="" />
+    <NodeProduct pkeyStoneProduct="" pkeyCustomer="" color="" description="" fichaTecnica="" apresentacao="" />
+    <NodeProduct pkeyStoneProduct="" pkeyCustomer="" color="" description="" fichaTecnica="" apresentacao="" />
+  </SectorProduct>
+</NaturalStone>
+
+
+

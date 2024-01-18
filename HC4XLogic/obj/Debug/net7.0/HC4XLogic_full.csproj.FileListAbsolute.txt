@@ -1,0 +1,17 @@
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4xServer.deps.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4xServer.runtimeconfig.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\appsettings.Development.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\appsettings.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4xServer.staticwebassets.runtime.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4xServer.exe
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4XLogic.deps.json
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4XLogic.dll
+L:\Documentos\vs\2023\HC4xServer\HC4xServer\bin\Debug\net7.0\HC4XLogic.pdb
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic_full.csproj.AssemblyReference.cache
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic_full.GeneratedMSBuildEditorConfig.editorconfig
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic_full.csproj.CoreCompileInputs.cache
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic_full.csproj.CopyComplete
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic.dll
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\refint\HC4XLogic.dll
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\HC4XLogic.pdb
+L:\Documentos\vs\2023\HC4xServer\HC4XLogic\obj\Debug\net7.0\ref\HC4XLogic.dll

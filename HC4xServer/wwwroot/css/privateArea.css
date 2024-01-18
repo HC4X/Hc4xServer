@@ -1,0 +1,93 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.text-uppercase {
+  font-family: 'Verdana', sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.offcanvas {
+  max-width: 320px;
+}
+
+/* cards da index*/
+#initial_private_area .card {
+  transition: all 0.3s;
+}
+
+#initial_private_area .card:hover {
+  transform: scale(1.05);
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* imagens do perfil*/
+.max-width {
+  max-width: 500px;
+  width: 100%;
+}
+
+#perfil-image {
+  max-width: 250px;
+  width: 95%;
+  transition: background;
+  cursor: pointer;
+}
+
+#perfil-image:hover {
+  background-color: azure;
+}
+
+/* upload de imagens*/
+.picture{
+  max-width: 600px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed #aaa;
+  cursor: pointer;
+  font-family: Verdana, sans-serif;
+}
+
+.picture:hover{
+  color: #777;
+  border: 2px dashed #777;
+  background: #aaa;
+}
+
+/*catalogo page*/
+.empresa-section {
+  background-color: rgb(65, 65, 65);
+}
+
+.imagem-empresa {
+  width: 200px;
+  height: 200px;
+}
+
+.main-examples {
+  background-color: rgb(221, 221, 221);
+}
+
+#card-body {
+  background-color: rgb(218, 218, 218);
+}
