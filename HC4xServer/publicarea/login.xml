@@ -4,7 +4,8 @@
 	NodeType="text/html"
 	ModelLayout="SingleForm"
 	htmltitle="HyperCube4x - Um mundo possível"
-	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler"
+    Revision="2024-01-19 17:08">
 	<NodeForm>
 		<![CDATA[
     <section>
