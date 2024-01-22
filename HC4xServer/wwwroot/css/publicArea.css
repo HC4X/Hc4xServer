@@ -7,7 +7,6 @@ body {
   height: 100%;
   justify-content: space-between;
 }
-
 p {
   margin: 0;
   padding: 0;
@@ -182,6 +181,11 @@ h1 {
   margin: auto;
 }
 
+/*newmailcode*/
+#newmailcode img{
+  height: 300px;
+}
+
 .legenda {
   width: 100%;
   height: 100%;
@@ -204,8 +208,6 @@ h1 {
   background-color: #F0F0E2;
 }
 
-
-
 #hyper_library .card{
   max-width: 400px;
   width: 100%;
@@ -217,7 +219,6 @@ h1 {
   width: 100%;
   height: 100%;
 }
-
 
 @media (max-width: 1450px) {
   .cards {

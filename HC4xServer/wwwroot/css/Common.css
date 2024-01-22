@@ -9,6 +9,7 @@
 
 #footer {
   background: linear-gradient(90deg, rgba(18, 84, 223, 1) 0%, rgba(91, 135, 227, 1) 35%, rgba(146, 181, 255, 1) 100%);
+  width: 100%;
 }
 
 /* Image Size */

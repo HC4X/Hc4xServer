@@ -32,13 +32,13 @@
         </nav>
         ]]>
     </NodeHeader>
-  <NodeFooter>
-    <![CDATA[
-    <div class="container-fluid p-3" id="footer">
-        <div>
-            <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
-        </div>
-    </div>
-    ]]>
+<NodeFooter>
+  <![CDATA[
+  <div class="container-fluid p-3" id="footer">
+      <div>
+          <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+      </div>
+  </div>
+  ]]>
 </NodeFooter>
 </NodeInterface>

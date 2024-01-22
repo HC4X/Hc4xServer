@@ -61,18 +61,18 @@
 	<NodeFooter>
 		<![CDATA[
 				<script>
-                    const icon = document.querySelector(".bi-eye-fill");
-                    const inputPass = document.querySelector("#user_pass");
+          const icon = document.querySelector(".bi-eye-fill");
+          const inputPass = document.querySelector("#user_pass");
 
-                    icon.addEventListener("click", function(){
-                        icon.classList.toggle("bi-eye-slash-fill");
-                        if(inputPass.type === "password"){
-                            inputPass.type = "text";
-                        } else {
-                            inputPass.type = "password";
-                        }
-                    });
-                </script>
+          icon.addEventListener("click", function(){
+              icon.classList.toggle("bi-eye-slash-fill");
+              if(inputPass.type === "password"){
+                  inputPass.type = "text";
+              } else {
+                  inputPass.type = "password";
+              }
+          });
+        </script>
 				]]>
 	</NodeFooter>
 </NodeInterface>
