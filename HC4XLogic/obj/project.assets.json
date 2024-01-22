@@ -36,11 +36,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HC4xServer_20240117\\HC4xServer\\HC4XLogic\\HC4XLogic.csproj",
+      "projectUniqueName": "D:\\RaphaelHC4XSERVER\\Hc4xServer\\HC4XLogic\\HC4XLogic.csproj",
       "projectName": "HC4XLogic",
-      "projectPath": "D:\\HC4xServer_20240117\\HC4xServer\\HC4XLogic\\HC4XLogic.csproj",
+      "projectPath": "D:\\RaphaelHC4XSERVER\\Hc4xServer\\HC4XLogic\\HC4XLogic.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "D:\\HC4xServer_20240117\\HC4xServer\\HC4XLogic\\obj\\",
+      "outputPath": "D:\\RaphaelHC4XSERVER\\Hc4xServer\\HC4XLogic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,8 +62,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\HC4xServer_20240117\\HC4xServer\\HC4xServer\\HC4xServer.csproj": {
-              "projectPath": "D:\\HC4xServer_20240117\\HC4xServer\\HC4xServer\\HC4xServer.csproj"
+            "D:\\RaphaelHC4XSERVER\\Hc4xServer\\HC4xServer\\HC4xServer.csproj": {
+              "projectPath": "D:\\RaphaelHC4XSERVER\\Hc4xServer\\HC4xServer\\HC4xServer.csproj"
             }
           }
         }
