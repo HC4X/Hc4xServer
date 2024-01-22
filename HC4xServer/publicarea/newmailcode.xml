@@ -7,25 +7,25 @@
 	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
 	<NodeForm>
 		<![CDATA[ 
-<section>
-          <div class="container-fluid">
-            <div class="row d-block">
-            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3  mx-auto d-block ">
-                <img src="/images/general/undraw_letter_re_8m03.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
-                <h4 class="text-uppercase text-center my-3">Deseja enviar um novo código de confirmação?</h4>
-                <p class="text-uppercase text-center text-secondary">Informe seu e-mail para o envio do código:</p>
+<div class="container-fluid" id="newmailcode">
+    <div class="row d-flex flex-column justify-content-center align-items-center">
+        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3 mx-auto d-block">
+            <img src="/images/general/undraw_letter_re_8m03.svg" class="img-fluid mx-auto d-block" alt="Sample image"/>
+            <h4 class="text-uppercase text-center my-3">Deseja enviar um novo código de confirmação?</h4>
+            <p class="text-uppercase text-center text-secondary">Informe seu e-mail para o envio do código:</p>
+        </div>
+        <!-- Email input -->
+        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 my-3 mx-auto d-block">
+            <div class="form-outline">
+                <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                <input type="email" name="user_email" id="user_email" class="form-control form-control-lg mb-4" placeholder="nome@email.com" required />
             </div>
-            <!-- Email input -->
-            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4  my-3 mx-auto d-block">
-                <div class="form-outline mb-4">
-                    <label class="form-label lead fs-6" for="user_email">E-mail</label>
-                    <input type="email" name="user_email" value="" id="user_email" class="form-control form-control-lg"
-                        placeholder="nome@email.com" required />
-                </div>
-                <a href="/publicarea/pt/email_send" class="text-decoration-none"><button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button></a>
-            </div>
+            <a href="/publicarea/pt/email_send" class="text-decoration-none">
+                <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button>
+            </a>
         </div>
     </div>
-</section> ]]>
+</div>
+]]>
 	</NodeForm>
 </NodeInterface>
