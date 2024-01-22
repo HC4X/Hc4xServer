@@ -406,3 +406,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 .sln.iml
 *.json
+HC4xServer/HC4xServer.csproj.user
