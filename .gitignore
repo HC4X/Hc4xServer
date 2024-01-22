@@ -31,6 +31,11 @@ bld
 [Oo]bj
 [Ll]og
 [Ll]ogs
+bin/Release/
+bin/Debug/
+obj/Debug/
+/.vs/HC4xServer/
+/Hc4xServer/HC4xServer/obj
 
 # Visual Studio 20152017 cacheoptions directory
 .vs
@@ -388,7 +393,9 @@ FodyWeavers.xsd
 
 # Local History for Visual Studio Code
 .history
-
+.cache
+.editorconfig
+.suo
 # Windows Installer files from build outputs
 .cab
 .msi
@@ -398,3 +405,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 .sln.iml
+*.json
