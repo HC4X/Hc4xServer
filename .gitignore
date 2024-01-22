@@ -398,3 +398,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 .sln.iml
+HC4xServer/bin/Debug/net7.0/HC4xServer.pdb
+HC4xServer/bin/Debug/net7.0/HC4xServer.exe
+HC4xServer/bin/Debug/net7.0/HC4xServer.dll
+HC4xServer/bin/Debug/net7.0/HC4XLogic.pdb
+HC4xServer/bin/Debug/net7.0/HC4XLogic.dll
