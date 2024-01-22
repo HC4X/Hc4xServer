@@ -32,7 +32,8 @@ bld
 [Ll]og
 [Ll]ogs
 bin/Release/
-bin/Debug
+bin/Debug/
+obj/Debug/
 
 # Visual Studio 20152017 cacheoptions directory
 .vs
