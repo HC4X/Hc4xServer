@@ -5,183 +5,184 @@
   htmltitle="HyperCube 4x">
 <NodeContent>
 		<![CDATA[
-<div id="hero" class="d-flex flex-column justify-content-center">
-
-  <div class="d-flex flex-column p-2">
+  <div id="hero" class="d-flex flex-column justify-content-center">
 
     <div class="d-flex flex-column p-2">
-      <h1 class="display-1 p-2 text-center text-light">HYPERCUBE 4X</h1>
-      <p class="lead p-2 text-light text-center">Plataforma de realidade virtual para a Web 3.0 e o Metaverso </p>
-    </div>
-  </div>
 
-  <div class="d-flex align-items-center justify-content-evenly position-relative">
-      <div class="text-center">
-          <img src="/images/logo/HyperCubeAlfaHero.png" alt="Logo HyperCube4X" class="img-fluid">
+      <div class="d-flex flex-column p-2">
+        <h1 class="display-1 p-2 text-center text-light">HYPERCUBE 4X</h1>
+        <p class="lead p-2 text-light text-center">Plataforma de realidade virtual para a Web 3.0 e o Metaverso </p>
       </div>
-<div class="absolute d-flex flex-md-row flex-column align-items-center">
-    <p class="m-0 p-0 text-start" style="font-size: 1rem; width:12em; height: 8em; color:yellow;">Conheça mais sobre o HyperStone baixando grátis nosso e-book <a style="text-decoration: none; color:yellow;"href="https://www-agenciarabisco-com.rds.land/hypercube-4x" alt="Landing page"><b>clicando aqui</b></a> ou acessando o QR-code</p>
-    <img src="/images/general/qrcode_hc4x.jfif" alt="Logo HyperCube4X" class="img-fluid" width="200px">
-</div>
-	</div>
-
-</div>
-<!-- Sobre -->
-<div class="container-fluid p-5" id="sobre">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block">
-      <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
-    </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
-      <h1 class="text-uppercase text-center mt-5">Saiba mais sobre o Hypercube 4X</h1>
-      <hr class="w-50 mx-auto">
-      <p>
-        <ul>
-          <li class="mx-2 p-3">
-            O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a
-            cognição especial,
-            memória especial e organização espacial do cérebro humano
-          </li>
-          <li class="mx-2 p-3">
-            Utiliza metáforas e algoritmos próprios para criar interação simbiótica e
-            visualização de dados
-            mais parecida com o mundo real.
-          </li>
-        </ul>
-      </p>
-    </div>
-  </div>
-</div>
-<!-- Produtos -->
-<div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
-  <div class="container-fluid">
-    <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
-    <hr class="w-100">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
-    <hr class="w-100">
-    <div class="cards">
-        <a id="card" href="/publicarea/pt/hyper_analyzer">
-            <h2>Hyper Analyzer</h2>
-            <div class="imagem-descricao">
-                <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
-                <p>Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação.</p>
-            </div>
-            <p class="text-primary">Clique no card para saber mais</p>
-         </a> 
-        <a id="card" href="/publicarea/pt/hyper_book">
-            <h2>Hyper Book</h2>
-            <div class="imagem-descricao">
-                <img src="/images/logo/hb.png" alt="Aplicação Hyper Analyzer">
-                <p>"Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.</p>
-            </div>
-            <p class="text-primary">Clique no card para saber mais</p>
-        </a>
-        <a id="card" href="/publicarea/pt/hyper_relational">
-            <h2>Hyper Relational</h2>
-            <div class="imagem-descricao">
-                <img src="/images/logo/hr.png" alt="Aplicação Hyper Analyzer">
-                <p>Conecta Sistemas de Gerenciamento de Banco de Dados Relacional (RDMS) a texto estruturado, como json e xml, por exemplo.</p>
-            </div>
-            <p class="text-primary">Clique no card para saber mais</p>
-        </a>   
     </div>
 
-    <!-- HyperStone -->
-    <hr class="w-100 mt-5 mx-auto">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso específico</h2>
-    <hr class="w-100 mx-auto mb-5">
-      <div class="row g-3 justify-content-center">  
-	    <a id="card" href="/publicarea/pt/hyper_stone">
-            <h2>Hyper Stone</h2>
-            <div class="imagem-descricao">
-                <img src="/images/logo/LogoHyperStone.png" alt="Aplicação Hyper Stone">
-                <p>Ambiente de realidade virtual para visualização de chapas de "natural stone" que simula a sensação de distância e o reflexo da chapa no manuseio e interação com o material real.</p>
-            </div>
-            <p class="text-primary">Clique no card para saber mais</p>
-        </a>
-          <!-- HyperLibrary-->
-		  <a id="card" href="/publicarea/pt/hyper_library">
-            <h2>Hyper Library</h2>
-            <div class="imagem-descricao">
-                <img src="/images/logo/hb.png" alt="Aplicação Hyper Library">
-                <p>Ambiente de realidade virtual que proporciona uma leitura imersiva dos livros do acervo da Biblioteca Municipal de Cachoeiro de Itapemirim "Major Walter dos Santos Paiva".</p>
-            </div>
-            <p class="text-primary">Clique no card para saber mais</p>
-        </a>
+    <div class="d-flex align-items-center justify-content-evenly position-relative">
+        <div class="text-center">
+            <img src="/images/logo/HyperCubeAlfaHero.png" alt="Logo HyperCube4X" class="img-fluid">
         </div>
-      </div>
+  <div class="absolute d-flex flex-md-row flex-column align-items-center">
+      <p class="m-0 p-0 text-start" style="font-size: 1rem; width:12em; height: 8em; color:yellow;">Conheça mais sobre o HyperStone baixando grátis nosso e-book <a style="text-decoration: none; color:yellow;"href="https://www-agenciarabisco-com.rds.land/hypercube-4x" alt="Landing page"><b>clicando aqui</b></a> ou acessando o QR-code</p>
+      <img src="/images/general/qrcode_hc4x.jfif" alt="Logo HyperCube4X" class="img-fluid" width="200px">
   </div>
-<!-- Veja mais -->
-<div class="container-fluid" id="vejaMais">
-  <div class="container my-5 p-3">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
-    <hr class="w-25 mx-auto  mb-5">
-    <div class="row justify-content-center" id="veja-mais">
-      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
-        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded">
-          <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
-          <div class="title">
-            <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
-          </div>
-          <div class="text">
-            <span>Saiba como realizar suas leituras imersivas no Hyperbook</span>
+    </div>
+
+  </div>
+  <!-- Sobre -->
+  <div class="container-fluid p-5" id="sobre">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block">
+        <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
+        <h1 class="text-uppercase text-center mt-5">Saiba mais sobre o Hypercube 4X</h1>
+        <hr class="w-50 mx-auto">
+        <p>
+          <ul>
+            <li class="mx-2 p-3">
+              O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a
+              cognição especial,
+              memória especial e organização espacial do cérebro humano
+            </li>
+            <li class="mx-2 p-3">
+              Utiliza metáforas e algoritmos próprios para criar interação simbiótica e
+              visualização de dados
+              mais parecida com o mundo real.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Produtos -->
+  <div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
+    <div class="container-fluid">
+      <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
+      <hr class="w-100">
+      <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
+      <hr class="w-100">
+      <div class="cards">
+          <a id="card" href="/publicarea/pt/hyper_analyzer">
+              <h2>Hyper Analyzer</h2>
+              <div class="imagem-descricao">
+                  <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
+                  <p>Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação.</p>
+              </div>
+              <p class="text-primary">Clique no card para saber mais</p>
+           </a> 
+          <a id="card" href="/publicarea/pt/hyper_book">
+              <h2>Hyper Book</h2>
+              <div class="imagem-descricao">
+                  <img src="/images/logo/hb.png" alt="Aplicação Hyper Analyzer">
+                  <p>"Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.</p>
+              </div>
+              <p class="text-primary">Clique no card para saber mais</p>
+          </a>
+          <a id="card" href="/publicarea/pt/hyper_relational">
+              <h2>Hyper Relational</h2>
+              <div class="imagem-descricao">
+                  <img src="/images/logo/hr.png" alt="Aplicação Hyper Analyzer">
+                  <p>Conecta Sistemas de Gerenciamento de Banco de Dados Relacional (RDMS) a texto estruturado, como json e xml, por exemplo.</p>
+              </div>
+              <p class="text-primary">Clique no card para saber mais</p>
+          </a>   
+      </div>
+
+      <!-- HyperStone -->
+      <hr class="w-100 mt-5 mx-auto">
+      <h2 class="text-uppercase text-center p-1">Aplicações de uso específico</h2>
+      <hr class="w-100 mx-auto mb-5">
+        <div class="row g-3 justify-content-center">  
+        <a id="card" href="/publicarea/pt/hyper_stone">
+              <h2>Hyper Stone</h2>
+              <div class="imagem-descricao">
+                  <img src="/images/logo/LogoHyperStone.png" alt="Aplicação Hyper Stone">
+                  <p>Ambiente de realidade virtual para visualização de chapas de "natural stone" que simula a sensação de distância e o reflexo da chapa no manuseio e interação com o material real.</p>
+              </div>
+              <p class="text-primary">Clique no card para saber mais</p>
+          </a>
+            <!-- HyperLibrary-->
+        <a id="card" href="/publicarea/pt/hyper_library">
+              <h2>Hyper Library</h2>
+              <div class="imagem-descricao">
+                  <img src="/images/logo/hb.png" alt="Aplicação Hyper Library">
+                  <p>Ambiente de realidade virtual que proporciona uma leitura imersiva dos livros do acervo da Biblioteca Municipal de Cachoeiro de Itapemirim "Major Walter dos Santos Paiva".</p>
+              </div>
+              <p class="text-primary">Clique no card para saber mais</p>
+          </a>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
-        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
-          <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
-          <div class="title">
-            <h4 class="text-uppercase text-center">Conheça o Hypercube4X</h4>
-          </div>
-          <div class="text">
-            <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+    </div>
+  <!-- Veja mais -->
+  <div class="container-fluid" id="vejaMais">
+    <div class="container my-5 p-3">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
+      <hr class="w-25 mx-auto  mb-5">
+      <div class="row justify-content-center" id="veja-mais">
+        <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+          <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded">
+            <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
+            </div>
+            <div class="text">
+              <span>Saiba como realizar suas leituras imersivas no Hyperbook</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
-        <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
-          <iframe src="https://www.youtube.com/embed/aswTtECl_Zo" class="video-part"></iframe>
-          <div class="title">
-            <h4 class="text-uppercase text-center">Hyper Stone</h4>
+        <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+          <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
+            <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">Conheça o Hypercube4X</h4>
+            </div>
+            <div class="text">
+              <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+            </div>
           </div>
-          <div class="text">
-            <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+          <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
+            <iframe src="https://www.youtube.com/embed/aswTtECl_Zo" class="video-part"></iframe>
+            <div class="title">
+              <h4 class="text-uppercase text-center">Hyper Stone</h4>
+            </div>
+            <div class="text">
+              <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Empresas parceiras -->
-<div class="container-fluid" id="parceiros">
-  <div class="container justify-content-center p-5">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
-    <hr class="w-25 mx-auto mb-5">
-    <div class="row justify-content-center pb-5">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
-        <a href="https://www.ifes.edu.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
-          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/Ifes.png" width="256px" height="256px" alt="Ifes">
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
-        <a href="https://fapes.es.gov.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
-          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/fapes.png" width="256px" height="256px" alt="Fapes">
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
-        <a href="https://www.inovativa.online/" target="_blank" rel="noopener noreferrer" class="mx-auto">
-          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/inovativa.svg" width="256px" height="256px" alt="Inovativa">
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
-        <a href="https://www.tecvitoria.com.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
-          <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/tecVitoria.svg" width="256px" height="256px" alt="Tec Vitória">
-        </a>
+  <!-- Empresas parceiras -->
+  <div class="container-fluid" id="parceiros">
+    <div class="container justify-content-center p-5">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
+      <hr class="w-25 mx-auto mb-5">
+      <div class="row justify-content-center pb-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
+          <a href="https://www.ifes.edu.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+            <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/Ifes.png" width="256px" height="256px" alt="Ifes">
+          </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
+          <a href="https://fapes.es.gov.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+            <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/fapes.png" width="256px" height="256px" alt="Fapes">
+          </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+          <a href="https://www.inovativa.online/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+            <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/inovativa.svg" width="256px" height="256px" alt="Inovativa">
+          </a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl- mx-auto p-3">
+          <a href="https://www.tecvitoria.com.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
+            <img class="img-fluid img-thumbnail rounded-circle border border-primary align-middle" src="/images/empresas_parceiras/tecVitoria.svg" width="256px" height="256px" alt="Tec Vitória">
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 ]]>
-</NodeContent>
+	</NodeContent>
 </NodeInterface>
