@@ -1,3 +1,8 @@
+html {
+  font-size: 14px;
+  height: 100%;
+}
+
 body {
   font-family: 'Verdana', sans-serif;
   text-align: justify;
@@ -21,10 +26,6 @@ p {
   background-color: #F0F0E2;
 }
 
-html {
-  font-size: 14px;
-  height: 100%;
-}
 
 @media (min-width: 768px) {
   html {

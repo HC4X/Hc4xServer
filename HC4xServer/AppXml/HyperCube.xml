@@ -92,6 +92,7 @@
       <NodeInterface id="equipe" FileName="publicarea\equipe.xml"/>
       <NodeInterface id="login" FileName="publicarea\login.xml"/>
 			<NodeInterface id="forgot-pass" FileName="publicarea\forgot-pass.xml" />
+			<NodeInterface id="before_after_hs" FileName="publicarea\before_after_hs.xml" />
 			<NodeInterface id="reset_pass" FileName="publicarea\reset_pass.xml"/>
       <NodeInterface id="email_send" FileName="publicarea\email_send.xml"/>
 			<NodeInterface id="send_success" FileName="publicarea\send_success.xml"/>
