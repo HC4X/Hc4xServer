@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="before_after_hs" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube 4x">
+  <NodeContent>
+    <![CDATA[
+<div class="container-fluid" style="background-color: #F0F0E2;">
+  <div class="container py-5">
+    <h1 class="text-center text-primary">HyperStone</h1>
+    <hr class="mx-auto w-50">
+    <h3 class="text-center text-primary text-uppercase">Conheça nossos resultados</h3>
+    <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5"> <a
+        href="https://api.hypercube4x.com.br/hyperstone/upload-form"
+        class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a> <a
+        href="/publicarea/pt/download" class="text-decoration-none btn btn-outline-primary">Clique aqui para baixar o
+        HyperCube4x</a> </div>
+    <div class="row my-5">
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/Bianco_021.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Bianco</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/Bianco_021.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Bianco</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/CRISTALLO_001.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Cristallo</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/CRISTALLO_001.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Cristallo</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/LE_BLANC_001.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Le Blanc</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/LE_BLANC_001.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Le Blanc</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/PERLA_VENATA_002.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Perla Venata</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/PERLA_VENATA_002.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Perla Venata</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/BRANCO_ITAUNAS_031.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Branco Itaúnas</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/BRANCO_ITAUNAS_031.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Branco Itaúnas</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/TAHYTI_017.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Tahyti</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/TAHYTI_017.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="mx-auto w-50">
+          <h4 class="text-center text-primary">Tahyti</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/VERDE_BAHIA_004.JPG" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">ANTES</h3>
+          <hr class="text-white mx-auto w-50">
+          <h4 class="text-center text-primary">Verde Bahia</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 imageStone my-4"> <img src="/images/hyper_stone/VERDE_BAHIA_004.png" alt=""
+          class="img-fluid image">
+        <div class="legenda">
+          <h3 class="text-center text-uppercase">DEPOIS</h3>
+          <hr class="text-white mx-auto w-50">
+          <h4 class="text-center text-primary">Verde Bahia</h4>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5"> <a
+        href="https://api.hypercube4x.com.br/hyperstone/upload-form"
+        class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a> <a
+        href="/publicarea/pt/download" class="text-decoration-none btn btn-outline-primary">Clique aqui para baixar o
+        HyperCube4x</a> </div>
+  </div>
+</div>]]>
+  </NodeContent>
+</NodeInterface>
