@@ -856,29 +856,6 @@ namespace HC4x_Server.Logic {
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ResendConfirmation)); }
       return (retValue);
       }
-    internal bool GetUrlsHyperStone() {
-      RackInterface objRack;
-      ServerInterface objServer;
-      bool retValue = false;
-      string pattern;
-      string patternStatic;
-      try {
-
-        objRack = axMundi.ndCubeApp.rcInterface;
-        patternStatic = $"https:%2F%2Fhypercube4x.com%2Frest%2Fpt%2Fhcstone-slabxml%2F";
-        objServer = objRack.PublicArea(c_hyper_stone);
-        if (!axRequest.IsLocalHost()) {
-          pattern = $"{axMundi.axRequest.atDisplayUrl.Split("/")[0]}%2F%2F{axMundi.axRequest.atDisplayUrl.Split("/")[2]}%2Frest%2Fpt%2Fhcstone-slabxml%2F";
-          retValue = objServer.SetForm(objServer.atForm.Replace("{0}", $"{axMundi.axRequest.atDisplayUrl.Split("/")[0]}%2F%2F{axMundi.axRequest.atDisplayUrl.Split("/")[2]}%2Frest%2Fpt%2Fhcstone-slabxml%2F3"));
-          objServer.SetForm(objServer.atForm.Replace("{1}", pattern));
-          }
-        else
-          retValue = objServer.SetForm(objServer.atForm.Replace("{0}", $"https:%2F%2Fhypercube4x.com%2Frest%2Fpt%2Fhcstone-slabxml%2F3"));
-        objServer.SetForm(objServer.atForm.Replace("{1}", patternStatic));
-        }
-      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetUrlsHyperStone)); }
-      return retValue;
-      }
     #endregion
     #region RawPage
     public override bool ActionGet(string parPageId) {
