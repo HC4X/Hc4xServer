@@ -17,8 +17,8 @@
                 <li class="list-group-item mb-1"><p class="h-6">Este programa utiliza .NET Framework versão 4.7.2;</p></li>
             </ul>
             <div class="mt-4">
-                <a href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x64_2023040.msi" class="btn btn-primary">Instalador em 64 bits</a>
-                <a href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x86_2023040.msi" class="btn btn-outline-primary">Instalador em 32 bits</a>
+                <a href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x64_20240120.msi" class="btn btn-primary">Instalador em 64 bits</a>
+                <a href="https://download.hypercube4x.com/pt/HyperCube4x_BR_x86_20240120.msi" class="btn btn-outline-primary">Instalador em 32 bits</a>
             </div>
         </div>
         <div class="col-md-6">
