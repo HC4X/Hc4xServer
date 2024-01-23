@@ -114,7 +114,11 @@
 			<NodeInterface id="download" FileName="publicarea\download.xml"/>
 			<NodeInterface id="certificados" FileName="publicarea\certificados.xml"/>
       <NodeInterface id="non-authenticate" FileName="publicarea\non-authenticate.xml"/>
-      <NodeInterface id="hcstone-slabxml" FileName="publicarea\hcstone-slabxml.xml"/>
+			<NodeInterface
+        id="hcstone-slabxml"
+        ModelLayout="Rest"
+        ServerClass="HC4x_Server.HCStone.HyperStone_Handler">
+			</NodeInterface>
 			<NodeInterface id="hcstone-upload" FileName="publicarea\hcstone-upload.xml"/>
 		</SectorInterface>
     <SectorInterface id="PrivateArea" PageLayout="_LayoutPrivate" DllName="HC4xLogic.dll"

@@ -32,7 +32,7 @@
     <img src="{hc4x-key:productCover}" class="card-img-top w-100" alt="{hc4x-key:description}" height="352">
     <div class="card-body text-center">
       <p class="card-text text-dark">{hc4x-key:description}</p>
-      <div class="btn btn-primary text-decoration-none d-block">Acessar</div>
+      <div class="btn btn-primary text-decoration-none d-block">Visualizar com hypercube</div>
     </div>
   </a>
 </div>]]>
