@@ -5,7 +5,7 @@
 	ModelLayout="ContentPage"
   htmltitle="Non-Authenticate">
 	<NodeContent>
-		<![CDATA[<!-- non-athenticate -->
+		<![CDATA[
       <div class="container-fluid my-5">
           <div class="row d-block">
               <div class="col-4 my-3  mx-auto d-block ">
