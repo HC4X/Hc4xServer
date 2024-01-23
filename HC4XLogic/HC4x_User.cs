@@ -585,7 +585,7 @@ namespace HC4x_Server.Logic {
       try {
         objTable = scData.SelectCommand("pkeyStoneProduct, description, productCover", "stoneproduct", "pkeyCustomer = " + parKeyCustomer, "");
         arNode = objTable.scRow.ArrayNode();
-        strUrl = "hc4x://newscene=HyperStone/url=" + axRequest.EncodedUrl(axRequest.atBaseUrl + "/0/") + "{hc4x-key:pkeyStoneProduct}";
+        strUrl = "hc4x://newscene=HyperStone/url=" + axRequest.EncodedUrl(axRequest.atBaseUrl + "/rest/pt/hcstone-slabxml/0/") + "{hc4x-key:pkeyStoneProduct}";
         strContentPage = ndCurInterface.atContentPage.Replace("{hc4x-key:url_template}", strUrl);
         ndCurInterface.SetContentPage(strContentPage);
         retValue = ndCurInterface.EvalContent(arNode);

@@ -14,6 +14,7 @@
       <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5">
         <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a>
         <a href="/publicarea/pt/download" class="text-decoration-none btn btn-outline-primary" target="_blank">Clique aqui para baixar o HyperCube4x</a>
+				<a href="/publicarea/pt/before_after_hs" class="text-decoration btn btn-outline-primary" target="_blank">Antes e depois</a>
       </div>
 
       <br>
@@ -29,8 +30,9 @@
 <div class="col">
   <a href="{hc4x-key:url_template}" class="card text-decoration-none">
     <img src="{hc4x-key:productCover}" class="card-img-top w-100" alt="{hc4x-key:description}" height="352">
-    <div class="card-body">
-      <p class="card-text text-center text-dark">{hc4x-key:description}</p>
+    <div class="card-body text-center">
+      <p class="card-text text-dark">{hc4x-key:description}</p>
+      <div class="btn btn-primary text-decoration-none d-block">Acessar</div>
     </div>
   </a>
 </div>]]>

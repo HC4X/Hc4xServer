@@ -110,7 +110,7 @@ namespace HC4xServer.Core {
         if (ndRenderPage != null) {
           if (InitData()) {
             if (!(retValue = axMundi.OpenDbSession()))
-              axMundi.RedirectTo(hc4x_SiteArea.publicarea, "expired_session");
+              axMundi.RedirectTo(hc4x_SiteArea.publicarea, "non-authenticate");
             }
           }
         }
