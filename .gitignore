@@ -36,6 +36,9 @@ bin/Debug/
 obj/Debug/
 /.vs/HC4xServer/
 /Hc4xServer/HC4xServer/obj
+.vs/
+Hc4xServer/HC4xServer/bin
+Hc4xServer/HC4XLogic/obj
 
 # Visual Studio 20152017 cacheoptions directory
 .vs
