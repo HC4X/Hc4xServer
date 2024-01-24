@@ -6,16 +6,61 @@
 	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
 	<NodeHeader>
 		<![CDATA[
-  <div class="container-fluid" style="background-color: #F0F0E2;">
+  <div class="container-fluid" id="public_hyper_stone" style="background-color: #F0F0E2;">
     <div class="container py-5">
       <h1 class="text-center text-primary">HyperStone</h1>
       <hr class="mx-auto w-50">
-      <h3 class="text-center text-primary text-uppercase">Conheça nossos resultados</h3>
-      <div class="d-flex flex-md-row flex-column align-items-center justify-content-evenly mt-5">
-        <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none btn btn-outline-primary mb-md-0 mb-5">Teste com sua chapa</a>
-        <a href="/publicarea/pt/download" class="text-decoration-none btn btn-outline-primary" target="_blank">Clique aqui para baixar o HyperCube4x</a>
-				<a href="/publicarea/pt/before_after_hs" class="text-decoration btn btn-outline-primary" target="_blank">Antes e depois</a>
-      </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-6 d-inline">
+            <p class="text-start fs-3 py-5">O HyperStone é a solução integrada de pós-produção de fotos de Natural Stone e
+              visualização em Realidade Virtual, utilizando o HyperCube4x.
+            </p>
+            <h2 class="text-start text-primary">Remoção de fundo</h2>
+            <p class="text-start fs-4 py-5">Recortamos a esteira de polimento e os demais elementos do ambiente
+              industrial, ajustando as cores de forma
+              automática, através do uso de Inteligência Artificial.</p>
+  
+            <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none"><button
+                class="btn btn-primary btn-lg mx-auto my-3">Teste com sua chapa</button></a>
+            <a href="/publicarea/pt/before_after_hs" class="text-decoration-none"><button
+                class="btn btn-primary btn-lg mx-auto my-3">Nossos resultados</button></a>
+            <a href="/customer/hcstone/pt/Hyperstone_remocao_fundo.pdf" class="text-decoration-none"><button
+                class="btn btn-primary btn-lg mx-auto my-3">Relatório Técnico</button></a>
+          </div>
+          <!--'Imagens de chapas'-->
+          <div class="col-12 col-md-12 col-lg-6 my-2 d-inline">
+            <figure>
+              <img src="/images/hyper_stone/Bianco_021.JPG" alt="Foto original do material Bianco"
+                class="img-fluid w-75 mb-2">
+              <figcaption>Foto Original</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/hyper_stone//Bianco_021.png" alt="Foto tratada do material Bianco" class="img-fluid w-75">
+              <figcaption>Foto Tratada</figcaption>
+            </figure>
+          </div>
+        </div>
+        <!--'Tutorial para visualização imersiva'-->
+        <div class="row my-5 d-flex justify-content-center">
+          <div class="col-12 col-md-12 col-lg-6 d-inline">
+            <h3 class="text-start text-primary pb-2">Visualização Imersiva Usando o HyperCube4x</h3>
+  
+            <ol class="text-start fs-5">
+              <li>O HyperCube4x é a plataforma de realidade virtual disponibilizada para visualizar as chapas de natural
+                stone;</li>
+              <li>Com ele, é possível ter a sensação de manusear a chapa, aproximar, afastar;</li>
+              <li>Faça download do HyperCube, instale e clique no catálogo abaixo para visualizar as chapas em realidade
+                virtual.</li>
+            </ol>
+  
+            <a href="/publicarea/pt/download" class="text-decoration-none"><button
+                class="btn btn-primary btn-lg mx-auto my-3 d-block">Baixar o Hypercube4X</button></a>
+          </div>
+  
+          <div class="col-12 col-md-12 col-lg-6 d-inline">
+            <img src="/images/general/laptop.png" alt="laptop com visualização no Hypercube4x" class="img-fluid w-75">
+          </div>
+        </div>
 
       <br>
       <div class="row my-5">
@@ -46,8 +91,3 @@
 </div>	]]>
 	</NodeFooter>
 </NodeInterface>
-
-
-
-
-
