@@ -3,7 +3,8 @@
   id="hyper_stone" 
 	NodeType="text/html" 
 	ModelLayout="ContentPage" 
-	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler"
+  Revision="2024-01-24 14:32">
 	<NodeHeader>
 		<![CDATA[
   <div class="container-fluid" id="public_hyper_stone" style="background-color: #F0F0E2;">
