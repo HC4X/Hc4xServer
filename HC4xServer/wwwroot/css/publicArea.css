@@ -209,6 +209,10 @@ h1 {
   background-color: #F0F0E2;
 }
 
+#hyper_library_content {
+  background-color: #eee;
+}
+
 #hyper_library .card{
   max-width: 400px;
   width: 100%;
