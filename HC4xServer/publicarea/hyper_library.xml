@@ -9,30 +9,32 @@
   <div class="container py-5">
     <h1 class="text-center text-primary">Hyper Library</h1>
     <hr class="mx-auto w-50">
-    <h5 class="text-center">O Hyper Library é uma aplicação de uso específico com o objetivo de
-      proporcionar à seu usuário uma leitura imersiva. Essa aplicação é uma parceria entre a Semcult
-      (Secretaria Municipal de Cultura e Turismo de Cachoeiro de Itapemirim) e o Hypercube4x Realidade Virtual
-    </h5>
-    <div class="row">
-      <div class="col-12 col-md-6 mx-auto d-block mt-5">
-        <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">
-          <a href="#" class="text-decoration-none text-white">Abrir
-            com Hypercube</a></button>
+      <div class="row my-5 d-flex justify-content-center">
+        <div class="col-12 col-md-12 col-lg-6 d-inline">
+          <h4 class="text-start">O Hyper Library é uma aplicação de uso específico com o objetivo de
+            proporcionar à seu usuário uma leitura imersiva. Essa aplicação é uma parceria entre a Semcult
+            (Secretaria Municipal de Cultura e Turismo de Cachoeiro de Itapemirim) e o Hypercube4x Realidade Virtual
+          </h4>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 d-inline">
+          <button type="submit" class="btn btn-primary btn-lg d-block my-2 mx-auto">
+            <a href="#" class="text-decoration-none text-white">Abrir
+              com Hypercube4x</a></button>
+          <button type="submit" class="btn btn-primary btn-lg d-block my-2 mx-auto">
+            <a href="/publicarea/pt/05_download" class="text-decoration-none text-white">Clique aqui para baixar o Hypercube4x</a></button>
+        </div>
       </div>
-      <div class="col-12 col-md-6 mx-auto d-block mt-5">
-        <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">
-          <a href="/publicarea/pt/05_download" class="text-decoration-none text-white">Clique aqui para baixar o Hypercube4x</a></button>
-      </div>
-    </div>
     <!--'Coleções de livros'-->
-    <h4 class="text-center mx-auto mt-5">Catálogo provindo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”
-    </h4>
+    <h3 class="text-center text-primary mx-auto mt-5">Catálogo provindo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major
+      Walter dos Santos Paiva”
+    </h3>
+    <hr class="mx-auto w-100">
         
     <div class="row my-5 " id="hyper_library">
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_tec.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/ciencia-da-comtaputacao.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 000</h5>
             <p class="card-text text-center">
@@ -45,7 +47,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_omega.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/filosofia.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 100</h5>
             <p class="card-text text-center">
@@ -58,7 +60,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_Connection.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/religiao.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 200</h5>
             <p class="card-text text-center">
@@ -71,7 +73,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_People.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/ciencias-sociais.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 300</h5>
             <p class="card-text text-center">
@@ -84,7 +86,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_language.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/linguagens.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 400</h5>
             <p class="card-text text-center">
@@ -97,7 +99,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_Science.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/ciencias-naturais.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 500</h5>
             <p class="card-text text-center">
@@ -110,7 +112,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_online.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/tecnologia.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 600</h5>
             <p class="card-text text-center">
@@ -123,7 +125,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_art.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/artes.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 700</h5>
             <p class="card-text text-center">
@@ -136,7 +138,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_Bookshelves.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/literatura.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 800</h5>
             <p class="card-text text-center">
@@ -149,7 +151,7 @@
         
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <div class="card">
-          <img src="/images/books/undraw_map.png" class="card-img-top img-thumbnail" alt="Waterfall">
+          <img src="/images/books/historia-geografia.jpg" class="card-img-top img-thumbnail" alt="Waterfall">
           <div class="card-body">
             <h5 class="card-title text-center">Coleção 900</h5>
             <p class="card-text text-center">
