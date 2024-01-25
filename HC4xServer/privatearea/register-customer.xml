@@ -14,19 +14,19 @@
 				<!-- cnpjCpf input -->
                         <div class="form-outline mb-3 position-relative">
                             <label class="form-label lead fs-6 " for="cnpjCpf">CPF ou CNPJ</label>
-                            <input type="text" id="cnpjCpf" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" minlength="11" maxlength="14" required placeholder="Digite o CPF do representante ou CNPJ da empresa" class="form-control form-control-lg position-relative" />
+                            <input type="text" id="cnpjCpf" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" minlength="11" maxlength="14" required placeholder="" class="form-control form-control-lg position-relative" />
                         </div>
                         <!-- Razão social input -->
                         <div class="form-outline mb-4">
                             <label class="form-label lead fs-6" for="razaoSocial">Razão social da empresa</label>
                             <input type="text" name="razaoSocial" value="{hc4x-key:razaoSocial}" required id="razaoSocial"
-                                class="form-control form-control-lg" placeholder="Razão social da empresa" />
+                                class="form-control form-control-lg" placeholder="" />
                         </div>
                         <!-- Name input -->
                         <div class="form-outline mb-4">
                             <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
                             <input type="text" name="namecustomer" value="{hc4x-key:nameCustomer}" required id="namecustomer"
-                                class="form-control form-control-lg" placeholder="Nome da empresa" />
+                                class="form-control form-control-lg" placeholder="" />
                         </div>
 						<!-- CustomerCategory input -->
 						<div>
@@ -38,24 +38,24 @@
                         <!-- nameContact input -->
                         <div class="form-outline mb-3 position-relative">
                             <label class="form-label lead fs-6 " for="nameContact">Nome do representante da empresa</label>
-                            <input type="text" id="nameContact" name="nameContact" required value="{hc4x-key:nameContact}" class="form-control form-control-lg position-relative" placeholder="Representante da empresa" />
+                            <input type="text" id="nameContact" name="nameContact" required value="{hc4x-key:nameContact}" class="form-control form-control-lg position-relative" placeholder="" />
                         </div>
                         <!-- emailContact input -->
                         <div class="form-outline mb-3 position-relative">
                             <label class="form-label lead fs-6 " for="emailContact">Email do representante da empresa</label>
-                            <input type="text" id="emailContact" name="emailContact" required value="{hc4x-key:emailContact}" class="form-control form-control-lg position-relative" placeholder="Email do representante da empresa" />
+                            <input type="text" id="emailContact" name="emailContact" required value="{hc4x-key:emailContact}" class="form-control form-control-lg position-relative" placeholder="" />
                         </div>
                         <!-- Site input -->
                         <div class="form-outline mb-4">
                             <label class="form-label lead fs-6" for="site">Site da empresa</label>
                             <input type="text" name="site" value="{hc4x-key:site}" required id="site"
-                             class="form-control form-control-lg" placeholder="Site da empresa" />
+                             class="form-control form-control-lg" placeholder="" />
                         </div>
                         <!-- Descrição input -->
                         <div class="form-outline mb-4">
                             <label class="form-label lead fs-6" for="descCustomer">Descrição da empresa</label>
                             <input type="text" name="descCustomer" value="{hc4x-key:descCustomer}" required id="descCustomer"
-                             class="form-control form-control-lg" placeholder="Descrição da empresa" />
+                             class="form-control form-control-lg" placeholder="" />
                         </div>
                 </div>
                 <div class="col-6">
