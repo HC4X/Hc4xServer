@@ -88,7 +88,6 @@
       <NodeInterface id="HeadLink" FileName="publicarea\HeadLink.xml"/>
       <NodeInterface id="BodyHeaderFooter" FileName="publicarea\BodyHeaderFooter.xml"/>
       <NodeInterface id="index" FileName="publicarea\index.xml"/>
-      <NodeInterface id="hyper_library" FileName="publicarea\hyper_library.xml"/>
       <NodeInterface id="equipe" FileName="publicarea\equipe.xml"/>
       <NodeInterface id="login" FileName="publicarea\login.xml"/>
 			<NodeInterface id="forgot-pass" FileName="publicarea\forgot-pass.xml" />
@@ -105,6 +104,7 @@
       <NodeInterface id="hyper_book" FileName="publicarea\hyper_book.xml"/>
 			<NodeInterface id="hyper_stone" FileName="publicarea\hyper_stone.xml"/>
 			<NodeInterface id="hyper_relational" FileName="publicarea\hyper_relational.xml"/>
+      <NodeInterface id="hyper_library" FileName="publicarea\hyper_library.xml"/>
 			<NodeInterface id="confirm_sucess" FileName="publicarea\confirm_sucess.xml"/>
 			<NodeInterface id="confirm-email_eml" FileName="publicarea\confirm-email_eml.xml"/>
 			<NodeInterface id="confirm-forgot_eml" FileName="publicarea\confirm-forgot_eml.xml"/>
@@ -129,6 +129,7 @@
       <NodeInterface id="catalogo" FileName="privatearea\catalogo.xml"/>
       <NodeInterface id="marble" FileName="privatearea\marble.xml"/>
 			<NodeInterface id="area-usuario" FileName="privatearea\area-usuario.xml"/>
+			<NodeInterface id="hyper_library" FileName="privatearea\hyper_library.xml"/>
 			<NodeInterface id="register-customer" FileName="privatearea\register-customer.xml"/>
     </SectorInterface>
     <SectorArea id="Other">
