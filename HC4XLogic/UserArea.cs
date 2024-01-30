@@ -119,7 +119,7 @@ namespace HC4x_Server.PrivateArea
         objCustomer.atDescCustomer = objPostCustomer.atDescCustomer;
         scCustomer.dbInsertCustomer(objCustomer);
         retValue = ndCurInterface.EvalForm(objCustomer);
-
+        atMessage = scCustomer.GetAlertByType(hc4x_TypeAlert.Success, "Cliente registrado com sucesso !");
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(RegisterCustomer)); }
       return (retValue);
@@ -152,13 +152,13 @@ namespace HC4x_Server.PrivateArea
       PostCustomer objPostCustomer;
       objPostCustomer = axRequest.FormKeyVal<PostCustomer>();
       parCustomer.atNameCustomer = objPostCustomer.atNameCustomer;
+      parCustomer.atPkeyCustomerCategory = scCustomer.FindPkeyCustomerCategoryByCategory(objPostCustomer.atCustomerCategory);
       parCustomer.atRazaoSocial = objPostCustomer.atRazaoSocial;
       parCustomer.atCnpjCpf = objPostCustomer.atCnpjCpf;
       parCustomer.atNameContact = objPostCustomer.atNameContact;
       parCustomer.atEmailContact = objPostCustomer.atEmailContact;
       parCustomer.atSite = objPostCustomer.atSite;
       parCustomer.atDescCustomer = objPostCustomer.atDescCustomer;
-
       if (retValue = scCustomer.UpdateCustomerData(parCustomer))
         atMessage = scCustomer.GetAlertByType(hc4x_TypeAlert.Success, "Dados do cliente alterados com sucesso !");
       return retValue;
@@ -210,7 +210,13 @@ namespace HC4x_Server.PrivateArea
             retValue = AreaUser();
             break;
           case c_register_customer:
-            retValue = RegisterCustomer();
+            if (ndCustomer == null)
+              retValue = RegisterCustomer();
+            else
+            {
+              UpdateCustomerForm(ndCustomer);
+              retValue = ndCurInterface.EvalForm(ndCustomer);
+            }
             break;
         }
       }
