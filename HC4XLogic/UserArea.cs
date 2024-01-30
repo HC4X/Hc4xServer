@@ -180,7 +180,9 @@ namespace HC4x_Server.PrivateArea
           retValue = GetImgUser();
           break;
         case c_register_customer:
-          retValue = ndCurInterface.EvalForm(ndCustomer);
+          if (ndCustomer == null)
+            retValue = true;
+          else retValue = ndCurInterface.EvalForm(ndCustomer);
           break;
         default:
           retValue = true; 
