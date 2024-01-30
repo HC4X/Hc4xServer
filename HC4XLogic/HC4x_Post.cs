@@ -7,7 +7,6 @@ namespace HC4xServer.Logic
 {
   public class PostCustomer : WebKeyValue {
     private const string Name = nameof(PostCustomer);
-
     #region Axis
     public new PageCore axMundi => (PageCore)base.axMundi;
     public AxisSession axSession => axMundi.axSession;
@@ -51,7 +50,7 @@ namespace HC4xServer.Logic
     private const string c_pkeycustomer = "pkeyCustomer";
     private const string c_customerCategory = "CustomerCategory";
     private const string c_pkeyappuser = "pkeyAppUser";
-    private const string c_namecustomer = "namecustomer";
+    private const string c_namecustomer = "nameCustomer";
     private const string c_razaosocial = "razaoSocial";
     private const string c_cnpjcpf = "cnpjCpf";
     private const string c_namecontact = "nameContact";

@@ -32,7 +32,7 @@
                   <!-- Name input -->
                   <div class="form-outline mb-4">
                       <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
-                      <input type="text" name="namecustomer" value="{hc4x-key:nameCustomer}" required id="namecustomer"
+                      <input type="text" name="nameCustomer" value="{hc4x-key:nameCustomer}" required id="nameCustomer"
                           class="form-control form-control-lg" placeholder="" />
                   </div>
 						      <!-- CustomerCategory input -->

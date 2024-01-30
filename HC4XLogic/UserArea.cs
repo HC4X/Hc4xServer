@@ -89,6 +89,7 @@ namespace HC4x_Server.PrivateArea
       PostCustomer objPostCustomer;
       HC4x_NodeCustomer objCustomer;
       HC4x_NodeAppUser objAppUser;
+      int appUserId;
       try
       {
         objPostCustomer = axRequest.FormKeyVal<PostCustomer>();
@@ -99,12 +100,16 @@ namespace HC4x_Server.PrivateArea
         }
         else
         {
-          scCustomer.GetAlertByType(hc4x_TypeAlert.Danger, $"{objPostCustomer.atCnpjCpf} não é válido !");
-          return retValue;
+          atMessage = scCustomer.GetAlertByType(hc4x_TypeAlert.Danger, $"{objPostCustomer.atCnpjCpf} não é válido !");
+          return ndCurInterface.EvalForm(objPostCustomer);
         }
         objAppUser.atPkeyUser = axSession.atPkUser;
         objAppUser.atPkeyApp = 4;
-        objCustomer.atPkeyAppUser = scCustomer.dbInsertAppUser(objAppUser).atPkeyAppUser;
+        appUserId = scCustomer.FindAppUserById(axSession.atPkUser);
+        if (appUserId < 0)
+          objCustomer.atPkeyAppUser = scCustomer.dbInsertAppUser(objAppUser).atPkeyAppUser;
+        else
+          objCustomer.atPkeyAppUser = appUserId;
         objCustomer.atRazaoSocial = objPostCustomer.atRazaoSocial;
         objCustomer.atNameCustomer = objPostCustomer.atNameCustomer;
         objCustomer.atPkeyCustomerCategory = scCustomer.FindPkeyCustomerCategoryByCategory(objPostCustomer.atCustomerCategory);
@@ -112,7 +117,9 @@ namespace HC4x_Server.PrivateArea
         objCustomer.atEmailContact = objPostCustomer.atEmailContact;
         objCustomer.atSite = objPostCustomer.atSite;
         objCustomer.atDescCustomer = objPostCustomer.atDescCustomer;
-        retValue = scCustomer.dbInsertCustomer(objCustomer).atPkeyCustomer > 0;
+        scCustomer.dbInsertCustomer(objCustomer);
+        retValue = ndCurInterface.EvalForm(objCustomer);
+
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(RegisterCustomer)); }
       return (retValue);
@@ -181,7 +188,7 @@ namespace HC4x_Server.PrivateArea
           break;
         case c_register_customer:
           if (ndCustomer == null)
-            retValue = true;
+            retValue = base.ActionRender();
           else retValue = ndCurInterface.EvalForm(ndCustomer);
           break;
         default:
