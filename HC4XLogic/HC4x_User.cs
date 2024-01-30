@@ -8,7 +8,9 @@ using System.Text.RegularExpressions;
 namespace HC4x_Server.Logic {
   /// <summary>Handles a single User</summary>
   public class HC4x_NodeUser : WebXml {
+    #region Name
     private const string Name = nameof(HC4x_NodeUser);
+    #endregion
     #region Attribute
     public int atId {
       get => ValueInt(c_pkey);
@@ -96,7 +98,9 @@ namespace HC4x_Server.Logic {
     }
   /// <summary>Handles a User group</summary
   public class HC4x_NodeAppUser : WebXml {
-
+    #region Name
+    private const string Name = nameof(HC4x_NodeAppUser);
+    #endregion
     #region Attribute
     public int atPkeyAppUser {
       get => ValueInt(c_pkeyappuser);
@@ -106,25 +110,33 @@ namespace HC4x_Server.Logic {
       get => ValueInt(c_pkeyuser);
       set => SetValue(c_pkeyuser, value);
       }
-    public int atPkeyApp => 4;
+    public int atPkeyApp
+    {
+      get => ValueInt(c_pkeyapp);
+      set => SetValue(c_pkeyapp, value);
+    }
     #endregion
     #region Constructor
     public HC4x_NodeAppUser(PageCore parMundi) : base(parMundi, c_node) { }
     #endregion
     #region Constant
     private const string c_pkeyappuser = "pkeyAppUser";
+    private const string c_pkeyapp = "pkeyApp";
     private const string c_pkeyuser = "pkeyUser";
     private const string c_node = "NodeAppUser";
     #endregion
     }
   public class HC4x_NodeCustomer : WebXml {
+    #region Name
+    private const string Name = nameof(HC4x_NodeCustomer);
+    #endregion
     #region Attribute
     public int atPkeyCustomer {
       get => ValueInt(c_pkeycustomer);
       set => SetValue(c_pkeycustomer, value);
       }
 
-    public int atCustomerCategory {
+    public int atPkeyCustomerCategory {
       get => ValueInt(c_pkeycustomercategory);
       set => SetValue(c_pkeycustomercategory, value);
       }
@@ -179,11 +191,99 @@ namespace HC4x_Server.Logic {
     #endregion
     }
   public class HC4x_SectorCustomer : DiceBase {
+    #region Name
     private const string Name = nameof(HC4x_SectorCustomer);
+    #endregion
     #region Axis
     private new PageCore axMundi => (PageCore)base.axMundi;
     #endregion
+    #region Static
+    internal static bool ValidCPF(string parCPForCNPJ)
+    {
+      string cpf = parCPForCNPJ.Replace(".", "").Replace("-", "");
+
+      if (cpf.Length != 11)
+        return false;
+
+      if (new string(cpf[0], cpf.Length) == cpf)
+        return false;
+
+      for (int i = 0, soma = 0, resto; i < 9; i++)
+      {
+        soma += int.Parse(cpf[i].ToString()) * (10 - i);
+        if (i == 8)
+        {
+          resto = soma % 11;
+          if (resto < 2) resto = 0;
+          else resto = 11 - resto;
+          if (resto != int.Parse(cpf[9].ToString())) return false;
+
+          soma = 0;
+        }
+      }
+
+      for (int i = 0, soma = 0, resto; i < 10; i++)
+      {
+        soma += int.Parse(cpf[i].ToString()) * (11 - i);
+        if (i == 9)
+        {
+          resto = soma % 11;
+          if (resto < 2) resto = 0;
+          else resto = 11 - resto;
+          if (resto != int.Parse(cpf[10].ToString())) return false;
+        }
+      }
+
+      return true;
+    }
+    internal static bool ValidCNPJ(string parCPForCNPJ)
+    {
+      string cnpj = parCPForCNPJ.Replace(".", "").Replace("-", "").Replace("/", "");
+
+      if (cnpj.Length != 14)
+        return false;
+
+      if (new string(cnpj[0], cnpj.Length) == cnpj)
+        return false;
+
+      int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+      int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+      int soma, resto;
+      string digito, tempCnpj;
+
+      tempCnpj = cnpj.Substring(0, 12);
+      soma = 0;
+
+      for (int i = 0; i < 12; i++)
+        soma += int.Parse(tempCnpj[i].ToString()) * multiplicador1[i];
+
+      resto = (soma % 11);
+      if (resto < 2)
+        resto = 0;
+      else
+        resto = 11 - resto;
+
+      digito = resto.ToString();
+      tempCnpj += digito;
+      soma = 0;
+
+      for (int i = 0; i < 13; i++)
+        soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
+
+      resto = (soma % 11);
+      if (resto < 2)
+        resto = 0;
+      else
+        resto = 11 - resto;
+
+      digito += resto.ToString();
+
+      return cnpj.EndsWith(digito);
+    }
+    #endregion
     #region Method
+    //esse método pode ser estático
     public string GetAlertByType(hc4x_TypeAlert parTypeAlert, string text) {
       string retValue = "";
       try {
@@ -232,20 +332,6 @@ namespace HC4x_Server.Logic {
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindPkeyCustomerCategoryByCategory)); }
       return retValue;
       }
-    //#internal List<string> FindCustomerCategory() {
-    //#  List<string> retValue = new List<string>();
-    //#  RawTable objTable;
-    //#  RawRow[] arNode;
-    //#  try {
-    //#    objTable = scData.SelectCommand("descCustomerCategory", "hc4xcustomercategory", "descCustomerCategory != \"uncategorized user\"", "");
-    //#    arNode = objTable.scRow.ArrayNode();
-    //#    foreach(RawRow itNode in arNode) {
-    //#      retValue.Add(itNode.ValueStr("descCustomerCategory"));
-    //#    }
-    //#  }
-    //#  catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindCustomerCategory)); }
-    //#  return retValue;
-    //#}
     internal bool UpdateCustomerData(HC4x_NodeCustomer parCustomer) {
       bool retValue = false;
       int iRow;
@@ -281,47 +367,35 @@ namespace HC4x_Server.Logic {
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindCustomerByPkeyUser)); }
       return (retValue);
       }
-    internal int dbInsertHc4xAppUser(int parPkeyUser) {
-      int iIdentity = -1;
-      int iRow;
-      string sqlCommand;
-      RawTable objTable;
-      try {
-        sqlCommand = string.Format("INSERT INTO hc4xappuser(pkeyUser, pkeyApp) VALUES({0}, 4)", parPkeyUser);
-        iRow = scData.ExecuteCommand(sqlCommand);
-        if (iRow == 1) {
-          objTable = scData.SelectCommand("pkeyAppUser", "hc4xappuser", string.Format("pkeyUser={0}", parPkeyUser), "");
-          iIdentity = objTable[0].ValueInt("pkeyAppUser");
-          }
-        }
-      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindAppUserById)); }
-      return iIdentity;
+    internal HC4x_NodeCustomer dbInsertCustomer(HC4x_NodeCustomer objCustomer)
+    {
+      int iIndentity;
+      NodeTable objTable;
+      try
+      {
+        objTable = ndCubeApp.scTable["hc4x_customer_insert"];
+        iIndentity = scData.InsertCommand("hc4xcustomer", objTable.scField, objCustomer);
+        if (iIndentity > 0) objCustomer.atPkeyCustomer = iIndentity;
       }
-    internal int dbInsertHc4xCustomer(HC4x_NodeCustomer parCustomer) {
-      int iRow;
-      string sqlCommand;
-      RawTable objTable;
-      try {
-        sqlCommand = string.Format("INSERT INTO hc4xcustomer" +
-          "(pkeyCustomerCategory, pkeyAppUser,namecustomer,razaoSocial,cnpjCpf,nameContact,emailContact,site,descCustomer) " +
-          "VALUES({0},{1},\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\")"
-          , parCustomer.atCustomerCategory, parCustomer.atPkeyAppUser, parCustomer.atNameCustomer,
-          parCustomer.atRazaoSocial, parCustomer.atCnpjCpf, parCustomer.atNameContact, parCustomer.atEmailContact,
-          parCustomer.atSite, parCustomer.atDescCustomer);
-
-        iRow = scData.ExecuteCommand(sqlCommand);
-        if (iRow == 1) {
-          objTable = scData.SelectCommand("pkeyCustomer", "hc4xcustomer", string.Format("pkeyAppUser={0}", parCustomer.atPkeyAppUser), "");
-          parCustomer.atPkeyCustomer = objTable[0].ValueInt("pkeyCustomer");
-          }
-        }
-      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindAppUserById)); }
-      return parCustomer.atPkeyCustomer;
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(HC4x_NodeCustomer)); }
+      return (objCustomer);
+    }
+    internal HC4x_NodeAppUser dbInsertAppUser(HC4x_NodeAppUser objAppUser)
+    {
+      int iIndentity;
+      NodeTable objTable;
+      try
+      {
+        objTable = ndCubeApp.scTable["hc4x_appuser_insert"];
+        iIndentity = scData.InsertCommand("hc4xappuser", objTable.scField, objAppUser);
+        if (iIndentity > 0) objAppUser.atPkeyAppUser = iIndentity;
       }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(HC4x_NodeCustomer)); }
+      return (objAppUser);
+    }
     #endregion
     #region Constructor
     public bool Init() { return (InitData()); }
-
     public HC4x_SectorCustomer(PageCore parPageHandler) : base(parPageHandler, c_sector) { }
     #endregion
     #region Constant
@@ -330,8 +404,9 @@ namespace HC4x_Server.Logic {
     }
 
   public class HC4x_StoneProduct : WebXml {
+    #region Name
     private const string Name = nameof(HC4x_StoneProduct);
-
+    #endregion
     #region Attribute
     public int atId {
       get => ValueInt(c_pkey);
@@ -357,6 +432,9 @@ namespace HC4x_Server.Logic {
     #endregion
     }
   public class HC4x_SectorStoneProduct : DiceBase {
+    #region Name
+    private const string Name = nameof(HC4x_SectorStoneProduct);
+    #endregion
     #region Constructor
     public bool Init() { return (InitData()); }
     public HC4x_SectorStoneProduct(PageCore parPageHandler) : base(parPageHandler, c_sector) { }
@@ -366,7 +444,9 @@ namespace HC4x_Server.Logic {
     #endregion
     }
   public class HC4x_SectorUser : DiceBase {
+    #region Name
     private const string Name = nameof(HC4x_SectorUser);
+    #endregion
     #region Axis
     private new PageCore axMundi => (PageCore)base.axMundi;
     #endregion
@@ -538,7 +618,9 @@ namespace HC4x_Server.Logic {
     #endregion
     }
   public class HC4x_UserHandler : RawPage {
+    #region Name
     private const string Name = nameof(HC4x_UserHandler);
+    #endregion
     #region Axis
     private new PageCore axMundi => (PageCore)base.axMundi;
     #endregion

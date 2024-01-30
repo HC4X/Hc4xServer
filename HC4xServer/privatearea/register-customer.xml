@@ -11,52 +11,63 @@
           <h1 class="text-center text-uppercase text-primary mt-1">Venha pro universo Hypercube!</h1>	
             <div class="d-flex flex-direction-column justify-content-center align-items-center p-0">
                 <div class="col-6">
-				<!-- cnpjCpf input -->
-                        <div class="form-outline mb-3 position-relative">
-                            <label class="form-label lead fs-6 " for="cnpjCpf">CPF ou CNPJ</label>
-                            <input type="text" id="cnpjCpf" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" minlength="11" maxlength="14" required placeholder="" class="form-control form-control-lg position-relative" />
-                        </div>
-                        <!-- Razão social input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label lead fs-6" for="razaoSocial">Razão social da empresa</label>
-                            <input type="text" name="razaoSocial" value="{hc4x-key:razaoSocial}" required id="razaoSocial"
-                                class="form-control form-control-lg" placeholder="" />
-                        </div>
-                        <!-- Name input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
-                            <input type="text" name="namecustomer" value="{hc4x-key:nameCustomer}" required id="namecustomer"
-                                class="form-control form-control-lg" placeholder="" />
-                        </div>
-						<!-- CustomerCategory input -->
-						<div>
-						    <label class="form-label lead fs-6" for="CustomerCategory">Categoria da empresa</label>
-						    <select class="form-select" name="CustomerCategory" id="CustomerCategory" aria-label="Selecione a categoria da empresa">
-                            {0}
-							</select>
-						</div>
-                        <!-- nameContact input -->
-                        <div class="form-outline mb-3 position-relative">
-                            <label class="form-label lead fs-6 " for="nameContact">Nome do representante da empresa</label>
-                            <input type="text" id="nameContact" name="nameContact" required value="{hc4x-key:nameContact}" class="form-control form-control-lg position-relative" placeholder="" />
-                        </div>
-                        <!-- emailContact input -->
-                        <div class="form-outline mb-3 position-relative">
-                            <label class="form-label lead fs-6 " for="emailContact">Email do representante da empresa</label>
-                            <input type="text" id="emailContact" name="emailContact" required value="{hc4x-key:emailContact}" class="form-control form-control-lg position-relative" placeholder="" />
-                        </div>
-                        <!-- Site input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label lead fs-6" for="site">Site da empresa</label>
-                            <input type="text" name="site" value="{hc4x-key:site}" required id="site"
-                             class="form-control form-control-lg" placeholder="" />
-                        </div>
-                        <!-- Descrição input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label lead fs-6" for="descCustomer">Descrição da empresa</label>
-                            <input type="text" name="descCustomer" value="{hc4x-key:descCustomer}" required id="descCustomer"
-                             class="form-control form-control-lg" placeholder="" />
-                        </div>
+								  <!-- Selecionar cpf ou cnpj -->
+								  <div class="mb-3">
+						        <label class="form-label lead fs-6" for="CustomerCategory">Selecione entre CPF ou CNPJ</label>
+						        <select class="form-select" name="cpf_cnpj" id="cpf_cnpj" aria-label="Selecione entre CPF ou CNPJ">
+											<option>CPF</option>
+											<option>CNPJ</option>
+							      </select>
+						      </div>
+				          <!-- cnpjCpf input -->
+                  <div class="form-outline mb-3 position-relative">
+                      <input type="text" id="cnpjCpf" autocomplete="off" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" required placeholder="Digite apenas números" class="form-control form-control-lg position-relative" />
+                  </div>
+                  <!-- Razão social input -->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6" for="razaoSocial">Razão social da empresa</label>
+                      <input type="text" name="razaoSocial" value="{hc4x-key:razaoSocial}" required id="razaoSocial"
+                          class="form-control form-control-lg" placeholder="" />
+                  </div>
+                  <!-- Name input -->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
+                      <input type="text" name="nameCustomer" value="{hc4x-key:nameCustomer}" required id="nameCustomer"
+                          class="form-control form-control-lg" placeholder="" />
+                  </div>
+						      <!-- CustomerCategory input -->
+						      <div>
+						          <label class="form-label lead fs-6" for="CustomerCategory">Categoria da empresa</label>
+						          <select class="form-select" name="CustomerCategory" id="CustomerCategory" aria-label="Selecione a categoria da empresa">
+                        <option>Produtor / Indústria</option>
+									      <option>Beneficiador / Indústria</option>
+									      <option>Distribuidor</option>
+									      <option>Profissional construção civil</option>
+									      <option>Consumidor final</option>
+							      </select>
+						      </div>
+                  <!-- nameContact input -->
+                  <div class="form-outline mb-3 position-relative">
+                      <label class="form-label lead fs-6 " for="nameContact">Nome do representante da empresa</label>
+                      <input type="text" id="nameContact" name="nameContact" required value="{hc4x-key:nameContact}" class="form-control form-control-lg position-relative" placeholder="" />
+                  </div>
+                  <!-- emailContact input -->
+                  <div class="form-outline mb-3 position-relative">
+                      <label class="form-label lead fs-6 " for="emailContact">Email do representante da empresa</label>
+                      <input type="text" id="emailContact" name="emailContact" required value="{hc4x-key:emailContact}" class="form-control form-control-lg position-relative" placeholder="" />
+                  </div>
+                  <!-- Site input -->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6" for="site">Site da empresa</label>
+                      <input type="text" name="site" value="{hc4x-key:site}" required id="site"
+                        class="form-control form-control-lg" placeholder="" />
+                  </div>
+                  <!-- Descrição input -->
+                  <div class="form-outline mb-4">
+                      <label class="form-label lead fs-6" for="descCustomer">Descrição da empresa</label>
+                      <input type="text" name="descCustomer" value="{hc4x-key:descCustomer}" required id="descCustomer"
+                        class="form-control form-control-lg" placeholder="" />
+                  </div>
                 </div>
                 <div class="col-6">
                   <img src="/images/general/undraw_done_re_oak4.svg" class="img-fluid" alt="Sample image" >
@@ -69,4 +80,52 @@
         </div>
     </section>]]>
 	</NodeForm>
+	<NodeFooter>
+		<![CDATA[
+		<script>
+      function formatarCPF(input) {
+          let inputLength = input.value.length;
+          if (inputLength === 3 || inputLength === 7) {
+              input.value += ".";
+          } else if (inputLength === 11) {
+              input.value += "-";
+          }
+      }
+			
+			function formatarCNPJ(input) {
+        let inputLength = input.value.length;
+        if (inputLength === 2 || inputLength === 6) {
+            input.value += ".";
+        } else if (inputLength === 10) {
+            input.value += "/";
+        }
+				 else if (inputLength === 15) {
+            input.value += "-";
+        }
+			}
+      const input = document.getElementById("cnpjCpf");
+			const selectCpfCnpj = document.getElementById("cpf_cnpj");
+			
+			selectCpfCnpj.addEventListener("change", () =>{
+			  input.value = "";
+			});
+			
+      input.addEventListener("keypress", () => {
+			
+			  if(selectCpfCnpj.value === "CPF")
+				{
+				  input.maxLength = 14;
+				  formatarCPF(input);
+				}
+				else
+				{
+				  input.maxLength = 18;
+				  formatarCNPJ(input);
+				}
+			
+			});
+			
+		</script>
+		]]>
+	</NodeFooter>
 </NodeInterface>
