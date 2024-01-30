@@ -337,7 +337,18 @@ namespace HC4x_Server.Logic {
       int iRow;
       string sqlCommand;
       try {
-        sqlCommand = string.Format("UPDATE hc4xcustomer " + "SET nameCustomer = \"{0}\" , razaoSocial = \"{1}\", cnpjCpf = \"{2}\", nameContact = \"{3}\", emailContact = \"{4}\", site = \"{5}\", descCustomer = \"{6}\" WHERE pkeyCustomer = {7};", parCustomer.atNameCustomer, parCustomer.atRazaoSocial, parCustomer.atCnpjCpf, parCustomer.atNameContact, parCustomer.atEmailContact, parCustomer.atSite, parCustomer.atDescCustomer, parCustomer.atPkeyCustomer);
+        sqlCommand = 
+          "UPDATE hc4xcustomer " + 
+          $"SET nameCustomer = \"{parCustomer.atNameCustomer}\", " +
+          $"razaoSocial = \"{parCustomer.atRazaoSocial}\", " +
+          $"cnpjCpf = \"{parCustomer.atCnpjCpf}\", " +
+          $"nameContact = \"{parCustomer.atNameContact}\", " +
+          $"emailContact = \"{parCustomer.atEmailContact}\", " +
+          $"site = \"{parCustomer.atSite}\"," +
+          $"descCustomer =  \"{parCustomer.atDescCustomer}\"," +
+          $"pkeyCustomerCategory =  {parCustomer.atPkeyCustomerCategory} " +
+          $"WHERE pkeyCustomer = {parCustomer.atPkeyCustomer};";
+
         iRow = scData.ExecuteCommand(sqlCommand);
         retValue = iRow == 1;
         }
