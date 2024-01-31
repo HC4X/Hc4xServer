@@ -22,11 +22,11 @@
               industrial, ajustando as cores de forma
               automática, através do uso de Inteligência Artificial.</p>
   
-            <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none"><button
+            <a href="https://api.hypercube4x.com.br/hyperstone/upload-form" class="text-decoration-none" target="_blank"><button
                 class="btn btn-primary mx-auto my-3">Teste com sua chapa</button></a>
-            <a href="/publicarea/pt/before_after_hs" class="text-decoration-none"><button
+            <a href="/publicarea/pt/before_after_hs" class="text-decoration-none" target="_blank"><button
                 class="btn btn-primary mx-auto my-3">Nossos resultados</button></a>
-            <a href="/customer/hcstone/pt/Hyperstone_remocao_fundo.pdf" class="text-decoration-none"><button
+            <a href="/customer/hcstone/pt/Hyperstone_remocao_fundo.pdf" class="text-decoration-none" target="_blank"><button
                 class="btn btn-primary mx-auto my-3">Relatório Técnico</button></a>
           </div>
 
@@ -57,7 +57,7 @@
             </ol>
   
             <button class="btn btn-primary btn-lg mx-auto my-3 d-block">
-              <a href="/publicarea/pt/download" class="text-decoration-none text-white">Baixar o Hypercube4X</a>
+              <a href="/publicarea/pt/download" class="text-decoration-none text-white" target="_blank">Baixar o Hypercube4X</a>
             </button>
           </div>
   
