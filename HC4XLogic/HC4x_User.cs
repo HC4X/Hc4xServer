@@ -136,6 +136,11 @@ namespace HC4x_Server.Logic {
       set => SetValue(c_pkeycustomer, value);
       }
 
+    public string atLogoCustomer
+    {
+      get => ValueStr(c_logocustomer);
+      set => SetValue(c_logocustomer, value);
+    }
     public int atPkeyCustomerCategory {
       get => ValueInt(c_pkeycustomercategory);
       set => SetValue(c_pkeycustomercategory, value);
@@ -187,6 +192,7 @@ namespace HC4x_Server.Logic {
     private const string c_emailcontact = "emailContact";
     private const string c_site = "site";
     private const string c_desccustomer = "descCustomer";
+    private const string c_logocustomer = "logoCustomer";
     private const string c_node = "NodeCustomer";
     #endregion
     }
@@ -311,6 +317,24 @@ namespace HC4x_Server.Logic {
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetAlertByType)); }
       return retValue;
       }
+    internal bool UpdateImg(object parObject)
+    {
+      bool retValue = false;
+      int iRow;
+      string sqlCommand;
+      try
+      {
+        HC4x_NodeCustomer parCustomer = parObject as HC4x_NodeCustomer;
+        if (!string.IsNullOrEmpty(parCustomer.atLogoCustomer))
+        {
+          sqlCommand = string.Format("UPDATE hc4xcustomer " + "SET imgUser = \"{0}\" WHERE pkeyUser = {1}; ", parCustomer.atLogoCustomer, parCustomer.atPkeyCustomer);
+          iRow = scData.ExecuteCommand(sqlCommand);
+          retValue = (iRow == 1);
+        }
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateImg)); }
+      return retValue;
+    }
     internal int FindAppUserById(int parId) {
       RawTable objTable;
       int iIdentity = -1;
@@ -543,18 +567,17 @@ namespace HC4x_Server.Logic {
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateUserData)); }
       return retValue;
       }
-    internal bool UpdateImg(HC4x_NodeUser parUser) {
+    internal bool UpdateImg(object parObject) {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-
       try {
+        HC4x_NodeUser parUser = parObject as HC4x_NodeUser;
         if (!string.IsNullOrEmpty(parUser.atImg)) {
           sqlCommand = string.Format("UPDATE hc4xuser " + "SET imgUser = \"{0}\" WHERE pkeyUser = {1}; ", parUser.atImg, parUser.atId);
           iRow = scData.ExecuteCommand(sqlCommand);
           retValue = (iRow == 1);
           }
-
         }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateImg)); }
       return retValue;

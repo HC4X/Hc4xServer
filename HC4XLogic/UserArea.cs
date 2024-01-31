@@ -18,7 +18,7 @@ namespace HC4x_Server.PrivateArea
     private HC4x_SectorCustomer scCustomer { get; set; }
     private HC4x_NodeUser ndUser { get; set; }
     private HC4x_NodeCustomer ndCustomer { get; set; }
-    #endregion   
+    #endregion
     #region Method
     internal bool ValidCPFCNPJ(string parCPForCNPJ) {
       bool retValue = true;
@@ -35,38 +35,39 @@ namespace HC4x_Server.PrivateArea
       try
       {
         if (axRequest.FileKey() != null && axRequest.FileKey().Length > 0)
-          UpdateProfilePic();
-
+          UpdateProfilePic("upload-image-profile",scUser.UpdateImg,ndUser);
         retValue = UpdateUserForm(ndUser);
         ndCurInterface.EvalForm(ndUser);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(AreaUser)); }
       return (retValue);
     }
-    internal bool UpdateProfilePic()
+    internal bool UpdateProfilePic(string uploadFolderPath, Func<object, bool> updateMethod, object updateObject)
     {
       bool retValue = false;
       string strWwwPath;
       NodeFormFile[] arFormFile;
       string imagePath;
       Task<bool> objTask;
+
       try
       {
         arFormFile = axRequest.FileKey();
-        strWwwPath = GearPath.Combine(axMundi.atWebPath, "upload-image-profile");
+        strWwwPath = GearPath.Combine(axMundi.atWebPath, uploadFolderPath);
         foreach (NodeFormFile itFile in arFormFile)
         {
           strWwwPath = itFile.GetSafeName(strWwwPath);
-          imagePath = GearPath.Combine("/upload-image-profile", GearPath.FileName(itFile.GetSafeName(strWwwPath)));
+          imagePath = GearPath.Combine("/" + uploadFolderPath, GearPath.FileName(itFile.GetSafeName(strWwwPath)));
           ndUser.atImg = imagePath.Replace("\\", "/");
           objTask = Task.Run(() => itFile.SaveLocalServer(strWwwPath));
           if (!objTask.Result) break;
         }
-        retValue = scUser.UpdateImg(ndUser);
+        retValue = updateMethod(updateObject);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateProfilePic)); }
-      return (retValue);
+      return retValue;
     }
+
     internal bool GetImgUser()
     {
       bool retValue = false;

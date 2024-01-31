@@ -147,7 +147,7 @@
       <NodeInterface id="HeadLink" FileName="privatearea\HeadLink.xml"/>
       <NodeInterface id="BodyHeaderFooter" FileName="privatearea\BodyHeaderFooter.xml"/>
 			<NodeInterface id="index" FileName="privatearea\index.xml"/>
-      <NodeInterface id="catalogo" FileName="privatearea\catalogo.xml"/>
+      <NodeInterface id="hcstonecatalogo" FileName="privatearea\hcstonecatalogo.xml"/>
       <NodeInterface id="marble" FileName="privatearea\marble.xml"/>
 			<NodeInterface id="area-usuario" FileName="privatearea\area-usuario.xml"/>
 			<NodeInterface id="hyper_library" FileName="privatearea\hyper_library.xml"/>

@@ -7,65 +7,38 @@
 	ServerClass="HC4x_Server.PrivateArea.UserArea">
 	<NodeForm>
 		<![CDATA[
-        <!--perfil-->
-      <style>
-	  #drop-area{
-	    width: 500px;
-		height: 300px;
-		padding: 30px;
-		background: #fff;
-		text-align: center;
-		border-radius: 20px;
-	  }
-	  #img-view{
-	    width: 100%;
-		height:110%;
-		border-radius: 20px;
-		border: 2px dashed #bbb5ff;
-		background: #f7f8ff;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 5px;
-	  }
-	  #img-view img{
-	    display:block;
-		height: 180px;
-	  }
-       </style>
-    <div class="d-flex flex-column align-items-center justify-content-center">
-        <h1 class="text-uppercase text-primary">Este é o seu perfil!</h1>
-        <hr class="w-25">
-		<label for="input-file" id="drop-area">
-		    <input type="file" accept="image/*" name="input-file" id="input-file" hidden/>
-			<div id="img-view">
-			    <img src="{hc4x-key:imgUser}" name="user-image" id="user-image"/>   
-			    <p>Clique ou arraste para trocar a imagem<br> e depois clique em Salvar</p>
-			</div>
-		</label>
-        <input type="submit" class="btn btn-outline-primary mb-5" value="Salvar"id="button-input-file" />
-        <input type="hidden" id="pkeyUser" name="pkeyUser" value="{hc4x-key:pkeyUser}"/>
-        <table class="table m-2 border rounded-2 w-25">
-          <tbody>
-            <tr>
-              <td><label for="email">Email</label></td>
-              <td><input size=30 type="text" id="email" name="email" value="{hc4x-key:email}" class="border-0"/></td>
-            </tr>
-            <tr>
-              <td><label for="descUser">Nome</label></td>
-              <td><input size=30 type="text" placeholder="Digite seu nome aqui" id="descUser" name="descUser" value="{hc4x-key:descUser}" class="border-0" /></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="d-flex justify-content-evenly align-items-center mt-2">
-            <button type="submit" class="btn btn-outline-primary me-5">Salvar</button>
-            <div>
-                <input class="form-check-input" type="checkbox" role="switch" id="newsletter">
-                <label for="form-check-input">Ativar newsletter</label>
-            </div>
+<div class="d-flex flex-column align-items-center justify-content-center">
+    <h1 class="text-uppercase text-primary">Este é o seu perfil!</h1>
+    <hr class="w-25">
+<label for="input-file" id="drop-area">
+		<input type="file" accept="image/*" name="input-file" id="input-file" hidden/>
+	<div id="img-view">
+			<img src="{hc4x-key:imgUser}" name="user-image" id="user-image"/>   
+			<p>Clique ou arraste para trocar a imagem<br> e depois clique em Salvar</p>
+	</div>
+</label>
+    <input type="submit" class="btn btn-outline-primary mb-5" value="Salvar"id="button-input-file" />
+    <input type="hidden" id="pkeyUser" name="pkeyUser" value="{hc4x-key:pkeyUser}"/>
+    <table class="table m-2 border rounded-2 w-25">
+      <tbody>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td><input size=30 type="text" id="email" name="email" value="{hc4x-key:email}" class="border-0"/></td>
+        </tr>
+        <tr>
+          <td><label for="descUser">Nome</label></td>
+          <td><input size=30 type="text" placeholder="Digite seu nome aqui" id="descUser" name="descUser" value="{hc4x-key:descUser}" class="border-0" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-evenly align-items-center mt-2">
+        <button type="submit" class="btn btn-outline-primary me-5">Salvar</button>
+        <div>
+            <input class="form-check-input" type="checkbox" role="switch" id="newsletter">
+            <label for="form-check-input">Ativar newsletter</label>
         </div>
     </div>
+</div>
         ]]>
 	</NodeForm>
 	<NodeFooter>

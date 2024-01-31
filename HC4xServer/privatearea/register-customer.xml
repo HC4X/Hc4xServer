@@ -2,7 +2,7 @@
 <NodeInterface
   id="register-customer" 
 	NodeType="text/html" 
-	ModelLayout="SingleForm" 
+	ModelLayout="UploadForm" 
 	htmltitle="HyperCube4x - Um mundo possível" 
 	ServerClass="HC4x_Server.PrivateArea.UserArea">
 	<NodeForm>
@@ -29,6 +29,11 @@
                       <input type="text" name="razaoSocial" value="{hc4x-key:razaoSocial}" required id="razaoSocial"
                           class="form-control form-control-lg" placeholder="" />
                   </div>
+                  <!-- logoCustomer -->
+                  <div class="mb-3">
+                    <label for="logoCustomer" class="form-label">Logo da empresa</label>
+                    <input type="file" class="form-control" id="logoCustomer" name="logoCustomer" />
+                  </div>							
                   <!-- Name input -->
                   <div class="form-outline mb-4">
                       <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
