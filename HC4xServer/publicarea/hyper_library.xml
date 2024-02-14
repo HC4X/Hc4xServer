@@ -4,30 +4,37 @@
   NodeType="text/html"
   ModelLayout="ContentPage"
   Version="2024-02-13 12:42">
-  <NodeContent>
+  <NodeHeader>
     <![CDATA[<div class="container-fluid">
   <div class="container py-5">
     <h1 class="text-center text-primary">Hyper Library</h1>
     <hr class="mx-auto w-50">
-    <h5 class="text-center">O Hyper Library é uma aplicação de uso específico com o objetivo de
-      proporcionar à seu usuário uma leitura imersiva. Essa aplicação é uma parceria entre a Semcult
-      (Secretaria Municipal de Cultura e Turismo de Cachoeiro de Itapemirim) e o Hypercube4x Realidade Virtual
-    </h5>
-    <div class="row">
-      <div class="col-12 col-md-6 mx-auto d-block mt-5">
-        <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">
-          <a href="#" class="text-decoration-none text-white">Abrir
-            com Hypercube</a></button>
-      </div>
-      <div class="col-12 col-md-6 mx-auto d-block mt-5">
-        <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">
-          <a href="/publicarea/pt/05_download" class="text-decoration-none text-white">Clique aqui para baixar o Hypercube4x</a></button>
-      </div>
+    <h5>O objetivo do Hyper Library proporcionar um ambiente de leitura imersiva aos usuários. A  aplicação está sendo desenvolvida em parceria com a SEMCULT
+      (Secretaria Municipal de Cultura e Turismo) de Cachoeiro de Itapemirim e financiada pelo edital FAPES nº 026/2022 (FAPES CLUSTER)</h5>
+  <div class="row my-5 d-flex justify-content-center">
+    <div class="col-12 col-md-12 col-lg-6 d-inline">
+      <h3 class="text-start text-primary pb-2">Visualização Imersiva Usando o HyperCube4x</h3>
+      <ol class="text-start fs-5">
+        <li>O HyperCube4x é a plataforma de realidade virtual disponibilizada para visualizar o acervo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”;</li>
+        <li>Com ele, é possível ter a sensação de manusear os livros;</li>
+        <li>Faça download do HyperCube, instale e clique no catálogo abaixo para visualizar as obras em realidade virtual.</li>
+      </ol>
+      <button class="btn btn-primary btn-lg mx-auto my-3 d-block">
+        <a href="/publicarea/pt/download" class="text-decoration-none text-white">Baixar o Hypercube4X</a>
+      </button>
     </div>
+    <div class="col-12 col-md-12 col-lg-6 d-inline">
+      <figure>
+        <img src="/images/general/laptop.png" alt="laptop com visualização no Hypercube4x" class="img-fluid w-75 mx-auto">
+      </figure>
+    </div>
+  </div>]]>
+  </NodeHeader>    
+  <NodeContent>
+    <![CDATA[
     <!--'Coleções de livros'-->
-    <h4 class="text-center mx-auto mt-5">Catálogo provindo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”
+    <h4 class="text-center mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”
     </h4>
-        
     <div class="row my-5 " id="hyper_library">
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fciencia-da-computacao-informacao-e-obras-gerais;ead?sf_format%3Dxml" class="card text-decoration-none">
@@ -149,8 +156,10 @@
           </div>
         </a>
       </div>
-    </div>
-  </div>
-</div>]]>
+    </div>]]>
   </NodeContent>
+  <NodeFooter>
+    <![CDATA[  </div>
+</div>]]>
+  </NodeFooter>
 </NodeInterface>
