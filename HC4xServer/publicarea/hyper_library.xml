@@ -3,9 +3,9 @@
   id="hyper_library"
   NodeType="text/html"
   ModelLayout="ContentPage"
-  Version="2024-02-13 12:42">
-  <NodeHeader>
-    <![CDATA[<div class="container-fluid">
+  Version="2024-02-23 07:41">
+	<NodeHeader>
+		<![CDATA[<div class="container-fluid">
   <div class="container py-5">
     <h1 class="text-center text-primary">Hyper Library</h1>
     <hr class="mx-auto w-50">
@@ -13,7 +13,7 @@
       (Secretaria Municipal de Cultura e Turismo) de Cachoeiro de Itapemirim e financiada pelo edital FAPES nº 026/2022 (FAPES CLUSTER)</h5>
   <div class="row my-5 d-flex justify-content-center">
     <div class="col-12 col-md-12 col-lg-6 d-inline">
-      <h3 class="text-start text-primary pb-2">Visualização Imersiva Usando o HyperCube4x</h3>
+      <h3 class="text-start text-primary pb-2">HyperCube4x - Visualização Imersiva</h3>
       <ol class="text-start fs-5">
         <li>O HyperCube4x é a plataforma de realidade virtual disponibilizada para visualizar o acervo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”;</li>
         <li>Com ele, é possível ter a sensação de manusear os livros;</li>
@@ -29,11 +29,26 @@
       </figure>
     </div>
   </div>]]>
-  </NodeHeader>    
-  <NodeContent>
-    <![CDATA[
+	</NodeHeader>
+	<NodeContent>
+		<![CDATA[<!--'Livros em Destaque'-->
+    <h4 class="text-center mx-auto mt-5">Livros para acesso em Realidade Virtual</h4>
+    <div class="row my-5 " id="hyper_library">
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fhypercube4x.com%2Fcustomer%2Fhclibrary%2FAlvaro_Abreu%2FViva_Producao_Prazerosa.json" class="card text-decoration-none">
+          <div class="card">
+            <img class="card-img-top img-responsive" src="/customer/hclibrary/alvaro_abreu/viva_producao_cover_thumb.png" alt="Viva a Produção Prazerosa">
+            <div class="card-body">
+              <h5 class="card-title text-center">Álvaro Abreu</h5>
+              <p class="card-text text-center">Viva a Produção Prazerosa</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
     <!--'Coleções de livros'-->
-    <h4 class="text-center mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”
+    <h4 class="text-center mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim<br />“Major Walter dos Santos Paiva”
     </h4>
     <div class="row my-5 " id="hyper_library">
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
@@ -157,9 +172,9 @@
         </a>
       </div>
     </div>]]>
-  </NodeContent>
-  <NodeFooter>
-    <![CDATA[  </div>
+	</NodeContent>
+	<NodeFooter>
+		<![CDATA[  </div>
 </div>]]>
-  </NodeFooter>
+	</NodeFooter>
 </NodeInterface>
