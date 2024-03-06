@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NodeInterface 
-  id="index" 
-  NodeType="text/html" 
+<NodeInterface
+  id="index"
+  NodeType="text/html"
   ModelLayout="ContentPage"
   htmltitle="HyperCube4x - Um mundo possível">
 	<NodeContent>
@@ -47,6 +47,19 @@
                             </div>
                             <div class="card-body ">
                                 <h5 class="card-title text-center text-primary">Hyper Analyzer</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+								<div class="col-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <a href="/privatearea/pt/hyper_library" alt="Hyper Library" class="text-decoration-none">
+                        <div class="card text-center shadow-lg p-3 bg-body-tertiary rounded">
+                            <div class="card-header">
+							<i class="bi bi-journals fs-1 text-center text-primary"></i> 
+                                <br>
+                            </div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center text-primary">Hyper Library</h5>
                             </div>
                         </div>
                     </a>

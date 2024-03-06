@@ -440,3 +440,12 @@ HC4xServer/bin/Release/net7.0/MySql.Data.dll
 HC4xServer/bin/Release/net7.0/System.Configuration.ConfigurationManager.dll
 HC4xServer/bin/Release/net7.0/System.Security.Permissions.dll
 *.cache
+*.bin
+.vs/HC4xServer/DesignTimeBuild/.dtbcache.v2
+.vs/HC4xServer/FileContentIndex/0793169d-2282-496d-9e5e-f966b6f99701.vsidx
+.vs/HC4xServer/FileContentIndex/17764790-c6d1-489e-a3ea-df8f15405be5.vsidx
+.vs/HC4xServer/FileContentIndex/2bddbd23-6cbe-4453-9ee7-e4ec7ba66dae.vsidx
+.vs/HC4xServer/FileContentIndex/a0690ebb-237f-4012-ac82-605044165a8a.vsidx
+.vs/HC4xServer/FileContentIndex/c9d7ca6e-a65e-4b93-8ea6-e3574544b880.vsidx
+.vs/ProjectEvaluation/hc4xserver.projects.v7.bin
+.vs/ProjectEvaluation/hc4xserver.metadata.v7.bin
