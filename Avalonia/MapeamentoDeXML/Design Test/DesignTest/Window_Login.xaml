@@ -1,0 +1,508 @@
+﻿<Window x:Class="DesignTest.Window_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignTest"
+        mc:Ignorable="d"
+        Title="Window_Login" SizeToContent="WidthAndHeight">
+  <Window.Resources>
+    <Style x:Key="border_lt" TargetType="Border">
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="1,1,0,0" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <Style x:Key="border_br_full" TargetType="Border">
+      <Setter Property="BorderBrush" Value="LightGray" />
+      <Setter Property="BorderThickness" Value="0,0,1,1" />
+      <Setter Property="CornerRadius" Value="0,0,4,0" />
+      <Setter Property="Margin" Value="0,2,0,2" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Gray" Opacity="0.25" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="border_br_min" TargetType="Border" BasedOn="{StaticResource border_br_full}">
+      <Setter Property="Margin" Value="4,4,0,0" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <Style x:Key="border_lt_gray_50" TargetType="Border">
+      <Setter Property="BorderBrush" Value="White" />
+      <Setter Property="BorderThickness" Value="1,1,1,1" />
+      <Setter Property="CornerRadius" Value="0,0,2,0" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="DarkGray" Opacity="0.5" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="border_tile_128" TargetType="Border" BasedOn="{StaticResource border_br_min}">
+      <Setter Property="Height" Value="128" />
+      <Setter Property="Width" Value="128" />
+    </Style>
+    <Style x:Key="tab_bottom_black75" TargetType="Border">
+      <Setter Property="CornerRadius" Value="0,0,0,4" />
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="1,0,0,2" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_bottom_gray75" TargetType="Border" BasedOn="{StaticResource tab_bottom_black75}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Gray" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_left_black75" TargetType="Border">
+      <Setter Property="CornerRadius" Value="4,0,0,0" />
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="2,1,0,0" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Margin" Value="2,2,0,0" />
+    </Style>
+    <Style x:Key="tab_left_gray75" TargetType="Border" BasedOn="{StaticResource tab_left_black75}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Gray" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_right_black75" TargetType="Border">
+      <Setter Property="CornerRadius" Value="0,4,0,0" />
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="0,1,2,0" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_right_gray75" TargetType="Border" BasedOn="{StaticResource tab_right_black75}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Gray" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_top_black75" TargetType="Border">
+      <Setter Property="CornerRadius" Value="0,4,0,0" />
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="0,1,1,0" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tab_top_gray75" TargetType="Border" BasedOn="{StaticResource tab_top_black75}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Gray" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="size_16" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="16" />
+      <Setter Property="Width" Value="16" />
+    </Style>
+    <Style x:Key="size_24" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="24" />
+      <Setter Property="Width" Value="24" />
+    </Style>
+    <Style x:Key="size_32" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="32" />
+      <Setter Property="Width" Value="32" />
+    </Style>
+    <Style x:Key="size_48" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="48" />
+      <Setter Property="Width" Value="48" />
+    </Style>
+    <Style x:Key="size_64" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="64" />
+      <Setter Property="Width" Value="64" />
+    </Style>
+    <Style x:Key="size_96" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="96" />
+      <Setter Property="Width" Value="96" />
+    </Style>
+    <Style x:Key="size_128" TargetType="FrameworkElement">
+      <Setter Property="Height" Value="128" />
+      <Setter Property="Width" Value="128" />
+    </Style>
+    <Style x:Key="size_16_vc" TargetType="FrameworkElement" BasedOn="{StaticResource size_16}">
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="hover_6_20" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="20" />
+      <Setter Property="Width" Value="20" />
+    </Style>
+    <Style x:Key="hover_6_36" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="36" />
+      <Setter Property="Width" Value="36" />
+    </Style>
+    <Style x:Key="hover_6_44" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="44" />
+      <Setter Property="Width" Value="44" />
+    </Style>
+    <Style x:Key="hover_6_48" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="48" />
+      <Setter Property="Width" Value="48" />
+    </Style>
+    <Style x:Key="hover_6_64" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="64" />
+      <Setter Property="Width" Value="64" />
+    </Style>
+    <Style x:Key="hover_6_72" TargetType="FrameworkElement" BasedOn="{StaticResource hover_6}">
+      <Setter Property="Height" Value="72" />
+      <Setter Property="Width" Value="72" />
+    </Style>
+    <Style x:Key="pnl_black_25" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.25" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="pnl_black_50" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.50" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="pnl_black_75" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="pnl_gray_25" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="DarkGray" Opacity="0.25" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="pnl_gray_50" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="DarkGray" Opacity="0.50" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="pnl_gray_75" TargetType="Panel">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="DarkGray" Opacity="0.75" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tile_black_10" TargetType="Panel">
+      <Setter Property="Margin" Value="0,4,0,4" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.10" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tile_black_25" TargetType="Panel" BasedOn="{StaticResource pnl_black_25}">
+      <Setter Property="Margin" Value="0,4,0,4" />
+    </Style>
+    <Style x:Key="tile_black_50" TargetType="Panel" BasedOn="{StaticResource pnl_black_50}">
+      <Setter Property="Margin" Value="0,4,0,4" />
+    </Style>
+    <Style x:Key="stck_bar_gray_75" TargetType="StackPanel" BasedOn="{StaticResource pnl_gray_75}">
+      <Setter Property="Margin" Value="0,0,0,4" />
+    </Style>
+    <Style x:Key="viewer_gray_50" TargetType="ScrollViewer">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="DarkGray" Opacity="0.50" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="GridLine" TargetType="Label">
+      <Setter Property="BorderBrush" Value="Gray" />
+      <Setter Property="BorderThickness" Value="0,0,1,1" />
+      <Setter Property="Padding" Value="2,2,2,2" />
+    </Style>
+    <Style x:Key="font_nb_10" TargetType="Control">
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="font_nb_12" TargetType="Control" BasedOn="{StaticResource font_nb_10}">
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style x:Key="font_bb_12" TargetType="Control" BasedOn="{StaticResource font_nb_12}">
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="font_nw_10" TargetType="Control" BasedOn="{StaticResource font_nb_10}">
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style x:Key="font_nw_12" TargetType="Control" BasedOn="{StaticResource font_nw_10}">
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style x:Key="font_bw_12" TargetType="Control" BasedOn="{StaticResource font_nw_12}">
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="font_bw_16" TargetType="Control">
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Margin" Value="0, 15, 0, 15" />
+    </Style>
+    <Style x:Key="font_bo_12" TargetType="Control" BasedOn="{StaticResource font_bb_12}">
+      <Setter Property="Foreground" Value="#FFFFA500" />
+    </Style>
+    <Style x:Key="font_bo_14" TargetType="Control" BasedOn="{StaticResource font_bo_12}">
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="font_bo_16" TargetType="Control" BasedOn="{StaticResource font_bo_12}">
+      <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style x:Key="button_nw_12" TargetType="Control" BasedOn="{StaticResource font_nw_12}">
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="label_color" TargetType="Control" BasedOn="{StaticResource font_nw_10}">
+      <Setter Property="BorderBrush" Value="Black" />
+      <Setter Property="BorderThickness" Value="1,1,1,1" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="Width" Value="16" />
+    </Style>
+    <Style x:Key="Button_WB_12" TargetType="Label" BasedOn="{StaticResource font_bw_16}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="LightGray" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="Padding" Value="50, 10, 50, 10" />
+    </Style>
+    <Style x:Key="label_black_25" TargetType="Label" BasedOn="{StaticResource font_bw_12}">
+      <Setter Property="Margin" Value="0,4,0,4" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.25" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="tbox_normal" TargetType="TextBox">
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+      <Setter Property="MaxHeight" Value="22" />
+    </Style>
+    <Style x:Key="box_query" TargetType="TextBox" BasedOn="{StaticResource font_nb_12}">
+      <Setter Property="FontFamily" Value="Courier New" />
+      <Setter Property="Margin" Value="2,2,0,0" />
+      <Setter Property="VerticalContentAlignment" Value="Top" />
+      <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+      <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+    <Style x:Key="lbl_query" TargetType="Label" BasedOn="{StaticResource font_bw_12}">
+      <Setter Property="FontFamily" Value="Courier New" />
+      <Setter Property="Margin" Value="4,2,0,2" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.25" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="screen_subtitle" TargetType="TextBlock">
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+      <Setter Property="LineHeight" Value="25" />
+      <Setter Property="Margin" Value="0, 0, 0, 50" />
+      <Setter Property="MaxWidth" Value="600" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+    <Style x:Key="ColHeader" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="SteelBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="ColTotal" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="SteelBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="Detail_1" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="White" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="Detail_2" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="LightBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="RowHeader_1" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="White" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="RowHeader_2" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="LightBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="RowTotal_1" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="White" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="RowTotal_2" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="LightBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="HighLight_1" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Cyan" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+    <Style x:Key="HighLight_2" TargetType="Label" BasedOn="{StaticResource GridLine}">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="LightBlue" />
+        </Setter.Value>
+      </Setter>
+      <Setter Property="FontFamily" Value="Verdana" />
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="MaxHeight" Value="600" />
+      <Setter Property="MaxWidth" Value="600" />
+    </Style>
+  </Window.Resources>
+  <StackPanel Name="FlatWait" Orientation="Vertical" Style="{StaticResource pnl_black_75}" Margin="4,4,4,4">
+    <Label Name="FlatTitle"
+       Style="{StaticResource font_bo_16}"
+       Margin="8,8,0,8">Tela de Login</Label>
+    <Label Style="{StaticResource font_bw_12}"
+        Margin="8,30,0,0">Nome</Label>    
+    <TextBox Name="txtUserName" Text="User01" />
+    <Label Style="{StaticResource font_bw_12}"
+        Margin="8,30,0,0">senha</Label>
+    <TextBox Name="txtUserPass" Text="Pass01" />
+    <Label Name="ActLogin" MouseDown="Action_MouseDown" Style="{StaticResource Button_WB_12}" MinWidth="200">Logar</Label>
+    <Label Name="Message" Style="{StaticResource font_bo_12}">[ready]</Label>
+  </StackPanel>
+</Window>
