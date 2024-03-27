@@ -6,10 +6,11 @@ using System.Security.Cryptography;
 
 namespace DesignTest.Atom
 {
+  #region RemoteDoc
   public class NodeKey : RawXml
   {
     private const string Key = nameof(NodeKey);
-    #region Attibutes
+    #region Attributes
     public string atId
     {
       get => ValueStr(c_atid);
@@ -33,9 +34,13 @@ namespace DesignTest.Atom
     private const string c_atvalue = "value";
     #endregion
   }
-
   public class SectorNumeric : RawXml 
   {
+    #region Attributes
+    #endregion
+    #region Node
+    public NodeKey ndKey { get; private set; }
+    #endregion
     #region Constructor
     public SectorNumeric(RawXml parXml) : base(parXml)
     {
@@ -43,18 +48,18 @@ namespace DesignTest.Atom
 
     }
     #endregion 
-
     #region Constant
     public const string c_sector = "SectorNumeric";
     private const string c_ndkey = NodeKey.c_node;
     #endregion
+  }
+  public class SectorDirection : RawXml 
+  {
+    #region Attributes
+    #endregion
     #region Node
     public NodeKey ndKey { get; private set; }
     #endregion
-  }
-
-  public class SectorDirection : RawXml 
-  {
     #region Constructor
     public SectorDirection(RawXml parXml) : base(parXml)
     {
@@ -65,12 +70,14 @@ namespace DesignTest.Atom
     public const string c_sector = "SectorDirection";
     private const string c_ndkey = NodeKey.c_node;
     #endregion
-    #region Node
-    public NodeKey ndKey { get; private set; }
-    #endregion
   }
   public class SectorZoom : RawXml 
   {
+    #region Attributes
+    #endregion
+    #region Node
+    public NodeKey ndKey { get; private set; }
+    #endregion
     #region Constructor
     public SectorZoom(RawXml parXml) : base(parXml)
     {
@@ -81,20 +88,17 @@ namespace DesignTest.Atom
     public const string c_sector = "SectorZoom";
     private const string c_ndkey = NodeKey.c_node;
     #endregion
-    #region Node
-    public NodeKey ndKey { get; private set; }
-    #endregion
   }
-
   public class RemoteDoc : RawXml
   {
+    #region Attributes
+    #endregion
     #region Node
     public SectorNumeric scNumeric { get; private set; }
     public SectorDirection scDirection { get; private set; }
     public SectorZoom scZoom { get; private set; }
 
     #endregion
-
     #region Constructor
     public RemoteDoc(string parFileName) : base(parFileName, hc4x_NodeType.XmlFileOpen)
     {
@@ -117,5 +121,7 @@ namespace DesignTest.Atom
     private const string c_scdirection = SectorDirection.c_sector;
     private const string c_sczoom = SectorZoom.c_sector;
     #endregion
-  }
+  } 
+  #endregion
 }
+
