@@ -1,0 +1,76 @@
+scAtomEadDoc.ndHeader.atLangencoding
+"iso639-2b"
+scAtomEadDoc.ndHeader.atLangencoding
+"xml_criativo"
+scAtomEadDoc.ndHeader.atLangencoding = "estado_atual_do_objeto"
+"estado_atual_do_objeto"
+scAtomEadDoc.Save
+{Method = {Boolean Save(System.String)}}
+    Method: {Boolean Save(System.String)}
+    Target: {DesignTest.Atom.AtomEadDoc}
+scAtomEadDoc.Save(@"D:\dev\HyperCube4X\Hc4xServer\Avalonia\MapeamentoDeXML\Design Test\DesignTest\Atom\xxx.xml")
+true
+this.ArrayNode()
+{LibModel.RawXml[3]}
+    [0]: {LibModel.RawXml}
+    [1]: {LibModel.RawXml}
+    [2]: {LibModel.RawXml}
+this.ArrayNode()[0].atNodeName
+"SectorNumeric"
+this.ArrayNode()[1].atNodeName
+"SectorDirection"
+this.ArrayNode()[2].atNodeName
+"SectorZoom"
+this.ArrayNode()[0].atNodeContent
+"<SectorNumeric><NodeKey id=\"Key0\" value=\"Command_0\" /><NodeKey id=\"Key1\" value=\"Command_1\" /><NodeKey id=\"Key2\" value=\"Command_2\" /><NodeKey id=\"Key3\" value=\"Command_3\" /><NodeKey id=\"Key4\" value=\"Command_4\" /><NodeKey id=\"Key5\" value=\"Command_5\" /><NodeKey id=\"Key6\" value=\"Command_6\" /><NodeKey id=\"Key7\" value=\"Command_7\" /><NodeKey id=\"Key8\" value=\"Command_8\" /><NodeKey id=\"Key9\" value=\"Command_9\" /></SectorNumeric>"
+this.ArrayNode()[1].atNodeContent
+"<SectorDirection><NodeKey id=\"KeyUp\" value=\"Command_Up\" /><NodeKey id=\"KeyDown\" value=\"Command_Down\" /><NodeKey id=\"KeyLeft\" value=\"Command_Left\" /><NodeKey id=\"KeyRight\" value=\"Command_Right\" /></SectorDirection>"
+this.ArrayNode()[2].atNodeContent
+"<SectorZoom><NodeKey id=\"KeyXLeft\" value=\"Command_X_Left\" /><NodeKey id=\"KeyXRight\" value=\"Command_X_Right\" /><NodeKey id=\"KeyYUp\" value=\"Command_Y_Up\" /><NodeKey id=\"KeyYDown\" value=\"Command_Y_Down\" /><NodeKey id=\"KeyZIn\" value=\"Command_Z_In\" /><NodeKey id=\"KeyZOut\" value=\"Command_Z_Out\" /></SectorZoom>"
+this.ArrayNode()[0].ArrayNode()
+{LibModel.RawXml[10]}
+    [0]: {LibModel.RawXml}
+    [1]: {LibModel.RawXml}
+    [2]: {LibModel.RawXml}
+    [3]: {LibModel.RawXml}
+    [4]: {LibModel.RawXml}
+    [5]: {LibModel.RawXml}
+    [6]: {LibModel.RawXml}
+    [7]: {LibModel.RawXml}
+    [8]: {LibModel.RawXml}
+    [9]: {LibModel.RawXml}
+this.ArrayNode()[0].ArrayNode()[0]
+{LibModel.RawXml}
+    atContent: ""
+    atCount: 2
+    atInitError: false
+    atNodeContent: "<NodeKey id=\"Key0\" value=\"Command_0\" />"
+    atNodeName: "NodeKey"
+    atXmlContent: ""
+    atXmlDocument: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><SectorRemote><SectorNumeric><NodeKey id=\"Key0\" value=\"Command_0\" /><NodeKey id=\"Key1\" value=\"Command_1\" /><NodeKey id=\"Key2\" value=\"Command_2\" /><NodeKey id=\"Key3\" value=\"Command_3\" /><NodeKey id=\"Key4\" value=\"Command_4\" /><NodeKey id=\"Key5\" value=\"Command_5\" /><NodeKey id=\"Key6\" value=\"Command_6\" /><NodeKey id=\"Key7\" value=\"Command_7\" /><NodeKey id=\"Key8\" value=\"Command_8\" /><NodeKey id=\"Key9\" value=\"Command_9\" /></SectorNumeric><SectorDirection><NodeKey id=\"KeyUp\" value=\"Command_Up\" /><NodeKey id=\"KeyDown\" value=\"Command_Down\" /><NodeKey id=\"KeyLeft\" value=\"Command_Left\" /><NodeKey id=\"KeyRight\" value=\"Command_Right\" /></SectorDirection><SectorZoom><NodeKey id=\"KeyXLeft\" value=\"Command_X_Left\" /><NodeKey id=\"KeyXRight\" value=\"Command_X_Right\" /><NodeKey id=\"KeyYUp\" value=\"Command_Y_Up\" /><NodeKey id=\"KeyYDown\" value=\"Command_Y_Down\" /><NodeKey id=\"KeyZIn\" value=\"Command_Z_
+In\" /><NodeKey id=\"KeyZOut\" value=\"Command_Z_Out\" /></SectorZoom></SectorRemote>"
+    fwXmlDoc: "Document"
+    fwXmlNode: "Element, Name=\"NodeKey\""
+    ndCount: 0
+    ndRoot: {LibModel.RawXml}
+    ndXmlKeyValue: {LibModel.XmlKeyValue}
+this.ArrayNode()[0].ArrayNode()[0].atNodeContent
+"<NodeKey id=\"Key0\" value=\"Command_0\" />"
+this.ArrayNode()[0].ArrayNode()[1].atNodeContent
+"<NodeKey id=\"Key1\" value=\"Command_1\" />"
+this.ArrayNode()[0].ArrayNode()[2].atNodeContent
+"<NodeKey id=\"Key2\" value=\"Command_2\" />"
+this.ArrayNode()[0].ArrayNode()[3].atNodeContent
+"<NodeKey id=\"Key3\" value=\"Command_3\" />"
+this.ArrayNode()[0].ArrayNode()[4].atNodeContent
+"<NodeKey id=\"Key4\" value=\"Command_4\" />"
+this.ArrayNode()[0].ArrayNode()[5].atNodeContent
+"<NodeKey id=\"Key5\" value=\"Command_5\" />"
+this.ArrayNode()[0].ArrayNode()[6].atNodeContent
+"<NodeKey id=\"Key6\" value=\"Command_6\" />"
+this.ArrayNode()[0].ArrayNode()[7].atNodeContent
+"<NodeKey id=\"Key7\" value=\"Command_7\" />"
+this.ArrayNode()[0].ArrayNode()[8].atNodeContent
+"<NodeKey id=\"Key8\" value=\"Command_8\" />"
+this.ArrayNode()[0].ArrayNode()[9].atNodeContent
+"<NodeKey id=\"Key9\" value=\"Command_9\" />"
