@@ -102,6 +102,6 @@ public partial class MainWindow : Window
         {
             Cmd_Central(_mainView.Desligar, EventArgs.Empty);
         };
-        ShowView(_homePage);
+        ShowView(_mainView);
     }
 }

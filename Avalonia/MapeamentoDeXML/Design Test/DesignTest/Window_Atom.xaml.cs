@@ -11,6 +11,7 @@ namespace DesignTest {
   public partial class Window_Atom : Window {
     #region Node
     private AtomEadDoc scAtomEadDoc { get; set; }
+    private RemoteDoc scRemoteDoc { get; set; }
     #endregion
     #region Event
     private void Label_MouseDown(object sender, MouseButtonEventArgs e) {
@@ -18,7 +19,9 @@ namespace DesignTest {
       try {
         arFileName = GearFileDialog.OpenFile("Atom EAD Xml", Environment.CurrentDirectory, "", "XMl (*.xml)|*.xml", true, false);
         if (arFileName != null)
-          scAtomEadDoc = new AtomEadDoc(arFileName[0]);
+          scRemoteDoc = new RemoteDoc(arFileName[0]);
+          //scAtomEadDoc = new AtomEadDoc(arFileName[0]);
+
         }
       catch (Exception Err) { AxisMundi.ShowException(Err, Name, nameof(Label_MouseDown)); }
       }
