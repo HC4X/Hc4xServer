@@ -98,6 +98,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Atom\AtomModel_01.cs" />
+    <Compile Include="Atom\remote.cs" />
     <Compile Include="HC4xCore.cs" />
     <Compile Include="hc4x_99_const_enum.cs" />
     <Compile Include="hc4x_Database.cs" />

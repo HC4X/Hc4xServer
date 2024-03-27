@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SectorRemote>
+	<SectorNumeric>
+		<NodeKey id="Key0" value="Command_0" />
+		<NodeKey id="Key1" value="Command_1" />
+		<NodeKey id="Key2" value="Command_2" />
+		<NodeKey id="Key3" value="Command_3" />
+		<NodeKey id="Key4" value="Command_4" />
+		<NodeKey id="Key5" value="Command_5" />
+		<NodeKey id="Key6" value="Command_6" />
+		<NodeKey id="Key7" value="Command_7" />
+		<NodeKey id="Key8" value="Command_8" />
+		<NodeKey id="Key9" value="Command_9" />
+	</SectorNumeric>
+
+	<SectorDirection>
+		<NodeKey id="KeyUp" value="Command_Up" />
+		<NodeKey id="KeyDown" value="Command_Down" />
+		<NodeKey id="KeyLeft" value="Command_Left" />
+		<NodeKey id="KeyRight" value="Command_Right" />
+	</SectorDirection>
+
+	<SectorZoom>
+		<NodeKey id="KeyXLeft" value="Command_X_Left" />
+		<NodeKey id="KeyXRight" value="Command_X_Right" />
+		<NodeKey id="KeyYUp" value="Command_Y_Up" />
+		<NodeKey id="KeyYDown" value="Command_Y_Down" />
+		<NodeKey id="KeyZIn" value="Command_Z_In" />
+		<NodeKey id="KeyZOut" value="Command_Z_Out" />
+	</SectorZoom>
+</SectorRemote>
