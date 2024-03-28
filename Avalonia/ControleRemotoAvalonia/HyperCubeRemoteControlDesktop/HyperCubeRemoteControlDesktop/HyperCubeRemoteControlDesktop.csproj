@@ -30,4 +30,17 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\HomePage.axaml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Reference\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LibInterface">
+      <HintPath>..\..\..\..\..\..\source\repos\HyperCubeRemoteControlDesktop\HyperCubeRemoteControlDesktop\Reference\LibInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="LibModel">
+      <HintPath>..\..\..\..\..\..\source\repos\HyperCubeRemoteControlDesktop\HyperCubeRemoteControlDesktop\Reference\LibModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
