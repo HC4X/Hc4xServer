@@ -18,14 +18,16 @@
 		<NodeKey id="KeyDown" value="Command_Down" />
 		<NodeKey id="KeyLeft" value="Command_Left" />
 		<NodeKey id="KeyRight" value="Command_Right" />
+		<NodeKey id="KeyRight" value="Command_Right" />
+		<NodeKey id="KeyCentral" value="Command_Central" />
 	</SectorDirection>
 
 	<SectorZoom>
-		<NodeKey id="KeyXLeft" value="Command_X_Left" />
-		<NodeKey id="KeyXRight" value="Command_X_Right" />
-		<NodeKey id="KeyYUp" value="Command_Y_Up" />
-		<NodeKey id="KeyYDown" value="Command_Y_Down" />
-		<NodeKey id="KeyZIn" value="Command_Z_In" />
-		<NodeKey id="KeyZOut" value="Command_Z_Out" />
+		<NodeKey id="KeyXLeft" value="Command_XLeft" />
+		<NodeKey id="KeyXRight" value="Command_XRight" />
+		<NodeKey id="KeyYUp" value="Command_YUp" />
+		<NodeKey id="KeyYDown" value="Command_YDown" />
+		<NodeKey id="KeyZIn" value="Command_ZIn" />
+		<NodeKey id="KeyZOut" value="Command_ZOut" />
 	</SectorZoom>
 </SectorRemote>
