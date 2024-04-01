@@ -1,80 +1,98 @@
-﻿using System;
-using HC4xServer.Core;
+﻿using HC4xServer.Core;
 using HC4xServer.Logic;
-using LibServer;
 using LibModel;
+using LibServer;
+using System;
 using System.Text.RegularExpressions;
 
-namespace HC4x_Server.Logic {
+namespace HC4x_Server.Logic
+{
   /// <summary>Handles a single User</summary>
-  public class HC4x_NodeUser : WebXml {
+  public class HC4x_NodeUser : WebXml
+  {
     #region Name
     private const string Name = nameof(HC4x_NodeUser);
     #endregion
     #region Attribute
-    public int atId {
+    public int atId
+    {
       get => ValueInt(c_pkey);
       set => SetValue(c_pkey, value);
-      }
-    public int atSelfUser {
+    }
+    public int atSelfUser
+    {
       get => ValueInt(c_self);
       set => SetValue(c_self, value);
-      }
-    public string atName {
+    }
+    public string atName
+    {
       get => ValueStr(c_name);
       set => SetValue(c_name, value);
-      }
-    public string atDesc {
+    }
+    public string atDesc
+    {
       get => ValueStr(c_desc);
       set => SetValue(c_desc, value);
-      }
-    public string atImg {
+    }
+    public string atImg
+    {
       get => ValueStr(c_imguser);
       set => SetValue(c_imguser, value);
-      }
-    public string atPass {
+    }
+    public string atPass
+    {
       get => ValueStr(c_pass);
       set => SetValue(c_pass, value);
-      }
-    public string atEmail {
+    }
+    public string atEmail
+    {
       get => ValueStr(c_email);
       set => SetValue(c_email, value);
-      }
-    public hc4x_UserType atType {
+    }
+    public hc4x_UserType atType
+    {
       get => ValueEnum<hc4x_UserType>(c_type);
       set => SetValue(c_type, value);
-      }
-    public hc4x_UserStatus atStatus {
+    }
+    public hc4x_UserStatus atStatus
+    {
       get => ValueEnum<hc4x_UserStatus>(c_self);
       set => SetValue(c_self, (int)value);
-      }
+    }
     public string atConfirmCode => atName.Substring(0, 8);
     #endregion
     #region Method
     public bool ValidPassword(string parPassWord) { return (atPass == parPassWord); }
-    public bool AlterPassword(string parCurPass, string parNewPass, string parNewPassConfirm) {
+    public bool AlterPassword(string parCurPass, string parNewPass, string parNewPassConfirm)
+    {
       bool retValue = false;
-      try {
-        if (ValidPassword(parCurPass)) {
-          if (parNewPass == parNewPassConfirm) {
+      try
+      {
+        if (ValidPassword(parCurPass))
+        {
+          if (parNewPass == parNewPassConfirm)
+          {
             retValue = true;
-            }
-          else {
+          }
+          else
+          {
             retValue = false;
-            }
           }
         }
+      }
       catch (Exception) { throw; }
       return (retValue);
-      }
-    public bool ConfirmCode(string parCode) {
+    }
+    public bool ConfirmCode(string parCode)
+    {
       bool retValue = false;
-      try {
+      try
+      {
         retValue = atConfirmCode == parCode;
-        }
+      }
       catch (Exception) { throw; }
       return (retValue);
-      }
+    }
     #endregion
     #region Constructor
     public HC4x_NodeUser(PageCore parMundi) : base(parMundi, c_node) { }
@@ -95,21 +113,24 @@ namespace HC4x_Server.Logic {
     private const string c_imguser = "imgUser";
     private const string c_node = "NodeUser";
     #endregion
-    }
+  }
   /// <summary>Handles a User group</summary
-  public class HC4x_NodeAppUser : WebXml {
+  public class HC4x_NodeAppUser : WebXml
+  {
     #region Name
     private const string Name = nameof(HC4x_NodeAppUser);
     #endregion
     #region Attribute
-    public int atPkeyAppUser {
+    public int atPkeyAppUser
+    {
       get => ValueInt(c_pkeyappuser);
       set => SetValue(c_pkeyappuser, value);
-      }
-    public int atPkeyUser {
+    }
+    public int atPkeyUser
+    {
       get => ValueInt(c_pkeyuser);
       set => SetValue(c_pkeyuser, value);
-      }
+    }
     public int atPkeyApp
     {
       get => ValueInt(c_pkeyapp);
@@ -125,53 +146,69 @@ namespace HC4x_Server.Logic {
     private const string c_pkeyuser = "pkeyUser";
     private const string c_node = "NodeAppUser";
     #endregion
-    }
-  public class HC4x_NodeCustomer : WebXml {
+  }
+  public class HC4x_NodeCustomer : WebXml
+  {
     #region Name
     private const string Name = nameof(HC4x_NodeCustomer);
     #endregion
     #region Attribute
-    public int atPkeyCustomer {
+    public int atPkeyCustomer
+    {
       get => ValueInt(c_pkeycustomer);
       set => SetValue(c_pkeycustomer, value);
-      }
+    }
 
-    public int atPkeyCustomerCategory {
+    public string atLogoCustomer
+    {
+      get => ValueStr(c_logocustomer);
+      set => SetValue(c_logocustomer, value);
+    }
+    public int atPkeyCustomerCategory
+    {
       get => ValueInt(c_pkeycustomercategory);
       set => SetValue(c_pkeycustomercategory, value);
-      }
-    public int atPkeyAppUser {
+    }
+    public int atPkeyAppUser
+    {
       get => ValueInt(c_pkeyappuser);
       set => SetValue(c_pkeyappuser, value);
-      }
-    public string atNameCustomer {
+    }
+    public string atNameCustomer
+    {
       get => ValueStr(c_namecustomer);
       set => SetValue(c_namecustomer, value);
-      }
-    public string atRazaoSocial {
+    }
+    public string atRazaoSocial
+    {
       get => ValueStr(c_razaosocial);
       set => SetValue(c_razaosocial, value);
-      }
-    public string atCnpjCpf {
+    }
+    public string atCnpjCpf
+    {
       get => ValueStr(c_cnpjcpf);
       set => SetValue(c_cnpjcpf, value);
-      }
-    public string atNameContact {
+    }
+    public string atNameContact
+    {
       get => ValueStr(c_namecontact);
       set => SetValue(c_namecontact, value);
-      }
-    public string atEmailContact {
+    }
+    public string atEmailContact
+    {
       get => ValueStr(c_emailcontact);
       set => SetValue(c_emailcontact, value);
-      }
-    public string atSite {
+    }
+    public string atSite
+    {
       get => ValueStr(c_site);
       set => SetValue(c_site, value);
-      }
-    public string atDescCustomer {
+    }
+    public string atDescCustomer
+    {
       get => ValueStr(c_desccustomer);
       set => SetValue(c_desccustomer, value);
-      }
+    }
     #endregion
     #region Constructor
     public HC4x_NodeCustomer(PageCore parMundi) : base(parMundi, c_node) { }
@@ -187,10 +224,12 @@ namespace HC4x_Server.Logic {
     private const string c_emailcontact = "emailContact";
     private const string c_site = "site";
     private const string c_desccustomer = "descCustomer";
+    private const string c_logocustomer = "logoCustomer";
     private const string c_node = "NodeCustomer";
     #endregion
-    }
-  public class HC4x_SectorCustomer : DiceBase {
+  }
+  public class HC4x_SectorCustomer : DiceBase
+  {
     #region Name
     private const string Name = nameof(HC4x_SectorCustomer);
     #endregion
@@ -284,10 +323,13 @@ namespace HC4x_Server.Logic {
     #endregion
     #region Method
     //esse método pode ser estático
-    public string GetAlertByType(hc4x_TypeAlert parTypeAlert, string text) {
+    public string GetAlertByType(hc4x_TypeAlert parTypeAlert, string text)
+    {
       string retValue = "";
-      try {
-        switch (parTypeAlert) {
+      try
+      {
+        switch (parTypeAlert)
+        {
           case hc4x_TypeAlert.Success:
             retValue = $"<div class=\"alert alert-success alert-dismissible\">\r\n  <button class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\r\n<strong>{text}</strong>\r\n</div>";
             break;
@@ -306,39 +348,63 @@ namespace HC4x_Server.Logic {
           case hc4x_TypeAlert.Secundary:
             retValue = $"<div class=\"alert alert-secundary alert-dismissible\">\r\n  <button class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\r\n  <strong>{text}</strong>\r\n</div>";
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetAlertByType)); }
       return retValue;
-      }
-    internal int FindAppUserById(int parId) {
-      RawTable objTable;
-      int iIdentity = -1;
-      try {
-        objTable = scData.SelectCommand("pkeyAppUser", "hc4xappuser", string.Format("pkeyUser={0}", parId), "");
-        if (objTable.scRow.ndCount == 1)
-          iIdentity = objTable[0].ValueInt("pkeyAppUser");
-        }
-      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindAppUserById)); }
-      return iIdentity;
-      }
-    internal int FindPkeyCustomerCategoryByCategory(string parCategory) {
-      int retValue = -1;
-      RawTable objTable;
-      try {
-        objTable = scData.SelectCommand("pkeyCustomerCategory", "hc4xcustomercategory", string.Format("descCustomerCategory = \"{0}\"", parCategory), "");
-        retValue = objTable[0].ValueInt("pkeyCustomerCategory");
-        }
-      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindPkeyCustomerCategoryByCategory)); }
-      return retValue;
-      }
-    internal bool UpdateCustomerData(HC4x_NodeCustomer parCustomer) {
+    }
+    internal bool UpdateImg(object parObject)
+    {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-      try {
-        sqlCommand = 
-          "UPDATE hc4xcustomer " + 
+      try
+      {
+        HC4x_NodeCustomer parCustomer = parObject as HC4x_NodeCustomer;
+        if (!string.IsNullOrEmpty(parCustomer.atLogoCustomer))
+        {
+          sqlCommand = string.Format("UPDATE hc4xcustomer " + "SET logoCustomer = \"{0}\" WHERE pkeyCustomer = {1}; ", parCustomer.atLogoCustomer, parCustomer.atPkeyCustomer);
+          iRow = scData.ExecuteCommand(sqlCommand);
+          retValue = (iRow == 1);
+        }
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateImg)); }
+      return retValue;
+    }
+    internal int FindAppUserById(int parId)
+    {
+      RawTable objTable;
+      int iIdentity = -1;
+      try
+      {
+        objTable = scData.SelectCommand("pkeyAppUser", "hc4xappuser", string.Format("pkeyUser={0}", parId), "");
+        if (objTable.scRow.ndCount == 1)
+          iIdentity = objTable[0].ValueInt("pkeyAppUser");
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindAppUserById)); }
+      return iIdentity;
+    }
+    internal int FindPkeyCustomerCategoryByCategory(string parCategory)
+    {
+      int retValue = -1;
+      RawTable objTable;
+      try
+      {
+        objTable = scData.SelectCommand("pkeyCustomerCategory", "hc4xcustomercategory", string.Format("descCustomerCategory = \"{0}\"", parCategory), "");
+        retValue = objTable[0].ValueInt("pkeyCustomerCategory");
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindPkeyCustomerCategoryByCategory)); }
+      return retValue;
+    }
+    internal bool UpdateCustomerData(HC4x_NodeCustomer parCustomer)
+    {
+      bool retValue = false;
+      int iRow;
+      string sqlCommand;
+      try
+      {
+        sqlCommand =
+          "UPDATE hc4xcustomer " +
           $"SET nameCustomer = \"{parCustomer.atNameCustomer}\", " +
           $"razaoSocial = \"{parCustomer.atRazaoSocial}\", " +
           $"cnpjCpf = \"{parCustomer.atCnpjCpf}\", " +
@@ -351,33 +417,38 @@ namespace HC4x_Server.Logic {
 
         iRow = scData.ExecuteCommand(sqlCommand);
         retValue = iRow == 1;
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateCustomerData)); }
       return retValue;
-      }
-    internal string FindDescCustomerCategoryById(int parIdCategory) {
+    }
+    internal string FindDescCustomerCategoryById(int parIdCategory)
+    {
       string retValue = "";
       RawTable objTable;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("descCustomerCategory", "hc4xcustomercategory", string.Format("pkeyCustomerCategory = {0}", parIdCategory), "");
         retValue = objTable[0].ValueStr("descCustomerCategory");
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindDescCustomerCategoryById)); }
       return retValue;
-      }
-    public HC4x_NodeCustomer FindCustomerByPkeyUser(int parPkeyUser) {
+    }
+    public HC4x_NodeCustomer FindCustomerByPkeyUser(int parPkeyUser)
+    {
       HC4x_NodeCustomer retValue = null;
       RawTable objTable;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("hc4xcustomer.*", "hc4xcustomer INNER JOIN hc4xappuser ON hc4xappuser.pkeyAppUser = hc4xcustomer.pkeyAppUser", $"hc4xappuser.pkeyUser = {parPkeyUser}", "");
-        if (objTable.scRow.ndCount == 1) {
+        if (objTable.scRow.ndCount == 1)
+        {
           retValue = new HC4x_NodeCustomer(axMundi);
           retValue.Update(objTable.scRow[0]);
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindCustomerByPkeyUser)); }
       return (retValue);
-      }
+    }
     internal HC4x_NodeCustomer dbInsertCustomer(HC4x_NodeCustomer objCustomer)
     {
       int iIndentity;
@@ -412,25 +483,29 @@ namespace HC4x_Server.Logic {
     #region Constant
     private const string c_sector = "CustomerSector";
     #endregion
-    }
+  }
 
-  public class HC4x_StoneProduct : WebXml {
+  public class HC4x_StoneProduct : WebXml
+  {
     #region Name
     private const string Name = nameof(HC4x_StoneProduct);
     #endregion
     #region Attribute
-    public int atId {
+    public int atId
+    {
       get => ValueInt(c_pkey);
       set => SetValue(c_pkey, value);
-      }
-    public string atDescription {
+    }
+    public string atDescription
+    {
       get => ValueStr(c_description);
       set => SetValue(c_description, value);
-      }
-    public string atProductCover {
+    }
+    public string atProductCover
+    {
       get => ValueStr(c_productcover);
       set => SetValue(c_productcover, value);
-      }
+    }
     #endregion
     #region Constructor
     public HC4x_StoneProduct(PageCore parMundi) : base(parMundi, c_node) { }
@@ -441,8 +516,9 @@ namespace HC4x_Server.Logic {
     private const string c_productcover = "productCover";
     private const string c_pkey = "pkeyStoneProduct";
     #endregion
-    }
-  public class HC4x_SectorStoneProduct : DiceBase {
+  }
+  public class HC4x_SectorStoneProduct : DiceBase
+  {
     #region Name
     private const string Name = nameof(HC4x_SectorStoneProduct);
     #endregion
@@ -453,8 +529,9 @@ namespace HC4x_Server.Logic {
     #region Constant
     private const string c_sector = "StoneProductSector";
     #endregion
-    }
-  public class HC4x_SectorUser : DiceBase {
+  }
+  public class HC4x_SectorUser : DiceBase
+  {
     #region Name
     private const string Name = nameof(HC4x_SectorUser);
     #endregion
@@ -466,23 +543,29 @@ namespace HC4x_Server.Logic {
     public string atGroupName { get; private set; }
     #endregion
     #region Method
-    internal string FindImgUser(int parId) {
+    internal string FindImgUser(int parId)
+    {
       string retValue = "";
       RawTable objTable;
 
-      try {
+      try
+      {
         objTable = scData.SelectCommand("imgUser", "hc4xuser", $"pkeyUser = {parId}", "");
-        if (!string.IsNullOrEmpty(objTable.scRow[0].ValueStr("imgUser"))) {
+        if (!string.IsNullOrEmpty(objTable.scRow[0].ValueStr("imgUser")))
+        {
           retValue = objTable.scRow[0].ValueStr("imgUser");
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindImgUser)); }
       return retValue;
-      }
-    internal string GetAlertByType(hc4x_TypeAlert parTypeAlert, string text) {
+    }
+    internal string GetAlertByType(hc4x_TypeAlert parTypeAlert, string text)
+    {
       string retValue = "";
-      try {
-        switch (parTypeAlert) {
+      try
+      {
+        switch (parTypeAlert)
+        {
           case hc4x_TypeAlert.Success:
             retValue = $"<div class=\"alert alert-success alert-dismissible m-0\">\r\n  <button class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\r\n<strong>{text}</strong>\r\n</div>";
             break;
@@ -501,123 +584,144 @@ namespace HC4x_Server.Logic {
           case hc4x_TypeAlert.Secundary:
             retValue = $"<div class=\"alert alert-secundary alert-dismissible m-0\">\r\n  <button class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\r\n  <strong>{text}</strong>\r\n</div>";
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetAlertByType)); }
       return retValue;
-      }
-    internal bool UpdateGroup(HC4x_NodeUser parUser) {
+    }
+    internal bool UpdateGroup(HC4x_NodeUser parUser)
+    {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-      try {
+      try
+      {
         sqlCommand = string.Format("UPDATE hc4xuser " + "SET selfUser = {0} " + "WHERE pkeyUser = {1}", (int)parUser.atStatus, parUser.atId);
         iRow = scData.ExecuteCommand(sqlCommand);
         retValue = (iRow == 1);
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateGroup)); }
       return (retValue);
-      }
+    }
 
-    internal bool UpdatePatchUser(HC4x_NodeUser parUser, string parNewPassword) {
+    internal bool UpdatePatchUser(HC4x_NodeUser parUser, string parNewPassword)
+    {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-      try {
+      try
+      {
         sqlCommand = string.Format("UPDATE hc4xuser " + "SET passUser = \"{0}\" " + "WHERE pkeyUser = {1}", parNewPassword, parUser.atId);
         iRow = scData.ExecuteCommand(sqlCommand);
         retValue = (iRow == 1);
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateGroup)); }
       return (retValue);
-      }
-    internal bool UpdateUserData(HC4x_NodeUser parUser) {
+    }
+    internal bool UpdateUserData(HC4x_NodeUser parUser)
+    {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-      try {
+      try
+      {
         sqlCommand = string.Format("UPDATE hc4xuser " + "SET selfUser = {0} , email = \"{1}\", descUser = \"{2}\" WHERE pkeyUser = {3};", (int)parUser.atStatus, parUser.atEmail, parUser.atDesc, parUser.atId);
         iRow = scData.ExecuteCommand(sqlCommand);
         retValue = (iRow == 1);
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateUserData)); }
       return retValue;
-      }
-    internal bool UpdateImg(HC4x_NodeUser parUser) {
+    }
+    internal bool UpdateImg(object parObject)
+    {
       bool retValue = false;
       int iRow;
       string sqlCommand;
-
-      try {
-        if (!string.IsNullOrEmpty(parUser.atImg)) {
+      try
+      {
+        HC4x_NodeUser parUser = parObject as HC4x_NodeUser;
+        if (!string.IsNullOrEmpty(parUser.atImg))
+        {
           sqlCommand = string.Format("UPDATE hc4xuser " + "SET imgUser = \"{0}\" WHERE pkeyUser = {1}; ", parUser.atImg, parUser.atId);
           iRow = scData.ExecuteCommand(sqlCommand);
           retValue = (iRow == 1);
-          }
-
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateImg)); }
       return retValue;
-      }
-    public HC4x_NodeUser FindUserOrGroup(string parEmail) {
+    }
+    public HC4x_NodeUser FindUserOrGroup(string parEmail)
+    {
       HC4x_NodeUser retValue = null;
       RawTable objTable;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("*", "hc4xuser", HC4x_NodeUser.sqlUserOrGroup(parEmail), "");
-        if (objTable.scRow.ndCount > 0) {
+        if (objTable.scRow.ndCount > 0)
+        {
           retValue = new HC4x_NodeUser(axMundi);
           retValue.Update(objTable.scRow[0]);
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindUserOrGroup)); }
       return (retValue);
-      }
+    }
     public HC4x_NodeUser FindUserById(int parId) { return (FindUserById(parId.ToString())); }
-    public HC4x_NodeUser FindUserById(string parId) {
+    public HC4x_NodeUser FindUserById(string parId)
+    {
       HC4x_NodeUser retValue = null;
       RawTable objTable;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("*", "hc4xuser", HC4x_NodeUser.sqlUserById(parId), "");
-        if (objTable.scRow.ndCount == 1) {
+        if (objTable.scRow.ndCount == 1)
+        {
           retValue = new HC4x_NodeUser(axMundi);
           retValue.Update(objTable.scRow[0]);
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindUserById)); }
       return (retValue);
-      }
-    public HC4x_NodeUser FindUserByMail(string parEmail) {
+    }
+    public HC4x_NodeUser FindUserByMail(string parEmail)
+    {
       HC4x_NodeUser retValue = null;
       RawTable objTable;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("*", "hc4xuser", HC4x_NodeUser.sqlUserByMail(parEmail), "");
-        if (objTable.scRow.ndCount == 1) {
+        if (objTable.scRow.ndCount == 1)
+        {
           retValue = new HC4x_NodeUser(axMundi);
           retValue.Update(objTable.scRow[0]);
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(FindUserByMail)); }
       return (retValue);
-      }
-    public bool UpdateUser(HC4x_NodeUser parUser) {
+    }
+    public bool UpdateUser(HC4x_NodeUser parUser)
+    {
       bool retValue = false;
-      try {
+      try
+      {
         throw new NotImplementedException();
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateUser)); }
       return (retValue);
-      }
-    public HC4x_NodeUser dbInsertUser(HC4x_NodeUser parUser) {
+    }
+    public HC4x_NodeUser dbInsertUser(HC4x_NodeUser parUser)
+    {
       int iIndentity;
       NodeTable objTable;
-      try {
+      try
+      {
         objTable = ndCubeApp.scTable["hc4x_user_insert"];
         iIndentity = scData.InsertCommand("hc4xuser", objTable.scField, parUser);
         if (iIndentity > 0) parUser.atId = iIndentity;
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(dbInsertUser)); }
       return (parUser);
-      }
+    }
     #endregion
     #region Constructor
     public bool Init() { return (InitData()); }
@@ -627,8 +731,9 @@ namespace HC4x_Server.Logic {
     #region Constant
     private const string c_sector = "UserSector";
     #endregion
-    }
-  public class HC4x_UserHandler : RawPage {
+  }
+  public class HC4x_UserHandler : RawPage
+  {
     #region Name
     private const string Name = nameof(HC4x_UserHandler);
     #endregion
@@ -642,15 +747,18 @@ namespace HC4x_Server.Logic {
     private HC4x_SectorStoneProduct scStoneProduct { get; set; }
     #endregion
     #region Method
-    internal RawMailMessage? RegisterMail(HC4x_NodeUser parUser, hc4x_SiteArea parSiteArea, string parEmlId, string parRedirect) {
+    internal RawMailMessage? RegisterMail(HC4x_NodeUser parUser, hc4x_SiteArea parSiteArea, string parEmlId, string parRedirect)
+    {
       string strUrl;
       string eBookUrl;
       RackInterface objRack;
       RawMailMessage retValue;
-      try {
+      try
+      {
         objRack = axMundi.ndCubeApp.rcInterface;
         eBookUrl = "https://download.hypercube4x.com/pt/EBook_HyperStone.pdf";
-        switch (parSiteArea) {
+        switch (parSiteArea)
+        {
           case hc4x_SiteArea.publicarea:
             retValue = objRack.PublicArea<RawMailMessage>(parEmlId);
             break;
@@ -659,49 +767,55 @@ namespace HC4x_Server.Logic {
             break;
           default:
             return (null);
-          }
+        }
         strUrl = ndRoute.FullPublicRoute("confirm-email", parUser.atId + ";" + parUser.atConfirmCode, true);
 
         retValue.atSubject = retValue.atTitle;
         retValue.AddTo(parUser.atEmail, parUser.atDesc);
         retValue.AddBodyPlain(string.Format(retValue.atHeader, strUrl, eBookUrl));
-        }
+      }
       catch (Exception Err) { retValue = null; axMundi.ShowException(Err, Name, nameof(RegisterMail)); }
       return (retValue);
-      }
-    internal bool GetDynamicStones(string parKeyCustomer) {
+    }
+    internal bool GetDynamicStones(string parKeyCustomer)
+    {
       bool retValue = false;
       string strUrl;
       string strContentPage;
       RawTable objTable;
       RawRow[] arNode;
-      try {
+      try
+      {
         objTable = scData.SelectCommand("pkeyStoneProduct, description, productCover", "stoneproduct", "pkeyCustomer = " + parKeyCustomer, "");
         arNode = objTable.scRow.ArrayNode();
         strUrl = "hc4x://newscene=HyperStone/url=" + axRequest.EncodedUrl(axRequest.atBaseUrl + "/rest/pt/hcstone-slabxml/0/") + "{hc4x-key:pkeyStoneProduct}";
         strContentPage = ndCurInterface.atContentPage.Replace("{hc4x-key:url_template}", strUrl);
         ndCurInterface.SetContentPage(strContentPage);
         retValue = ndCurInterface.EvalContent(arNode);
-        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetDynamicStones)); }
       return (retValue);
-      }
-    internal bool ConfirmUserEMail() {
+    }
+    internal bool ConfirmUserEMail()
+    {
       bool retValue = false;
       string strQuery;
       string[] arQuery;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         strQuery = axRequest.QueryString();
         arQuery = GearAux.SyntaxSplit(strQuery, true);
         objUser = scUser.FindUserById(arQuery[0]);
-        if (objUser == null) {
+        if (objUser == null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Warning, "Usuário não encontrado");
           return (retValue);
-          }
-        switch (objUser.atStatus) {
+        }
+        switch (objUser.atStatus)
+        {
           case hc4x_UserStatus.Admin:
           case hc4x_UserStatus.User:
             atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Código Validado com sucesso!");
@@ -709,74 +823,87 @@ namespace HC4x_Server.Logic {
             break;
           case hc4x_UserStatus.Anonymous:
           case hc4x_UserStatus.Waiting:
-            if (objUser.ConfirmCode(arQuery[1])) {
+            if (objUser.ConfirmCode(arQuery[1]))
+            {
               objUser.atStatus = hc4x_UserStatus.User;
               if (retValue = scUser.UpdateGroup(objUser))
                 atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Código Validado com sucesso!");
-              }
+            }
             else
               atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Secundary, "Código inválido");
             break;
           default:
             atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Info, "O usuário encontra-se desativado. Favor reativar o usuário antes de confirmar o código");
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ConfirmUserEMail)); }
       return (retValue);
-      }
-    internal bool RegisterUser() {
+    }
+    internal bool RegisterUser()
+    {
       bool retValue = false;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
       RawMailMessage objMail;
       hc4x_PasswordLevel passwordLevel;
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         passwordLevel = GetPasswordLevel(objPostUser.atPass);
-        if (passwordLevel == hc4x_PasswordLevel.Weak || passwordLevel == hc4x_PasswordLevel.Normal) {
+        if (passwordLevel == hc4x_PasswordLevel.Weak || passwordLevel == hc4x_PasswordLevel.Normal)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Senha fraca! Utilize caracteres especiais como por exemplo: !@#");
           return (retValue);
-          }
-        if (objPostUser.atPass != objPostUser.atPass_2) {
+        }
+        if (objPostUser.atPass != objPostUser.atPass_2)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Senha não confere com a repetição !");
           return (retValue);
-          }
+        }
         objUser = scUser.FindUserByMail(objPostUser.atEmail);
-        if (objUser != null) {
+        if (objUser != null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Info, "Usuário já existe no banco de dados !");
-          }
-        else {
+        }
+        else
+        {
           objUser = objPostUser.CreateNodeUser();
-          if (scUser.dbInsertUser(objUser) != null) {
+          if (scUser.dbInsertUser(objUser) != null)
+          {
             objMail = RegisterMail(objUser, hc4x_SiteArea.publicarea, "confirm-email_eml", "confirm-email");
             if (objMail != null) axResponse.SendMail(objMail);
             retValue = true;
-            }
-          atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Usuário cadastrado com sucesso !");
           }
+          atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Usuário cadastrado com sucesso !");
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(RegisterUser)); }
       return (retValue);
-      }
-    internal bool ValidateUserPass() {
+    }
+    internal bool ValidateUserPass()
+    {
       bool retValue = false;
       string strCrypto;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         objUser = scUser.FindUserByMail(objPostUser.atEmail);
-        if (objUser == null) {
+        if (objUser == null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Usuário ou senha inválidos");
           return (retValue);
-          }
+        }
         strCrypto = objPostUser.EncryptUTF8(objPostUser.atPass);
-        if (!objUser.ValidPassword(strCrypto)) {
+        if (!objUser.ValidPassword(strCrypto))
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Usuário ou senha inválidos");
           return (retValue);
-          }
-        switch (objUser.atStatus) {
+        }
+        switch (objUser.atStatus)
+        {
           case hc4x_UserStatus.None:
             break;
           case hc4x_UserStatus.Admin:
@@ -796,39 +923,46 @@ namespace HC4x_Server.Logic {
           default:
             atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Info, "Seu login não pode ser validado. Entre em contato com o administrador do sistema");
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ValidateUserPass)); }
       return (retValue);
-      }
-    internal bool ForgotPass() {
+    }
+    internal bool ForgotPass()
+    {
       bool retValue = false;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
       RawMailMessage objMail;
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         objUser = scUser.FindUserByMail(objPostUser.atEmail);
-        if (objUser == null) {
+        if (objUser == null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Warning, "Usuário não encontrado!");
           return retValue;
-          }
-        else {
+        }
+        else
+        {
           objMail = ResetPassword(objUser, hc4x_SiteArea.publicarea, "confirm-forgot_eml", "reset_pass");
           if (objMail != null) axResponse.SendMail(objMail);
           retValue = true;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ForgotPass)); }
       return retValue;
-      }
-    internal RawMailMessage? ResetPassword(HC4x_NodeUser parUser, hc4x_SiteArea parSiteArea, string parEmlId, string parRedirect) {
+    }
+    internal RawMailMessage? ResetPassword(HC4x_NodeUser parUser, hc4x_SiteArea parSiteArea, string parEmlId, string parRedirect)
+    {
       string strUrl;
       RackInterface objRack;
       RawMailMessage retValue;
-      try {
+      try
+      {
         objRack = axMundi.ndCubeApp.rcInterface;
-        switch (parSiteArea) {
+        switch (parSiteArea)
+        {
           case hc4x_SiteArea.publicarea:
             retValue = objRack.PublicArea<RawMailMessage>(parEmlId);
             break;
@@ -837,66 +971,76 @@ namespace HC4x_Server.Logic {
             break;
           default:
             return (null);
-          }
+        }
         strUrl = ndRoute.FullPublicRoute(parRedirect, parUser.atId.ToString(), true);
         retValue.atSubject = retValue.atTitle;
         retValue.AddTo(parUser.atEmail, parUser.atDesc);
         retValue.AddBodyPlain(string.Format(retValue.atHeader, strUrl));
-        }
+      }
       catch (Exception Err) { retValue = null; axMundi.ShowException(Err, Name, nameof(RegisterMail)); }
       return (retValue);
-      }
-    internal bool ResetPass() {
+    }
+    internal bool ResetPass()
+    {
       bool retValue = false;
       string strQuery;
       string[] arQuery;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         strQuery = axRequest.QueryString();
         arQuery = GearAux.SyntaxSplit(strQuery, true);
-        if (arQuery.Length == 0) {
+        if (arQuery.Length == 0)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Entrada inválida");
           return retValue;
-          }
+        }
         objUser = scUser.FindUserById(arQuery[0]);
-        if (objUser == null) {
+        if (objUser == null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Usuário não encontrado");
           return (retValue);
-          }
+        }
         objPostUser = axRequest.FormKeyVal<PostUser>();
-        if (string.IsNullOrWhiteSpace(objPostUser.atPass)) {
+        if (string.IsNullOrWhiteSpace(objPostUser.atPass))
+        {
           return (retValue);
-          }
+        }
 
         var passwordLevel = GetPasswordLevel(objPostUser.atPass);
 
-        if (passwordLevel == hc4x_PasswordLevel.Weak || passwordLevel == hc4x_PasswordLevel.Normal) {
+        if (passwordLevel == hc4x_PasswordLevel.Weak || passwordLevel == hc4x_PasswordLevel.Normal)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Senha fraca! Utilize caracteres especiais como por exemplo: !@#");
           return (retValue);
-          }
+        }
 
-        if (objPostUser.atPass != objPostUser.atPass_2) {
+        if (objPostUser.atPass != objPostUser.atPass_2)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Danger, "Senha não confere com a repetição da senha");
           return (retValue);
-          }
+        }
 
-        if (objUser.AlterPassword(objUser.atPass, objPostUser.atPass, objPostUser.atPass_2)) {
+        if (objUser.AlterPassword(objUser.atPass, objPostUser.atPass, objPostUser.atPass_2))
+        {
           string newPass = objPostUser.EncryptUTF8(objPostUser.atPass);
           if (scUser.UpdatePatchUser(objUser, newPass))
             retValue = true;
-          }
-
         }
+
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ResetPass)); }
       return (retValue);
-      }
+    }
     //refatorar pois estão no lugar errado os métodos abaixo
-    public hc4x_PasswordLevel GetPasswordLevel(string password) {
+    public hc4x_PasswordLevel GetPasswordLevel(string password)
+    {
       hc4x_PasswordLevel level;
 
-      switch (true) {
+      switch (true)
+      {
         case var _ when !ContainsNumbers(password):
           level = hc4x_PasswordLevel.Weak;
           break;
@@ -909,122 +1053,146 @@ namespace HC4x_Server.Logic {
         default:
           level = hc4x_PasswordLevel.None;
           break;
-        }
+      }
       return level;
-      }
-    public bool ContainsNumbers(string input) {
-      foreach (char c in input) {
-        if (Char.IsDigit(c)) {
+    }
+    public bool ContainsNumbers(string input)
+    {
+      foreach (char c in input)
+      {
+        if (Char.IsDigit(c))
+        {
           return true;
-          }
         }
-      return false;
       }
-    public bool ContainsSpecialCharacters(string input) {
+      return false;
+    }
+    public bool ContainsSpecialCharacters(string input)
+    {
       Regex regex = new Regex("[!@#$%^&*(),.?\":{ }|<>]");
       return regex.IsMatch(input);
-      }
-    internal bool ResendConfirmation() {
+    }
+    internal bool ResendConfirmation()
+    {
       bool retValue = false;
       PostUser objPostUser;
       HC4x_NodeUser objUser;
       RawMailMessage objMail;
 
-      try {
+      try
+      {
         objPostUser = axRequest.FormKeyVal<PostUser>();
         objUser = scUser.FindUserByMail(objPostUser.atEmail);
-        if (objUser == null) {
+        if (objUser == null)
+        {
           atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Warning, "Usuário não existente no banco de dados, realize o cadastro");
           return (retValue);
-          }
-        else if (objUser.atStatus == hc4x_UserStatus.Waiting) {
+        }
+        else if (objUser.atStatus == hc4x_UserStatus.Waiting)
+        {
           objMail = RegisterMail(objUser, hc4x_SiteArea.publicarea, "confirm-email_eml", "confirm_sucess");
           if (objMail != null) axResponse.SendMail(objMail);
           retValue = true;
-          }
-        else {
-          atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Usuário já confirmado, o código de confirmação não é mais necessário!");
-          }
         }
+        else
+        {
+          atMessage = scUser.GetAlertByType(hc4x_TypeAlert.Success, "Usuário já confirmado, o código de confirmação não é mais necessário!");
+        }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ResendConfirmation)); }
       return (retValue);
-      }
+    }
     #endregion
     #region RawPage
-    public override bool ActionGet(string parPageId) {
-      try {
-        switch (parPageId) {
+    public override bool ActionGet(string parPageId)
+    {
+      try
+      {
+        switch (parPageId)
+        {
           case c_hyper_stone:
             return GetDynamicStones("3");
           default:
             return true;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ActionGet)); };
       return true;
-      }
-    public override bool ActionPost(string parPageId) {
+    }
+    public override bool ActionPost(string parPageId)
+    {
       bool retValue = false;
-      try {
-        switch (parPageId) {
+      try
+      {
+        switch (parPageId)
+        {
           case c_page_login:
             retValue = ValidateUserPass();
             break;
           case c_page_registration:
-            if (retValue = RegisterUser()) {
+            if (retValue = RegisterUser())
+            {
               axMundi.RedirectTo(hc4x_SiteArea.publicarea, "registration_success");
-              }
+            }
             break;
           case c_page_validemail:
-            if (retValue = ConfirmUserEMail()) {
+            if (retValue = ConfirmUserEMail())
+            {
               axMundi.RedirectTo(hc4x_SiteArea.publicarea, "confirm_sucess");
-              }
+            }
             break;
           case c_forgot_pass:
-            if (retValue = ForgotPass()) {
+            if (retValue = ForgotPass())
+            {
               axMundi.RedirectTo(hc4x_SiteArea.publicarea, "send_success");
-              }
+            }
             break;
           case c_page_newmailcode:
-            if (retValue = ResendConfirmation()) {
+            if (retValue = ResendConfirmation())
+            {
               axMundi.RedirectTo(hc4x_SiteArea.publicarea, "registration_success");
-              }
+            }
             break;
           case c_reset_pass:
-            if (retValue = ResetPass()) {
+            if (retValue = ResetPass())
+            {
               axMundi.RedirectTo(hc4x_SiteArea.publicarea, "alter_pass_success");
-              }
+            }
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(ActionPost)); }
       return (retValue);
-      }
-    public override bool Init(AxisMundi parMundi) {
+    }
+    public override bool Init(AxisMundi parMundi)
+    {
       bool retValue = false;
-      try {
+      try
+      {
         if (!base.Init(parMundi)) return (retValue);
-        switch (axMundi.atRequestMethod) {
+        switch (axMundi.atRequestMethod)
+        {
           case hc4x_RequestMethod.Post:
             scUser = new HC4x_SectorUser(axMundi);
             retValue = scUser.Init();
             break;
           case hc4x_RequestMethod.Get:
-            if (axMundi.axRequest.QueryString().Length > 0 || ndCurInterface.atModelLayout == hc4x_ModelLayout.ContentPage.ToString()) {
+            if (axMundi.axRequest.QueryString().Length > 0 || ndCurInterface.atModelLayout == hc4x_ModelLayout.ContentPage.ToString())
+            {
               scUser = new HC4x_SectorUser(axMundi);
               scStoneProduct = new HC4x_SectorStoneProduct(axMundi);
               retValue = scUser.Init() && scStoneProduct.Init();
-              }
+            }
             retValue = true;
             break;
           default:
             retValue = true;
             break;
-          }
         }
+      }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(Init)); }
       return (retValue);
-      }
+    }
     #endregion
     #region Constant
     private const string c_page_login = "login";
@@ -1035,5 +1203,5 @@ namespace HC4x_Server.Logic {
     private const string c_reset_pass = "reset_pass";
     private const string c_hyper_stone = "hyper_stone";
     #endregion
-    }
   }
+}

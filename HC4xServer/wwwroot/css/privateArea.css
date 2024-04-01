@@ -34,10 +34,6 @@ p {
   transform: scale(1.05);
 }
 
-input[type='file'] {
-  display: none;
-}
-
 /* imagens do perfil*/
 .max-width {
   max-width: 500px;

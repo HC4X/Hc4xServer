@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <NodeInterface 
-  id="index" 
+  id="hcstonecatalogo" 
   NodeType="text/html" 
   ModelLayout="ContentPage">
 	<NodeContent>

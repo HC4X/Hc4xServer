@@ -1,14 +1,15 @@
-﻿using System;
-using HC4x_Server.Logic;
+﻿using HC4x_Server.Logic;
 using HC4xServer.Core;
-using System.Threading.Tasks;
 using HC4xServer.Logic;
-using LibServer;
 using LibModel;
+using LibServer;
+using System;
+using System.Threading.Tasks;
 
 namespace HC4x_Server.PrivateArea
 {
-  internal class UserArea : RawPage {
+  internal class UserArea : RawPage
+  {
     private const string Name = nameof(UserArea);
     #region Axis
     private new PageCore axMundi => (PageCore)base.axMundi;
@@ -18,9 +19,10 @@ namespace HC4x_Server.PrivateArea
     private HC4x_SectorCustomer scCustomer { get; set; }
     private HC4x_NodeUser ndUser { get; set; }
     private HC4x_NodeCustomer ndCustomer { get; set; }
-    #endregion   
+    #endregion
     #region Method
-    internal bool ValidCPFCNPJ(string parCPForCNPJ) {
+    internal bool ValidCPFCNPJ(string parCPForCNPJ)
+    {
       bool retValue = true;
       if (parCPForCNPJ.Length == 14)
         retValue = HC4x_SectorCustomer.ValidCPF(parCPForCNPJ);
@@ -35,38 +37,46 @@ namespace HC4x_Server.PrivateArea
       try
       {
         if (axRequest.FileKey() != null && axRequest.FileKey().Length > 0)
-          UpdateProfilePic();
-
+          UpdateProfilePic("upload-image-profile", scUser.UpdateImg, ndUser);
         retValue = UpdateUserForm(ndUser);
         ndCurInterface.EvalForm(ndUser);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(AreaUser)); }
       return (retValue);
     }
-    internal bool UpdateProfilePic()
+    internal bool UpdateProfilePic(string uploadFolderPath, Func<object, bool> updateMethod, object updateObject)
     {
       bool retValue = false;
       string strWwwPath;
       NodeFormFile[] arFormFile;
       string imagePath;
       Task<bool> objTask;
+
       try
       {
         arFormFile = axRequest.FileKey();
-        strWwwPath = GearPath.Combine(axMundi.atWebPath, "upload-image-profile");
+        strWwwPath = GearPath.Combine(axMundi.atWebPath, uploadFolderPath);
         foreach (NodeFormFile itFile in arFormFile)
         {
           strWwwPath = itFile.GetSafeName(strWwwPath);
-          imagePath = GearPath.Combine("/upload-image-profile", GearPath.FileName(itFile.GetSafeName(strWwwPath)));
-          ndUser.atImg = imagePath.Replace("\\", "/");
+          imagePath = GearPath.Combine("/" + uploadFolderPath, GearPath.FileName(itFile.GetSafeName(strWwwPath)));
+          if (updateObject is HC4x_NodeUser user)
+          {
+            user.atImg = imagePath.Replace("\\", "/");
+          }
+          if (updateObject is HC4x_NodeCustomer customer)
+          {
+            customer.atLogoCustomer = imagePath.Replace("\\", "/");
+          }
           objTask = Task.Run(() => itFile.SaveLocalServer(strWwwPath));
           if (!objTask.Result) break;
         }
-        retValue = scUser.UpdateImg(ndUser);
+        retValue = updateMethod(updateObject);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(UpdateProfilePic)); }
-      return (retValue);
+      return retValue;
     }
+
     internal bool GetImgUser()
     {
       bool retValue = false;
@@ -95,7 +105,8 @@ namespace HC4x_Server.PrivateArea
         objPostCustomer = axRequest.FormKeyVal<PostCustomer>();
         objCustomer = new HC4x_NodeCustomer(axMundi);
         objAppUser = new HC4x_NodeAppUser(axMundi);
-        if (ValidCPFCNPJ(objPostCustomer.atCnpjCpf))  {
+        if (ValidCPFCNPJ(objPostCustomer.atCnpjCpf))
+        {
           objCustomer.atCnpjCpf = objPostCustomer.atCnpjCpf;
         }
         else
@@ -117,6 +128,8 @@ namespace HC4x_Server.PrivateArea
         objCustomer.atEmailContact = objPostCustomer.atEmailContact;
         objCustomer.atSite = objPostCustomer.atSite;
         objCustomer.atDescCustomer = objPostCustomer.atDescCustomer;
+        if (axRequest.FileKey() != null && axRequest.FileKey().Length > 0)
+          UpdateProfilePic("upload-customer-profile", scCustomer.UpdateImg, objCustomer);
         scCustomer.dbInsertCustomer(objCustomer);
         retValue = ndCurInterface.EvalForm(objCustomer);
         atMessage = scCustomer.GetAlertByType(hc4x_TypeAlert.Success, "Cliente registrado com sucesso !");
@@ -159,6 +172,8 @@ namespace HC4x_Server.PrivateArea
       parCustomer.atEmailContact = objPostCustomer.atEmailContact;
       parCustomer.atSite = objPostCustomer.atSite;
       parCustomer.atDescCustomer = objPostCustomer.atDescCustomer;
+      if (axRequest.FileKey() != null && axRequest.FileKey().Length > 0)
+        UpdateProfilePic("upload-customer-profile", scCustomer.UpdateImg, ndCustomer);
       if (retValue = scCustomer.UpdateCustomerData(parCustomer))
         atMessage = scCustomer.GetAlertByType(hc4x_TypeAlert.Success, "Dados do cliente alterados com sucesso !");
       return retValue;
@@ -192,7 +207,7 @@ namespace HC4x_Server.PrivateArea
           else retValue = ndCurInterface.EvalForm(ndCustomer);
           break;
         default:
-          retValue = true; 
+          retValue = true;
           break;
       }
       return retValue;

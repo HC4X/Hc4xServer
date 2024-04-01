@@ -25,6 +25,7 @@ namespace HC4xServer.Logic
     public string atEmailContact => ValueStr(c_emailcontact);
     public string atSite => ValueStr(c_site);
     public string atDescCustomer => ValueStr(c_desccustomer);
+    public string atLogoCustomer => ValueStr(c_logocustomer);
     #endregion
     #region Method
     public HC4x_NodeCustomer CreateNodeCustomer() {
@@ -57,6 +58,7 @@ namespace HC4xServer.Logic
     private const string c_emailcontact = "emailContact";
     private const string c_site = "site";
     private const string c_desccustomer = "descCustomer";
+    private const string c_logocustomer = "logoCustomer";
     #endregion
   }
   public class PostUser : WebKeyValue {
