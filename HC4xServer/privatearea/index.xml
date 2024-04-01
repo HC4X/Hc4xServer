@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NodeInterface 
-  id="index" 
-  NodeType="text/html" 
+<NodeInterface
+  id="index"
+  NodeType="text/html"
   ModelLayout="ContentPage"
   htmltitle="HyperCube4x - Um mundo possível">
 	<NodeContent>

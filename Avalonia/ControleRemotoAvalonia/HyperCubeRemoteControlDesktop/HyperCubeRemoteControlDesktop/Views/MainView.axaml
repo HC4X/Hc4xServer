@@ -1,0 +1,259 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:HyperCubeRemoteControlDesktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800"
+             x:Class="HyperCubeRemoteControlDesktop.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			 Foreground="White">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+
+	</Design.DataContext>
+	<ScrollViewer>
+	<StackPanel Width="360" Background="#0F0F0F" Orientation="Vertical">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 40, 0, 16">
+			<Image Source="/Assets/HyperCubeAlfa.png" Height="32" Width="32" Margin="110, 0, 5, 0"/>
+			<TextBlock Text="HyperCube 4x" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,60,0"/>
+			<Border Width="32" Height="47.5" Background="#FF33373B" CornerRadius="10" Margin="0, 0, 32.5, 0">
+				<Canvas>
+					<!-- Botão de sair -->
+					<Button Foreground="White" Name="Desligar" Canvas.Left="3" Padding="0, 0, 20, 0" Canvas.Top="15"  Background="Transparent" BorderThickness="0">
+						Sair
+					</Button>
+					<!-- Botão de ligar -->
+					<Button Name="SendHello" Canvas.Left="10" Canvas.Top="5" Width="20" Height="20" Background="Transparent" BorderThickness="0" IsVisible="False">
+						<Path Fill="Green" Stroke="Green" StrokeThickness="0.5"
+			Data="M 4,0 L 6,0 L 6,10 L 4,10 Z" >
+							<Path.RenderTransform>
+								<RotateTransform Angle="180" CenterX="-2.5" CenterY="-1"/>
+							</Path.RenderTransform>
+						</Path> 
+					</Button>
+				</Canvas>
+			</Border>
+		</StackPanel>
+		<StackPanel Orientation="Vertical">
+			<TextBox Name="txtSendTo" Text="127.0.0.1:4044" Foreground="Green" Background="Gray" IsVisible="False"/>
+			<TextBox Name="txtMessage" Text="Hello Server" Foreground="Green" IsVisible="False"/>
+			<Border Background="#20242D" CornerRadius="24" Padding="24" Margin="16">
+				<Grid RowDefinitions="*, *, *" ColumnDefinitions="*, *, *" HorizontalAlignment="Center" Background="#20242D">
+					<Button Grid.Column="0"
+							Margin="0, 0, 50, 0"
+							Grid.Row="0"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_7">7</Button>
+					<Button Grid.Column="1"
+							Margin="0, 0, 50, 0"
+							Grid.Row="0"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_8">8</Button>
+					<Button Grid.Column="2"
+							Grid.Row="0"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_9">9</Button>
+					<Button Grid.Column="0"
+							Grid.Row="1"
+							Margin="0, 58"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_4">4</Button>
+					<Button Grid.Column="1"
+							Grid.Row="1"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_5">5</Button>
+					<Button Grid.Column="2"
+							Grid.Row="1"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_6">6</Button>
+					<Button Grid.Column="0"
+							Grid.Row="2"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_1">1</Button>
+					<Button Grid.Column="1"
+							Grid.Row="2"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_2">2</Button>
+					<Button Grid.Column="2"
+							Grid.Row="2"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							CornerRadius="24"
+							Foreground="White"
+							Width="60"
+							Background="#2E3441"
+							Height="35"
+							Name="Command_3">3</Button>
+				</Grid>
+
+			</Border>
+			<Canvas Width="187" Height="187">
+				<Ellipse Width="187" Height="187" Fill="#16171C"/>
+				<Ellipse Width="187" Height="187" Stroke="#324368" StrokeThickness="49"/>
+
+				<!-- Botão Superior -->
+				<Button Name="Command_Up" Canvas.Left="81" Canvas.Top="19" Width="25" Height="25" >
+					<Path Fill="White" Stroke="White" StrokeThickness="1"
+          Data="M 4.5,2 L -4,17 L 13,17 Z" />
+
+				</Button>
+				<!-- Botão Inferior -->
+				<Button Name="Command_Down" Canvas.Left="81" Canvas.Top="143" Width="25" Height="25" >
+					<Path Fill="White" Stroke="White" StrokeThickness="1"
+Data="M 3.5,8 L -4,23 L 12,23 Z" >
+						<Path.RenderTransform>
+							<RotateTransform Angle="180" CenterX="1" CenterY="5"/>
+						</Path.RenderTransform>
+					</Path>
+				</Button>
+
+				<!-- Botão Esquerdo -->
+				<Button Name="Command_Left" Canvas.Left="19" Canvas.Top="81" Width="25" Height="25" >
+					<Path Fill="White" Stroke="White" StrokeThickness="1"
+          Data="M 3.5,5 L -4,20 L 12,20 Z" >
+						<Path.RenderTransform>
+							<RotateTransform Angle="-90" CenterX="0" CenterY="5"/>
+						</Path.RenderTransform>
+					</Path>
+				</Button>
+
+				<!-- Botão Direito -->
+				<Button Name="Command_Right" Canvas.Left="143" Canvas.Top="81" Width="25" Height="25" >
+					<Path Fill="White" Stroke="White" StrokeThickness="1"
+          Data="M 3.5,8 L -4,23 L 12,23 Z" >
+						<Path.RenderTransform>
+							<RotateTransform Angle="90" CenterX="3" CenterY="5"/>
+						</Path.RenderTransform>
+					</Path>
+				</Button>
+
+				<!-- Botão Central -->
+				<Button Name="Command_Central" Width="30" Height="30" Canvas.Left="78.5" Canvas.Top="78.5">
+					<Image Source="/Assets/livro.png" Width="32" Height="32"/>
+				</Button>
+			</Canvas>
+			<!--Botão + e - -->
+			<Border Background="#20242D" CornerRadius="24" Padding="24 16" Margin="16">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#20242D">
+					<Border Width="45" Height="95" Background="#FF33373B" CornerRadius="30" Margin="0, 0, 80, 0">
+						<Canvas>
+							<!-- Botão de '+' -->
+							<Button Name="Command_ZIn" Canvas.Left="-5" Canvas.Top="10" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Data="M11,20 L29,20 M20,10 L20,30" Stroke="White" StrokeThickness="2"/>
+							</Button>
+
+							<!-- Botão de '-' -->
+							<Button Name="Command_ZOut" Canvas.Left="10" Canvas.Top="50" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Data="M-5,20 L15,20" Stroke="White" StrokeThickness="2"/>
+							</Button>
+						</Canvas>
+					</Border>
+					<Border Width="45" Height="95" Background="#FF33373B" CornerRadius="30" Margin="0, 0, 65, 0">
+						<Canvas>
+							<!-- Botão de seta para cima -->
+							<Button Name="Command_YUp" Canvas.Left="-5" Canvas.Top="10" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Fill="White" Data="M 10,20 L 5,15 L 6,14 L 9,17 V2.5 H 11 V17 L 14,14 L 15,15 Z" Stroke="White" StrokeThickness="1">
+
+									<Path.RenderTransform>
+										<RotateTransform Angle="180" CenterX="2" CenterY="-2"/>
+
+									</Path.RenderTransform>
+								</Path>
+							</Button>
+
+
+							<!-- Botão de seta para baixo -->
+							<Button Name="Command_YDown" Canvas.Left="10" Canvas.Top="50" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Fill="White" Data="M 10,0 L 15,5 L 14,6 L 11,3 V17.5 H 9 V3 L 6,6 L 5,5 Z" Stroke="White" StrokeThickness="1">
+
+									<Path.RenderTransform>
+										<RotateTransform Angle="180" CenterX="-5" CenterY="-2"/>
+
+									</Path.RenderTransform>
+								</Path>
+							</Button>
+						</Canvas>
+					</Border>
+					<Border Width="45" Height="95" Background="#FF33373B" CornerRadius="30" Margin="0, 0, 0, 0">
+						<Canvas>
+							<!-- Botão de seta para a esquerda -->
+							<Button Name="Command_XLeft" Canvas.Left="-5" Canvas.Top="10" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Fill="White" Data="M 10,0 L 15,5 L 14,6 L 11,3 V17.5 H 9 V3 L 6,6 L 5,5 Z" Stroke="White" StrokeThickness="1">
+									<Path.RenderTransform>
+										<RotateTransform Angle="-90" CenterX="4" CenterY="-10"/>
+									</Path.RenderTransform>
+								</Path>
+							</Button>
+
+							<!-- Botão de seta para a direita -->
+							<Button Name="Command_XRight" Canvas.Left="10" Canvas.Top="50" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+								<Path Fill="White" Data="M 10,0 L 15,5 L 14,6 L 11,3 V17.5 H 9 V3 L 6,6 L 5,5 Z" Stroke="White" StrokeThickness="1">
+									<Path.RenderTransform>
+										<RotateTransform Angle="90" CenterX="-10" CenterY="-2"/>
+									</Path.RenderTransform>
+								</Path>
+							</Button>
+						</Canvas>
+					</Border>
+				</StackPanel>
+			</Border>
+			<TextBox Name="TxtClientLog"
+					 MinWidth="300"
+					 MinHeight="400"
+					 MaxHeight="800"
+					 Foreground="Green"
+					 ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+		</StackPanel>
+	</StackPanel>
+	</ScrollViewer>
+</UserControl>
