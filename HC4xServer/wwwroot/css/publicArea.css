@@ -17,6 +17,10 @@ p {
   padding: 0;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 .text-uppercase {
   color: rgba(18, 84, 223, 1);
 }
