@@ -3,7 +3,7 @@
   NodeType="text/html"
   ModelLayout="ContentPage"
   htmltitle="HyperCube 4x">
-<NodeContent>
+<NodeHeader>
 		<![CDATA[
   <div id="hero" class="d-flex flex-column justify-content-center">
 
@@ -184,5 +184,66 @@
   </div>
 </div>
 ]]>
-	</NodeContent>
+	</NodeHeader>
+			  <NodeFooter>
+				  <![CDATA[  <!-- Contatos -->
+  <div class="container-fluid p-5" id="contato">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">contatos</h1>
+      <hr class="w-100 text-secondary mx-auto mb-5">
+      <div class="row text-center mt-5">
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  Fale com a gente:
+                  <br>
+                  <i class="bi bi-envelope-at text-secondary mx-2"></i><a href="mailto:comercial@hypercube4x.com"
+                  title="E-mail Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">comercial@hypercube4x.com</a>
+              </span>
+          </div>
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  Siga-nos:
+              </span>
+              <br>
+              <a href="https://www.instagram.com/hypercube4x/" title="Instagram Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-instagram mx-2 "></i>
+              </a>
+              <a href="https://www.facebook.com/hypercube4x" title="Facebook Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-facebook mx-2 "></i>
+              </a>
+              <a href="https://twitter.com/hypercube4x/" title="Twitter Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-twitter mx-2 "></i>
+              </a>
+              <a href="https://www.linkedin.com/in/hypercube4x-realidade-virtual-034612280/"
+                  title="Linkedin Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-linkedin mx-2 "></i>
+              </a>
+              <a href="https://www.youtube.com/@hypercube4x" title="YouTube Hypercube4X" target="_blank"
+                  class="text-decoration-none text-secondary text-uppercase">
+                  <span class="text-secondary text-uppercase">
+                      <i class="bi bi-youtube mx-2 "></i>
+              </a>
+              </span>
+          </div>
+          <div class="col-lg-4 my-3">
+              <span class="text-secondary text-uppercase">
+                  <i class="bi bi-geo-alt mx-2"></i>Localização
+              </span>
+              <span class="text-secondary text-uppercase">
+                  <br>
+                  Espírito Santo
+              </span>
+          </div>
+      </div>
+      <hr class="w-100 text-secondary">
+  </div>]]>
+			  </NodeFooter>
 </NodeInterface>
