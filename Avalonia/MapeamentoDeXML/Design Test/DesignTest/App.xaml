@@ -1,0 +1,42 @@
+﻿<Application x:Class="DesignTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DesignTest"
+             StartupUri="Window_Atom.xaml">
+    <Application.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <Style x:Uid="Style_1" x:Key="hover_2" TargetType="FrameworkElement">
+                <Style.Triggers>
+                    <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="True">
+                        <Setter x:Uid="Setter_1" Property="Opacity" Value=".2" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Uid="Style_2" x:Key="hover_4" TargetType="FrameworkElement">
+                <Style.Triggers>
+                    <Trigger x:Uid="Trigger_2" Property="IsMouseOver" Value="True">
+                        <Setter x:Uid="Setter_2" Property="Opacity" Value=".4" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Uid="Style_3" x:Key="hover_6" TargetType="FrameworkElement">
+                <Style.Triggers>
+                    <Trigger x:Uid="Trigger_3" Property="IsMouseOver" Value="True">
+                        <Setter x:Uid="Setter_3" Property="Opacity" Value=".6" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Uid="Style_4" x:Key="hover_8" TargetType="FrameworkElement">
+                <Style.Triggers>
+                    <Trigger x:Uid="Trigger_4" Property="IsMouseOver" Value="True">
+                        <Setter x:Uid="Setter_4" Property="Opacity" Value=".8" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Uid="Style_5" TargetType="ScrollViewer">
+                <Setter x:Uid="Setter_5" Property="VerticalScrollBarVisibility" Value="Auto" />
+                <Setter x:Uid="Setter_6" Property="HorizontalScrollBarVisibility" Value="Auto" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

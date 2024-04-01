@@ -1,169 +1,180 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <NodeInterface
-  id="hyper_library" 
-	NodeType="text/html" 
-	ModelLayout="ContentPage">
-	<NodeContent>
-		<![CDATA[
-<div class="container-fluid">
+  id="hyper_library"
+  NodeType="text/html"
+  ModelLayout="ContentPage"
+  Version="2024-02-23 07:41">
+	<NodeHeader>
+		<![CDATA[<div class="container-fluid">
   <div class="container py-5">
     <h1 class="text-center text-primary">Hyper Library</h1>
     <hr class="mx-auto w-50">
-      <div class="row my-5 d-flex justify-content-center">
-        <div class="col-12 col-md-12 col-lg-6 d-inline">
-          <h4 class="text-start">O Hyper Library é uma aplicação de uso específico com o objetivo de
-            proporcionar à seu usuário uma leitura imersiva. Essa aplicação é uma parceria entre a Semcult
-            (Secretaria Municipal de Cultura e Turismo de Cachoeiro de Itapemirim) e o Hypercube4x Realidade Virtual
-          </h4>
-        </div>
-        <div class="col-12 col-md-12 col-lg-6 d-inline">
-          <button type="submit" class="btn btn-primary btn-lg d-block my-2 mx-auto">
-            <a href="#" class="text-decoration-none text-white">Abrir
-              com Hypercube4x</a></button>
-          <button type="submit" class="btn btn-primary btn-lg d-block my-2 mx-auto">
-            <a href="/publicarea/pt/05_download" class="text-decoration-none text-white" target="_blank">Clique aqui para baixar o Hypercube4x</a></button>
-        </div>
-      </div>
-    <!--'Coleções de livros'-->
-    <h3 class="text-center text-primary mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major
-      Walter dos Santos Paiva”
-    </h3>
-    <hr class="mx-auto w-100">
-        
+    <h5>O objetivo do Hyper Library proporcionar um ambiente de leitura imersiva aos usuários. A  aplicação está sendo desenvolvida em parceria com a SEMCULT
+      (Secretaria Municipal de Cultura e Turismo) de Cachoeiro de Itapemirim e financiada pelo edital FAPES nº 026/2022 (FAPES CLUSTER)</h5>
+  <div class="row my-5 d-flex justify-content-center">
+    <div class="col-12 col-md-12 col-lg-6 d-inline">
+      <h3 class="text-start text-primary pb-2">HyperCube4x - Visualização Imersiva</h3>
+      <ol class="text-start fs-5">
+        <li>O HyperCube4x é a plataforma de realidade virtual disponibilizada para visualizar o acervo da Biblioteca Municipal de Cachoeiro de Itapemirim “Major Walter dos Santos Paiva”;</li>
+        <li>Com ele, é possível ter a sensação de manusear os livros;</li>
+        <li>Faça download do HyperCube, instale e clique no catálogo abaixo para visualizar as obras em realidade virtual.</li>
+      </ol>
+      <button class="btn btn-primary btn-lg mx-auto my-3 d-block">
+        <a href="/publicarea/pt/download" class="text-decoration-none text-white">Baixar o Hypercube4X</a>
+      </button>
+    </div>
+    <div class="col-12 col-md-12 col-lg-6 d-inline">
+      <figure>
+        <img src="/images/books/laptop_library.png" alt="laptop com visualização no Hypercube4x" class="img-fluid w-75 mx-auto">
+      </figure>
+    </div>
+  </div>]]>
+	</NodeHeader>
+	<NodeContent>
+		<![CDATA[<!--'Livros em Destaque'-->
+    <h4 class="text-center mx-auto mt-5">Livros para acesso em Realidade Virtual</h4>
     <div class="row my-5 " id="hyper_library">
-        
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/ciencia-da-comtaputacao.jpg" class="card-img-top img-thumbnail" alt="capa Ciência da computação, informação e obras gerais">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 000</h5>
-            <p class="card-text text-center">
-              Ciência da computação, informação e obras gerais
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/ciencia-da-computacao-informacao-e-obras-gerais;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fhypercube4x.com%2Fcustomer%2Fhclibrary%2FAlvaro_Abreu%2FViva_Producao_Prazerosa.json" class="card text-decoration-none">
+          <div class="card">
+            <img class="card-img-top img-responsive" src="/customer/hclibrary/alvaro_abreu/viva_producao_cover_thumb.png" alt="Viva a Produção Prazerosa">
+            <div class="card-body">
+              <h5 class="card-title text-center">Álvaro Abreu</h5>
+              <p class="card-text text-center">Viva a Produção Prazerosa</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
           </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/filosofia.jpg" class="card-img-top img-thumbnail" alt="capa Filosofia e psicologia">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 100</h5>
-            <p class="card-text text-center">
-              Filosofia e psicologia
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/filosofia-e-psicologia;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/religiao.jpg" class="card-img-top img-thumbnail" alt="capa Religião">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 200</h5>
-            <p class="card-text text-center">
-              Religião
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/religiao;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/ciencias-sociais.jpg" class="card-img-top img-thumbnail" alt="capa Ciências Sociais">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 300</h5>
-            <p class="card-text text-center">
-              Ciências Sociais
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/ciencias-sociais;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/linguagens.jpg" class="card-img-top img-thumbnail" alt="capa Linguagem &amp; Idiomas">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 400</h5>
-            <p class="card-text text-center">
-              Linguagem &amp; Idiomas
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/linguagem-idiomas;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/ciencias-naturais.jpg" class="card-img-top img-thumbnail" alt="capa Ciências Naturais e Matemáticas">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 500</h5>
-            <p class="card-text text-center">
-              Ciências Naturais e Matemáticas
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/ciencias-naturais-e-matematicas;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/tecnologia.jpg" class="card-img-top img-thumbnail" alt="capa Tecnologia">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 600</h5>
-            <p class="card-text text-center">
-              Tecnologia
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/tecnologia;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/artes.jpg" class="card-img-top img-thumbnail" alt="capa  Artes; artes plásticas e decorativas">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 700</h5>
-            <p class="card-text text-center">
-              Artes; artes plásticas e decorativas
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/artes-artes-plasticas-e-decorativas;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/literatura.jpg" class="card-img-top img-thumbnail" alt="capa Literatura e retórica">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 800</h5>
-            <p class="card-text text-center">
-              Literatura e retórica
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/literatura-e-retorica;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
-      </div>
-        
-      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
-        <div class="card">
-          <img src="/images/books/historia-geografia.jpg" class="card-img-top img-thumbnail" alt="capa história e geografia">
-          <div class="card-body">
-            <h5 class="card-title text-center">Coleção 900</h5>
-            <p class="card-text text-center">
-              História e Geografia
-            </p>
-            <a href="http://atom.hypercube4x.com/semcultci/index.php/historia-e-geografia;ead?sf_format=xml" class="btn btn-primary d-block">Visualizar com Hypercube4x</a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
-  </div>
-</div>
-		]]>
+    <!--'Coleções de livros'-->
+    <h4 class="text-center mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim<br />“Major Walter dos Santos Paiva”
+    </h4>
+    <div class="row my-5 " id="hyper_library">
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fciencia-da-computacao-informacao-e-obras-gerais;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/ciencia-da-computacao.jpg" class="card-img-top img-thumbnail" alt="Ciência da computação, informação e obras gerais">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 000</h5>
+              <p class="card-text text-center">Ciência da computação, informação e obras gerais</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Ffilosofia-e-psicologia;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/filosofia.jpg" class="card-img-top img-thumbnail" alt="Filosofia e psicologia">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 100</h5>
+              <p class="card-text text-center">Filosofia e psicologia</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Freligiao;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/religiao.jpg" class="card-img-top img-thumbnail" alt="Religião">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 200</h5>
+              <p class="card-text text-center">Religião</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fciencias-sociais;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/ciencias-sociais.jpg" class="card-img-top img-thumbnail" alt="Ciências Sociais">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 300</h5>
+              <p class="card-text text-center">Ciências Sociais</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Flinguagem-idiomas;ead?sf_format%3Dxml" class="card text-decoration-none">      
+          <div class="card">
+            <img src="/images/books/linguagens.jpg" class="card-img-top img-thumbnail" alt="Linguagem &amp; Idiomas">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 400</h5>
+              <p class="card-text text-center">Linguagem &amp; Idiomas</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fciencias-naturais-e-matematicas;ead?sf_format%3Dxml" class="card text-decoration-none">      
+          <div class="card">
+            <img src="/images/books/ciencias-naturais.jpg" class="card-img-top img-thumbnail" alt="Ciências Naturais e Matemáticas">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 500</h5>
+              <p class="card-text text-center">Ciências Naturais e Matemáticas</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Ftecnologia;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/tecnologia.jpg" class="card-img-top img-thumbnail" alt="Tecnologia">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 600</h5>
+              <p class="card-text text-center">Tecnologia</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fartes-artes-plasticas-e-decorativas;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/artes.jpg" class="card-img-top img-thumbnail" alt="Artes; artes plásticas e decorativas">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 700</h5>
+              <p class="card-text text-center">Artes; artes plásticas e decorativas</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fliteratura-e-retorica;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/literatura.jpg" class="card-img-top img-thumbnail" alt="Literatura e retórica">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 800</h5>
+              <p class="card-text text-center">Literatura e retórica</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
+        <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fhistoria-e-geografia;ead?sf_format%3Dxml" class="card text-decoration-none">
+          <div class="card">
+            <img src="/images/books/historia-geografia.jpg" class="card-img-top img-thumbnail" alt="História e Geografia">
+            <div class="card-body">
+              <h5 class="card-title text-center">Coleção 900</h5>
+              <p class="card-text text-center">História e Geografia</p>
+              <div class="btn btn-primary text-decoration-none d-block">Visualizar com HyperCube</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>]]>
 	</NodeContent>
+	<NodeFooter>
+		<![CDATA[  </div>
+</div>]]>
+	</NodeFooter>
 </NodeInterface>

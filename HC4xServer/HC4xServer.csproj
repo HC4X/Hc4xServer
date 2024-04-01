@@ -9,9 +9,13 @@
 
   <ItemGroup>
     <Compile Remove="Logic\**" />
+    <Compile Remove="wwwroot\customer\NovaPasta\**" />
     <Content Remove="Logic\**" />
+    <Content Remove="wwwroot\customer\NovaPasta\**" />
     <EmbeddedResource Remove="Logic\**" />
+    <EmbeddedResource Remove="wwwroot\customer\NovaPasta\**" />
     <None Remove="Logic\**" />
+    <None Remove="wwwroot\customer\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +35,14 @@
     <Reference Include="System.Security.Permissions">
       <HintPath>References\System.Security.Permissions.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\customer\hc4xapps\themes\" />
+    <Folder Include="wwwroot\customer\hclibrary\themes\" />
+    <Folder Include="wwwroot\Download\en\" />
+    <Folder Include="wwwroot\Download\pt\" />
+    <Folder Include="wwwroot\images\books\" />
   </ItemGroup>
 
 </Project>

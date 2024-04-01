@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  
+  <meta name="description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta name="keywords" content="Interface Homem-Computador, Visualização da Informação, Além do Desktop, Jogo de Permutação, Hipercubo, Quarta Dimensão" />
+    <!-- Open Graph -->
+  <meta property="og:type" content="website" /> <!-- website / article -->
+  <meta property="og:locale" content="pt_BR" /> <!-- pt_BR / en_US  -->
+  <meta property="og:title" content="HyperCube - Um Mundo Possível" />
+  <meta property="og:description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />
+  <meta property="og:url" content="https://hypercube4x.com" />
+  <meta property="og:site_name" content="HyperCube - Um Mundo Possível" /> <!-- HyperCube - A Possible World -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" /> <!-- summary / summary_large_image -->
+  <meta name="twitter:site" content="[conta do twitter do site com @]" />
+  <meta name="twitter:creator" content="[conta do twitter do site com @]" />
+  <meta name="twitter:title" content="HyperCube - Um Mundo Possível" />
+  <meta name="twitter:description" content="O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />
+ 
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+  
+  <link rel="stylesheet" type="text/css" href="/css/Common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/publicArea.css" />
+  <link rel="stylesheet" type="text/css" href="/icons/font/bootstrap-icons.css"/>
+ 
+  <link rel="shortcut icon" type="image/x-icon" href="/images/ico/HyperCube.ico" />
+  <title></title>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="/publicarea/pt/index#hero">
+        <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo"
+             style="width: 40px; height: 40px;">Hypercube4X
+      </a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <div class="navbar-nav ms-auto align-items-end me-5">
+	  <a href="/publicarea/pt/index" class="nav-link text-white">Home</a>
+          <a href="/publicarea/pt/index#sobre" class="nav-link text-white">Empresa</a>
+          <a href="/publicarea/pt/index#produtos" class="nav-link text-white">Soluções</a>
+          <a href="/publicarea/pt/index#vejaMais" class="nav-link text-white">Galeria</a>
+	      <a href="/publicarea/pt/certificados" class="nav-link text-white">Certificações</a>
+          <a href="/publicarea/pt/index#parceiros" class="nav-link text-white">Apoio</a>
+          <a href="/publicarea/pt/index#contato" class="nav-link text-white">Contatos</a>
+          <a href="/publicarea/pt/equipe" class="nav-link text-white">Equipe</a>
+          <a href="/publicarea/pt/download" class="nav-link text-white">Download</a>
+          <a href="/publicarea/pt/login" class="nav-link text-white">Login</a>
+          <a href="/publicarea/pt/registration" class="nav-link text-white">Cadastre-se</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+  <!-- main role="main" class="pb-3" -->
+  
+
+
+  <!--/main-->
+  
+  <div class="container-fluid p-3" id="footer">
+    <div>
+      <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
+    </div>
+  </div>
+ 
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/site.js?v=dN_5ZsZKNMIThK6SsAELN6ZMgoWMAupRliURBrqP1gs"></script>
+  
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="0608aac2d27b4ae2b70e3da4405ee558" data-requestMappingFromServer="false" data-connectUrl="http://localhost:58296/20a06fd88b904b16b6a27b7a63132a5d/browserLink"></script>
+<!-- End Browser Link -->
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+</html>
