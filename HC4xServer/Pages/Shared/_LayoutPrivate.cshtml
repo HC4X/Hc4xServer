@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
   @await RenderSectionAsync(GearCore.c_SectorHeadLink)
   <link rel="shortcut icon" type="image/x-icon" href="~/images/ico/HyperCube.ico" />
+  
   <title>@ViewData[GearCore.c_tagtitle]</title>
 </head>
 <body>
@@ -22,6 +23,7 @@
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/site.js" asp-append-version="true"></script>
+  <script src="~/js/select_first_input.js" asp-append-version="true"></script>
   @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

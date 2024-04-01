@@ -34,10 +34,6 @@ p {
   transform: scale(1.05);
 }
 
-input[type='file'] {
-  display: none;
-}
-
 /* imagens do perfil*/
 .max-width {
   max-width: 500px;
@@ -121,6 +117,18 @@ input[type='file'] {
   display: block;
   height: 180px;
 }
+
+#hyper_library .card {
+  max-width: 400px;
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+}
+
+  #hyper_library .card img {
+    width: 100%;
+    height: 100%;
+  }
 
 @media (min-width: 768px) {
   html {

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <NodeInterface
-  id="register-customer"
-	NodeType="text/html"
-	ModelLayout="SingleForm"
-	htmltitle="HyperCube4x - Um mundo possível"
+  id="register-customer" 
+	NodeType="text/html" 
+	ModelLayout="UploadForm" 
+	htmltitle="HyperCube4x - Um mundo possível" 
 	ServerClass="HC4x_Server.PrivateArea.UserArea">
 	<NodeForm>
 		<![CDATA[ <section>
@@ -11,10 +11,17 @@
           <h1 class="text-center text-uppercase text-primary mt-1">Venha pro universo Hypercube!</h1>	
             <div class="d-flex flex-direction-column justify-content-center align-items-center p-0">
                 <div class="col-6">
+								  <!-- Selecionar cpf ou cnpj -->
+								  <div class="mb-3">
+						        <label class="form-label lead fs-6" for="CustomerCategory">Selecione entre CPF ou CNPJ</label>
+						        <select class="form-select" name="cpf_cnpj" id="cpf_cnpj" aria-label="Selecione entre CPF ou CNPJ">
+											<option>CPF</option>
+											<option>CNPJ</option>
+							      </select>
+						      </div>
 				          <!-- cnpjCpf input -->
                   <div class="form-outline mb-3 position-relative">
-                      <label class="form-label lead fs-6 " for="cnpjCpf">CPF ou CNPJ</label>
-                      <input type="text" id="cnpjCpf" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" minlength="11" maxlength="14" required placeholder="Digite apenas números" class="form-control form-control-lg position-relative" />
+                      <input type="text" id="cnpjCpf" autocomplete="off" name="cnpjCpf" value="{hc4x-key:cnpjCpf}" required placeholder="Digite apenas números" class="form-control form-control-lg position-relative" />
                   </div>
                   <!-- Razão social input -->
                   <div class="form-outline mb-4">
@@ -22,10 +29,24 @@
                       <input type="text" name="razaoSocial" value="{hc4x-key:razaoSocial}" required id="razaoSocial"
                           class="form-control form-control-lg" placeholder="" />
                   </div>
+                  <!-- logoCustomer -->
+                  <!--<div class="mb-3">
+                    <label for="logoCustomer" class="form-label">Logo da empresa</label>
+                    <input type="file" class="form-control" id="logoCustomer" name="logoCustomer" />
+										<img src="/upload-customer-profile/cube.jpg"/>
+                  </div>-->
+									<label class="mb-3" for="input-file" id="drop-area">
+									  Logo da empresa
+		                <input type="file" accept="image/*" name="input-file" id="input-file" hidden/>
+	                  <div id="img-view">
+			                  <img src="{hc4x-key:logoCustomer}" name="user-image" id="user-image" />   
+			                  <p>Clique ou arraste para trocar a imagem</p>
+	                  </div>
+                  </label>
                   <!-- Name input -->
                   <div class="form-outline mb-4">
                       <label class="form-label lead fs-6" for="namecustomer">Nome da empresa</label>
-                      <input type="text" name="namecustomer" value="{hc4x-key:nameCustomer}" required id="namecustomer"
+                      <input type="text" name="nameCustomer" value="{hc4x-key:nameCustomer}" required id="nameCustomer"
                           class="form-control form-control-lg" placeholder="" />
                   </div>
 						      <!-- CustomerCategory input -->
@@ -73,4 +94,72 @@
         </div>
     </section>]]>
 	</NodeForm>
+	<NodeFooter>
+		<![CDATA[
+		<script>		
+		const dropArea = document.getElementById("drop-area");
+    const inputFile = document.getElementById("input-file");
+    const userImage = document.getElementById("user-image");
+    const imageView = document.getElementById("img-view");
+
+    inputFile.addEventListener("change", uploadImage);
+
+    function uploadImage(){				  
+        let imgLink = URL.createObjectURL(inputFile.files[0]);
+		    userImage.src = imgLink;
+		    imageView.style.border = 0;
+        userImage.style.height = '100px';
+    }
+    dropArea.addEventListener("dragover",function(e){
+        e.preventDefault();				
+    })
+    dropArea.addEventListener("drop",function(e){
+        e.preventDefault();		
+		    inputFile.files = e.dataTransfer.files;
+		    uploadImage();
+    })
+			function formatarCPF(input) {
+          let inputLength = input.value.length;
+          if (inputLength === 3 || inputLength === 7) {
+              input.value += ".";
+          } else if (inputLength === 11) {
+              input.value += "-";
+          }
+      }
+			function formatarCNPJ(input) {
+        let inputLength = input.value.length;
+        if (inputLength === 2 || inputLength === 6) {
+            input.value += ".";
+        } else if (inputLength === 10) {
+            input.value += "/";
+        }
+				 else if (inputLength === 15) {
+            input.value += "-";
+        }
+			}
+      const input = document.getElementById("cnpjCpf");
+			const selectCpfCnpj = document.getElementById("cpf_cnpj");
+			
+			selectCpfCnpj.addEventListener("change", () =>{
+			  input.value = "";
+			});
+			
+      input.addEventListener("keypress", () => {
+			
+			  if(selectCpfCnpj.value === "CPF")
+				{
+				  input.maxLength = 14;
+				  formatarCPF(input);
+				}
+				else
+				{
+				  input.maxLength = 18;
+				  formatarCNPJ(input);
+				}
+			
+			});	
+			
+		</script>
+		]]>
+	</NodeFooter>
 </NodeInterface>

@@ -7,7 +7,6 @@ namespace HC4xServer.Logic
 {
   public class PostCustomer : WebKeyValue {
     private const string Name = nameof(PostCustomer);
-
     #region Axis
     public new PageCore axMundi => (PageCore)base.axMundi;
     public AxisSession axSession => axMundi.axSession;
@@ -26,6 +25,7 @@ namespace HC4xServer.Logic
     public string atEmailContact => ValueStr(c_emailcontact);
     public string atSite => ValueStr(c_site);
     public string atDescCustomer => ValueStr(c_desccustomer);
+    public string atLogoCustomer => ValueStr(c_logocustomer);
     #endregion
     #region Method
     public HC4x_NodeCustomer CreateNodeCustomer() {
@@ -51,13 +51,14 @@ namespace HC4xServer.Logic
     private const string c_pkeycustomer = "pkeyCustomer";
     private const string c_customerCategory = "CustomerCategory";
     private const string c_pkeyappuser = "pkeyAppUser";
-    private const string c_namecustomer = "namecustomer";
+    private const string c_namecustomer = "nameCustomer";
     private const string c_razaosocial = "razaoSocial";
     private const string c_cnpjcpf = "cnpjCpf";
     private const string c_namecontact = "nameContact";
     private const string c_emailcontact = "emailContact";
     private const string c_site = "site";
     private const string c_desccustomer = "descCustomer";
+    private const string c_logocustomer = "logoCustomer";
     #endregion
   }
   public class PostUser : WebKeyValue {

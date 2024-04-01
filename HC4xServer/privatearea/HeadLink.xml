@@ -6,6 +6,7 @@
 	<NodeHeader>
 		<![CDATA[<link rel="stylesheet" type="text/css" href="/css/Common.css" />
   <link rel="stylesheet" type="text/css" href="/css/privateArea.css" /> 
-  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css"/>]]>
+  <link rel="stylesheet" href="/icons/font/bootstrap-icons.css"/>
+	]]>
 	</NodeHeader>
 </NodeInterface>
