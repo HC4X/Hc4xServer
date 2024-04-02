@@ -234,6 +234,7 @@
             </span>
         </div>
         <div class="col-lg-4 my-3">
+				  <a href="https://www.google.com/maps/dir//hypercube+realidade+virtual+ltda/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0xb94388de53805b:0xfb5a3e892f88e1fb?sa=X&ved=1t:3061&ictx=111" title="Link para localização da empresa HyperCube4X">
             <span class="text-secondary text-uppercase">
                 <i class="bi bi-geo-alt mx-2"></i>Localização
             </span>
@@ -241,7 +242,8 @@
                 <br>
                 Espírito Santo
             </span>
-        </div>
+          </a>
+				</div>
     </div>
     <hr class="w-100 text-secondary">
 </div>]]>
