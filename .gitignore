@@ -39,6 +39,11 @@ obj/Debug/
 .vs/
 Hc4xServer/HC4xServer/bin
 Hc4xServer/HC4XLogic/obj
+# Ignorar todos os arquivos na pasta bin/Release/net7.0
+**/bin/Release/net7.0/*
+# Ignorar todos os arquivos na pasta obj/Release/net7.0
+**/obj/Release/net7.0/*
+
 
 # Visual Studio 20152017 cacheoptions directory
 .vs
