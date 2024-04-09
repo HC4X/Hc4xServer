@@ -1,4 +1,5 @@
-﻿using HC4x_Server.Logic;
+﻿using HC4x_Server.HCStone;
+using HC4x_Server.Logic;
 using HC4xServer.Core;
 using HC4xServer.Logic;
 using LibModel;
@@ -21,6 +22,24 @@ namespace HC4x_Server.PrivateArea
     private HC4x_NodeCustomer ndCustomer { get; set; }
     #endregion
     #region Method
+    internal bool GetHcStoneCatalog(int parPkeyCustomer)
+    {
+      bool retValue = false;
+      RawTable objTable;
+      RawRow[] arNode;
+      view_stone_catalog Hc4xViewStoneCatalog;
+      try
+      {
+        objTable = scData.SelectCommand("nameCustomer,logoCustomer,productCover,description", "hc4xcustomer LEFT JOIN stoneproduct ON hc4xcustomer.pkeyCustomer = stoneproduct.pkeyCustomer", $"hc4xcustomer.pkeyCustomer = {parPkeyCustomer}", "");
+        arNode = objTable.scRow.ArrayNode();
+        Hc4xViewStoneCatalog = new view_stone_catalog(axMundi);
+        ndCurInterface.atHeader.Replace("{hc4x-key:logoCustomer}", arNode[0].ValueStr("logoCustomer"));
+        ndCurInterface.atHeader.Replace("{hc4x-key:nameCustomer}", arNode[0].ValueStr("nameCustomer"));
+        retValue = Hc4xViewStoneCatalog.public_catalog(ndCurInterface, "3");
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetHcStoneCatalog)); }
+      return retValue;
+    }
     internal bool ValidCPFCNPJ(string parCPForCNPJ)
     {
       bool retValue = true;
@@ -61,13 +80,9 @@ namespace HC4x_Server.PrivateArea
           strWwwPath = itFile.GetSafeName(strWwwPath);
           imagePath = GearPath.Combine("/" + uploadFolderPath, GearPath.FileName(itFile.GetSafeName(strWwwPath)));
           if (updateObject is HC4x_NodeUser user)
-          {
             user.atImg = imagePath.Replace("\\", "/");
-          }
           if (updateObject is HC4x_NodeCustomer customer)
-          {
             customer.atLogoCustomer = imagePath.Replace("\\", "/");
-          }
           objTask = Task.Run(() => itFile.SaveLocalServer(strWwwPath));
           if (!objTask.Result) break;
         }
@@ -206,6 +221,15 @@ namespace HC4x_Server.PrivateArea
             retValue = base.ActionRender();
           else retValue = ndCurInterface.EvalForm(ndCustomer);
           break;
+        case c_hctsone_catalogo:
+          if (ndCustomer == null)
+          {
+            axMundi.RedirectTo(hc4x_SiteArea.privatearea, "register-customer");
+            retValue = true;
+          }
+          else
+            retValue = GetHcStoneCatalog(ndCustomer.atPkeyCustomer);
+          break;
         default:
           retValue = true;
           break;
@@ -259,6 +283,7 @@ namespace HC4x_Server.PrivateArea
     #region Constant
     private const string c_area_cliente = "area-usuario";
     private const string c_register_customer = "register-customer";
+    private const string c_hctsone_catalogo = "hcstonecatalogo";
     #endregion
   }
 }
