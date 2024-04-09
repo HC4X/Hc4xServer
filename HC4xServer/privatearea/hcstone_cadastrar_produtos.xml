@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="hcstone_cadastrar_produtos" 
+  NodeType="text/html" 
+  ModelLayout="UploadForm"
+  htmltitle="HyperCube 4x">
+	<NodeHeader>
+		<![CDATA[
+<div class="container mt-5">  
+  <h2>Cadastro produto</h2>
+	]]>
+	</NodeHeader>
+	<NodeForm>
+		<![CDATA[
+  <div class="mb-3">
+    <label for="description" class="form-label">Descrição</label>
+    <input type="text" class="form-control" id="description" placeholder="Insira a descrição">
+  </div>
+  <div class="mb-3">
+    <label for="color" class="form-label">Cor</label>
+    <input type="text" class="form-control" id="color" placeholder="Insira a cor">
+  </div>
+  <div class="mb-3">
+    <label for="fichaTecnica" class="form-label">Ficha Técnica</label>
+    <textarea class="form-control" id="fichaTecnica" rows="3" placeholder="Insira as informações da ficha técnica"></textarea>
+  </div>    
+  <div class="mb-3">
+    <label for="productCover" class="form-label">Capa do Produto</label>
+    <input type="file" class="form-control" id="productCover">
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+	  ]]>
+	</NodeForm>
+<NodeFooter>
+<![CDATA[
+  </div>
+]]>
+</NodeFooter>
+</NodeInterface>

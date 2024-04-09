@@ -152,6 +152,7 @@
 			<NodeInterface id="area-usuario" FileName="privatearea\area-usuario.xml"/>
 			<NodeInterface id="hyper_library" FileName="privatearea\hyper_library.xml"/>
 			<NodeInterface id="register-customer" FileName="privatearea\register-customer.xml"/>
+			<NodeInterface id="hcstone_cadastrar_produtos" FileName="privatearea\hcstone_cadastrar_produtos.xml"/>
     </SectorInterface>
     <SectorArea id="Other">
       <NodeInterface id="UXForm" NodeType="text/html">
