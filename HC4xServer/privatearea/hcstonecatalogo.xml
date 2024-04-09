@@ -1,89 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NodeInterface 
-  id="hcstonecatalogo" 
-  NodeType="text/html" 
-  ModelLayout="ContentPage">
-	<NodeContent>
+<NodeInterface
+  id="hcstonecatalogo"
+  NodeType="text/html"
+  ModelLayout="ContentPage"
+	ServerClass="HC4x_Server.PrivateArea.UserArea">
+	<NodeHeader>
 		<![CDATA[
 <div class="empresa-section container-fluid d-flex flex-column justify-content-center align-items-center p-5">
-    <img class="imagem-empresa rounded-sm rounded-circle mt-4" src="/images/chapas/cube.jpg" alt="wallpaper">
-    <h1 class="p-1 text-uppercase text-center text-light mt-2">Marmoraria X</h1>
-    <p class="text-uppercase text-center text-info"> Cachoeiro de Itapemirim, ES </p>
+  <img class="imagem-empresa rounded-sm rounded-circle mt-4" src="{hc4x-key:logoCustomer}" alt="wallpaper">
+  <h1 class="p-1 text-uppercase text-center text-light mt-2">{hc4x-key:nameCustomer}</h1>
 </div>
-
-<div class="container-fluid d-flex flex-column justify-content-center p-5">
-        <h3 class="text-uppercase text-center text-primary mb-3">Seja bem-vindo à página da Marmoraria X</h3>
-        <hr class="w-100 mx-auto mb-3">
-
-        <div class="row row-cols-1 row-cols-lg-6 row-cols-md-3 row-cols-sm-3 g-4 py-3">
-
-            <a href="/privatearea/pt/marble/" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/images/chapas/marble1.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Card 1</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/images/chapas/marble2.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column" id="card-body">
-                            <h5 class="card-title">Card 2</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="/images/chapas/marble3.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column" id="card-body">
-                            <h5 class="card-title">Card 3</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/images/chapas/marble4.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column" id="card-body">
-                            <h5 class="card-title">Card 4</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/images/chapas/marble5.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column" id="card-body">
-                            <h5 class="card-title">Card 5</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" style="text-decoration: none;" class="text-dark">
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/images/chapas/marble6.jpg" class="card-img-top img-fluid">
-                        <div class="card-body d-flex flex-column" id="card-body">
-                            <h5 class="card-title">Card 6</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-</div>]]>
+<div class="row row-cols-1 row-cols-lg-6 row-cols-md-3 row-cols-sm-3 gap-3 py-3">
+]]>
+	</NodeHeader>
+	<NodeContent>
+		<![CDATA[		
+<div class="col card-products-customer m-5">
+    <div class="card h-100" style="width: 20rem;">
+        <a href="{hc4x-key:productSlabs}">
+				  <img src="{hc4x-key:productCover}" class="card-img-top img-fluid">
+        </a>
+				<h5 class="card-title">{hc4x-key:description}</h5>
+				<a class="btn btn-primary template_url_catalog" href="{hc4x-key:url_template}">Abrir com o hypercube</a>
+    </div>
+</div>  
+]]>
 	</NodeContent>
+	<NodeFooter>
+		<![CDATA[
+  <a href="/privatearea/pt/hcstone_cadastrar_produtos/" style="text-decoration: none;" class="text-dark m-5">
+    <div class="col">
+      <div class="card h-100" style="width: 18rem;">
+        <div class="d-flex justify-content-center" style="font-size: 2rem;">
+          <i class="bi bi-cart-plus"></i>
+        </div>
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title">Cadastrar produto</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+]]>
+	</NodeFooter>
 </NodeInterface>
