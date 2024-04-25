@@ -3,6 +3,9 @@ using HC4xServer.Logic;
 using LibModel;
 using LibServer;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace HC4x_Server.Logic
@@ -1072,6 +1075,32 @@ namespace HC4x_Server.Logic
       Regex regex = new Regex("[!@#$%^&*(),.?\":{ }|<>]");
       return regex.IsMatch(input);
     }
+    public bool GetInfoDownloadPage()
+    {
+      bool retValue = false;
+      string atDownloadFolderPath;
+      HC4x_DeployInfo objDeployInfo;
+      string strContentPage;
+      try
+      {
+        objDeployInfo = new HC4x_DeployInfo();
+        atDownloadFolderPath = GearPath.Combine($@"{axMundi.atWebPath}\Download", "deployinfo.json");
+        using (StreamReader r = new StreamReader(atDownloadFolderPath))
+        {
+          string jsonString = r.ReadToEnd();
+          objDeployInfo = JsonSerializer.Deserialize<HC4x_DeployInfo>(jsonString);
+        }
+        strContentPage = ndCurInterface.atContentPage
+        .Replace("{hc4x-key:Version}", objDeployInfo.Version)
+        .Replace("{hc4x-key:Data}", objDeployInfo.Date)
+        .Replace("{hc4x-key:Nodepackage64}", objDeployInfo.NodePackage[0].Url)
+        .Replace("{hc4x-key:Nodepackage86}", objDeployInfo.NodePackage[1].Url);
+
+        retValue = ndCurInterface.SetContentPage(strContentPage);
+      }
+      catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetInfoDownloadPage)); }
+      return retValue;
+    }
     internal bool ResendConfirmation()
     {
       bool retValue = false;
@@ -1112,6 +1141,8 @@ namespace HC4x_Server.Logic
         {
           case c_hyper_stone:
             return GetDynamicStones("3");
+          case c_download:
+            return GetInfoDownloadPage();
           default:
             return true;
         }
@@ -1202,6 +1233,23 @@ namespace HC4x_Server.Logic
     private const string c_page_newmailcode = "newmailcode";
     private const string c_reset_pass = "reset_pass";
     private const string c_hyper_stone = "hyper_stone";
+    private const string c_download = "download";
     #endregion
+  }
+  public class HC4x_DeployInfo
+  {
+    public string id { get; set; }
+    public string Version { get; set; }
+    public string Date { get; set; }
+    public string Status { get; set; }
+    public string CheckUpdate { get; set; }
+    public string ServerUrl { get; set; }
+    public List<HC4x_NodePackage> NodePackage { get; set; }
+  }
+  public class HC4x_NodePackage
+  {
+    public string id { get; set; }
+    public string Description { get; set; }
+    public string Url { get; set; }
   }
 }
