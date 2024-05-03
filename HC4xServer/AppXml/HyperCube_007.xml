@@ -561,7 +561,7 @@
 				]]>
 			  </NodeHeader>
 		  </NodeInterface>
-		  <NodeInterface id="login" FileName="publicarea\login.xml" />
+		  <NodeInterface id="login" FileName="login.xml" />
 		  <NodeInterface id="forgot-pass" NodeType="text/html" ModelLayout="SingleForm"
 			htmltitle="HyperCube4x - Um mundo possível" ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
 			  <NodeForm>
