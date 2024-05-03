@@ -149,7 +149,7 @@
   </div>]]>
         </NodeFooter>
       </NodeInterface>
-      <NodeInterface id="index" FileName="publicarea\index.xml">
+      <NodeInterface id="index" FileName="index.xml">
       </NodeInterface>
       <NodeInterface id="hyper_library" NodeType="text/html" ModelLayout="SingleForm">
         <NodeHeader>
