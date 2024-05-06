@@ -26,11 +26,11 @@
 	</div>
 
 </div>
-<!-- Sobre -->
-<div class="container-fluid p-5" id="sobre">
+<!-- About -->
+<div class="container-fluid p-5" id="about">
   <div class="row">
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block">
-      <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
+      <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="photo" class="img-fluid">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
       <h1 class="text-uppercase text-center mt-5">Learn more about the Hypercube 4X</h1>
@@ -60,71 +60,71 @@
     <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
     <hr class="w-100">
     <div class="cards">
-        <a id="card" href="/publicarea/pt/hyper_analyzer">
+        <a id="card" href="/publicarea/en/hyper_analyzer">
             <h2>Hyper Analyzer</h2>
             <div class="imagem-descricao">
                 <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
-                <p>Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação.</p>
+                <p>OLAP (Online Analytical Processing) cube viewer that explores the spatial relationship of information.</p>
             </div>
-            <p class="text-primary">Clique no card para saber mais</p>
+            <p class="text-primary">Click on the card to learn more</p>
          </a> 
-        <a id="card" href="/publicarea/pt/hyper_book">
+        <a id="card" href="/publicarea/en/hyper_book">
             <h2>Hyper Book</h2>
             <div class="imagem-descricao">
                 <img src="/images/logo/hb.png" alt="Aplicação Hyper Analyzer">
-                <p>"Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.</p>
+                <p>"Image gallery and e-doc reader that can load multiple files into the same environment, including PDF and HTML documents.</p>
             </div>
-            <p class="text-primary">Clique no card para saber mais</p>
+            <p class="text-primary">Click on the card to learn more</p>
         </a>
-        <a id="card" href="/publicarea/pt/hyper_relational">
+        <a id="card" href="/publicarea/en/hyper_relational">
             <h2>Hyper Relational</h2>
             <div class="imagem-descricao">
                 <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
-                <p>Conecta Sistemas de Gerenciamento de Banco de Dados Relacional (RDMS) a texto estruturado, como json e xml, por exemplo.</p>
+                <p>It connects Relational Database Management Systems (RDMS) to structured text formats, such as JSON and XML, for example.</p>
             </div>
-            <p class="text-primary">Clique no card para saber mais</p>
+            <p class="text-primary">Click on the card to learn more</p>
         </a>   
     </div>
 
     <!-- HyperStone -->
     <hr class="w-100 mt-5 mx-auto">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso específico</h2>
+    <h2 class="text-uppercase text-center p-1">Specific use applications</h2>
     <hr class="w-100 mx-auto mb-5">
       <div class="row g-3 justify-content-center">  
-	    <a id="card" href="/publicarea/pt/hyper_stone">
+	    <a id="card" href="/publicarea/en/hyper_stone">
             <h2>Hyper Stone</h2>
             <div class="imagem-descricao">
-                <img src="/images/logo/LogoHyperStone.png" alt="Aplicação Hyper Stone">
-                <p>Ambiente de realidade virtual para visualização de chapas de "natural stone" que simula a sensação de distância e o reflexo da chapa no manuseio e interação com o material real.</p>
+                <img src="/images/logo/LogoHyperStone.png" alt="Hyper Stone Application">
+                <p>Virtual reality environment for viewing natural stone slabs that simulates the sensation of distance and the reflection of the slab when handling and interacting with the real material.</p>
             </div>
-            <p class="text-primary">Clique no card para saber mais</p>
+            <p class="text-primary">Click on the card to learn more</p>
         </a>
           <!-- HyperLibrary-->
-		  <a id="card" href="/publicarea/pt/hyper_library">
+		  <a id="card" href="/publicarea/en/hyper_library">
             <h2>Hyper Library</h2>
             <div class="imagem-descricao">
                 <img src="/images/logo/hb.png" alt="Aplicação Hyper Library">
-                <p>Ambiente de realidade virtual que proporciona uma leitura imersiva dos livros do acervo da Biblioteca Municipal de Cachoeiro de Itapemirim "Major Walter dos Santos Paiva".</p>
+                <p>Virtual reality environment that provides an immersive reading experience of the books in the collection of the Municipal Library of Cachoeiro de Itapemirim 'Major Walter dos Santos Paiva.".</p>
             </div>
-            <p class="text-primary">Clique no card para saber mais</p>
+            <p class="text-primary">Click on the card to learn more</p>
         </a>
         </div>
       </div>
   </div>
-<!-- Veja mais -->
-<div class="container-fluid" id="vejaMais">
+<!-- See more -->
+<div class="container-fluid" id="seeMore">
   <div class="container my-5 p-3">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
+    <h1 class=" text-uppercase text-center mt-5 mb-5">See more about our platform:</h1>
     <hr class="w-25 mx-auto  mb-5">
-    <div class="row justify-content-center" id="veja-mais">
+    <div class="row justify-content-center" id="see-more">
       <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
         <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded">
           <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
           <div class="title">
-            <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
+            <h4 class="text-uppercase text-center">Hyper Book Tutorial</h4>
           </div>
           <div class="text">
-            <span>Saiba como realizar suas leituras imersivas no Hyperbook</span>
+            <span>Learn how to do your immersive readings on Hyperbook</span>
           </div>
         </div>
       </div>
@@ -132,10 +132,10 @@
         <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
           <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
           <div class="title">
-            <h4 class="text-uppercase text-center">Conheça o Hypercube4X</h4>
+            <h4 class="text-uppercase text-center">Get to know Hypercube4X</h4>
           </div>
           <div class="text">
-            <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+            <span>Learn a little more about Hypercube4x and what it can do</span>
           </div>
         </div>
       </div>
@@ -146,17 +146,17 @@
             <h4 class="text-uppercase text-center">Hyper Stone</h4>
           </div>
           <div class="text">
-            <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+            <span>Learn how Hyper Stone emerged and its main advantages</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Empresas parceiras -->
-<div class="container-fluid" id="parceiros">
+<!-- Partner Companies -->
+<div class="container-fluid" id="partners">
   <div class="container justify-content-center p-5">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
+    <h1 class=" text-uppercase text-center mt-5 mb-5">Support:</h1>
     <hr class="w-25 mx-auto mb-5">
     <div class="row justify-content-center pb-5">
       <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
@@ -184,23 +184,23 @@
 </div>]]>
 	</NodeContent>
 	<NodeFooter>
-		<![CDATA[  <!-- Contatos -->
-  <div class="container-fluid p-5" id="contato">
-      <h1 class=" text-uppercase text-center mt-5 mb-5">contatos</h1>
+		<![CDATA[  <!-- Contacts -->
+  <div class="container-fluid p-5" id="contact">
+      <h1 class=" text-uppercase text-center mt-5 mb-5">contacts</h1>
       <hr class="w-100 text-secondary mx-auto mb-5">
       <div class="row text-center mt-5">
           <div class="col-lg-4 my-3">
               <span class="text-secondary text-uppercase">
-                  Fale com a gente:
+                  Contact us:
                   <br>
                   <i class="bi bi-envelope-at text-secondary mx-2"></i><a href="mailto:comercial@hypercube4x.com"
-                  title="E-mail Hypercube4X" target="_blank"
+                  title="Email Hypercube4X" target="_blank"
                   class="text-decoration-none text-secondary text-uppercase">comercial@hypercube4x.com</a>
               </span>
           </div>
           <div class="col-lg-4 my-3">
               <span class="text-secondary text-uppercase">
-                  Siga-nos:
+                  Follow us:
               </span>
               <br>
               <a href="https://www.instagram.com/hypercube4x/" title="Instagram Hypercube4X" target="_blank"
@@ -233,7 +233,7 @@
           </div>
           <div class="col-lg-4 my-3">
               <span class="text-secondary text-uppercase">
-                  <i class="bi bi-geo-alt mx-2"></i>Localização
+                  <i class="bi bi-geo-alt mx-2"></i>Location
               </span>
               <span class="text-secondary text-uppercase">
                   <br>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hyper_analyzer"
+	NodeType="text/html"
+	ModelLayout="ContentPage">
+	<NodeContent>
+		<![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 fs-2">Hyper Analyzer</h1>
+              <p class="text-justify fs-6">
+                Imagine that a dataset consists of three columns, two of them "groupable" (i.e., a column where GROUP BY is applicable) and one "aggregatable" (i.e., used in SUM, COUNT, AVG functions in the SELECT clause of a SQL query). This dataset would be explored like the 3D cube in figure 3.5(b). In contrast, traditional OLAP visualization treats these datasets as unfolded cubes, as shown in figure 3.5(a), i.e., impaired understanding due to the loss of spatial relationships. Adding "groupable" and "aggregatable" columns to the dataset transforms it into a multidimensional dataset. They behave like unfolded tesseracts (figure 3.5(c)) when users analyze each dataset sequentially. In contrast, combining the datasets for simultaneous visualizations maps to figure 3.5(d).
+              </p>
+                <div class="row row-cols-4 gap-1 align-items-center">
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5a.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figure 3.5(a)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5b.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figure 3.5(b)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5c.png" class="img-fluid " alt="...">
+                      <div class="card-body align-items-center">
+                        <p class="card-text">Figure 3.5(c)</p>
+                      </div>
+                  </div>
+                    <div class="card border-0 align-items-center" style="width: 18rem;">
+                      <img src="/images/hyper_analyzer/3.5d.png" class="img-fluid" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Figure 3.5(d)</p>
+                      </div>
+                  </div>
+                
+                </div>
+                <div class="row align-items-start mt-5">
+                  <div class="col-md-12 col-xl-6">
+                      <p class="text-justify fs-6">
+                      The HyperAnalyzer deals with these issues by offering complementary ways of visualizing the information, integrating interaction proposals and Shneiderman's mantra to allow the user to choose the visualization strategy that best suits their needs. First, the user prepares the data by limiting the number of columns, transposing, adding custom calculations, generating charts, and creating new facets with this transformed data. Then, the user would sequence (e.g., for a slideshow), compare side by side, use the "depth and surface" technique, and so on.
+                  </p></div>
+                  <div class="col-md-12 col-xl-6 ">
+                    <img src="/images/hyper_analyzer/3.16.jpg" alt="" class="img-fluid" text-center"/>
+                  </div>
+                </div>
+                <div class="row align-items-start mt-5">
+                  <div class="col-md-12 col-xl-6">
+                      <p class="text-justify fs-6">
+                      As shown in figure 3.17, the split cube report placed in a side-by-side visualization highlights "external columns". Thus, the external columns generate the pie chart in figure 3.16(a). Applying the same criteria for rows, we have the bar chart in figure 3.16(b). Therefore, the external rows and columns are the "Overview" and should appear first. 
+                  </p></div>
+                  <div class="col-md-12 col-xl-6">
+                    <img src="/images/hyper_analyzer/3.17.jpg" alt="" class="img-fluid text-center"/>
+                  </div>
+                </div>
+                <div class="col-12 mt-5">
+                      <p class="text-justify fs-6">
+                      The choice of a pie chart for columns and a bar chart for rows was just a personal preference. The pie chart highlights the contribution of each column to the result, i.e., treats columns as categories. However, the row data is temporal, and the bar chart illustrates how the numbers change over time. However, one might consider the opposite as a better approach: a pie chart to indicate progress over time and a bar chart to compare participation in categories. Otherwise, using the same type of chart facilitates comparing row and column data. All these scenarios are easily achieved by replacing the contents of the facets or creating facets.
+                      From the insights provided by the overview facets, it is possible to generate segmented visualizations like "zoom and filter". For example, in figure 3.18, (a) shows a quarterly review (rows), while (b) shows three selected categories. Calculations are done only for the selected dataset.
+                  </p>
+                </div>
+                <div class="col-12">
+                  <img src="/images/hyper_analyzer/3.18.jpg" alt="" class="img-fluid text-center"/>
+                  <div class="d-flex justify-content-evenly">
+                    <p class="fs-6 text-muted">
+                      (a) Filter by quarterly review 
+                    </p>
+                    <p class="fs-6 text-muted">
+                      (b) Filter by category.
+                    </p>
+                  </div>
+                </div>
+            </div>
+          ]]>
+	</NodeContent>
+</NodeInterface>

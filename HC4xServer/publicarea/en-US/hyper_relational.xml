@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hyper_relational"
+  NodeType="text/html"
+  ModelLayout="ContentPage"
+  htmltitle="HyperCube 4x">
+	<NodeContent>
+		<![CDATA[
+        <style>
+            p{
+            font-family: Roboto;
+            }
+        </style>
+        <div class="container">
+            <h1 class="text-center fs-2">
+                Hyper Relational
+                </h1>
+                <p class="text-justify fs-6">
+                Spreadsheets expose data in rows and columns. Therefore, it is a flat object because the data in cells depend on a "row header" (i.e., a primary key) and a column header to be meaningful. The connection between two tables (e.g., through a join command) mimics figure 3.5(a), since the data from both tables are available on the same plane. In contrast, the master/detail layout mimics figure 3.5(b), as it keeps the information from each table on different planes. Thus, data organized according to the entity-relationship model is a 3D cube. Conversely, dealing with metadata is also necessary to discover new ways to join information across the collection.
+                </p>
+                <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5a.png" alt="Figure 3.5(a)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figure 3.5(a): unfolded cube
+                        </p>
+                    </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                    <div class="col-md-12 align-items-center">
+                        <img src="/images/hyper_relational/3.5b.png" alt="Figure 3.5(b)" class="img-fluid" text-center"/>
+                        <p class="text-muted fs-6 text-center my-3">
+                        Figure 3.5(b): projected cube
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <p class="text-justify fs-6 mt-5">
+                The <b>HyperRelational</b> handles structured data in various formats, such as proprietary RDMS9, CSV, XML, and JSON. The goal is to provide options for exploring data and metadata extracted from geometric visualization properties, as depicted in figure 3.15:
+                </p>
+                <div class="col-12">
+                <img src="/images/hyper_relational/3.15.jpg" alt="Figure 3.15: a table in grid view and master/detail form." class="img-fluid text-center"/>
+                <div class="d-flex justify-content-center">
+                    <p class="fs-6 text-muted">
+                    Figure 3.15: a table in grid view and master/detail form. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        ]]>
+	</NodeContent>
+</NodeInterface>

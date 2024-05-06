@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="hyper_book"
+	NodeType="text/html"
+	ModelLayout="ContentPage">
+	<NodeContent>
+		<![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 fs-2">Hyper Book</h1>
+              <p class="text-justify fs-6">
+                The HyperBook is the simplest WorkScene because it does not deal with any "information relation mappable to dimensions," displaying data as referential and aesthetic literary text, infographics, and images. Furthermore, as discussed in Chapter 2, information interpretation should be linear, sequential, or follow a path drawn by the author or the user. Since there is no way to accelerate cognition using a dimensional approach, the HyperBook treats them as one-dimensional forms.
+                Here, the major challenge is to emulate "random access" to achieve goals such as streamlining information analysis, allowing side-by-side comparison, and merging content.
+                It is assumed that documents formatted as DOC, DOCX, ODS, PDF are divided into pages, but in reality, division only occurs in the printed version. When viewed on the screen, they behave like "Egyptian scrolls" because access to pages must follow the sequential flow of the document. In contrast, the HyperBook divides documents into pages; to group/reorder, analyze/compare non-sequential information side by side on the screen. Thus, this WorkScene leverages the bindery metaphors and identifiers illustrated in figure 3.8 and predefined camera movements illustrated in figure 3.9.  
+              </p>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.8.jpg" alt="Figure 3.8 (a) real identifier; (b) faces marked with tag; (c) faces organized by tag." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figure 3.8. (a) real identifier; (b) faces marked with tag; (c) faces organized by tag.</p>
+                  </div>
+                  <div class="col-12 mx-2 my-3">
+                    <img src="/images/hyper_book/3.9.jpg" alt="Figure 3.9 (a) overview, (b) single face view, (c) rotation, (d) manual zoom." class="img-fluid"/>
+                  <p class="text-center text-muted fs-6">Figure 3.9 (a) overview, (b) single face view, (c) rotation, (d) manual zoom.</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <h1 class="text-center fs-2">
+                    Virtual Screen Scrolling and Zooming 
+                  </h1>
+                  <p class="text-justify fs-6">
+                  In a real-world document, readers have no limitations such as "portion of the screen" and use their fingers to mark the reading position before moving the page. However, when readers open a document in A4 format with "portrait" orientation on an e-book reader, as the screen and page orientation are different, some problems arise: 1) scrolling the page is necessary; 2) the visible part of the document is limited; and 3) readers must fix their gaze on the moving page to maintain the reading position. The limitations imposed on the visible part of documents lead to zoom and scroll adjustments that force readers to look at the moving page. Whereas traditional scrolling methods, such as rotating the mouse wheel or dragging the scroll bar, are not precise enough, this is the only way to keep up with the reading position.
+                  As a result, the cognitive load associated with these aspects impacts productivity, immersion, enjoyment, and absorption of reading. 
+                  The <b>HyperBook</b> implements some techniques to deal with these problems, aiming to reduce the cognitive load of LnE: smoother scrolling and page tilt. In the former, the scrolling area advances in steps at a fixed time so that the reader can predict the reading position without looking at the page. In the latter, by tilting the page, it is possible to enlarge the visible part of the document, enlarge the context, and reduce the scrolling area. For example, figure 3.13 shows how a 45° tilt results in a 41.42% increase in virtual height, making an 18” screen mimic a 20” one. 
+                  </p>
+                  <img src="/images/hyper_book/3.13.jpg" alt="Figure 3.13 Page Tilt." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6">Figure 3.13. Page Tilt.</p>
+                  <p class="text-justify fs-6">
+                    The commercial measurement of a 16:9 screen is 18.3576. The height tilt at 45o
+                    generates an isosceles right triangle. The increased height is the hypotenuse, so: 9 * √2 = 9 * 
+                    1.414221. The virtual screen is 16:12.7280. The commercial measurement would be: √ (16^2 + 12.728^2) = √ 
+                    (256 + 162.0019) = √ (418.0019) = 20.445. Achieving maximum enlargement with better 
+                    readability requires a combination of tilt and scroll techniques, as proposed:
+                  </p>
+                  <img src="/images/hyper_book/3.14.jpg" alt="Figure 3.14. Page Enlargement." class="img-fluid"/> 
+                  <p class="text-center text-muted fs-6 my-2">Figure 3.14. Page Enlargement.</p>
+                  <p class="text-justify fs-6 my-2">
+                    Figure 3.14(a) shows a page without tilt. The camera shows the top half of the page (P1). The distance between P1 and P2 is half the page, i.e., if a page is 1920 in height, the camera must scroll 960. If the page tilts 45°, it reduces scrolling, but 
+                    the camera is too far from the top of the page, causing distortion. To reduce the distortion and enlarge the visible area of the page, a slight tilt is necessary when the camera is on top (15°), as shown in Figure 3.14(b) P3. Figure 
+                    3.14(b) P4 shows that the tilt increases as the camera scrolls down (up to 45°). The central part of the page is visible in camera positions P3 and P4, facilitating reading regression if necessary. The start/end angles and the number of steps to 
+                    scroll through the page are adjustable.
+                  </p>
+                </div>
+            </div>
+          ]]>
+	</NodeContent>
+</NodeInterface>
