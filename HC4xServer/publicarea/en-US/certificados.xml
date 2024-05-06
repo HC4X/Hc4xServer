@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
+  id="certificados" 
+  NodeType="text/html" 
+  ModelLayout="ContentPage"
+  htmltitle="Certificados">
+	<NodeHeader>
+		<![CDATA[ <div class="container-fluid">
+          <div class="container my-5">
+              <h1 class="text-center text-primary mt-5 mb-2">Veja nossas certificações</h1>
+              <hr class="mx-auto mb-4 w-50 ">
+              <div class="row">
+                  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                      <img src="/images/certificados/Certificado_Centelha_2022.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="certificado_centelha_2022" />
+                      <img src="/images/certificados/HYPERCUBE-Certificado-Acelerada-InovAtiva-23.1-1.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="Certificado_acelerada_inivativa" />
+                  </div>
+                  <div class="col-lg-4 mb-4 mb-lg-0">
+                      <img src="/images/certificados/certificado_cluster.jpg" class="w-100 shadow-1-strong rounded mb-4"
+                          alt="Certificado_cluster" />
+                      <img src="/images/certificados/GRADUADA BRASIL COLORIDA.png"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="selo_graduada_brasil" />
+                  </div>
+                  <div class="col-lg-4 mb-4 mb-lg-0">
+                      <img src="/images/certificados/HYPERCUBE-Certificado-Graduada-InovAtiva-23.1.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="Certificado_graduada_inovativa" />
+                      <img src="/images/certificados/MOI_Certificate_Alessandro_Rego.jpg"
+                          class="w-100 shadow-1-strong rounded mb-4" alt="certificado_moi" />
+                  </div>
+              </div>
+          </div>
+      </div>]]>
+	</NodeHeader>
+</NodeInterface>
