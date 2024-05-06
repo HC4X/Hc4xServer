@@ -24,7 +24,7 @@
                             <label class="form-label lead fs-6 " for="user_pass">Senha</label>
                             <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
                                 placeholder="digite sua senha"  required />
-              <i class="bi bi-eye-fill" id="password-icon"></i>
+              <i class="bi bi-eye-fill"></i>
                         </div>
                         <!-- Password input confirm -->
                         <div class="form-outline mb-3">

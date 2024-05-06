@@ -1,53 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<NodeInterface
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface 
   id="reset_pass"
-  NodeType="text/html"
+  NodeType="text/html" 
   ModelLayout="SingleForm"
-  htmltitle="HyperCube4x - Um mundo possível"
+  htmltitle="HyperCube4x - Um mundo possível" 
   ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
 	<NodeForm>
 		<![CDATA[ 
-            <section>
-                <div class="container mb-5 pb-5">
-                    <div class="row d-block">
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto d-block ">
-                            <img src="/images/general/reset_pass.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
-                            <h4 class="text-uppercase text-center">Redefina a sua senha</h4>
-                        </div>
-                        <div class="justify-content-center align-items-center d-flex flex-column">
-                            <!-- Password input -->
-                            <div class="form-outline mb-4">
-                                <label class="form-label lead fs-6" for="user_pass">Senha</label>
-                                <input type="password" name="user_pass" id="user_pass" class="form-control form-control-lg" required />
-                                <i class="bi bi-eye-fill pointer" onclick="togglePasswordVisibility('user_pass', this)"></i>
-                            </div>
-                            <!-- Password input confirm -->
-                            <div class="form-outline mb-4">
-                                <label class="form-label lead fs-6" for="user_pass_2">Confirmar senha</label>
-                                <input type="password" name="user_pass_2" id="user_pass_2" class="form-control form-control-lg" required />
-                                <i class="bi bi-eye-fill pointer" onclick="togglePasswordVisibility('user_pass_2', this)"></i>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button>
-                        </div>
-                    </div>
+           <section>
+          <div class="container mb-5 pb-5">
+            <div class="row d-block">
+            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto d-block ">
+                <img src="/images/general/reset_pass.svg" class="img-fluid mx-auto d-block" alt="Sample image" style="width:50vw; height:39.5vh;">
+                <h4 class="text-uppercase text-center">Redefina a sua senha</h4>
+            </div>
+             <div class="justify-content-center align-items-center d-flex flex-column">
+			    <!-- Password input -->
+                       <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_pass">Senha</label>
+                    <input type="password" name="user_pass" value="" id="user_pass" class="form-control form-control-lg" required />
                 </div>
-            </section>
-        ]]>
+                        <!-- Password input confirm -->
+                <div class="form-outline mb-4">
+                    <label class="form-label lead fs-6" for="user_pass_2">Confirmar senha</label>
+                    <input type="password" name="user_pass_2" value="" id="user_pass_2" class="form-control form-control-lg" required />
+                </div>
+                    <button type="submit" class="btn btn-primary btn-lg d-block mx-auto">Enviar</button>
+			    </div>
+            </div>
+        </div>
+    </div>
+</section> ]]>
 	</NodeForm>
-	<NodeFooter>
-		<![CDATA[
-        <script>
-            function togglePasswordVisibility(passwordFieldId, icon) {
-                const input = document.getElementById(passwordFieldId);
-                if (input.type === "password") {
-                    input.type = "text";
-                    icon.classList.toggle("bi-eye-slash-fill", true);
-                } else {
-                    input.type = "password";
-                    icon.classList.toggle("bi-eye-slash-fill", false);
-                }
-            }
-        </script>
-    ]]>
-	</NodeFooter>
 </NodeInterface>
