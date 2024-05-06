@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+	id="login"
+	NodeType="text/html"
+	ModelLayout="SingleForm"
+	htmltitle="HyperCube4x - Um mundo possível"
+	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeForm>
+		<![CDATA[
+    <section>
+        <div class="container-fluid mb-5 pb-5">
+          <div class="container mb-5 pb-5"> 
+            <h1 class="text-center text-primary text-uppercase">Faça seu Login</h1>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <div class="divider d-flex justify-content-around my-4">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+			    <label class="form-label lead fs-6" for="user_email">E-mail</label>
+                            <input type="email" name="user_email" value=""  id="user_email" class="form-control form-control-lg"
+                                placeholder="nome@email.com" required/>
+                        </div>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3 position-relative">
+                            <label class="form-label lead fs-6 " for="user_pass">Senha</label>
+                            <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
+                                placeholder="digite sua senha"  required />
+							<i class="bi bi-eye-fill"></i>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="form-check lead mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="rememberMe" />
+                                <label class="form-check-label fs-5" for="rememberMe">
+                                    Lembre de mim
+                                </label>
+                            </div>
+                            <a href="/publicarea/pt/forgot-pass" class="text-body link-primary">Esqueceu a senha?</a>
+                        </div>
+                
+                        <div class="text-center text-lg-start mt-4 pt-2"> 
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="lead fs-6 small mt-2 pt-1 mb-0">Não tem uma conta? <a href="/publicarea/pt/registration"
+                                    class="text-decoration-none link-primary">Cadastre-se</a></p>
+			    <p class="lead fs-6 small mt-2 pt-1 mb-0">Para receber um novo código de confirmação do email<a href="/publicarea/pt/newmailcode"
+                                    class="text-decoration-none link-primary"> clique aqui</a></p>
+                        </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-5 col-xxl-5">
+                    <img src="/images/general/undraw_login_re_4vu2.svg" class="img-fluid d-none d-md-none d-lg-block" alt="Login image" style="width:50vw; height:39.5vh;">
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>]]>
+	</NodeForm>
+	<NodeFooter>
+		<![CDATA[
+				<script>
+                    const icon = document.querySelector(".bi-eye-fill");
+                    const inputPass = document.querySelector("#user_pass");
+
+                    icon.addEventListener("click", function(){
+                        icon.classList.toggle("bi-eye-slash-fill");
+                        if(inputPass.type === "password"){
+                            inputPass.type = "text";
+                        } else {
+                            inputPass.type = "password";
+                        }
+                    });
+                </script>
+				]]>
+	</NodeFooter>
+</NodeInterface>
