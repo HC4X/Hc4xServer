@@ -12,7 +12,7 @@
 
     <div class="d-flex flex-column p-2">
       <h1 class="display-1 p-2 text-center text-light">HYPERCUBE 4X</h1>
-      <p class="lead p-2 text-light text-center">Plataforma de realidade virtual para a Web 3.0 e o Metaverso </p>
+      <p class="lead p-2 text-light text-center">Virtual reality platform for Web 3.0 and the Metaverse</p>
     </div>
   </div>
 
@@ -21,7 +21,6 @@
           <img src="/images/logo/HyperCubeAlfaHero.png" alt="Logo HyperCube4X" class="img-fluid">
       </div>
 <div class="absolute d-flex flex-md-row flex-column align-items-center">
-    <p class="m-0 p-0 text-start" style="font-size: 1rem; width:12em; height: 8em; color:yellow;">Conheça mais sobre o HyperStone baixando grátis nosso e-book <a style="text-decoration: none; color:yellow;"href="https://www-agenciarabisco-com.rds.land/hypercube-4x" alt="Landing page"><b>clicando aqui</b></a> ou acessando o QR-code</p>
     <img src="/images/general/qrcode_hc4x.jfif" alt="Logo HyperCube4X" class="img-fluid" width="200px">
 </div>
 	</div>
@@ -34,19 +33,19 @@
       <img src="/images/general/undraw_virtual_reality_re_yg8i.svg" alt="foto" class="img-fluid">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline-block fs-4">
-      <h1 class="text-uppercase text-center mt-5">Saiba mais sobre o Hypercube 4X</h1>
+      <h1 class="text-uppercase text-center mt-5">Learn more about the Hypercube 4X</h1>
       <hr class="w-50 mx-auto">
       <p>
         <ul>
           <li class="mx-2 p-3">
-            O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a
-            cognição especial,
-            memória especial e organização espacial do cérebro humano
+            HyperCube connects the attributes of Virtual Reality Environments with the 
+            spatial cognition, 
+            spatial memory and spatial organization of the human brain          
           </li>
           <li class="mx-2 p-3">
-            Utiliza metáforas e algoritmos próprios para criar interação simbiótica e
-            visualização de dados
-            mais parecida com o mundo real.
+            It uses its own metaphors and algorithms to create symbiotic interaction and 
+            data visualization 
+            that is more similar to the real world.          
           </li>
         </ul>
       </p>

@@ -1,12 +1,10 @@
-﻿using LibModel;
-using LibServer;
+﻿using System;
 using Microsoft.AspNetCore.Hosting;
-using System;
+using LibServer;
+using LibModel;
 
-namespace HC4xServer.Core
-{
-  public class PageLauncher : RawPage
-  {
+namespace HC4xServer.Core {
+  public class PageLauncher : RawPage {
     private const string Name = nameof(PageLauncher);
     #region Attribute
     public hc4x_SiteArea atSiteArea { get; protected set; }
@@ -17,15 +15,22 @@ namespace HC4xServer.Core
     private RenderPage ndRenderPage { get; set; }
     #endregion
     #region Method
-    public string GetHeaderSection(string parPageId)
-    {
+    /// <summary></summary>
+    ///! Date: 03/05/2024
+    public string GetHeaderSection(string parPageId) {
       string retValue;
+      string strMessage;
       ServerInterface objInterface;
-      try
-      {
+      try {
+        strMessage = atMessage;
         objInterface = GetInterface(parPageId);
-        if (objInterface == null) return (string.Empty);
-        if (ndRenderPage != null)
+        if (string.IsNullOrWhiteSpace(strMessage) && !string.IsNullOrWhiteSpace(atMessage)) {
+          retValue = atMessage;
+          axMundi.ClearMessage();
+        }
+        else if (objInterface == null)
+          retValue = string.Empty;
+        else if (ndRenderPage != null)
           retValue = ndRenderPage.RenderHeader(objInterface);
         else
           retValue = objInterface.atHeader;
@@ -33,12 +38,10 @@ namespace HC4xServer.Core
       catch (Exception Err) { retValue = GearServer.ExceptionHtml(Err, Name, nameof(GetHeaderSection)); }
       return (retValue);
     }
-    public string GetFooterSection(string parPageId)
-    {
+    public string GetFooterSection(string parPageId) {
       string retValue;
       ServerInterface objInterface;
-      try
-      {
+      try {
         objInterface = GetInterface(parPageId);
         if (objInterface == null) return (string.Empty);
         if (ndRenderPage != null)
@@ -49,19 +52,16 @@ namespace HC4xServer.Core
       catch (Exception Err) { retValue = GearServer.ExceptionHtml(Err, Name, nameof(GetFooterSection)); }
       return (retValue);
     }
-    private ServerInterface GetHeadMeta(string parInterface)
-    {
+    private ServerInterface GetHeadMeta(string parInterface) {
       ServerInterface retValue;
       retValue = axMundi.ndCubeApp.rcInterface[parInterface];
       if (!retValue.Init()) retValue = null;
       return (retValue);
     }
-    public ServerInterface RenderCurrent()
-    {
+    public ServerInterface RenderCurrent() {
       ServerInterface retValue;
       RawPage objPage;
-      try
-      {
+      try {
         retValue = CurInterface();
         if (retValue != null)
           if ((objPage = retValue.ndPage) != null) objPage.ActionRender();
@@ -69,11 +69,9 @@ namespace HC4xServer.Core
       catch (Exception Err) { retValue = null; axMundi.ShowException(Err, Name, nameof(RenderCurrent)); }
       return (retValue);
     }
-    public ServerInterface CurInterface()
-    {
+    public ServerInterface CurInterface() {
       ServerInterface retValue;
-      try
-      {
+      try {
         retValue = ndCurInterface;
         if (retValue == null)
           retValue = ndCurInterface = GetInterface(atInterface);
@@ -82,19 +80,15 @@ namespace HC4xServer.Core
       return (retValue);
     }
     private ServerInterface EmptyInterface() { return (ndCurInterface = axMundi.EmptyInterface(hc4x_ModelLayout.InfoPage)); }
-    public ServerInterface GetInterface(string parPageId)
-    {
+    public ServerInterface GetInterface(string parPageId) {
       ServerInterface retValue;
-      try
-      {
-        if (atRedirecting)
-        {
+      try {
+        if (atRedirecting) {
           retValue = EmptyInterface();
           return (retValue);
         }
         retValue = ndService.GetInterface(atSiteArea, parPageId);
-        if (retValue == null)
-        {
+        if (retValue == null) {
           atMessage = string.Format("Interface not Found: {0}", parPageId);
           retValue = axMundi.EmptyInterface(hc4x_ModelLayout.InfoPage);
         }
@@ -102,38 +96,30 @@ namespace HC4xServer.Core
       catch (Exception Err) { retValue = null; axMundi.ShowException(Err, Name, nameof(GetInterface)); }
       return (retValue);
     }
-    public void ShowException(Exception parErr, string parClass, string parMethod)
-    {
+    public void ShowException(Exception parErr, string parClass, string parMethod) {
       atMessage = GearServer.ExceptionHtml(parErr, parClass, parMethod);
-      if (ndCurInterface == null)
-      {
+      if (ndCurInterface == null) {
         if (axMundi.ndCubeApp != null)
           GetInterface(axMundi.ndRoute.atPageId);
       }
     }
-    private bool InitPublic()
-    {
+    private bool InitPublic() {
       bool retValue = false;
-      try
-      {
+      try {
         ndRenderPage = ndCubeApp.rcInterface.PublicRenderPage();
         retValue = (ndRenderPage != null);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(InitPublic)); }
       return (retValue);
     }
-    private bool InitPrivate()
-    {
+    private bool InitPrivate() {
       bool retValue = false;
-      try
-      {
+      try {
         ndRenderPage = ndCubeApp.rcInterface.PrivateRenderPage();
-        if (ndRenderPage != null)
-        {
-          if (InitData())
-          {
+        if (ndRenderPage != null) {
+          if (InitData()) {
             if (!(retValue = axMundi.OpenDbSession()))
-              axMundi.RedirectTo(hc4x_SiteArea.publicarea, "non-authenticate");
+              axMundi.RedirectTo(hc4x_SiteArea.publicarea, "expired_session");
           }
         }
       }
@@ -142,16 +128,12 @@ namespace HC4xServer.Core
     }
     #endregion
     #region Constructor
-    public bool InitGet()
-    {
+    public bool InitGet() {
       bool retValue = false;
-      try
-      {
+      try {
         if (!Init(new PageCore(this, hc4x_RequestMethod.Get))) return (retValue);
-        if (retValue = axMundi.Init())
-        {
-          if (InitSiteArea())
-          {
+        if (retValue = axMundi.Init()) {
+          if (InitSiteArea()) {
             atInterface = ndRoute.atPageId;
             if (ndRoute.atQueryStr.Length == 0)
               retValue = axMundi.ActionGet();
@@ -163,16 +145,12 @@ namespace HC4xServer.Core
       catch (Exception Err) { ShowException(Err, Name, nameof(InitGet)); }
       return (retValue);
     }
-    public bool InitPost()
-    {
+    public bool InitPost() {
       bool retValue = false;
-      try
-      {
+      try {
         if (!Init(new PageCore(this, hc4x_RequestMethod.Post))) return (retValue);
-        if (axMundi.Init())
-        {
-          if (InitSiteArea())
-          {
+        if (axMundi.Init()) {
+          if (InitSiteArea()) {
             atInterface = ndRoute.atPageId;
             retValue = axMundi.ActionPost();
           }
@@ -181,15 +159,12 @@ namespace HC4xServer.Core
       catch (Exception Err) { ShowException(Err, Name, nameof(InitPost)); }
       return (retValue);
     }
-    private bool InitSiteArea()
-    {
+    private bool InitSiteArea() {
       bool retValue = false;
       string strFileExt;
-      try
-      {
+      try {
         atSiteArea = ndRoute.SiteArea<hc4x_SiteArea>();
-        switch (atSiteArea)
-        {
+        switch (atSiteArea) {
           case hc4x_SiteArea.publicarea:
             if (!(retValue = InitPublic())) return (retValue);
             break;
@@ -210,8 +185,7 @@ namespace HC4xServer.Core
     public PageLauncher() { } //# Init(new PageCore(this)); }
     #endregion
   }
-  public class BlazorServerService : ServerService
-  { //# ServerInformation
+  public class BlazorServerService : ServerService { //# ServerInformation
     private const string Name = nameof(BlazorServerService);
     #region Attribute
     public hc4x_Environment atEnvironment => GearBase.ParseEnum<hc4x_Environment>(ndEnvironment.EnvironmentName);
@@ -220,13 +194,10 @@ namespace HC4xServer.Core
     public IWebHostEnvironment ndEnvironment => fwApp.Environment;
     #endregion
     #region Method
-    public ServerInterface GetInterface(hc4x_SiteArea parSiteArea, string parPageId)
-    {
+    public ServerInterface GetInterface(hc4x_SiteArea parSiteArea, string parPageId) {
       ServerInterface retValue;
-      try
-      {
-        switch (parSiteArea)
-        {
+      try {
+        switch (parSiteArea) {
           case hc4x_SiteArea.None:
             retValue = axMundi.EmptyInterface(hc4x_ModelLayout.InfoPage);
             break;

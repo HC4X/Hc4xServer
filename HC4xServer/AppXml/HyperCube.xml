@@ -10,8 +10,9 @@
   Direction4D="Shell"
   ShowInGallery="false"
   LoginType="None"
-  Revision="2024-05-03 09:59:00">
+  Revision="2024-05-03 12:26:00">
   <SectorLocale>
+    <NodeLocale id="en" LanguageCode="en-US" LanguageName="English United States" LanguagePath="en-US" />
     <NodeLocale id="pt" LanguageCode="pt-BR" LanguageName="Português Brasil" LanguagePath="pt-BR" />
   </SectorLocale>
   <SectorString>
@@ -51,10 +52,10 @@
         <NodeKeyValue key="DbTable">hc4xcustomer</NodeKeyValue>
       </SectorKeyValue>
       <SectorField id="base">
-        <NodeField 
-					FieldName="pkeyCustomer" 
-					FieldLabel="Inc" 
-					DataType="Integer" 
+        <NodeField
+					FieldName="pkeyCustomer"
+					FieldLabel="Inc"
+					DataType="Integer"
 					IncrementSeed="1"
           IncrementStep="1" />
         <NodeField FieldName="pkeyCustomerCategory" DataType="Integer" />
@@ -68,23 +69,23 @@
         <NodeField FieldName="descCustomer" />
       </SectorField>
     </NodeTable>
-		<NodeTable TabName="hc4x_appuser_insert" PrimaryKey="pkeyAppUser">
-			<SectorKeyValue>
-				<NodeKeyValue key="DbTable">hc4xappuser</NodeKeyValue>
-			</SectorKeyValue>
-			<SectorField id="base">
-				<NodeField FieldName="pkeyAppUser"
-									 FieldLabel="Inc" DataType="Integer" 
-									 IncrementSeed="1" 
+    <NodeTable TabName="hc4x_appuser_insert" PrimaryKey="pkeyAppUser">
+      <SectorKeyValue>
+        <NodeKeyValue key="DbTable">hc4xappuser</NodeKeyValue>
+      </SectorKeyValue>
+      <SectorField id="base">
+        <NodeField FieldName="pkeyAppUser"
+									 FieldLabel="Inc" DataType="Integer"
+									 IncrementSeed="1"
 									 IncrementStep="1"/>
-				<NodeField
-					FieldName="pkeyUser" 
+        <NodeField
+					FieldName="pkeyUser"
 					DataType="Integer"/>
-				<NodeField
+        <NodeField
 					FieldName="pkeyApp"
 					DataType="Integer"/>
-			</SectorField>
-		</NodeTable>
+      </SectorField>
+    </NodeTable>
     <NodeTable TabName="TableBlob">
       <SectorKeyValue>
         <NodeKeyValue key="DbTable">htBlob</NodeKeyValue>
@@ -103,54 +104,54 @@
     </NodeTable>
   </SectorTable>
   <SectorInterface AreaPath="publicarea">
-		<NodeInterface id="HeadMeta" FileName="HeadMeta.xml"/>
+    <NodeInterface id="HeadMeta" FileName="HeadMeta.xml"/>
     <SectorInterface id="PublicArea" AreaPath="publicarea" PageLayout="_LayoutPublic" DllName="HC4xLogic.dll" ServerClass="HC4x_Server.Render.PublicAreaRender">
       <NodeInterface id="HeadLink" FileName="HeadLink.xml"/>
       <NodeInterface id="BodyHeaderFooter" FileName="BodyHeaderFooter.xml"/>
       <NodeInterface id="index" FileName="index.xml"/>
       <NodeInterface id="equipe" FileName="equipe.xml"/>
       <NodeInterface id="login" FileName="login.xml"/>
-			<NodeInterface id="forgot-pass" FileName="forgot-pass.xml" />
-			<NodeInterface id="before_after_hs" FileName="before_after_hs.xml" />
-			<NodeInterface id="reset_pass" FileName="reset_pass.xml"/>
+      <NodeInterface id="forgot-pass" FileName="forgot-pass.xml" />
+      <NodeInterface id="before_after_hs" FileName="before_after_hs.xml" />
+      <NodeInterface id="reset_pass" FileName="reset_pass.xml"/>
       <NodeInterface id="email_send" FileName="email_send.xml"/>
-			<NodeInterface id="send_success" FileName="send_success.xml"/>
-			<NodeInterface id="registration" FileName="registration.xml"/>
+      <NodeInterface id="send_success" FileName="send_success.xml"/>
+      <NodeInterface id="registration" FileName="registration.xml"/>
       <NodeInterface id="termos" FileName="termos.xml"/>
       <NodeInterface id="politica-de-privacidade" FileName="politica-de-privacidade.xml"/>
-			<NodeInterface id="registration_success" FileName="registration_success.xml"/>
+      <NodeInterface id="registration_success" FileName="registration_success.xml"/>
       <NodeInterface id="alter_pass_success" FileName="alter_pass_success.xml"/>
       <NodeInterface id="hyper_analyzer" FileName="hyper_analyzer.xml"/>
       <NodeInterface id="hyper_book" FileName="hyper_book.xml"/>
-			<NodeInterface id="hyper_stone" FileName="hyper_stone.xml"/>
-			<NodeInterface id="hyper_relational" FileName="hyper_relational.xml"/>
+      <NodeInterface id="hyper_stone" FileName="hyper_stone.xml"/>
+      <NodeInterface id="hyper_relational" FileName="hyper_relational.xml"/>
       <NodeInterface id="hyper_library" FileName="hyper_library.xml"/>
-			<NodeInterface id="confirm_sucess" FileName="confirm_sucess.xml"/>
-			<NodeInterface id="confirm-email_eml" FileName="confirm-email_eml.xml"/>
-			<NodeInterface id="confirm-forgot_eml" FileName="confirm-forgot_eml.xml"/>
+      <NodeInterface id="confirm_sucess" FileName="confirm_sucess.xml"/>
+      <NodeInterface id="confirm-email_eml" FileName="confirm-email_eml.xml"/>
+      <NodeInterface id="confirm-forgot_eml" FileName="confirm-forgot_eml.xml"/>
       <NodeInterface id="confirm-email" FileName="confirm-email.xml"/>
-			<NodeInterface id="newmailcode" FileName="newmailcode.xml"/>
-			<NodeInterface id="01_project" FileName="01_project.xml"/>
-			<NodeInterface id="download" FileName="download.xml"/>
-			<NodeInterface id="certificados" FileName="certificados.xml"/>
+      <NodeInterface id="newmailcode" FileName="newmailcode.xml"/>
+      <NodeInterface id="01_project" FileName="01_project.xml"/>
+      <NodeInterface id="download" FileName="download.xml"/>
+      <NodeInterface id="certificados" FileName="certificados.xml"/>
       <NodeInterface id="non-authenticate" FileName="non-authenticate.xml"/>
-			<NodeInterface
+      <NodeInterface
         id="hcstone-slabxml"
         ModelLayout="Rest"
         ServerClass="HC4x_Server.HCStone.HyperStone_Handler">
-			</NodeInterface>
-			<NodeInterface id="hcstone-upload" FileName="hcstone-upload.xml"/>
-		</SectorInterface>
+      </NodeInterface>
+      <NodeInterface id="hcstone-upload" FileName="hcstone-upload.xml"/>
+    </SectorInterface>
     <SectorInterface id="PrivateArea" AreaPath="privatearea" PageLayout="_LayoutPrivate" DllName="HC4xLogic.dll"
       ServerClass="HC4x_Server.Render.PrivateAreaRender">
       <NodeInterface id="HeadLink" FileName="HeadLink.xml"/>
       <NodeInterface id="BodyHeaderFooter" FileName="BodyHeaderFooter.xml"/>
-			<NodeInterface id="index" FileName="index.xml"/>
+      <NodeInterface id="index" FileName="index.xml"/>
       <NodeInterface id="hcstonecatalogo" FileName="hcstonecatalogo.xml"/>
       <NodeInterface id="marble" FileName="marble.xml"/>
-			<NodeInterface id="area-usuario" FileName="area-usuario.xml"/>
-			<NodeInterface id="hyper_library" FileName="hyper_library.xml"/>
-			<NodeInterface id="register-customer" FileName="register-customer.xml"/>
+      <NodeInterface id="area-usuario" FileName="area-usuario.xml"/>
+      <NodeInterface id="hyper_library" FileName="hyper_library.xml"/>
+      <NodeInterface id="register-customer" FileName="register-customer.xml"/>
     </SectorInterface>
     <SectorArea id="Other">
       <NodeInterface id="UXForm" NodeType="text/html">

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="HeadLink" 
+  NodeType="text/html" 
+  ModelLayout="PageSection">
+	<NodeHeader>
+	<![CDATA[
+		<link rel="stylesheet" type="text/css" href="/css/Common.css" />
+		<link rel="stylesheet" type="text/css" href="/css/publicArea.css" />
+		<link rel="stylesheet" type="text/css" href="/icons/font/bootstrap-icons.css"/>
+	]]>
+	</NodeHeader>
+</NodeInterface>

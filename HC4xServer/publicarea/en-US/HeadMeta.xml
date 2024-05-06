@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="HeadMeta" 
+	NodeType="text/html" 
+	ModelLayout="PageSection">
+	<NodeHeader>
+		<![CDATA[<meta name="description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta name="keywords" content="Interface Homem-Computador, Visualização da Informação, Além do Desktop, Jogo de Permutação, Hipercubo, Quarta Dimensão" />
+    <!-- Open Graph -->
+  <meta property="og:type" content="website" /> <!-- website / article -->
+  <meta property="og:locale" content="pt_BR" /> <!-- pt_BR / en_US  -->
+  <meta property="og:title" content="HyperCube - Um Mundo Possível" />
+  <meta property="og:description" content="Página de apresentação da tese de doutorado: O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />
+  <meta property="og:url" content="https://hypercube4x.com" />
+  <meta property="og:site_name" content="HyperCube - Um Mundo Possível" /> <!-- HyperCube - A Possible World -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" /> <!-- summary / summary_large_image -->
+  <meta name="twitter:site" content="[conta do twitter do site com @]" />
+  <meta name="twitter:creator" content="[conta do twitter do site com @]" />
+  <meta name="twitter:title" content="HyperCube - Um Mundo Possível" />
+  <meta name="twitter:description" content="O hipercubo: As novas metáforas e algoritmos para a concepção de interfaces e visualização da informação" />
+  <meta property="og:image" content="images/logo/hypercube.png" />]]>
+	</NodeHeader>
+</NodeInterface>
