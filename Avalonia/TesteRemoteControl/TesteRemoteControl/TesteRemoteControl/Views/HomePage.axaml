@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TesteRemoteControl.HomePage">
+	<Grid Width="360" Background="#0F0F0F">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="0" Foreground="White" Margin="0, 10, 0, 5" HorizontalAlignment="Center" >IP do Computador</TextBlock>
+		<TextBox Text="" Name="ip" Grid.Row="1" Foreground="White" />
+		<TextBlock Grid.Row="2" Foreground="White" HorizontalAlignment="Center" Margin="0, 10, 0, 5">Porta</TextBlock>
+		<TextBox Text="" Name="port" Grid.Row="3" Foreground="White" />
+		<TextBlock Grid.Row="4" Foreground="White" HorizontalAlignment="Center" Margin="0, 10, 0, 5"> Mensagem</TextBlock>
+		<TextBox Name="mensagem" Grid.Row="5" Foreground="Wheat" />
+		<Button Click="TrocarDeTela" Grid.Row="6" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Content="Conectar" Background="#324368" Foreground="White" Margin="0, 10, 0, 5"/>
+		<TextBlock Grid.Row="7" Foreground="White" HorizontalAlignment="Center" Margin="0, 10, 0, 5">QR CODE</TextBlock>
+		<Button Name="buttonQr" Grid.Row="8" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Content="Abrir Camera" Background="#324368" Foreground="White"/>
+	</Grid>
+</UserControl>
