@@ -9,6 +9,19 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+    <AndroidSigningKeyStore>my-release-key.keystore</AndroidSigningKeyStore>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningStorePass>hc4xAppKey</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>hc4x-app-key</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>hc4xAppKey</AndroidSigningKeyPass>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningStorePass>hc4xAppKey</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>hc4x-app-key</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>hc4xAppKey</AndroidSigningKeyPass>
   </PropertyGroup>
 
   <ItemGroup>
