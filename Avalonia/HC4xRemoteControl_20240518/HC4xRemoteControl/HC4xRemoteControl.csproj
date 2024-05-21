@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="Interface\**" />
+    <AvaloniaXaml Remove="meta\**" />
+    <AvaloniaXaml Remove="z_Interface\**" />
+    <AvaloniaXaml Remove="z_meta\**" />
+    <Compile Remove="Interface\**" />
+    <Compile Remove="meta\**" />
+    <Compile Remove="z_Interface\**" />
+    <Compile Remove="z_meta\**" />
+    <EmbeddedResource Remove="Interface\**" />
+    <EmbeddedResource Remove="meta\**" />
+    <EmbeddedResource Remove="z_Interface\**" />
+    <EmbeddedResource Remove="z_meta\**" />
+    <None Remove="Interface\**" />
+    <None Remove="meta\**" />
+    <None Remove="z_Interface\**" />
+    <None Remove="z_meta\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
+    <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibHC4xAsset\LibHC4xAsset.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="LibModel">
+      <HintPath>Reference\LibModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
