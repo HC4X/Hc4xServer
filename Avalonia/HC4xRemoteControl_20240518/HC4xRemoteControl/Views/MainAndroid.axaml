@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  x:Class="HC4xRemoteControl.Views.MainAndroid"
+  Background="SlateGray"
+  MinHeight="600"
+  MinWidth="360">
+  <StackPanel Orientation="Vertical">
+    <StackPanel Name="StackTop" Orientation="Horizontal" Margin="0,10,0,0">
+      <Image Source="avares://LibHC4xAsset/Assets/HyperCubeAlfa.png" Height="64" Width="64" />
+      <TextBlock Name="ProductName" Text="Remote Control" FontFamily="Verdana" FontSize="24" Foreground="White" VerticalAlignment="Center" />
+      <Label Name="cmdExit" FontFamily="Verdana" FontSize="24" Margin="40,0,0,0" VerticalAlignment="Center" Foreground="White" Content="Sair" />
+    </StackPanel>
+    <ScrollViewer Name="hc4x_viewer" />
+    <Label Name="lblMessage" FontFamily="Verdana" FontSize="16" Foreground="White" Content="Ready" />
+    <!--Image Name="MyImage" MaxWidth="300" MaxHeight="300" /-->
+  </StackPanel>
+</UserControl>
