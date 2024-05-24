@@ -1,8 +1,10 @@
-﻿using System;
-using Avalonia.Threading;
+﻿using Avalonia.Threading;
+using System;
 
-namespace Android.HyperCube {
-  internal class QRDecoderTimer {
+namespace Android.HyperCube
+{
+  internal class QRDecoderTimer
+  {
     private const string Name = nameof(QRDecoderTimer);
     #region Axis
     private AndroidLifetime ndLifetime => fwCameraCtrl.ndLifetime;
@@ -17,28 +19,33 @@ namespace Android.HyperCube {
     private readonly DispatcherTimer ndtimer;
     #endregion
     #region Method
-    public bool Start() {
+    public bool Start()
+    {
       ndtimer?.Start();
       return true;
     }
-    public bool Stop() {
+    public bool Stop()
+    {
       ndtimer?.Stop();
       return true;
     }
     #endregion
     #region Event
-    private void Timer_Tick(object? sender, EventArgs e) {
+    private void Timer_Tick(object? sender, EventArgs e)
+    {
       try { fwCameraCtrl?.QrCodeDecode(); }
       catch (Exception Err) { Stop(); ndLifetime?.ShowException(Err, Name, nameof(Timer_Tick)); }
     }
     #endregion
     #region Constructor
-    public QRDecoderTimer(CameraControl parCameraCtrl) {
+    public QRDecoderTimer(CameraControl parCameraCtrl)
+    {
       fwCameraCtrl = parCameraCtrl;
       ndtimer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(1000) };
       ndtimer.Tick += Timer_Tick;
     }
-    public void Close() {
+    public void Close()
+    {
       Stop();
       ndtimer.Tick -= Timer_Tick;
       fwCameraCtrl = default;
