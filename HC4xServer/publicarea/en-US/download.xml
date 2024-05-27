@@ -6,7 +6,7 @@
 	htmltitle="HyperCube 4x"
 	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
 	<NodeContent>
-		<![CDATA[<h1>Baixe o HyperCube4X agora mesmo!</h1>
+		<![CDATA[<h1>Download HyperCube4X now!</h1>
   <div class="container mt-5">
     <div class="row align-items-center">
         <div class="col-md-6">
@@ -16,13 +16,13 @@
               <!-- 
                 <li class="list-group-item mb-1"><a class="h-6" href="/download/pt/License_pt-BR.pdf">Licença de uso (mesmo embutido no instalador em .pdf)</a></li>
               -->
-                <li class="list-group-item mb-1">Publicado em: {hc4x-key:Data}</li>
-                <li class="list-group-item mb-1"><a class="h-6" href="/download/pt/HC4XTemplate.pptx">Modelo para Apresentações PPTX</a></li>
-                <li class="list-group-item mb-1"><p class="h-6">Este programa utiliza .NET Framework versão 4.7.2;</p></li>
+                <li class="list-group-item mb-1">Published in: {hc4x-key:Data}</li>
+                <li class="list-group-item mb-1"><a class="h-6" href="/download/pt/HC4XTemplate.pptx">Template for PPTX Presentations</a></li>
+                <li class="list-group-item mb-1"><p class="h-6">This program uses .NET Framework version 4.7.2;</p></li>
             </ul>
             <div class="mt-4">
-                <a href="/download/{hc4x-key:Nodepackage64}" class="btn btn-primary">Instalador (x64) recomendado</a>
-                <a href="/download/{hc4x-key:Nodepackage86}" class="btn btn-outline-primary">Instalador (x86) legado</a>
+                <a href="/download/{hc4x-key:Nodepackage64}" class="btn btn-primary">Instalador (x64) recommended</a>
+                <a href="/download/{hc4x-key:Nodepackage86}" class="btn btn-outline-primary">Instalador (x86) legacy</a>
             </div>
         </div>
         <div class="col-md-6">
