@@ -55,9 +55,9 @@
 <!-- Produtos -->
 <div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
   <div class="container-fluid">
-    <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
+    <h1 class="text-uppercase text-center mt-5 mb-5">You can use HyperCube 4X to:</h1>
     <hr class="w-100">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
+    <h2 class="text-uppercase text-center p-1">General purpose applications</h2>
     <hr class="w-100">
     <div class="cards">
         <a id="card" href="/publicarea/en/hyper_analyzer">

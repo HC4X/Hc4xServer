@@ -1090,11 +1090,22 @@ namespace HC4x_Server.Logic
           string jsonString = r.ReadToEnd();
           objDeployInfo = JsonSerializer.Deserialize<HC4x_DeployInfo>(jsonString);
         }
-        strContentPage = ndCurInterface.atContentPage
+        if (axMundi.ndRoute.atLang == "pt")
+        {
+          strContentPage = ndCurInterface.atContentPage
         .Replace("{hc4x-key:Version}", objDeployInfo.Version)
         .Replace("{hc4x-key:Data}", objDeployInfo.Date)
         .Replace("{hc4x-key:Nodepackage64}", objDeployInfo.NodePackage[0].Url)
         .Replace("{hc4x-key:Nodepackage86}", objDeployInfo.NodePackage[1].Url);
+        }
+        else
+        {
+          strContentPage = ndCurInterface.atContentPage
+          .Replace("{hc4x-key:Version}", objDeployInfo.Version)
+          .Replace("{hc4x-key:Data}", objDeployInfo.Date)
+          .Replace("{hc4x-key:Nodepackage64}", objDeployInfo.NodePackage[2].Url)
+          .Replace("{hc4x-key:Nodepackage86}", objDeployInfo.NodePackage[3].Url);
+        }
 
         retValue = ndCurInterface.SetContentPage(strContentPage);
       }
