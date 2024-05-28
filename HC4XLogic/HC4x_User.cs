@@ -1249,6 +1249,10 @@ namespace HC4x_Server.Logic
   }
   public class HC4x_DeployInfo
   {
+    #region Name
+    private const string Name = nameof(HC4x_DeployInfo);
+    #endregion
+    #region Attribute
     public string id { get; set; }
     public string Version { get; set; }
     public string Date { get; set; }
@@ -1256,11 +1260,17 @@ namespace HC4x_Server.Logic
     public string CheckUpdate { get; set; }
     public string ServerUrl { get; set; }
     public List<HC4x_NodePackage> NodePackage { get; set; }
+    #endregion
   }
   public class HC4x_NodePackage
   {
+    #region Name
+    private const string Name = nameof(HC4x_NodePackage);
+    #endregion
+    #region Attribute
     public string id { get; set; }
     public string Description { get; set; }
     public string Url { get; set; }
+    #endregion
   }
 }
