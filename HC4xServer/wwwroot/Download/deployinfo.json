@@ -1,0 +1,30 @@
+{
+  "id": "HyperCube4x",
+  "Version": "20.24.09.136",
+  "Date": "22/04/2024",
+  "Status": "New",
+  "CheckUpdate": "Install",
+  "ServerUrl": "https://hypercube4x.com/download/",
+  "NodePackage": [
+    {
+      "id": "pt-BR_x64",
+      "Description": "Português Brasil (x64)",
+      "Url": "pt/HyperCube4x_BR_x64_202409136.msi"
+    },
+    {
+      "id": "pt-BR_x86",
+      "Description": "Português Brasil (x86)",
+      "Url": "pt/HyperCube4x_BR_x86_202409136.msi"
+    },
+    {
+      "id": "en-US_x64",
+      "Description": "International English - US (x64)",
+      "Url": "en/HyperCube4x_US_x64_202409136.msi"
+    },
+    {
+      "id": "en-US_x86",
+      "Description": "International English - US (x86)",
+      "Url": "en/HyperCube4x_US_x86_202409136.msi"
+    }
+  ]
+}
