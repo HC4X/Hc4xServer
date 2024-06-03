@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HyperApplication Name="HC4xRemoteControl" LanguageCode="pt">
+  <SectorLocale>
+    <NodeLocale id="en" LanguageCode="en-US" LanguagePath="en-US" LanguageName="English (EUA)" LocaleFile="HyperCube_en-US.xml"/>
+    <NodeLocale id="pt" LanguageCode="pt-BR" LanguagePath="pt-BR" LanguageName="Português Brasil" LocaleFile="HyperCube_pt-BR.xml"/>
+  </SectorLocale>
+  <SectorInterface AreaPath="Interface">
+    <NodeInterface id="ControlPage" FileName="ControlPage.xml"/>
+    <NodeInterface id="StartPage" FileName="StartPage.xml"/>
+  </SectorInterface>
+  <SectorSocket ServerIp="192.168.137.1" ServerPort="4044">
+    <SectorClient>
+      <NodeSocket id="hello-server"><![CDATA[{"SocketComm":"hello-server"}]]></NodeSocket>
+      <NodeSocket id="gdbye-server"><![CDATA[{"SocketComm":"gdbye-server"}]]></NodeSocket>
+      <NodeSocket id="cmmnd-server"><![CDATA[{"SocketComm":"cmmnd-server", "param": "(None)"}]]></NodeSocket>
+      <NodeSocket id="flask-server"><![CDATA[{"SocketComm":"flask-server", "filename": "(None)", "mime":"text/plain"}]]></NodeSocket>
+    </SectorClient>
+    <SectorServer>
+      <NodeSocket id="hello-client"><![CDATA[{"SocketComm":"hello-client", "sessionid":"(none)"}]]></NodeSocket>
+      <NodeSocket id="gdbye-client"><![CDATA[{"SocketComm":"gdbye-client"}]]></NodeSocket>
+      <NodeSocket id="rfsed-client"><![CDATA[{"SocketComm":"rfsed-client"}]]></NodeSocket>
+      <NodeSocket id="ok-client"><![CDATA[{"SocketComm":"ok-client"}]]></NodeSocket>
+      <NodeSocket id="flans-client"><![CDATA[{"SocketComm":"flans-client", "filename": "(None)", "mime":"text/plain"}]]></NodeSocket>
+    </SectorServer>
+  </SectorSocket>
+  <SectorRemote>
+    <SectorNumeric>
+      <NodeKey id="Key1" value="Camera/QuaCam21" />
+      <NodeKey id="Key2" value="Camera/QuaCam22" />
+      <NodeKey id="Key3" value="Camera/QuaCam23" />
+      <NodeKey id="Key4" value="Camera/QuaCam24" />
+      <NodeKey id="Key5" value="Camera/QuaCam25" />
+      <NodeKey id="Key6" value="Camera/QuaCam26" />
+      <NodeKey id="Key7" value="Camera/QuaCam27" />
+      <NodeKey id="Key8" value="Camera/QuaCam28" />
+      <NodeKey id="Key9" value="Camera/QuaCam29" />
+    </SectorNumeric>
+    <SectorDirection>
+      <NodeKey id="KeyUp" value="Camera/CamFace3" />
+      <NodeKey id="KeyDown" value="Camera/CamFace0" />
+      <NodeKey id="KeyLeft" value="Face/FaceBackward" />
+      <NodeKey id="KeyRight" value="Face/FaceForward" />
+      <NodeKey id="KeyCentral" value="Command_Central" />
+    </SectorDirection>
+    <SectorZoom>
+      <NodeKey id="KeyXLeft" value="Camera/HndCamX1" />
+      <NodeKey id="KeyXRight" value="Camera/HndCamX2" />
+      <NodeKey id="KeyYUp" value="Camera/HndCamY2" />
+      <NodeKey id="KeyYDown" value="Camera/HndCamY1" />
+      <NodeKey id="KeyZIn" value="Camera/HndCamZ2" />
+      <NodeKey id="KeyZOut" value="Camera/HndCamZ1" />
+    </SectorZoom>
+  </SectorRemote>
+</HyperApplication>
