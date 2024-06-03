@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ApplicationId>com.HyperCube.RemoteControl</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+    <PublishTrimmed>false</PublishTrimmed>
+    <RunAOTCompilation>false</RunAOTCompilation>
+    <AndroidSigningKeyStore>my-release-key.keystore</AndroidSigningKeyStore>
+    <RootNamespace>HC4xRC.AndroidPlatform</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidSigningStorePass>hc4xAppKey</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>hc4x-app-key</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>hc4xAppKey</AndroidSigningKeyPass>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <AndroidSigningStorePass>hc4xAppKey</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>hc4x-app-key</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>hc4xAppKey</AndroidSigningKeyPass>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="CameraService.cs" />
+    <Compile Remove="ZXingImplementation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Icon.png">
+      <Link>Resources\drawable\Icon.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Android" Version="11.0.10" />
+    <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.6" />
+    <PackageReference Include="ZXing.Net" Version="0.16.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HC4xRemoteControl\HC4xRemoteControl.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="LibModel">
+      <HintPath>..\HC4xRemoteControl\Reference\LibModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
