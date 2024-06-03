@@ -16,12 +16,12 @@
                 <div class="collapse navbar-collapse" id="menuNavbar">
                     <div class="navbar-nav ms-auto align-items-end me-5">
                         <a href="/publicarea/en/index" class="nav-link text-white">Home</a>
-                        <a href="/publicarea/en/index#sobre" class="nav-link text-white">Company</a>
-                        <a href="/publicarea/en/index#produtos" class="nav-link text-white">Solutions</a>
-                        <a href="/publicarea/en/index#vejaMais" class="nav-link text-white">Gallery</a>
+                        <a href="/publicarea/en/index#about" class="nav-link text-white">Company</a>
+                        <a href="/publicarea/en/index#products" class="nav-link text-white">Solutions</a>
+                        <a href="/publicarea/en/index#seeMore" class="nav-link text-white">Gallery</a>
                         <a href="/publicarea/en/certificados" class="nav-link text-white">Certifications</a>
-                        <a href="/publicarea/en/index#parceiros" class="nav-link text-white">Support</a>
-                        <a href="/publicarea/en/index#contato" class="nav-link text-white">Contacts</a>
+                        <a href="/publicarea/en/index#partners" class="nav-link text-white">Support</a>
+                        <a href="/publicarea/en/index#contact" class="nav-link text-white">Contacts</a>
                         <a href="/publicarea/en/equipe" class="nav-link text-white">Team</a>
                         <a href="/publicarea/en/download" class="nav-link text-white">Download</a>
                         <a href="/publicarea/en/login" class="nav-link text-white">Login</a>

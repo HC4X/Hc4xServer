@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Interface\pt-BR\ControlPage.xml" />
+    <None Remove="Interface\pt-BR\MainPage.xml" />
+    <None Remove="Interface\pt-BR\StartPage.xml" />
+    <None Remove="Interface\SocketProtocol.xml" />
+    <None Remove="meta\HyperCube.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interface\pt-BR\ControlPage.xml" />
+    <EmbeddedResource Include="Interface\pt-BR\MainPage.xml" />
+    <EmbeddedResource Include="Interface\pt-BR\StartPage.xml" />
+    <EmbeddedResource Include="meta\HyperCube.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+  </ItemGroup>
+</Project>
