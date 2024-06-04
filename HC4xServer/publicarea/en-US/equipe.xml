@@ -6,7 +6,7 @@
 	<NodeContent>
 		<![CDATA[
 <div class="container text-center d-flex flex-column justify-content-center align-items-center" id="equipe">
-    <h1 class=" text-uppercase text-center mt-5 mb-2">Equipe</h1>
+    <h1 class=" text-uppercase text-center mt-5 mb-2">Team</h1>
     <hr class="w-50 mx-auto mb-5">
     <div class="row g-2">
         <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
@@ -20,7 +20,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Saulo Ribeiro</h5>
                             <p class="card-text">RV / IA</p>
-                            <p class="card-text"><small class="text-muted">Sócio</small></p>
+                            <p class="card-text"><small class="text-muted">Partner</small></p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Alessandro Lima</h5>
                             <p class="card-text">Proponente</p>
-                            <p class="card-text"><small class="text-muted">Sócio</small></p>
+                            <p class="card-text"><small class="text-muted">Partner</small></p>
                         </div>
                     </div>
                 </div>
@@ -53,8 +53,8 @@
                     <div class="col-6">
                         <div class="card-body">
                             <h5 class="card-title">Marcelo Tadeu</h5>
-                            <p class="card-text">DBA/Análise de dados</p>
-                            <p class="card-text"><small class="text-muted">Sócio</small></p>
+                            <p class="card-text">DBA/Data Analyst</p>
+                            <p class="card-text"><small class="text-muted">Partner</small></p>
                         </div>
                     </div>
                 </div>
@@ -70,8 +70,8 @@
                     <div class="col-6">
                         <div class="card-body">
                             <h5 class="card-title">Denilson Carvalho</h5>
-                            <p class="card-text">Administrativo / Comercial</p>
-                            <p class="card-text"><small class="text-muted">Sócio</small></p>
+                            <p class="card-text">Administrative / Commercial</p>
+                            <p class="card-text"><small class="text-muted">Partner</small></p>
                         </div>
                     </div>
                 </div>
@@ -87,25 +87,8 @@
                     <div class="col-6">
                         <div class="card-body">
                             <h5 class="card-title">Raphael Macedo</h5>
-                            <p class="card-text">Instituto Federal do Espírito Santo</p>
-                            <p class="card-text"><small class="text-muted">Bolsistas (Projeto Centelha)</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-            <div class="card shadow p-3" style="transition: all 0.3s;">
-                <div class="row align-items-center">
-                    <div class="col-6 p-3">
-                        <img src="/images/equipe/agda.png" class="img-fluid img-thumbnail rounded-circle"
-                            alt="Agda da Silva de Paula">
-                    </div>
-                    <div class="col-6">
-                        <div class="card-body">
-                            <h5 class="card-title">Agda da Silva de Paula</h5>
-                            <p class="card-text">Instituto Federal do Espírito Santo</p>
-                            <p class="card-text"><small class="text-muted">Bolsista (Projeto Centelha)</small></p>
+                            <p class="card-text">Partner</p>
+                            <p class="card-text"><small class="text-muted">Systems Analyst</small></p>
                         </div>
                     </div>
                 </div>
@@ -121,43 +104,8 @@
                     <div class="col-6">
                         <div class="card-body">
                             <h5 class="card-title text-xl-center">Caio Schmidt França Fonseca </h5>
-                            <p class="card-text">Universidade Vila Velha</p>
-                            <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-            <div class="card shadow p-3" style="transition: all 0.3s;">
-                <div class="row align-items-center">
-                    <div class="col-6 p-3">
-                        <img src="/images/equipe/nicacio.png" class="img-fluid img-thumbnail rounded-circle"
-                            alt="Gabriel Nicácio">
-                    </div>
-                    <div class="col-6">
-                        <div class="card-body">
-                            <h5 class="card-title">Gabriel Nicácio</h5>
-                            <p class="card-text text-start text-lg-start">Universidade Federal de Alagoas</p>
-                            <p class="card-text"><small class="text-muted">Bolsista (Projeto Centelha)</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-            <div class="card shadow p-3" style="transition: all 0.3s;">
-                <div class="row align-items-center">
-                    <div class="col-6 p-3">
-                        <img src="/images/equipe/lucas.png" class="img-fluid img-thumbnail rounded-circle"
-                            alt="Gabriel Lemos">
-                    </div>
-                    <div class="col-5">
-                        <div class="card-body">
-                            <h5 class="card-title">Lucas Macedo</h5>
-                            <p class="card-text">Instituto Federal do Espírito Santo</p>
-                            <p class="card-text"><small class="text-muted">Bolsista (Projeto Centelha)</small></p>
-                            </p>
+                            <p class="card-text">UVV</p>
+                            <p class="card-text"><small class="text-muted">TCC</small></p>
                         </div>
                     </div>
                 </div>
@@ -173,8 +121,8 @@
                     <div class="col-5">
                         <div class="card-body">
                             <h5 class="card-title">Gabriel Lemos</h5>
-                            <p class="card-text text-start text-lg-start">Universidade Vila Velha</p>
-                            <p class="card-text"><small class="text-muted">Trabalho de Conclusão de Curso</small></p>
+                            <p class="card-text text-start text-lg-start">UVV</p>
+                            <p class="card-text"><small class="text-muted">TCC</small></p>
                         </div>
                     </div>
                 </div>

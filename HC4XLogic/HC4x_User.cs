@@ -1108,7 +1108,6 @@ namespace HC4x_Server.Logic
               objDeployInfo.NodePackage[2].Url ?? "",
               objDeployInfo.NodePackage[3].Url ?? "");
         }
-        var x = strContentPage;
         retValue = ndCurInterface.SetContentPage(strContentPage);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetInfoDownloadPage)); }
