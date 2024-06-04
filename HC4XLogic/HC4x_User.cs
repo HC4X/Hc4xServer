@@ -1078,35 +1078,37 @@ namespace HC4x_Server.Logic
     public bool GetInfoDownloadPage()
     {
       bool retValue = false;
-      string atDownloadFolderPath;
       HC4x_DeployInfo objDeployInfo;
       string strContentPage;
+
       try
       {
         objDeployInfo = new HC4x_DeployInfo();
-        atDownloadFolderPath = GearPath.Combine($@"{axMundi.atWebPath}\Download", "deployinfo.json");
+        string atDownloadFolderPath = GearPath.Combine($@"{axMundi.atWebPath}\Download", "deployinfo.json");
+
         using (StreamReader r = new StreamReader(atDownloadFolderPath))
         {
           string jsonString = r.ReadToEnd();
           objDeployInfo = JsonSerializer.Deserialize<HC4x_DeployInfo>(jsonString);
         }
+
         if (axMundi.ndRoute.atLang == "pt")
         {
-          strContentPage = ndCurInterface.atContentPage
-        .Replace("{hc4x-key:Version}", objDeployInfo.Version)
-        .Replace("{hc4x-key:Data}", objDeployInfo.Date)
-        .Replace("{hc4x-key:Nodepackage64}", objDeployInfo.NodePackage[0].Url)
-        .Replace("{hc4x-key:Nodepackage86}", objDeployInfo.NodePackage[1].Url);
+          strContentPage = string.Format(ndCurInterface.atContentPage,
+              objDeployInfo.Version,
+              objDeployInfo.Date,
+              objDeployInfo.NodePackage[0].Url ?? "",
+              objDeployInfo.NodePackage[1].Url ?? "");
         }
         else
         {
-          strContentPage = ndCurInterface.atContentPage
-          .Replace("{hc4x-key:Version}", objDeployInfo.Version)
-          .Replace("{hc4x-key:Data}", objDeployInfo.Date)
-          .Replace("{hc4x-key:Nodepackage64}", objDeployInfo.NodePackage[2].Url)
-          .Replace("{hc4x-key:Nodepackage86}", objDeployInfo.NodePackage[3].Url);
+          strContentPage = string.Format(ndCurInterface.atContentPage,
+              objDeployInfo.Version,
+              objDeployInfo.Date,
+              objDeployInfo.NodePackage[2].Url ?? "",
+              objDeployInfo.NodePackage[3].Url ?? "");
         }
-
+        var x = strContentPage;
         retValue = ndCurInterface.SetContentPage(strContentPage);
       }
       catch (Exception Err) { axMundi.ShowException(Err, Name, nameof(GetInfoDownloadPage)); }
