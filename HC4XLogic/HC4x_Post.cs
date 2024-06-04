@@ -1,11 +1,12 @@
-﻿using System;
-using HC4x_Server.Logic;
+﻿using HC4x_Server.Logic;
 using HC4xServer.Core;
 using LibServer;
+using System;
 
 namespace HC4xServer.Logic
 {
-  public class PostCustomer : WebKeyValue {
+  public class PostCustomer : WebKeyValue
+  {
     private const string Name = nameof(PostCustomer);
     #region Axis
     public new PageCore axMundi => (PageCore)base.axMundi;
@@ -14,7 +15,8 @@ namespace HC4xServer.Logic
     #region Attribute
     public int atPkeyCustomer => ValueInt(c_pkeycustomer);
     public string atCustomerCategory => ValueStr(c_customerCategory);
-    public int atPkeyAppUser {
+    public int atPkeyAppUser
+    {
       get => ValueInt(c_pkeyappuser);
       set => SetValue(c_pkeyappuser, value);
     }
@@ -28,11 +30,13 @@ namespace HC4xServer.Logic
     public string atLogoCustomer => ValueStr(c_logocustomer);
     #endregion
     #region Method
-    public HC4x_NodeCustomer CreateNodeCustomer() {
+    public HC4x_NodeCustomer CreateNodeCustomer()
+    {
       HC4x_NodeCustomer retValue;
       try
       {
-        retValue = new HC4x_NodeCustomer(axMundi) {
+        retValue = new HC4x_NodeCustomer(axMundi)
+        {
           atNameCustomer = atNameCustomer,
           atRazaoSocial = atRazaoSocial,
           atCnpjCpf = atCnpjCpf,
@@ -61,7 +65,8 @@ namespace HC4xServer.Logic
     private const string c_logocustomer = "logoCustomer";
     #endregion
   }
-  public class PostUser : WebKeyValue {
+  public class PostUser : WebKeyValue
+  {
     private const string Name = nameof(PostUser);
     #region Axis
     public new PageCore axMundi => (PageCore)base.axMundi;
@@ -76,9 +81,11 @@ namespace HC4xServer.Logic
     public string atCode => ValueStr(c_code);
     public string atName => ValueStr(c_name);
     public string atMail => ValueStr(c_mail);
+    public string atRememberMe => ValueStr(c_remember_me);
     #endregion
     #region Method
-    public HC4x_NodeUser CreateNodeUser() {
+    public HC4x_NodeUser CreateNodeUser()
+    {
       HC4x_NodeUser retValue;
       try
       {
@@ -89,13 +96,14 @@ namespace HC4xServer.Logic
           atPass = EncryptUTF8(atPass),
           atDesc = "",
           atStatus = hc4x_UserStatus.Waiting,
-          atImg = "/images/ico/user-default.png"
+          atImg = "/images/ico/user-default.png",
         };
       }
       catch (Exception Err) { retValue = null; axMundi.ShowException(Err, Name, nameof(CreateNodeUser)); }
       return (retValue);
     }
-    public string EncryptUTF8(string parText) {
+    public string EncryptUTF8(string parText)
+    {
       string retValue;
       try
       {
@@ -114,6 +122,7 @@ namespace HC4xServer.Logic
     private const string c_email = "user_email";
     private const string c_name = "descUser";
     private const string c_mail = "email";
+    private const string c_remember_me = "rememberMe";
     #endregion
   }
 }
