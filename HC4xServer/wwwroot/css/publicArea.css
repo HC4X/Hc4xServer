@@ -101,6 +101,19 @@ h1 {
   height: 28rem;
   width: 100%;
 }
+.hyperstone-img-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  background-color: #fff;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.hyperstone-img-card:hover{
+  transform: scale(1.05);
+}
 
   #card:hover {
     transform: scale(1.05);
