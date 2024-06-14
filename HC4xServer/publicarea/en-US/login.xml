@@ -5,6 +5,15 @@
 	ModelLayout="SingleForm"
 	htmltitle="HyperCube4x - Um mundo possível"
 	ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeHeader>
+		<![CDATA[
+		<style>
+		  .pointer{
+			  cursor: pointer;
+			}
+		</style>
+		]]>
+	</NodeHeader>
 	<NodeForm>
 		<![CDATA[
     <section>
@@ -26,7 +35,7 @@
                             <label class="form-label lead fs-6 " for="user_pass">Password</label>
                             <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
                                 placeholder="type your password"  required />
-							              <i class="bi bi-eye-fill position-absolute top-50 end-0"></i>
+							              <i class="bi bi-eye-fill position-absolute top-50 end-0 pointer"></i>
                         </div>
                         <!-- Checkbox -->
                         <div class="d-flex justify-content-between align-items-center">
