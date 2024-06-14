@@ -5,6 +5,15 @@
   ModelLayout="SingleForm"
   htmltitle="HyperCube4x - Um mundo possível"
   ServerClass="HC4x_Server.Logic.HC4x_UserHandler">
+	<NodeHeader>
+		<![CDATA[
+		<style>
+		  .pointer{
+			  cursor: pointer;
+			}
+		</style>
+		]]>
+	</NodeHeader>
 	<NodeForm>
 		<![CDATA[ <section>
         <div class="container-fluid mb-5 pb-5">
@@ -24,14 +33,15 @@
                             <label class="form-label lead fs-6 " for="user_pass">Senha</label>
                             <input type="password" id="user_pass" name="user_pass" value="" class="form-control form-control-lg position-relative"
                                 placeholder="digite sua senha"  required />
-              <i class="bi bi-eye-fill"></i>
+                            <i class="bi bi-eye-fill position-absolute top-50 end-0 pointer"></i>
                         </div>
                         <!-- Password input confirm -->
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-3 position-relative">
                             <label class="form-label lead fs-6 " for="user_pass">Confirme sua senha</label>
                             <input type="password" name="user_pass_2" value="" id="user_pass_2"
                                 class="form-control form-control-lg" placeholder="confirme sua senha" required />
-                        </div>
+                            <i class="bi bi-eye-fill position-absolute top-50 end-0 pointer"></i>
+												</div>
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <button type="submit" class="btn btn-primary btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrar</button>
@@ -51,21 +61,23 @@
 	<NodeFooter>
 		<![CDATA[
         <script>
-                    const icon = document.querySelector(".bi-eye-fill");
-                    const inputPass = document.querySelector("#user_pass");
-                    const inputPass_2 = document.querySelector("#user_pass_2");
+        const icons = document.querySelectorAll(".bi-eye-fill");
+        const inputPass = document.querySelector("#user_pass");
+        const inputPass_2 = document.querySelector("#user_pass_2");
           
-                    icon.addEventListener("click", function(){
-                        icon.classList.toggle("bi-eye-slash-fill");
-                        if(inputPass.type === "password"){
-                            inputPass.type = "text";
-              inputPass_2.type = "text";
-                        } else {
-                            inputPass.type = "password";
-              inputPass_2.type = "password";
-                        }
-                    });
-                </script>
+        icons.forEach((icon)=>{
+	        icon.addEventListener("click", function(){
+		        icon.classList.toggle("bi-eye-slash-fill");
+		        if(inputPass.type === "password"){
+			        inputPass.type = "text";
+			        inputPass_2.type = "text";
+		        } else {
+			        inputPass.type = "password"
+			        inputPass_2.type = "password";
+		        }		
+	        });
+        });
+        </script>
         ]]>
 	</NodeFooter>
 </NodeInterface>
