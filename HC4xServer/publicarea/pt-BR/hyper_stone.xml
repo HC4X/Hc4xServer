@@ -72,20 +72,18 @@
           <h3 class="text-uppercase text-center text-primary mb-3">Imagens Cedidas pela CS3 revestimentos</h3>
           <hr class="w-100 mx-auto mb-3">
           <div class="container my-5">
-            <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3  g-4">
+            <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3">
     ]]>
 	</NodeHeader>
 	<NodeContent>
 		<![CDATA[
-  <div class="col">
-    <a href="{hc4x-key:url_template}" class="card text-decoration-none">
-      <img src="{hc4x-key:productCover}" class="card-img-top w-100" alt="{hc4x-key:description}" height="352">
+    <a href="{hc4x-key:url_template}" class="hyperstone-img-card text-decoration-none">
+      <img src="{hc4x-key:productCover}" class="object-fit-cover card-img-top w-100 h-100" alt="{hc4x-key:description}">
       <div class="card-body text-center">
-        <p class="card-text text-dark">{hc4x-key:description}</p>
+        <p class="card-text text-dark text-center">{hc4x-key:description}</p>
         <div class="btn btn-primary text-decoration-none d-block">Visualizar com hypercube</div>
       </div>
-    </a>
-  </div>]]>
+    </a>]]>
 	</NodeContent>
 	<NodeFooter>
 		<![CDATA[

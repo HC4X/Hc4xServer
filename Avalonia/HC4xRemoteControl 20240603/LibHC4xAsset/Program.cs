@@ -1,6 +1,6 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
-namespace LibHC4xAsset {
+namespace LibHC4xAsset
+{
   public static class Core { public static Assembly Init() => Assembly.GetExecutingAssembly(); }
 }

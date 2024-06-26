@@ -43,6 +43,7 @@
     <Folder Include="wwwroot\Download\en\" />
     <Folder Include="wwwroot\Download\pt\" />
     <Folder Include="wwwroot\images\books\" />
+    <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
 </Project>

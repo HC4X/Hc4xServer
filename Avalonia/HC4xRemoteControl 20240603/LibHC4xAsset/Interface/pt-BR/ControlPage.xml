@@ -20,7 +20,7 @@
     <Style Selector="Border.Rounded_Btn2" >
       <Setter Property="CornerRadius" Value="12" />
       <Setter Property="Background" Value="#FF33373B" />
-      <Setter Property="Margin" Value="12" />
+      <Setter Property="Margin" Value="4" />
       <Setter Property="Height" Value="96" />
       <Setter Property="Width" Value="48" />
     </Style>
@@ -39,218 +39,305 @@
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
+<Style Selector="Button.RetangleButton">
+    <Setter Property="Width" Value="64" />
+    <Setter Property="Height" Value="64" />
+    <Setter Property="CornerRadius" Value="10" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Margin" Value="12" />
+</Style>
+
   </UserControl.Styles>
   <StackPanel Orientation="Vertical" Background="#0F0F0F">
-    <Border Classes="Rounded_12">
-      <Grid RowDefinitions="*, *, *" ColumnDefinitions="*, *, *" HorizontalAlignment="Center">
-        <Label Grid.Row="0"
+		<!-- Painel de botões coloridos -->
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="12">
+			<Button Classes="RetangleButton" Background="Blue" />
+			<Button Classes="RetangleButton" Background="White" />
+			<Button Classes="RetangleButton" Background="Red" />
+			<Button Classes="RetangleButton" Background="Yellow" />
+		</StackPanel>
+		<Border Classes="Rounded_12">
+			<Grid RowDefinitions="*, *, *" ColumnDefinitions="*, *, *" HorizontalAlignment="Center">
+				<Label Grid.Row="0"
           Grid.Column="0"
           Classes="KeyNumber"
           Margin="0, 0, 0, 0"
           Name="Key7"
           Content="7" />
-        <Label Grid.Row="1"
+				<Label Grid.Row="1"
           Grid.Column="0"
           Classes="KeyNumber"
           Margin="0, 16, 0, 0"
           Name="Key4"
           Content="4" />
-        <Label Grid.Row="2"
+				<Label Grid.Row="2"
           Grid.Column="0"
           Classes="KeyNumber"
           Margin="0, 16, 0, 0"
           Name="Key1"
           Content="1" />
-        <Label Grid.Row="0"
+				<Label Grid.Row="0"
           Grid.Column="1"
           Classes="KeyNumber"
           Margin="16, 0, 0, 0"
           Name="Key8"
           Content="8" />
-        <Label Grid.Row="1"
+				<Label Grid.Row="1"
           Grid.Column="1"
           Classes="KeyNumber"
           Margin="16, 16, 0, 0"
           Name="Key5"
           Content="5" />
-        <Label Grid.Row="2"
+				<Label Grid.Row="2"
           Grid.Column="1"
           Classes="KeyNumber"
           Margin="16, 16, 0, 0"
           Name="Key2"
           Content="2" />
-        <Label Grid.Row="0"
+				<Label Grid.Row="0"
           Grid.Column="2"
           Classes="KeyNumber"
           Margin="16, 0, 0, 0"
           Name="Key9"
           Content="9" />
-        <Label Grid.Row="1"
+				<Label Grid.Row="1"
           Grid.Column="2"
           Classes="KeyNumber"
           Margin="16, 16, 0, 0"
           Name="Key6"
           Content="6" />
-        <Label Grid.Row="2"
+				<Label Grid.Row="2"
           Grid.Column="2"
           Classes="KeyNumber"
           Margin="16, 16, 0, 0"
           Name="Key3"
           Content="3" />
-      </Grid>
-    </Border>
-    <Canvas Width="196" Height="196">
-      <Ellipse Width="196" Height="196" Fill="#16171C"/>
-      <Ellipse Width="196" Height="196" Stroke="#324368" StrokeThickness="48"/>
-      <!-- Botão Superior -->
-      <Label
+			</Grid>
+		</Border>
+		<Canvas Width="196" Height="196">
+			<Ellipse Width="196" Height="196" Fill="#16171C"/>
+			<Ellipse Width="196" Height="196" Stroke="#324368" StrokeThickness="48"/>
+			<!-- Botão Superior -->
+			<Label
         Name="KeyUp"
         Margin="74,4,0,0"
         Classes="KeyArrow">
-        <Label.Background>
-          <SolidColorBrush Color="SlateGray" Opacity="0.2" />
-        </Label.Background>
-        <Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" />
-      </Label>
-      <!-- Botão Inferior -->
-      <Label
+				<Label.Background>
+					<SolidColorBrush Color="SlateGray" Opacity="0.2" />
+				</Label.Background>
+				<Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" />
+			</Label>
+			<!-- Botão Inferior -->
+			<Label
         Name="KeyDown"
         Margin="74,148,0,0"
         Classes="KeyArrow">
-        <Label.Background>
-          <SolidColorBrush Color="SlateGray" Opacity="0.2" />
-        </Label.Background>
-        <Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-          <Path.RenderTransform>
-            <RotateTransform Angle="180" CenterX="0" CenterY="0"/>
-          </Path.RenderTransform>
-        </Path>
-      </Label>
-      <!-- Botão Esquerdo -->
-      <Label
+				<Label.Background>
+					<SolidColorBrush Color="SlateGray" Opacity="0.2" />
+				</Label.Background>
+				<Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+					<Path.RenderTransform>
+						<RotateTransform Angle="180" CenterX="0" CenterY="0"/>
+					</Path.RenderTransform>
+				</Path>
+			</Label>
+			<!-- Botão Esquerdo -->
+			<Label
         Name="KeyLeft"
         Margin="0,74"
         Classes="KeyArrow">
-        <Label.Background>
-          <SolidColorBrush Color="SlateGray" Opacity="0.2" />
-        </Label.Background>
-        <Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-          <Path.RenderTransform>
-            <RotateTransform Angle="-90" CenterX="0" CenterY="0"/>
-          </Path.RenderTransform>
-        </Path>
-      </Label>
-      <!-- Botão Direito -->
-      <Label
+				<Label.Background>
+					<SolidColorBrush Color="SlateGray" Opacity="0.2" />
+				</Label.Background>
+				<Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+					<Path.RenderTransform>
+						<RotateTransform Angle="-90" CenterX="0" CenterY="0"/>
+					</Path.RenderTransform>
+				</Path>
+			</Label>
+			<!-- Botão Direito -->
+			<Label
         Name="KeyRight"
         Margin="148,74"
         Classes="KeyArrow">
-        <Label.Background>
-          <SolidColorBrush Color="SlateGray" Opacity="0.2" />
-        </Label.Background>
-        <Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-          <Path.RenderTransform>
-            <RotateTransform Angle="90" CenterX="0" CenterY="0"/>
-          </Path.RenderTransform>
-        </Path>
-      </Label>
-      <!-- Botão Central -->
-      <Label Name="KeyCentral"
+				<Label.Background>
+					<SolidColorBrush Color="SlateGray" Opacity="0.2" />
+				</Label.Background>
+				<Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+					<Path.RenderTransform>
+						<RotateTransform Angle="90" CenterX="0" CenterY="0"/>
+					</Path.RenderTransform>
+				</Path>
+			</Label>
+			<!-- Botão Central -->
+			<Label Name="KeyCentral"
         Margin="64"
         Width="64"
         Height="64"
         Background="#FF33373B">
-      </Label>
-    </Canvas>
-    <!--Botão + e - -->
-    <Border Classes="Rounded_12">
-      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#20242D">
-        <Border Classes="Rounded_Btn2">
-          <StackPanel Orientation="Vertical">
-            <!-- Botão de '+' -->
-            <Label
+			</Label>
+		</Canvas>
+		<!--Botão + e - -->
+		<Border Classes="Rounded_12">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#20242D">
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de '+' -->
+						<Label
               Name="KeyZIn"
               Margin="0,4,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-              <Path  Data="M 0,10 L20,10 M10,0 L10,20" Stroke="White" StrokeThickness="2"/>
-            </Label>
-            <!-- Botão de '-' -->
-            <Label
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path  Data="M 0,10 L20,10 M10,0 L10,20" Stroke="White" StrokeThickness="2"/>
+						</Label>
+						<!-- Botão de '-' -->
+						<Label
               Name="KeyZOut"
               Margin="0,2,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-            <Path Data="M 0,15 L15,15" Stroke="White" StrokeThickness="2"/>
-              </Label>
-          </StackPanel>
-        </Border>
-        <Border Classes="Rounded_Btn2">
-          <StackPanel Orientation="Vertical">
-            <!-- Botão de seta para cima -->
-            <Label
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path Data="M 0,15 L15,15" Stroke="White" StrokeThickness="2"/>
+						</Label>
+					</StackPanel>
+				</Border>
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de seta para cima -->
+						<Label
               Name="KeyYUp"
               Margin="0,4,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-              <Path Margin="4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" />
-            </Label>
-            <!-- Botão de seta para baixo -->
-            <Label
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path Margin="4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" />
+						</Label>
+						<!-- Botão de seta para baixo -->
+						<Label
               Name="KeyYDown"
               Margin="0,2,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-              <Path Margin="0,4,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-                <Path.RenderTransform>
-                  <RotateTransform Angle="180" CenterX="0" CenterY="0"/>
-                </Path.RenderTransform>
-              </Path>
-            </Label>
-          </StackPanel>
-        </Border>
-        <Border Classes="Rounded_Btn2">
-          <StackPanel Orientation="Vertical">
-            <!-- Botão de seta para a esquerda -->
-            <Label
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path Margin="0,4,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+								<Path.RenderTransform>
+									<RotateTransform Angle="180" CenterX="0" CenterY="0"/>
+								</Path.RenderTransform>
+							</Path>
+						</Label>
+					</StackPanel>
+				</Border>
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de seta para a esquerda -->
+						<Label
               Name="KeyXLeft"
-              Margin="0,4,0,0"
+              Margin="0,2,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-              <Path Margin="-4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-                <Path.RenderTransform>
-                  <RotateTransform Angle="-90" CenterX="0" CenterY="0"/>
-                </Path.RenderTransform>
-              </Path>
-            </Label>
-            <!-- Botão de seta para a direita -->
-            <Label
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path Margin="4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+								<Path.RenderTransform>
+									<RotateTransform Angle="-90" CenterX="0" CenterY="0"/>
+								</Path.RenderTransform>
+							</Path>
+						</Label>
+						<!-- Botão de seta para a direita -->
+						<Label
               Name="KeyXRight"
               Margin="0,2,0,0"
               Classes="KeyArrow">
-              <Label.Background>
-                <SolidColorBrush Color="SlateGray" Opacity="0.1" />
-              </Label.Background>
-              <Path Margin="4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
-                <Path.RenderTransform>
-                  <RotateTransform Angle="90" CenterX="0" CenterY="0"/>
-                </Path.RenderTransform>
-              </Path>
-            </Label>
-          </StackPanel>
-        </Border>
-      </StackPanel>
-    </Border>
-  </StackPanel>
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Path Margin="4,0,0,0" Fill="White" Stroke="White" StrokeThickness="1" Data="M 4,4 L -4,20 L 12,20 Z" >
+								<Path.RenderTransform>
+									<RotateTransform Angle="90" CenterX="0" CenterY="0"/>
+								</Path.RenderTransform>
+							</Path>
+						</Label>
+					</StackPanel>
+				</Border>
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de rotacionar para esquerda -->
+						<Label
+              Name="KeyXRotateLeft"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<TextBlock Text="↺" Foreground="White" FontSize="20"/>
+						</Label>
+						<!-- Botão de rotacionar para direita -->
+						<Label
+              Name="KeyXRotateRight"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<TextBlock Text="↻" Foreground="White" FontSize="20"/>
+						</Label>
+					</StackPanel>
+				</Border>
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de câmera esquerda -->
+						<Label
+              Name="KeyXCameraRotateLeft"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Image Source="avares://LibHC4xAsset/Assets/camera_video_icon_left.png" Height="32" />
+						</Label>
+						<!-- Botão de câmera direita -->
+						<Label
+              Name="KeyXCameraRotateRight"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Image Source="avares://LibHC4xAsset/Assets/camera_video_icon_right.png" Height="32" />
+						</Label>
+					</StackPanel>
+				</Border>
+				<Border Classes="Rounded_Btn2">
+					<StackPanel Orientation="Vertical">
+						<!-- Botão de inclinar Acima -->
+						<Label
+              Name="KeyXDiagonalUp"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+						<Image Source="avares://LibHC4xAsset/Assets/trapezio_inclinado_cima.png" Height="32" />
+						</Label>
+						<!-- Botão de inclinar Abaixo -->
+						<Label
+              Name="KeyXDiagonalDown"
+              Margin="0,2,0,0"
+              Classes="KeyArrow">
+							<Label.Background>
+								<SolidColorBrush Color="SlateGray" Opacity="0.1" />
+							</Label.Background>
+							<Image Source="avares://LibHC4xAsset/Assets/trapezio_inclinado_baixo.png" Height="32" />
+						</Label>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Border>
+	</StackPanel>
 </UserControl>]]>
 </NodeInterface>
