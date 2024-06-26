@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NodeInterface
-	id="BodyHeaderFooter"
-  NodeType="text/html"
-  ModelLayout="PageSection">
-  <NodeHeader>
-        <![CDATA[
-        <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-dark" id="navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="/publicarea/pt/index#hero">
-                    <img src="/images/logo/HyperCubeAlfaWhite.png" alt="logo" class="img-fluid" id="logo" style="width: 40px; height: 40px;">Hypercube4X
-                </a>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-                <div class="collapse navbar-collapse" id="menuNavbar">
-                    <div class="navbar-nav ms-auto align-items-end me-5">
-                        <a href="/publicarea/pt/index" class="nav-link text-white">Home</a>
-                        <a href="/publicarea/pt/index#sobre" class="nav-link text-white">Empresa</a>
-                        <a href="/publicarea/pt/index#produtos" class="nav-link text-white">Soluções</a>
-                        <a href="/publicarea/pt/index#vejaMais" class="nav-link text-white">Galeria</a>
-                        <a href="/publicarea/pt/certificados" class="nav-link text-white">Certificações</a>
-                        <a href="/publicarea/pt/index#parceiros" class="nav-link text-white">Apoio</a>
-                        <a href="/publicarea/pt/index#contato" class="nav-link text-white">Contatos</a>
-                        <a href="/publicarea/pt/equipe" class="nav-link text-white">Equipe</a>
-                        <a href="/publicarea/pt/download" class="nav-link text-white">Download</a>
-                        <a href="/publicarea/pt/login" class="nav-link text-white">Login</a>
-                        <a href="/publicarea/pt/registration" class="nav-link text-white">Cadastre-se</a>
-                    </div>
+<NodeInterface id="BodyHeaderFooter" NodeType="text/html" ModelLayout="PageSection">
+    <NodeHeader>
+<![CDATA[
+  <style>
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+  </style>
+    <nav class="navbar bg-light navbar-expand-sm">
+        <div class="container-fluid">
+            <a href="/publicarea/pt/index#hero" class="navbar-brand d-flex align-items-center">
+                <img src="/images/logo/logohc4x_pt.png" alt="logo" class="img-fluid" id="logo" style="height: 100px;"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center align-self-end" id="menuNavbar">
+                <div class="navbar-nav">
+                    <a href="/publicarea/pt/index" class="nav-link fs-6">Home</a>
+                    <a href="/publicarea/pt/index#produtos" class="nav-link fs-6">Soluções</a>
+                    <a href="/publicarea/pt/index#vejaMais" class="nav-link fs-6">Vídeos</a>
+                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6">Apoio</a>
+                    <a href="/publicarea/pt/certificados" class="nav-link fs-6">Certificações</a>
+                    <a href="/publicarea/pt/download" class="nav-link fs-6">Download</a>
+                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6">Contatos</a>
                 </div>
             </div>
-        </nav>
-        ]]>
-    </NodeHeader>
-  <NodeFooter>
-    <![CDATA[
+            <div class="align-self-start" id="menu_login">
+                <a class="fs-6" href="/publicarea/pt/login">Login</a>
+                <a class="fs-6" href="/publicarea/pt/registration">Cadastre-se</a>
+            </div>
+        </div>
+    </nav>
+]]></NodeHeader>
+    <NodeFooter>
+<![CDATA[
     <div class="container-fluid p-3" id="footer">
         <div>
             <h6 class="text-center text-white ">Copyright © Hypercube4X - Todos os Direitos Reservados</h6>
         </div>
     </div>
-    ]]>
-</NodeFooter>
+    ]]></NodeFooter>
 </NodeInterface>

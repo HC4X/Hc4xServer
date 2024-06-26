@@ -1,7 +1,24 @@
 @import url('https://fonts.cdnfonts.com/css/chosence');
 
+@font-face {
+  font-family: 'HorizonRegular'; /* Nome da fonte para refer�ncia no CSS */
+  src: url('/fonts/HorizonRegular.otf') format('opentype'); /* Caminho e formato da fonte */
+  font-weight: normal; /* Peso padr�o da fonte */
+  font-style: normal; /* Estilo padr�o da fonte */
+}
+
+.horizon {
+  font-family: HorizonRegular, sans-serif;
+}
+
 #navbar {
-  background: linear-gradient(90deg, rgba(18, 84, 223, 1) 0%, rgba(91, 135, 227, 1) 35%, rgba(146, 181, 255, 1) 100%);
+  background: #f6f6f6;
+}
+#menuNavbar a {
+  color: #575da9;
+}
+#menu_login a{
+  color: #575da9; 
 }
 #hero {
   width: 100%;

@@ -1,9 +1,11 @@
-﻿using System;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using HyperCube.Platform;
+using System;
 
-namespace HC4xRemoteControl.Views {
-  public partial class MainWindow : Window {
+namespace HC4xRemoteControl.Views
+{
+  public partial class MainWindow : Window
+  {
     #region Axis
     private LandLifetime ndLifeTime => AxisMundi.ndLifetime;
     private Evaluator ndEvaluator => ndLifeTime.ndEvaluator;
@@ -11,9 +13,11 @@ namespace HC4xRemoteControl.Views {
     #region Method
     #endregion
     #region Constructor
-    public bool Init() {
+    public bool Init()
+    {
       bool retValue = false;
-      try {
+      try
+      {
         if (ndLifeTime.LoadContent("MainPage.xml"))
           if (ndLifeTime.InitEvaluator())
             retValue = ndEvaluator.LoadStartPage();

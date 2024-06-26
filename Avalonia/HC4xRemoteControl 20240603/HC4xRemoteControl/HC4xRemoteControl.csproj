@@ -26,6 +26,9 @@
     <None Remove="z_meta\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\LibHC4xAsset\Interface\pt-BR\ControlPage.xml" Link="ControlPage.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.10" />
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.10" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />

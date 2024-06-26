@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HyperApplication LanguageCode="en-US" LanguageName="English (EUA)">
   <SectorInterface AreaPath="en-US">
-    <NodeInterface id="ControlPage" FileName="ControlPage.xml"/>
+    <NodeInterface id="
+									 " FileName="ControlPage.xml"/>
     <NodeInterface id="StartPage" FileName="StartPage.xml"/>
   </SectorInterface>
 </HyperApplication>
