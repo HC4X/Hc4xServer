@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using Android;
-using Android.OS;
+﻿using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.Hardware.Camera2;
+using Android.HyperCube;
+using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Core.App;
@@ -12,18 +11,21 @@ using AndroidX.Core.Content;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
-using Android.HyperCube;
-using HyperCube.Platform;
 using HC4xRemoteControl;
+using HyperCube.Platform;
+using System;
+using System.Linq;
 
-namespace HC4xRC.AndroidPlatform {
+namespace HC4xRC.AndroidPlatform
+{
   [Activity(
     Label = "HC4x Control",
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
-  public class MainActivity : AvaloniaMainActivity<App> {
+  public class MainActivity : AvaloniaMainActivity<App>
+  {
     private const string Name = nameof(CameraControl);
     #region Axis
     private AndroidLifetime ndLifetime => (AndroidLifetime)AxisMundi.ndLifetime;
@@ -35,10 +37,12 @@ namespace HC4xRC.AndroidPlatform {
     private View fwMainView { get; set; }
     #endregion
     #region Method
-    internal bool EndCamera() {
+    internal bool EndCamera()
+    {
       bool retValue = false;
       ViewGroup objParent;
-      try {
+      try
+      {
         objParent = fwMainView.Parent as ViewGroup;
         objParent?.RemoveView(fwMainView);
         fwMainView.Dispose();
@@ -47,11 +51,13 @@ namespace HC4xRC.AndroidPlatform {
       catch (Exception Err) { ndLifetime.ShowException(Err, Name, nameof(EndCamera)); }
       return (retValue);
     }
-    internal bool InitCameraCtrl() {
+    internal bool InitCameraCtrl()
+    {
       bool retValue = false;
       Button objButton;
       LayoutInflater objInflater;
-      try {
+      try
+      {
         objInflater = (LayoutInflater)GetSystemService(LayoutInflaterService);
         fwMainView = objInflater.Inflate(Resource.Layout.Main, null);
         fwCamTexture = fwMainView.FindViewById<TextureView>(Resource.Id.cam_view);
@@ -66,19 +72,23 @@ namespace HC4xRC.AndroidPlatform {
     }
     #endregion
     #region Event
-    public override void OnBackPressed() {
-      if (fwMainView != null) {
+    public override void OnBackPressed()
+    {
+      if (fwMainView != null)
+      {
         ndLifetime.AppMessage("Ready");
         CancelCamera();
       }
       else
         base.OnBackPressed();
     }
-    private void btnCancel_Click(object? sender, EventArgs e) {
+    private void btnCancel_Click(object? sender, EventArgs e)
+    {
       ndLifetime.AppMessage("Ready");
-      CancelCamera(); 
+      CancelCamera();
     }
-    private void CancelCamera() {
+    private void CancelCamera()
+    {
       fwCameraCtrl?.Close();
       fwCameraCtrl = default;
       fwMainView = default;
@@ -88,14 +98,16 @@ namespace HC4xRC.AndroidPlatform {
     #region Permission
     /// <summary></summary>
     ///! Date: 25/05/2024
-    private void CheckAndRequestPermissions() {
+    private void CheckAndRequestPermissions()
+    {
       string[] permissionsNeeded = {
         Manifest.Permission.Camera,
         Manifest.Permission.AccessNetworkState,
         Manifest.Permission.WriteExternalStorage
     };
       var permissionsToRequest = permissionsNeeded.Where(permission => ContextCompat.CheckSelfPermission(this, permission) != Permission.Granted).ToList();
-      if (permissionsToRequest.Any()) {
+      if (permissionsToRequest.Any())
+      {
         ActivityCompat.RequestPermissions(this, permissionsToRequest.ToArray(), REQUEST_PERMISSIONS_CODE);
       }
     }
@@ -103,8 +115,10 @@ namespace HC4xRC.AndroidPlatform {
     #region Constructor
     /// <summary></summary>
     ///! Date: 25/05/2024
-    protected override void OnCreate(Bundle savedInstanceState) {
-      try {
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+      try
+      {
         AxisMundi.CreateLifetime(new AndroidLifetime());
         base.OnCreate(savedInstanceState);
         CheckAndRequestPermissions();
@@ -114,7 +128,8 @@ namespace HC4xRC.AndroidPlatform {
     }
     /// <summary></summary>
     ///! Date: 25/05/2024
-    protected override AppBuilder CustomizeAppBuilder(AppBuilder builder) {
+    protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
+    {
       AppBuilder retValue;
       try { retValue = base.CustomizeAppBuilder(builder).WithInterFont().UseReactiveUI(); }
       catch (Exception Err) { retValue = null; ndLifetime.ShowException(Err, Name, nameof(CustomizeAppBuilder)); }

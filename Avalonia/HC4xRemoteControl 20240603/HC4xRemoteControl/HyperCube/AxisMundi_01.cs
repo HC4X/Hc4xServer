@@ -1,28 +1,34 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using LibModel;
 using MsBox.Avalonia.Base;
 using MsBox.Avalonia.Enums;
-using LibModel;
+using System;
+using System.IO;
+using System.Reflection;
 
-namespace HyperCube.Platform {
-  public class LandLifetime {
+namespace HyperCube.Platform
+{
+  public class LandLifetime
+  {
     private const string Name = nameof(LandLifetime);
     #region Framework
     public Control fwMainWindow { get; protected set; }
     public StackPanel fwStackPanel { get; private set; }
-    private ScrollViewer fwViewer {
-      get {
+    private ScrollViewer fwViewer
+    {
+      get
+      {
         ScrollViewer retValue = default;
         if (fwStackPanel != null) retValue = fwStackPanel.FindControl<ScrollViewer>(atViewer);
         return (retValue);
       }
     }
-    private Label fwLblMessage {
-      get {
+    private Label fwLblMessage
+    {
+      get
+      {
         Label retValue = default;
         if (fwStackPanel != null) retValue = fwStackPanel.FindControl<Label>(atStatusLbl);
         return (retValue);
@@ -47,10 +53,12 @@ namespace HyperCube.Platform {
     #region Virtual
     public virtual void ShowException(Exception parErr, string parClass, string parMethod) => ShowException(parErr, parClass, parMethod, "");
     public virtual void ShowException(Exception parErr, string parClass, string parMethod, string parExtraInfo) => AxisMundi.ShowException(parErr, parClass, parMethod, parExtraInfo);
-    public virtual Control LoadControl(string parFileName) {
+    public virtual Control LoadControl(string parFileName)
+    {
       Control retValue;
       NodeInterface objInterface;
-      try {
+      try
+      {
         objInterface = InterfacePath(parFileName);
         retValue = GearXAML.LoadXamlControl(objInterface.atContent);
       }
@@ -58,8 +66,9 @@ namespace HyperCube.Platform {
       return (retValue);
     }
     public virtual bool LoadContent(string parFileName) => true;
-    public virtual bool OpenCamera() =>throw new NotImplementedException();
-    public virtual bool InitEvaluator() {
+    public virtual bool OpenCamera() => throw new NotImplementedException();
+    public virtual bool InitEvaluator()
+    {
       ndEvaluator = new Evaluator();
       return true;
     }
@@ -70,7 +79,8 @@ namespace HyperCube.Platform {
     #region Method
     public bool AppMessage(string parMessage) { if (fwLblMessage != null) { fwLblMessage.Content = parMessage; } return (true); }
     public void SetViewerContent(UserControl parControl) => fwViewer.Content = parControl;
-    internal T GetViewerContent<T>() {
+    internal T GetViewerContent<T>()
+    {
       T retValue;
       if (fwViewer.Content is UserControl objUserCtrl)
         retValue = (T)objUserCtrl.Content;
@@ -78,15 +88,19 @@ namespace HyperCube.Platform {
         retValue = (T)fwViewer.Content;
       return (retValue);
     }
-    public NodeInterface InterfacePath(string parFileName) {
+    public NodeInterface InterfacePath(string parFileName)
+    {
       NodeInterface retValue;
       RawXml objXml;
-      try {
-        if (atIsFS) {
+      try
+      {
+        if (atIsFS)
+        {
           parFileName = GearPath.Combine(atInterfacePath, parFileName);
           objXml = new RawXml(parFileName, hc4x_NodeType.XmlFileOpen);
         }
-        else {
+        else
+        {
           parFileName = atInterfacePath + parFileName;
           objXml = GearXml.ParseStream(GetResource(parFileName));
         }
@@ -95,7 +109,8 @@ namespace HyperCube.Platform {
       catch (Exception Err) { retValue = default; ShowException(Err, Name, nameof(InterfacePath)); }
       return (retValue);
     }
-    protected bool MainStckPnl(StackPanel parStackPanel, string parViewer, string parStatusLbl) {
+    protected bool MainStckPnl(StackPanel parStackPanel, string parViewer, string parStatusLbl)
+    {
       fwStackPanel = parStackPanel;
       fwStackPanel.PointerPressed -= Pointer_Pressed;
       fwStackPanel.PointerPressed += Pointer_Pressed;
@@ -106,18 +121,21 @@ namespace HyperCube.Platform {
     public Stream GetResource(string parResName) => fwLibAsset.GetManifestResourceStream(parResName);
     #endregion
     #region Event
-    private void Pointer_Pressed(object? sender, PointerPressedEventArgs e) {
+    private void Pointer_Pressed(object? sender, PointerPressedEventArgs e)
+    {
       StyledElement objElement;
       objElement = GearControl.GetElement(e.Source as Control);
       if (objElement != null) ndEvaluator.EvalPressed(objElement);
     }
     #endregion
     #region Constructor
-    protected bool InitFS() {
+    protected bool InitFS()
+    {
       bool retValue = false;
       string strHyperCube;
       NodeLocale objLocale;
-      try {
+      try
+      {
         atBasePath = atBasePath = fwLibAsset.Location.Substring(0, fwLibAsset.Location.IndexOf("HC4xRemoteControl.Desktop")); //# @"L:\HyperCube\Community\HC4xRemoteControl\LibHC4xAsset";
         atMetaPath = GearPath.Combine(atBasePath, "meta");
         strHyperCube = GearPath.Combine(atMetaPath, "HyperCube.xml");
@@ -130,11 +148,13 @@ namespace HyperCube.Platform {
       catch (Exception Err) { ShowException(Err, Name, nameof(InitFS)); }
       return (retValue);
     }
-    protected bool InitRes() {
+    protected bool InitRes()
+    {
       bool retValue = false;
       string strHyperCube;
       NodeLocale objLocale;
-      try {
+      try
+      {
         atBasePath = "LibHC4xAsset.";
         atMetaPath = atBasePath + "meta.";
         strHyperCube = atMetaPath + "HyperCube.xml";
