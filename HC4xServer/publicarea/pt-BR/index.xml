@@ -38,8 +38,6 @@
   <div class="container-fluid">
     <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
     <hr class="w-100">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso geral</h2>
-    <hr class="w-100">
     <div class="cards">
         <a id="card" href="/publicarea/pt/hyper_analyzer">
             <h2>Hyper Analyzer</h2>
@@ -68,9 +66,6 @@
     </div>
 
     <!-- HyperStone -->
-    <hr class="w-100 mt-5 mx-auto">
-    <h2 class="text-uppercase text-center p-1">Aplicações de uso específico</h2>
-    <hr class="w-100 mx-auto mb-5">
       <div class="row g-3 justify-content-center">  
 	    <a id="card" href="/publicarea/pt/hyper_stone">
             <h2>Hyper Stone</h2>
