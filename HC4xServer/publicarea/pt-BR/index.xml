@@ -22,15 +22,17 @@
   <NodeContent>
 <![CDATA[
 		  <!-- Hero Section -->
-<div class="">
-  <h1 class="texto-principal horizon fs-xl text-start">Plataforma de realidade virtual para computação espacial, Web 3.0 e o Metaverso</h1>
-    <div class="d-flex align-items-md-center">
-      <ul class="col-12 justify-content-md-center col-md-6 col-xl-6 explicacoes">
-        <li class="fs-4 mb-5 w-75">O HyperCube conecta os atributos dos Ambientes de Realidade Virtual com a cognição espacial, memória espacial e organização espacial do cérebro humano.</li>
-        <li class="fs-4 w-75">Utiliza metáforas e algoritmos próprios para criar interação simbiótica e visualização de dados mais parecida com o mundo real.</li>
-      </ul>
-        <img class="img-fluid d-none d-md-block d-lg-block" src="/images/general/homem_sentado_pp.png" alt="Pessoa sentada com o oculos de realidade virtual"/ style="width: 100%; height: auto;" >
-    </div>
+<div>
+  <h1 class="texto-principal horizon fs-xl mx-3 my-0 text-start">Plataforma de realidade virtual para computação espacial, Web 3.0 e o Metaverso</h1>
+	<p class="fs-4 mb-3 mx-3 my-0">A HyperCube é uma startup cujo objetivo é oferecer uma plataforma de interação e visualização de informação em realidade virtual, que amplia a percepção, engajamento e atenção do usuário, o que se converte em melhor retenção da informação visualizada.</p>
+	<div class="d-flex align-items-md-center">
+    <ul class="col-12 justify-content-md-center col-md-6 col-xl-6 explicacoes">
+      <li class="fs-5 mb-3 w-75">A plataforma HyperCube4X e seus produtos exploram as capacidades cognitivas espaciais do usuário conectando os atributos dos ambientes de realidade virtual com a cognição, memória e organização espacial do cérebro humano.</li>
+      <li class="fs-5 mb-3 w-75">Utiliza metáforas e algoritmos próprios para criar interação simbiótica e visualização de informações, mais parecida com o mundo real.</li>
+		  <li class="fs-5 w-75">Surgiu como tese de doutorado, onde testes científicos de interação e visualização de textos, imagens, gráficos e números demonstraram significativos avanços em relação à metáfora do desktop.</li>
+    </ul>
+    <img class="img-fluid d-none d-md-block d-lg-block" src="/images/general/homem_sentado_pp.png" alt="Pessoa sentada com o oculos de realidade virtual"/ style="width: 100%; height: auto;" >
+  </div>
 <!-- Produtos -->
 <div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
   <div class="container-fluid">
