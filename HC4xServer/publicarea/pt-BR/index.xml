@@ -36,7 +36,7 @@
 <!-- Produtos -->
 <div class="container-fluid p-5 d-flex justify-content-center" id="produtos">  
   <div class="container-fluid">
-    <h1 class="text-uppercase text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
+    <h1 class="texto-principal horizon text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
     <hr class="w-100">
     <div class="cards">
         <a id="card" href="/publicarea/pt/hyper_analyzer">
