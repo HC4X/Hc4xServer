@@ -92,34 +92,34 @@
     <div class="row justify-content-center" id="veja-mais">
       <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
         <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded">
-          <iframe src="https://www.youtube.com/embed/lYrrL_unOqY" class="video-part"></iframe>
+          <iframe src="https://www.youtube.com/embed/VEcsY1GtCRM" class="video-part"></iframe>
           <div class="title">
-            <h4 class="text-uppercase text-center">Tutorial Hyper Book</h4>
+            <h4 class="default_color text-center">Hypercube</h4>
           </div>
           <div class="text">
-            <span>Saiba como realizar suas leituras imersivas no Hyperbook</span>
+            <span>Conheça a proposta e o conceito do Hypercube.</span>
           </div>
         </div>
       </div>
       <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
         <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
-          <iframe src="https://www.youtube.com/embed/1LfXFrhBQo0" class="video-part"></iframe>
+          <iframe src="https://www.youtube.com/embed/pC9q5ZM9hg0" class="video-part"></iframe>
           <div class="title">
-            <h4 class="text-uppercase text-center">Conheça o Hypercube4X</h4>
+            <h4 class="default_color text-center">HyperStone</h4>
           </div>
           <div class="text">
-            <span>Saiba um pouco mais sobre o Hypercube4x e do que ele é capaz</span>
+            <span>Conheça um pouco mais sobre o HyperStone.</span>
           </div>
         </div>
       </div>
       <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
         <div class="box-part text-center shadow-lg p-3 mb-5 mx-auto bg-body-tertiary rounded ">
-          <iframe src="https://www.youtube.com/embed/aswTtECl_Zo" class="video-part"></iframe>
+          <iframe src="https://www.youtube.com/embed/eYUvfUEy6Vk" class="video-part"></iframe>
           <div class="title">
-            <h4 class="text-uppercase text-center">Hyper Stone</h4>
+            <h4 class="default_color text-center">Análise Documental</h4>
           </div>
           <div class="text">
-            <span>Conheça como surgiu o Hyper Stone e suas principais vantagens</span>
+            <span>Demonstração de como manusear um periódico antigo utilizando o Hypercube.</span>
           </div>
         </div>
       </div>
