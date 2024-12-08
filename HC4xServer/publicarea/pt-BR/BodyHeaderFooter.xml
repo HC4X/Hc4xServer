@@ -7,28 +7,28 @@
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   </style>
-    <nav class="navbar bg-light navbar-expand-sm">
+    <nav class="navbar navbar-expand-sm default_background_color">
         <div class="container-fluid">
             <a href="/publicarea/pt/index#hero" class="navbar-brand d-flex align-items-center">
-                <img src="/images/logo/logohc4x_pt.png" alt="logo" class="img-fluid" id="logo" style="height: 100px;"/>
+                <img src="/images/logo/logohc4x_pt_white.png" alt="logo" class="img-fluid" id="logo" style="height: 100px;"/>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center align-self-end" id="menuNavbar">
                 <div class="navbar-nav">
-                    <a href="/publicarea/pt/index" class="nav-link fs-6">Home</a>
-                    <a href="/publicarea/pt/index#produtos" class="nav-link fs-6">Soluções</a>
-                    <a href="/publicarea/pt/index#vejaMais" class="nav-link fs-6">Vídeos</a>
-                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6">Apoio</a>
-                    <a href="/publicarea/pt/certificados" class="nav-link fs-6">Certificações</a>
-                    <a href="/publicarea/pt/download" class="nav-link fs-6">Download</a>
-                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6">Contatos</a>
+                    <a href="/publicarea/pt/index" class="nav-link fs-6 white_nav_link">Home</a>
+                    <a href="/publicarea/pt/index#produtos" class="nav-link fs-6 white_nav_link">Soluções</a>
+                    <a href="/publicarea/pt/index#vejaMais" class="nav-link fs-6 white_nav_link">Vídeos</a>
+                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6 white_nav_link">Apoio</a>
+                    <a href="/publicarea/pt/certificados" class="nav-link fs-6 white_nav_link">Certificações</a>
+                    <a href="/publicarea/pt/download" class="nav-link fs-6 white_nav_link">Download</a>
+                    <a href="/publicarea/pt/index#parceiros" class="nav-link fs-6 white_nav_link">Contatos</a>
                 </div>
             </div>
             <div class="align-self-start" id="menu_login">
-                <a class="fs-6" href="/publicarea/pt/login">Login</a>
-                <a class="fs-6" href="/publicarea/pt/registration">Cadastre-se</a>
+                <a class="fs-6 white_nav_link" href="/publicarea/pt/login">Login</a>
+                <a class="fs-6 white_nav_link" href="/publicarea/pt/registration">Cadastre-se</a>
             </div>
         </div>
     </nav>

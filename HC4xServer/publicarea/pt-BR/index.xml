@@ -23,7 +23,7 @@
 <![CDATA[
 <!-- Hero Section -->
 <div>
-  <h1 class="texto-principal horizon fs-xl mx-3 my-0 text-start">Plataforma de realidade virtual para computação espacial, Web 3.0 e o Metaverso</h1>
+  <h1 class="texto-principal horizon fs-xl mx-3 my-0 mt-4 text-start">Plataforma de realidade virtual para computação espacial, Web 3.0 e o Metaverso</h1>
 	<p class="fs-4 mb-3 mx-3 my-0">A HyperCube é uma startup cujo objetivo é oferecer uma plataforma de interação e visualização de informação em realidade virtual, que amplia a percepção, engajamento e atenção do usuário, o que se converte em melhor retenção da informação visualizada.</p>
 	<div class="d-flex align-items-md-center">
     <ul class="col-12 justify-content-md-center col-md-6 col-xl-6 explicacoes">
@@ -36,10 +36,10 @@
 	
   <!-- Produtos -->
   <div class="p-5" id="produtos">
-    <h1 class="texto-principal horizon text-center mt-5 mb-5">Você pode usar o HyperCube 4X para:</h1>
+    <h1 class="texto-principal horizon text-center mt-5 mb-5 text-white">Você pode usar o HyperCube 4X para:</h1>
     <div class="horizontal_scrollable_cards">
       <a id="card" href="/publicarea/pt/hyper_analyzer">
-          <h2 class="mt-4">Hyper Analyzer</h2>
+          <h2 class="mt-4 default_color">Hyper Analyzer</h2>
           <div class="imagem-descricao">
               <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
               <p class="mt-4 mb-4 text-center">Visualizador de cubo OLAP (processamento analítico online) que explora a relação espacial da informação.</p>
@@ -47,7 +47,7 @@
           <p class="text-primary mb-4">Clique no card para saber mais</p>
         </a> 
       <a id="card" href="/publicarea/pt/hyper_book">
-          <h2 class="mt-4">Hyper Book</h2>
+          <h2 class="mt-4 default_color">Hyper Book</h2>
           <div class="imagem-descricao">
               <img src="/images/logo/hb.png" alt="Aplicação Hyper Analyzer">
               <p class="mt-4 mb-4 text-center">"Galeria de imagens” e leitor de e-doc que pode carregar vários arquivos para o mesmo ambiente, incluindo documentos PDF e Html.</p>
@@ -55,7 +55,7 @@
           <p class="text-primary mb-4">Clique no card para saber mais</p>
       </a>
       <a id="card" href="/publicarea/pt/hyper_relational">
-          <h2 class="mt-4">Hyper Relational</h2>
+          <h2 class="mt-4 default_color">Hyper Relational</h2>
           <div class="imagem-descricao">
               <img src="/images/logo/ha.png" alt="Aplicação Hyper Analyzer">
               <p class="mt-4 mb-4 text-center">Conecta Sistemas de Gerenciamento de Banco de Dados Relacional (RDMS) a texto estruturado, como json e xml, por exemplo.</p>
@@ -64,7 +64,7 @@
       </a>
 				
 		  <a id="card" href="/publicarea/pt/hyper_stone">
-          <h2 class="mt-4">Hyper Stone</h2>
+          <h2 class="mt-4 default_color">Hyper Stone</h2>
           <div class="imagem-descricao">
               <img src="/images/logo/LogoHyperStone.png" alt="Aplicação Hyper Stone">
               <p class="mt-4 mb-4 text-center">Ambiente de realidade virtual para visualização de chapas de "natural stone" que simula a sensação de distância e o reflexo da chapa no manuseio e interação com o material real.</p>
@@ -73,7 +73,7 @@
       </a>
       <!-- HyperLibrary-->
 		  <a id="card" href="/publicarea/pt/hyper_library">
-            <h2 class="mt-4">Hyper Library</h2>
+            <h2 class="mt-4 default_color">Hyper Library</h2>
             <div class="imagem-descricao">
                 <img src="/images/logo/hb.png" alt="Aplicação Hyper Library">
                 <p class="mt-4 mb-4 text-center">Ambiente de realidade virtual que proporciona uma leitura imersiva dos livros do acervo da Biblioteca Municipal de Cachoeiro de Itapemirim "Major Walter dos Santos Paiva".</p>
@@ -87,7 +87,7 @@
 <!-- Veja mais -->
 <div class="container-fluid" id="vejaMais">
   <div class="container my-5 p-3">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Veja mais sobre nossa plataforma:</h1>
+    <h1 class="horizon text-center mt-5 mb-5 default_color">Veja mais sobre nossa plataforma:</h1>
     <hr class="w-25 mx-auto  mb-5">
     <div class="row justify-content-center" id="veja-mais">
       <div class="col-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
@@ -129,7 +129,7 @@
 <!-- Empresas parceiras -->
 <div class="container-fluid" id="parceiros">
   <div class="container justify-content-center p-5">
-    <h1 class=" text-uppercase text-center mt-5 mb-5">Apoio:</h1>
+    <h1 class="horizon text-center mt-5 mb-5 text-white">Apoio:</h1>
     <hr class="w-25 mx-auto mb-5">
     <div class="row justify-content-center pb-5">
       <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
@@ -158,7 +158,7 @@
   <NodeFooter>
 <![CDATA[  <!-- Contatos -->
   <div class="container-fluid p-5" id="contato">
-      <h1 class=" text-uppercase text-center mt-5 mb-5">contatos</h1>
+      <h1 class="default_color text-center mt-5 mb-5">Contatos</h1>
       <hr class="w-100 text-secondary mx-auto mb-5">
       <div class="row text-center mt-5">
           <div class="col-lg-4 my-3">

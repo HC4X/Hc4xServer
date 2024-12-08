@@ -32,7 +32,7 @@ p {
 
 #produtos,
 #parceiros {
-  background-color: #F0F0E2;
+  background-color: #2e388f;
 }
 
 
@@ -167,6 +167,14 @@ h1 {
     margin: 0;
     padding: 0 1rem;
   }
+
+.default_color {
+  color: #2e388f;
+}
+
+.default_background_color {
+  background-color: #2e388f;
+}
 
 /*frames da galeria*/
 #veja-mais .box-part {
