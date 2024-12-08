@@ -7,7 +7,7 @@
 	<NodeHeader>
 		<![CDATA[<div class="container-fluid">
   <div class="container py-5">
-    <h1 class="text-center text-primary">Hyper Library</h1>
+    <h1 class="horizon default_color text-center">Hyper Library</h1>
     <hr class="mx-auto w-50">
     <h5>O objetivo do Hyper Library proporcionar um ambiente de leitura imersiva aos usuários. A  aplicação está sendo desenvolvida em parceria com a SEMCULT
       (Secretaria Municipal de Cultura e Turismo) de Cachoeiro de Itapemirim e financiada pelo edital FAPES nº 026/2022 (FAPES CLUSTER)</h5>
@@ -32,7 +32,7 @@
 	</NodeHeader>
 	<NodeContent>
 		<![CDATA[<!--'Livros em Destaque'-->
-    <h4 class="text-center mx-auto mt-5">Livros para acesso em Realidade Virtual</h4>
+    <h4 class="horizon default_color text-center mx-auto mt-5 fs-1">Conteúdo em Destaque</h4>
     <div class="row my-5 " id="hyper_library">
 
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
@@ -65,8 +65,7 @@
     </div>
 
     <!--'Coleções de livros'-->
-    <h4 class="text-center mx-auto mt-5">Catálogo da Biblioteca Municipal de Cachoeiro de Itapemirim<br />“Major Walter dos Santos Paiva”
-    </h4>
+    <h4 class="text-center mx-auto mt-5">Navegue nos acervos de diversos entes públicos e privados</h4>
     <div class="row my-5 " id="hyper_library">
       <div class="col-12 col-md-6 col-lg-4 my-4 d-block">
         <a href="hc4x://newscene=HyperLibrary/url=https%3A%2F%2Fatom.hypercube4x.com.br%2Fsemcultci%2Findex.php%2Fciencia-da-computacao-informacao-e-obras-gerais;ead?sf_format%3Dxml" class="card text-decoration-none">
