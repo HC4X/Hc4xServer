@@ -35,7 +35,7 @@
   </div>
 	
   <!-- Produtos -->
-  <div class="p-5" id="produtos">
+  <div class="pt-5" id="produtos">
     <h1 class="texto-principal horizon text-center mt-5 mb-5 text-white">Você pode usar o HyperCube 4X para:</h1>
     <div class="horizontal_scrollable_cards">
       <a id="card" href="/publicarea/pt/hyper_analyzer">
@@ -130,7 +130,6 @@
 <div class="container-fluid" id="parceiros">
   <div class="container justify-content-center p-5">
     <h1 class="horizon text-center mt-5 mb-5 text-white">Apoio:</h1>
-    <hr class="w-25 mx-auto mb-5">
     <div class="row justify-content-center pb-5">
       <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto p-3">
         <a href="https://www.ifes.edu.br/" target="_blank" rel="noopener noreferrer" class="mx-auto">
