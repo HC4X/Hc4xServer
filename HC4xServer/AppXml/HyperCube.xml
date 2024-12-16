@@ -135,6 +135,7 @@
       <NodeInterface id="download" FileName="download.xml"/>
       <NodeInterface id="certificados" FileName="certificados.xml"/>
       <NodeInterface id="non-authenticate" FileName="non-authenticate.xml"/>
+      <NodeInterface id="interactcentral" FileName="interactcentral.xml"/>
       <NodeInterface
         id="hcstone-slabxml"
         ModelLayout="Rest"

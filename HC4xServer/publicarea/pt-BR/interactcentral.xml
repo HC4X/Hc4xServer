@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NodeInterface
+  id="interactcentral"
+	NodeType="text/html"
+	ModelLayout="ContentPage"
+	htmltitle="Interact Central"
+	>
+	<NodeContent>
+		<![CDATA[
+            <style>
+              p{
+                font-family: Roboto;
+              }
+            </style>
+            <div class="container">
+              <h1 class="text-center m-5 horizon default_color">Interact Central</h1>
+              <p class="text-justify fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+								mollit anim id est laborum.
+              </p>
+							
+							<h2 class="text-center horizon default_color m-5">Como navegar no HyperCube pelo teclado e mouse</h2>
+							<p class="text-justify fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+								mollit anim id est laborum.
+              </p>
+							
+							<h2 class="text-center horizon default_color m-5">Como navegar usando o Controle Remoto</h2>
+							<p class="text-justify fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+								mollit anim id est laborum.
+              </p>
+							
+							<h2 class="text-center horizon default_color m-5">Como navegar usando o Joystick</h2>
+							<p class="text-justify fs-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+								mollit anim id est laborum.
+              </p>
+							
+							<h2 class="text-center horizon default_color m-5">Solução de Problemas</h2>
+							<p class="text-justify fs-6 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+								mollit anim id est laborum.
+              </p>
+            </div>
+          ]]>
+	</NodeContent>
+</NodeInterface>
